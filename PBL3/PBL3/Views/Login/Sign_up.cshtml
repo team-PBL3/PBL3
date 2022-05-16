@@ -1,0 +1,42 @@
+﻿@model Pbl3Context.User
+
+@{
+    ViewBag.Title = "Sign_up";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sign_up</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Sex)
+    @Html.DropDownListFor(model => model.Sex, new List<SelectListItem>    {
+        new SelectListItem{Text="Nam" , Value="Nam"},
+        new SelectListItem{Text="Nu" , Value="Nu"} },
+        "Chọn giới tính")
+
+    @Html.LabelFor(model => model.Phone)
+    @Html.TextBoxFor(model => model.Phone)
+
+    @Html.LabelFor(model => model.Address)
+    @Html.TextBoxFor(model => model.Address)
+
+    @Html.LabelFor(model => model.Username)
+    @Html.TextBoxFor(model => model.Username)
+
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email)
+
+    @Html.LabelFor(model => model.Password)
+    @Html.PasswordFor(model => model.Password)
+
+    <input type="submit" value="Sign up" />
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
