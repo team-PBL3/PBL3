@@ -3,7 +3,8 @@
     ViewBag.Title = "Sign_in";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("Sign_in", "Login"))
+@ViewBag.isAccess
+@using (Html.BeginForm("Sign_in", "Login", FormMethod.Post))
 {
     <label for="email">Email:</label>
     <br>
@@ -14,4 +15,5 @@
     <input type="password" id="password" name="password">
     <input type="submit" value="Sign in" />
 }
+
 
