@@ -1,6 +1,5 @@
 ﻿using System.Web;
 using System.Web.Optimization;
-
 namespace PBL3
 {
     public class BundleConfig

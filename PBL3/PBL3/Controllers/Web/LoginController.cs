@@ -38,7 +38,11 @@ namespace PBL3.Controllers.Web
                 if (i.Email == email && i.Password == password)
                 {
                     ViewBag.isAccess = true;
+                    Session.Add(RedirController.Account_Session, i);
+                    if (i.Idrole == 1) return RedirectToAction("Index", "AdminHome");
+                    else if (i.Idrole == 2) return RedirectToAction("Index", "UserHome");
                     break;
+
                 }
                 else ViewBag.isAccess = false;
             return View();
