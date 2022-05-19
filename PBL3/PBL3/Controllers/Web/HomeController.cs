@@ -7,7 +7,7 @@ using Pbl3Context;
 
 namespace PBL3.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : RouteController
     {
         public ActionResult Index()
         {

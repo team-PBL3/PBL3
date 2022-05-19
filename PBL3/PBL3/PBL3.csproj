@@ -153,19 +153,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminHome\AdminHomeController.cs" />
-    <Compile Include="Controllers\RedirController.cs" />
+    <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\UserHome\UserHomeController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
     <Compile Include="Controllers\Web\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataContext1.Designer.cs">
+    <Compile Include="Models\Errors.cs" />
+    <Compile Include="Models\Pbl3DataContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataContext1.lqml</DependentUpon>
+      <DependentUpon>Pbl3DataContext.lqml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Errors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -180,15 +180,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Models\DataContext1.Diagram1.view">
-      <DependentUpon>DataContext1.lqml</DependentUpon>
+    <Content Include="Models\Pbl3DataContext.Diagram1.view">
+      <DependentUpon>Pbl3DataContext.lqml</DependentUpon>
     </Content>
-    <Content Include="Models\DataContext1.edps">
-      <DependentUpon>DataContext1.lqml</DependentUpon>
+    <Content Include="Models\Pbl3DataContext.edps">
+      <DependentUpon>Pbl3DataContext.lqml</DependentUpon>
     </Content>
-    <Content Include="Models\DataContext1.lqml">
+    <Content Include="Models\Pbl3DataContext.lqml">
       <Generator>DevartLinqToSqlGenerator</Generator>
-      <LastGenOutput>DataContext1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Pbl3DataContext.Designer.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -221,7 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Redir\" />
+    <Folder Include="Views\Route\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
