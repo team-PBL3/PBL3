@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Pbl3Context;
 
 namespace PBL3.Controllers
 {
-    public class HomeController : RouteController
+    public class PageNotFoundController : Controller
     {
+        // GET: ErrorPage
         public ActionResult Index()
         {
-            return View();
+            return View("Error");
         }
     }
 }

@@ -153,7 +153,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminHome\AdminHomeController.cs" />
-    <Compile Include="Controllers\RedirController.cs" />
+    <Compile Include="Controllers\PageNotFoundController.cs" />
+    <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\UserHome\UserHomeController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
     <Compile Include="Controllers\Web\LoginController.cs" />
@@ -222,7 +223,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Redir\" />
+    <Folder Include="Views\ErrorPage\" />
+    <Folder Include="Views\Route\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

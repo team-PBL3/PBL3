@@ -8,7 +8,7 @@ namespace PBL3.Models
     public class Errors
     {
     }
-    public class SignUp_Errors
+    public class SignUp_Errors  //class ghi lỗi của controller Sign up
     {
         public string Name;
         public string Sex;

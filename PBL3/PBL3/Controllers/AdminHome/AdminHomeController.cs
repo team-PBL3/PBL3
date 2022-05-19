@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PBL3.Controllers.AdminController
+namespace PBL3.Controllers.AdminHome
 {
-    public class AdminHomeController : Controller
+    public class AdminHomeController : RouteController
     {
+        public static string Name = "AdminHome";
         // GET: Admin
         public ActionResult Index()
         {

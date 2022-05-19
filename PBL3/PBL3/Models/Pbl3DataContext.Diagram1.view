@@ -35,7 +35,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>fc468646-eb71-4335-919e-279117ad77e4</Path>
+=======
                       <Path>cd42dfb6-6513-45c3-980c-bd1865c638f2</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -54,7 +58,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>5d25ac6d-3753-4070-b92e-86647e4ed4f9</Path>
+=======
                       <Path>02e735bb-8162-4928-a976-30e6a56b9fd5</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -85,7 +93,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>8f33a1f6-a127-481b-8887-66c4dc9a324c</Path>
+=======
                       <Path>b8aeeea8-614f-439b-a615-4164ad4a4e2c</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -104,7 +116,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>d9217b86-97c5-4082-99a5-89211cdc3179</Path>
+=======
                       <Path>2ba8d629-515b-4067-8a6d-ceb891656b0b</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -142,7 +158,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>fab6018d-2653-4b73-bb4d-c76d5f62ba35</Path>
+=======
               <Path>ca9b4948-dc51-45ca-b41c-bbc6df43a9cb</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -174,7 +194,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>041843ce-9ba5-46a5-9877-5fe0116f2f90</Path>
+=======
                       <Path>76375759-33e8-46f4-87e5-0984bc50b662</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -193,7 +217,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>c5f8aeac-9bb3-448b-b41c-d688f683ba4f</Path>
+=======
                       <Path>f4f95895-1343-4d52-92a0-76157e3cd775</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -212,7 +240,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>f778e8c0-4f78-4910-bd7a-533e106faf2b</Path>
+=======
                       <Path>0f57137d-1699-49cf-93e3-e132c54ba56d</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -231,7 +263,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>9f6ff419-0539-42b6-a960-45c51cadf22d</Path>
+=======
                       <Path>d7cf99ec-fb6a-4faa-b57d-065ceb4c6a28</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -262,7 +298,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>1c1bf8b2-5096-4477-8e76-e30ca5d5762d</Path>
+=======
                       <Path>00fa6faf-39b2-4a21-ab5a-158213eda757</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -281,7 +321,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>fcf2936c-45f9-4f1b-8ff2-95ee665ba3c3</Path>
+=======
                       <Path>b764beb8-705c-4533-a17d-57e05ee62e3b</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -319,7 +363,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>adf0d54e-0872-4ef1-90c0-1eed85edee8e</Path>
+=======
               <Path>a318def6-72e3-4e08-9d2e-f86b3fdacc4e</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -351,7 +399,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>8fb8f7d3-1829-4b30-a1eb-8fcf5dd086e5</Path>
+=======
                       <Path>78b74910-44d3-4d49-bcf4-fa7e5b2362a9</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -370,7 +422,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>2943fb7f-056b-420a-a3fe-2627e2beeefc</Path>
+=======
                       <Path>99f781f0-96fd-4c80-b970-8fd00d1407d8</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -401,7 +457,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>6c347881-f6d7-45fb-ae42-b927d5fc05df</Path>
+=======
                       <Path>92e07d4a-d401-4e64-bb4c-0020af80afbd</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -439,7 +499,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>cd651165-0931-4cf9-83a3-217e8c10d8c8</Path>
+=======
               <Path>35303c52-1a60-4f6c-9e57-fb021e6332f9</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -471,7 +535,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>b2827555-3a45-4361-b53a-8e46e16165c6</Path>
+=======
                       <Path>ff4a1dcb-38c0-4905-b995-06e89d84025c</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -490,7 +558,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>7723d814-6610-4175-b356-59d62bd0ba0f</Path>
+=======
                       <Path>5823fa6e-9683-40ca-a5b2-cebc1b04fd7a</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -509,7 +581,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>ab76f678-42b4-473e-8d20-8a96d36666a1</Path>
+=======
                       <Path>e2a498b5-3aa8-4461-a475-365c1fdae196</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -540,7 +616,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>985d0685-02cb-41ce-ac1e-dface38b974c</Path>
+=======
                       <Path>bf05ab83-1711-4721-956e-a341236779b0</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -578,7 +658,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>7f4c58a7-ef9f-4699-8363-b3c1c0091ec5</Path>
+=======
               <Path>6457eb35-b7c8-4bfc-8333-2f171db207ba</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -610,7 +694,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>075f2a0f-0fea-4ccb-b02b-7bbd144441ce</Path>
+=======
                       <Path>f4370c95-eff6-43c6-9a4b-dc415bc01a97</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -629,7 +717,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>3c0541bc-66b4-4ed1-9581-80b72243d59f</Path>
+=======
                       <Path>b9325a38-d7ed-4a96-9552-38cb964db5d7</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -648,7 +740,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>b61580bf-6e27-4a2e-846c-c1c3b755c93a</Path>
+=======
                       <Path>c7b09ab5-0420-4709-9fb0-4c2050eae6d1</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -679,7 +775,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>0dbf543d-2395-4bb6-92b0-65b78758840d</Path>
+=======
                       <Path>14e9ae68-5bc0-440c-99b9-0cc691d09ccb</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -717,7 +817,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>0a6fac56-3ef1-4995-beb4-cdf6c46b3077</Path>
+=======
               <Path>95e58775-4e7b-4eb2-911b-17500d850a4e</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -749,7 +853,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>f0d0ece1-b563-434b-b547-07eed204b859</Path>
+=======
                       <Path>4e58cf6b-335d-47fc-baaf-4f2666aeaeb8</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -768,7 +876,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>823b3df9-ad3a-4e52-bf12-4f346e125418</Path>
+=======
                       <Path>5b43b955-ba7a-429d-b7d9-3878874d3b31</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -787,7 +899,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>821d7129-f802-46c6-8102-dda0ff311f3f</Path>
+=======
                       <Path>2a22cfb4-c32e-413d-81d2-e714e4644867</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -806,7 +922,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>5d6033f3-4077-4df6-90ed-21d879baf621</Path>
+=======
                       <Path>844d933e-d4a2-4fb3-86c7-47b8b1213657</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -825,7 +945,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>58b9688e-46f0-4582-acb5-7ba1339b28bf</Path>
+=======
                       <Path>b99b4eb4-eacc-49cc-add1-4788269fc40f</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -844,7 +968,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>d41dbd21-7082-4083-b9ba-cc3504f59eb6</Path>
+=======
                       <Path>5ea6bcd0-9a53-4740-a7bf-6ccdd9abefc5</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -875,7 +1003,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>e6caab6b-d9ec-4504-83cf-403cfc5b5ecb</Path>
+=======
                       <Path>22b4cac6-a1b8-4eb0-9f76-6316f6145145</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -894,7 +1026,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>fc6a1c5e-0c40-4e65-8292-0dbaf184b96a</Path>
+=======
                       <Path>5716a3e8-551f-43b9-9c32-820512b42e04</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -932,7 +1068,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>eed97c2d-8e51-41c0-9a8f-6fe52f7e2e69</Path>
+=======
               <Path>c77561d5-fa5d-4a7f-b015-b1d1ff3c8237</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -964,7 +1104,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>a3aff300-0faf-446e-9a7a-aaddfbb10f3b</Path>
+=======
                       <Path>4870b6e1-3048-4892-bb36-2ae5d5a06b86</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -983,7 +1127,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>717d4dcf-91fa-42cb-98ba-15fb26841713</Path>
+=======
                       <Path>67b79326-0862-43e6-b28f-087c8569c710</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1002,7 +1150,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>554952ad-f8b1-4d01-b9fa-8998d4f05e54</Path>
+=======
                       <Path>497e6a77-73ad-414c-8c4c-080d51059ecb</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1021,7 +1173,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>df018585-e685-4256-80a2-c31ce5f58b44</Path>
+=======
                       <Path>a28d5cb1-43cc-471c-8729-42cc56c664a7</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1052,7 +1208,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>e788e1f7-9ded-448f-99ab-9b2d8a2c3727</Path>
+=======
                       <Path>6b0d1de6-dbe8-4d8e-bfb6-b7057497baf0</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1071,7 +1231,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>84f6933b-70d0-4f10-ac5f-33c4b1930224</Path>
+=======
                       <Path>7359b1a4-90cc-40ec-8e18-2d703f63caba</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1090,7 +1254,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>6fd279df-14c5-4cba-bb2f-2eaf8c17e6ea</Path>
+=======
                       <Path>38b355dd-7722-45de-81e2-d2294f1fd6d7</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1128,7 +1296,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>127ade6f-c37b-4595-bd79-41c64fe78d41</Path>
+=======
               <Path>51f1fc27-1672-4e64-ab7e-512100d11173</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -1160,7 +1332,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>ba6771b9-ecb7-4dd6-9e3a-317f37ea361a</Path>
+=======
                       <Path>6ff616dc-5586-4457-8040-6edec14608d7</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1179,7 +1355,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>3616383b-4351-4b5a-8176-57997d7fadba</Path>
+=======
                       <Path>9fcb84cb-cd66-4623-b979-b231485f1557</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1198,7 +1378,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>bcbaec4b-1644-4f85-a15d-ab2f76d9df4f</Path>
+=======
                       <Path>f703a7d7-ccb8-4d8c-90f3-2196dea29d55</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1217,7 +1401,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>187523d3-9847-4cb6-bbbd-05a0b096a22a</Path>
+=======
                       <Path>2b924049-d048-43ad-974f-87f6e9db8603</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1236,7 +1424,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>6610afaa-5f20-4950-b24a-2edd15d40de9</Path>
+=======
                       <Path>3cd7ff2c-31c6-44fa-b203-45602560c997</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1255,7 +1447,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>c6b28056-8c7f-4cba-99df-42c4aa6cbff4</Path>
+=======
                       <Path>3f5cbf74-88c1-4a4c-baf1-2d11e07bfb32</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1286,7 +1482,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>4e90b1cd-44b3-4ab5-8f9d-ffe46302a97a</Path>
+=======
                       <Path>4daf7e19-3f06-47c9-a5eb-8365c796cfff</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1305,7 +1505,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>45725d8c-d474-43b0-b3b2-881706ff7949</Path>
+=======
                       <Path>b4a4b6f7-fdb9-4f62-87b2-76dc21323857</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1343,7 +1547,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>87c6ba84-9203-46fc-9621-a51bd089ee94</Path>
+=======
               <Path>6470bfb5-6c6d-41b3-b92d-404609bd07e2</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -1375,7 +1583,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>92b0d02d-2689-475d-a7ca-dda12ea43196</Path>
+=======
                       <Path>56569f9f-caaa-4d0f-8894-75c151b2795c</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1394,7 +1606,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>f373efec-8fd2-408c-aa99-82ffd3d9ebed</Path>
+=======
                       <Path>29350bc6-e036-49f4-88f2-dc31e9641fed</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1413,7 +1629,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>a2ebd253-f88d-486b-b677-6f9393f25f74</Path>
+=======
                       <Path>88c83df0-1a6c-4f92-9bbb-c45af7599670</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1432,7 +1652,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>38c12ee2-b7d2-4cad-a09e-3e8c607696c0</Path>
+=======
                       <Path>74d99cc9-cfe3-4cbd-bff8-e9db3d08f982</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1451,7 +1675,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>ce3d859e-26c8-4ca7-8766-052c94ea1726</Path>
+=======
                       <Path>3cdece6c-a6a9-4684-80db-badff0293687</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1470,7 +1698,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>b51f31cc-d315-4b27-95a4-bcc32efd0a3d</Path>
+=======
                       <Path>dc8f600d-2f88-4cea-8620-e463285260a1</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1523,7 +1755,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>bef592d3-4087-49e1-9b40-eb83f902c5d6</Path>
+=======
               <Path>770f43ae-76d8-4f18-b79c-344869fb5cc9</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -1555,7 +1791,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>69a4be69-037a-4f7d-96e9-725e5cc4d993</Path>
+=======
                       <Path>a2872086-b5c8-4ba4-8ba1-09d54634b3e0</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1574,7 +1814,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>f3770730-2632-44b6-a976-12d02dca7db1</Path>
+=======
                       <Path>5b327c25-2e86-4e4e-a601-510b266f3d5e</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1593,7 +1837,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>a9d3dc69-3036-42a1-ab51-9508e1d26e7e</Path>
+=======
                       <Path>b52a390f-883d-431e-884c-9fdad033a603</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1612,7 +1860,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>ef02d6a4-16c3-4c48-9a67-529279a62dd2</Path>
+=======
                       <Path>c16e3f5f-5a6f-4f94-9dce-6fdad1bc6632</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1631,7 +1883,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>74a86cb9-9e64-432e-ac68-48ecd0bc139f</Path>
+=======
                       <Path>24573c77-b541-4967-a800-09c3f4329c41</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1650,7 +1906,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>3e00f109-2673-4a86-8af3-d6cfddd18885</Path>
+=======
                       <Path>678248d2-e631-4c7c-bb22-334b87a0cc16</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1669,7 +1929,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>8f62c76e-a2b1-43dd-8fba-3c8d9164089d</Path>
+=======
                       <Path>1707491a-4532-45ea-9538-614e9208fa1d</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1688,7 +1952,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>0d8219b9-ef88-4234-850f-99c6abb64298</Path>
+=======
                       <Path>5ad71b97-6141-42bd-b976-c95ce46275bf</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1707,7 +1975,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>4e084113-93f5-4971-a31a-01767854d793</Path>
+=======
                       <Path>eb295e7f-fb6c-4dd8-868a-1ca5cdd0340f</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1738,7 +2010,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>e7bc0341-5908-48c7-831f-bc1653270391</Path>
+=======
                       <Path>cb39e2ce-1495-4b33-b532-a04a05bca544</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1757,7 +2033,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>c86a653b-4542-416b-a5bb-16701144d870</Path>
+=======
                       <Path>68dd493e-afac-45bd-bdea-155b686b65cf</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1776,7 +2056,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>928fae01-63b3-47c5-900b-ecd8083b0296</Path>
+=======
                       <Path>fe071420-8c71-461b-a6c5-ae2dd8141aab</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1795,7 +2079,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>124cdd7e-9649-4890-b677-6407ec74e349</Path>
+=======
                       <Path>abcf011e-1925-4cdf-afdc-b53ebb63dc74</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1814,7 +2102,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>d0d1508d-1a2b-42dd-b8ca-907c258e7e0a</Path>
+=======
                       <Path>e534f409-aa25-4c19-9678-00796fcda595</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1852,7 +2144,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>3035d40c-42e1-4186-bbe3-649a1d5cec70</Path>
+=======
               <Path>ce3f3785-cd5f-40da-92ea-cb3fb1f652bd</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -1884,7 +2180,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>c9b10601-580c-43ba-8632-2a39f3b85def</Path>
+=======
                       <Path>ef87f2fe-796e-4bd6-86be-e4424016b953</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1903,7 +2203,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>657e8462-a660-467a-a3a7-48b7be2b84cb</Path>
+=======
                       <Path>b61de18c-fcd0-4ee0-bab7-269811ffbe4f</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1934,7 +2238,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>82ce64e4-13d2-49cd-94cc-8ac4765ecde0</Path>
+=======
                       <Path>22890203-4993-4e25-9d71-a90a85c09ba0</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1972,7 +2280,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>c1f7f29b-beb9-4290-83d0-74eff65fa40a</Path>
+=======
               <Path>7535cdb1-6009-43b0-882c-7f2808ba72c9</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -2004,7 +2316,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>25b6fe8c-540b-4069-902a-fac886396e4e</Path>
+=======
                       <Path>850c7d40-9abd-412a-8b93-316a5c2bf058</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2023,7 +2339,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>fe9c539a-c8f4-47e7-ac67-40a18267312d</Path>
+=======
                       <Path>edef39ee-bafb-4c39-91e1-9d0d4102780b</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2054,7 +2374,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>0c89e187-08cf-4fc3-a29f-42e05e98711b</Path>
+=======
                       <Path>1abec255-d71f-4a1e-8f15-6d08fc689284</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2092,7 +2416,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>3fd7bcbc-7756-45a7-a614-fc451a9fbc00</Path>
+=======
               <Path>effb6c70-ee5a-4d92-addc-e2af93e5e34e</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -2124,7 +2452,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>241e7148-6813-44f7-837d-10bb912ba86f</Path>
+=======
                       <Path>d5541d1e-26f2-46b6-b905-2e24cd7e89bc</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2143,7 +2475,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>4cac736d-bdb8-4602-bb89-db7b27b3ef07</Path>
+=======
                       <Path>55031a04-2bb2-4e72-a975-c58e53d9e5c1</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2162,7 +2498,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>45aa4976-a1f2-431b-a775-322b3f2f805e</Path>
+=======
                       <Path>a9403bff-819e-4a23-b4ff-cfcc7ded9509</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2181,7 +2521,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>af87dfe4-8504-4c18-a1e9-a1b2298a8dcb</Path>
+=======
                       <Path>8e6e032d-2043-4507-ad0b-b07bfa43f0a4</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2200,7 +2544,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>14b7f2df-2797-4975-a0c7-e866fe839ad9</Path>
+=======
                       <Path>af7dab22-dd2a-4820-ad7f-679cd261073b</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2219,7 +2567,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>54b39dd2-0745-45ab-a710-ef2512cc8528</Path>
+=======
                       <Path>5a041b10-b96e-4b53-9270-32d7d1bb7bc0</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2238,7 +2590,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>2868e11a-af81-493d-995c-4241ef2a2a3f</Path>
+=======
                       <Path>820e078f-91f1-45ed-876b-768f09491dd4</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2257,7 +2613,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>175602b5-9a8f-4100-b576-143fdb06cba1</Path>
+=======
                       <Path>87423e05-5b43-4c6f-a178-b76ced43284f</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2276,7 +2636,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>f0274da7-8726-4463-8c4e-5a10c78f629d</Path>
+=======
                       <Path>f9afac7b-b7b3-40b4-8d0c-340bfe1940b1</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2295,7 +2659,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>01f1e3d9-d619-43a8-910f-46cea6b65910</Path>
+=======
                       <Path>08d341e2-a857-4096-9a27-a969cc68fa02</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2326,7 +2694,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>f70cb735-5201-449c-b608-210d41f00ab4</Path>
+=======
                       <Path>072ad336-db81-4663-8e27-c4e96555948e</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2345,7 +2717,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>030d2d3b-2fd5-412b-a0c9-468175df9e19</Path>
+=======
                       <Path>30ba6be8-928c-4b52-90e3-3060de7491c4</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2364,7 +2740,11 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+                      <Path>72610f4b-165f-4cf9-948a-a5a31592a7a1</Path>
+=======
                       <Path>37bd780b-1866-4054-9906-51b477bdc9ce</Path>
+>>>>>>> hoang
                       <TypeName>EntityDeveloper.Linq.LinqConnectRelationProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2402,7 +2782,11 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>4caecd47-d584-4ce7-b7c0-075bbf51034f</Path>
+=======
               <Path>c811e6c5-4a18-4146-9a39-a8c9d58ce7cf</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqClass</TypeName>
             </Oid>
             <FixedHeight>35 px</FixedHeight>
@@ -2444,7 +2828,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>6ce1c773-71ec-4e94-9b1e-af2ea52112e9</Path>
+=======
               <Path>73d4cd53-528d-4c24-a35f-77b8e1988fcd</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2491,7 +2879,11 @@
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>9aeb22b1-a925-47ff-a4b3-d95da5d18b2e</Path>
+=======
               <Path>294ef2c2-b14d-4da8-bf1c-5becf6603d5c</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2532,7 +2924,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>15bd65ce-7b0f-4c99-b87d-9a4bcee5a358</Path>
+=======
               <Path>63f07eb1-92ae-480c-9719-a162d4f2f3eb</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2573,7 +2969,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>917f6352-09e9-42b5-8c54-453ba3b2f70a</Path>
+=======
               <Path>c637ac4d-3293-4a07-83a7-317d80703d69</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2614,7 +3014,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>ea20275e-6f25-4b6a-aa71-592e3314bd41</Path>
+=======
               <Path>6dc6e7db-96ff-4a1a-8c23-b41673672c10</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2655,7 +3059,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>86697191-4395-437a-80a0-2ca07c81ba77</Path>
+=======
               <Path>f63f80d8-14eb-4d7f-ba6a-0a1b387653b0</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2696,7 +3104,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>fbb81ffd-dabd-4d9b-8470-6cce4fa3e17d</Path>
+=======
               <Path>21a01942-2e39-40ff-a645-0f1b8d355579</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2743,7 +3155,11 @@
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>67896385-9b7e-44bc-b927-aa20427b570a</Path>
+=======
               <Path>77439bc2-7ef3-4a20-b1a2-86d45306cb5b</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2784,7 +3200,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>1014ceb7-3e3f-4be4-8ba0-93694dc33251</Path>
+=======
               <Path>b8c26a8a-3195-44a6-8c8e-c680d2ef5117</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2825,7 +3245,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>601263ce-1ba8-47bc-9420-4c0af527f223</Path>
+=======
               <Path>7f34ef73-c876-4e5b-8135-3ca842197c9a</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2866,7 +3290,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>f893a111-56b1-441d-add5-82e2935c5d46</Path>
+=======
               <Path>0e564f6a-5825-4d06-bfa7-c91d06a46ee1</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2907,7 +3335,11 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
+<<<<<<< HEAD
+              <Path>98096eaa-7f66-4894-8f1f-b152504bcfa2</Path>
+=======
               <Path>70301253-0af6-4190-9bcc-8c9e6cb97b31</Path>
+>>>>>>> hoang
               <TypeName>EntityDeveloper.Linq.LinqConnectAssociation</TypeName>
             </Oid>
           </Model>
@@ -2915,6 +3347,16 @@
         <GridSize>8 px</GridSize>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
+<<<<<<< HEAD
+          <Scale>0.301323831</Scale>
+          <Location>
+            <X>-813.635170190144 px</X>
+            <Y>12.3884810721262 px</Y>
+          </Location>
+        </ViewPort>
+        <Oid xsi:type="SchemaModelOID">
+          <Path>743ed2a7-6c37-4740-ac49-47d2c42d439b</Path>
+=======
           <Scale>0.2218363</Scale>
           <Location>
             <X>-1124.6106227765 px</X>
@@ -2923,6 +3365,7 @@
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">
           <Path>24918d08-83f0-483f-a725-4b761054350b</Path>
+>>>>>>> hoang
           <TypeName>EntityDeveloper.Linq.LinqConnectContextModel</TypeName>
         </Oid>
       </Model>
