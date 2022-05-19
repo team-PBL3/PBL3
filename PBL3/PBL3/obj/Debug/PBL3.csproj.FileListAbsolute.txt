@@ -142,7 +142,6 @@ C:\Users\win\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.WebPages.Razor.xml
 C:\Users\win\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 C:\Users\win\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 C:\Users\win\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
-<<<<<<< HEAD
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\bin\PBL3.dll.config
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\bin\PBL3.dll
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\bin\PBL3.pdb
@@ -197,7 +196,6 @@ E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.ca
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
-=======
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\PBL3.dll.config
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\PBL3.dll
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\PBL3.pdb
@@ -234,4 +232,3 @@ C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompile
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
->>>>>>> hoang
