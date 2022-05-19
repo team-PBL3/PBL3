@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="pbl3" EntityNamespace="Pbl3Context" ContextNamespace="Pbl3Context" Class="Pbl3DataContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="24918d08-83f0-483f-a725-4b761054350b" Provider="Devart.Data.MySql.Linq.Provider.MySqlDataProvider, Devart.Data.MySql.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="User Id=root;Password=chauchau2406;Host=localhost;Database=pbl3;Persist Security Info=True" Provider="Devart.Data.MySql" />
+  <Table Name="pbl3.cart" Member="Carts">
+    <Type Name="Cart" ed:Guid="ca9b4948-dc51-45ca-b41c-bbc6df43a9cb">
+      <Column Name="userId" Member="UserId" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="cd42dfb6-6513-45c3-980c-bd1865c638f2" />
+      <Column Name="quantityBuy" Member="QuantityBuy" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="02e735bb-8162-4928-a976-30e6a56b9fd5" />
+      <Association Name="User_Cart" ed:AssociationGuid="73d4cd53-528d-4c24-a35f-77b8e1988fcd" Member="User" ed:Guid="b8aeeea8-614f-439b-a615-4164ad4a4e2c" ThisKey="UserId" OtherKey="ID" Type="User" DeleteRule="NO ACTION" IsForeignKey="true" Cardinality="One" />
+      <Association Name="Cart_Cartdetail" ed:AssociationGuid="294ef2c2-b14d-4da8-bf1c-5becf6603d5c" Member="Cartdetails" ed:Guid="2ba8d629-515b-4067-8a6d-ceb891656b0b" ThisKey="UserId" OtherKey="CartId" Type="Cartdetail" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.cartdetail" Member="Cartdetails">
+    <Type Name="Cartdetail" ed:Guid="a318def6-72e3-4e08-9d2e-f86b3fdacc4e">
+      <Column Name="Id" Type="System.Int32" AutoSync="OnInsert" DbType="INT NOT NULL AUTO_INCREMENT" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="76375759-33e8-46f4-87e5-0984bc50b662" />
+      <Column Name="cartId" Member="CartId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f4f95895-1343-4d52-92a0-76157e3cd775" />
+      <Column Name="productId" Member="ProductId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0f57137d-1699-49cf-93e3-e132c54ba56d" />
+      <Column Name="quantityBuy" Member="QuantityBuy" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d7cf99ec-fb6a-4faa-b57d-065ceb4c6a28" />
+      <Association Name="Cart_Cartdetail" ed:AssociationGuid="294ef2c2-b14d-4da8-bf1c-5becf6603d5c" Member="Cart" ed:Guid="00fa6faf-39b2-4a21-ab5a-158213eda757" ThisKey="CartId" OtherKey="UserId" Type="Cart" DeleteRule="NO ACTION" IsForeignKey="true" />
+      <Association Name="Product_Cartdetail" ed:AssociationGuid="63f07eb1-92ae-480c-9719-a162d4f2f3eb" Member="Product" ed:Guid="b764beb8-705c-4533-a17d-57e05ee62e3b" ThisKey="ProductId" OtherKey="Id" Type="Product" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.category" Member="Categories">
+    <Type Name="Category" ed:Guid="35303c52-1a60-4f6c-9e57-fb021e6332f9">
+      <Column Name="Id" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="78b74910-44d3-4d49-bcf4-fa7e5b2362a9" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="99f781f0-96fd-4c80-b970-8fd00d1407d8" />
+      <Association Name="Category_Product" ed:AssociationGuid="c637ac4d-3293-4a07-83a7-317d80703d69" Member="Products" ed:Guid="92e07d4a-d401-4e64-bb4c-0020af80afbd" ThisKey="Id" OtherKey="CategoryId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.creditcard" Member="Creditcards">
+    <Type Name="Creditcard" ed:Guid="6457eb35-b7c8-4bfc-8333-2f171db207ba">
+      <Column Name="Id" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="ff4a1dcb-38c0-4905-b995-06e89d84025c" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="5823fa6e-9683-40ca-a5b2-cebc1b04fd7a" />
+      <Column Name="cardNumber" Member="CardNumber" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e2a498b5-3aa8-4461-a475-365c1fdae196" />
+      <Association Name="Creditcard_Payment" ed:AssociationGuid="6dc6e7db-96ff-4a1a-8c23-b41673672c10" Member="Payments" ed:Guid="bf05ab83-1711-4721-956e-a341236779b0" ThisKey="Id" OtherKey="CreaditCardId" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.image" Member="Images">
+    <Type Name="Image" ed:Guid="95e58775-4e7b-4eb2-911b-17500d850a4e">
+      <Column Name="Id" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="f4370c95-eff6-43c6-9a4b-dc415bc01a97" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="b9325a38-d7ed-4a96-9552-38cb964db5d7" />
+      <Column Name="productId" Member="ProductId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="c7b09ab5-0420-4709-9fb0-4c2050eae6d1" />
+      <Association Name="Product_Image" ed:AssociationGuid="f63f80d8-14eb-4d7f-ba6a-0a1b387653b0" Member="Product" ed:Guid="14e9ae68-5bc0-440c-99b9-0cc691d09ccb" ThisKey="ProductId" OtherKey="Id" Type="Product" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.orderdetail" Member="Orderdetails">
+    <Type Name="Orderdetail" ed:Guid="c77561d5-fa5d-4a7f-b015-b1d1ff3c8237">
+      <Column Name="Id" Type="System.Int32" AutoSync="OnInsert" DbType="INT NOT NULL AUTO_INCREMENT" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="4e58cf6b-335d-47fc-baaf-4f2666aeaeb8" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="5b43b955-ba7a-429d-b7d9-3878874d3b31" />
+      <Column Name="price" Member="Price" Type="System.Single" DbType="FLOAT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="2a22cfb4-c32e-413d-81d2-e714e4644867" />
+      <Column Name="quantity" Member="Quantity" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="844d933e-d4a2-4fb3-86c7-47b8b1213657" />
+      <Column Name="orderId" Member="OrderId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b99b4eb4-eacc-49cc-add1-4788269fc40f" />
+      <Column Name="productId" Member="ProductId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="5ea6bcd0-9a53-4740-a7bf-6ccdd9abefc5" />
+      <Association Name="Orderr_Orderdetail" ed:AssociationGuid="21a01942-2e39-40ff-a645-0f1b8d355579" Member="Orderr" ed:Guid="22b4cac6-a1b8-4eb0-9f76-6316f6145145" ThisKey="OrderId" OtherKey="Id" Type="Orderr" DeleteRule="NO ACTION" IsForeignKey="true" />
+      <Association Name="Product_Orderdetail" ed:AssociationGuid="77439bc2-7ef3-4a20-b1a2-86d45306cb5b" Member="Product" ed:Guid="5716a3e8-551f-43b9-9c32-820512b42e04" ThisKey="ProductId" OtherKey="Id" Type="Product" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.orderr" Member="Orderrs">
+    <Type Name="Orderr" ed:Guid="51f1fc27-1672-4e64-ab7e-512100d11173">
+      <Column Name="Id" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="4870b6e1-3048-4892-bb36-2ae5d5a06b86" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="67b79326-0862-43e6-b28f-087c8569c710" />
+      <Column Name="status" Member="Status" Type="System.String" DbType="ENUM NULL" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="497e6a77-73ad-414c-8c4c-080d51059ecb" />
+      <Column Name="userId" Member="UserId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a28d5cb1-43cc-471c-8729-42cc56c664a7" />
+      <Association Name="Orderr_Orderdetail" ed:AssociationGuid="21a01942-2e39-40ff-a645-0f1b8d355579" Member="Orderdetails" ed:Guid="6b0d1de6-dbe8-4d8e-bfb6-b7057497baf0" ThisKey="Id" OtherKey="OrderId" Type="Orderdetail" />
+      <Association Name="User_Orderr" ed:AssociationGuid="b8c26a8a-3195-44a6-8c8e-c680d2ef5117" Member="User" ed:Guid="7359b1a4-90cc-40ec-8e18-2d703f63caba" ThisKey="UserId" OtherKey="ID" Type="User" DeleteRule="NO ACTION" IsForeignKey="true" />
+      <Association Name="Orderr_Payment" ed:AssociationGuid="7f34ef73-c876-4e5b-8135-3ca842197c9a" Member="Payments" ed:Guid="38b355dd-7722-45de-81e2-d2294f1fd6d7" ThisKey="Id" OtherKey="OrderId" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.payment" Member="Payments">
+    <Type Name="Payment" ed:Guid="6470bfb5-6c6d-41b3-b92d-404609bd07e2">
+      <Column Name="Id" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="6ff616dc-5586-4457-8040-6edec14608d7" />
+      <Column Name="paymentDate" Member="PaymentDate" Type="System.DateTime" DbType="DATE NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9fcb84cb-cd66-4623-b979-b231485f1557" />
+      <Column Name="amount" Member="Amount" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f703a7d7-ccb8-4d8c-90f3-2196dea29d55" />
+      <Column Name="totalPrice" Member="TotalPrice" Type="System.Single" DbType="FLOAT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="2b924049-d048-43ad-974f-87f6e9db8603" />
+      <Column Name="orderId" Member="OrderId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3cd7ff2c-31c6-44fa-b203-45602560c997" />
+      <Column Name="creaditCardId" Member="CreaditCardId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3f5cbf74-88c1-4a4c-baf1-2d11e07bfb32" />
+      <Association Name="Creditcard_Payment" ed:AssociationGuid="6dc6e7db-96ff-4a1a-8c23-b41673672c10" Member="Creditcard" ed:Guid="b4a4b6f7-fdb9-4f62-87b2-76dc21323857" ThisKey="CreaditCardId" OtherKey="Id" Type="Creditcard" DeleteRule="NO ACTION" IsForeignKey="true" />
+      <Association Name="Orderr_Payment" ed:AssociationGuid="7f34ef73-c876-4e5b-8135-3ca842197c9a" Member="Orderr" ed:Guid="4daf7e19-3f06-47c9-a5eb-8365c796cfff" ThisKey="OrderId" OtherKey="Id" Type="Orderr" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.person" Member="People">
+    <Type Name="Person" ed:Guid="770f43ae-76d8-4f18-b79c-344869fb5cc9">
+      <Column Name="ID" Type="System.Int32" AutoSync="OnInsert" DbType="INT NOT NULL AUTO_INCREMENT" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="56569f9f-caaa-4d0f-8894-75c151b2795c" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="29350bc6-e036-49f4-88f2-dc31e9641fed" />
+      <Column Name="sex" Member="Sex" Type="System.String" DbType="ENUM NULL" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="88c83df0-1a6c-4f92-9bbb-c45af7599670" />
+      <Column Name="phone" Member="Phone" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="74d99cc9-cfe3-4cbd-bff8-e9db3d08f982" />
+      <Column Name="address" Member="Address" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="3cdece6c-a6a9-4684-80db-badff0293687" />
+      <Column Name="email" Member="Email" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="dc8f600d-2f88-4cea-8620-e463285260a1" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.product" Member="Products">
+    <Type Name="Product" ed:Guid="ce3f3785-cd5f-40da-92ea-cb3fb1f652bd">
+      <Column Name="Id" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="a2872086-b5c8-4ba4-8ba1-09d54634b3e0" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="5b327c25-2e86-4e4e-a601-510b266f3d5e" />
+      <Column Name="categoryId" Member="CategoryId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b52a390f-883d-431e-884c-9fdad033a603" />
+      <Column Name="trademarkId" Member="TrademarkId" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="c16e3f5f-5a6f-4f94-9dce-6fdad1bc6632" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="24573c77-b541-4967-a800-09c3f4329c41" />
+      <Column Name="price" Member="Price" Type="System.Single" DbType="FLOAT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="678248d2-e631-4c7c-bb22-334b87a0cc16" />
+      <Column Name="Status" Type="System.String" DbType="ENUM NULL" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="1707491a-4532-45ea-9538-614e9208fa1d" />
+      <Column Name="infoProduct" Member="InfoProduct" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="5ad71b97-6141-42bd-b976-c95ce46275bf" />
+      <Column Name="quantityRemain" Member="QuantityRemain" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="eb295e7f-fb6c-4dd8-868a-1ca5cdd0340f" />
+      <Association Name="Product_Cartdetail" ed:AssociationGuid="63f07eb1-92ae-480c-9719-a162d4f2f3eb" Member="Cartdetails" ed:Guid="cb39e2ce-1495-4b33-b532-a04a05bca544" ThisKey="Id" OtherKey="ProductId" Type="Cartdetail" />
+      <Association Name="Category_Product" ed:AssociationGuid="c637ac4d-3293-4a07-83a7-317d80703d69" Member="Category" ed:Guid="abcf011e-1925-4cdf-afdc-b53ebb63dc74" ThisKey="CategoryId" OtherKey="Id" Type="Category" DeleteRule="NO ACTION" IsForeignKey="true" />
+      <Association Name="Product_Image" ed:AssociationGuid="f63f80d8-14eb-4d7f-ba6a-0a1b387653b0" Member="Images" ed:Guid="68dd493e-afac-45bd-bdea-155b686b65cf" ThisKey="Id" OtherKey="ProductId" Type="Image" />
+      <Association Name="Product_Orderdetail" ed:AssociationGuid="77439bc2-7ef3-4a20-b1a2-86d45306cb5b" Member="Orderdetails" ed:Guid="fe071420-8c71-461b-a6c5-ae2dd8141aab" ThisKey="Id" OtherKey="ProductId" Type="Orderdetail" />
+      <Association Name="Trademark_Product" ed:AssociationGuid="0e564f6a-5825-4d06-bfa7-c91d06a46ee1" Member="Trademark" ed:Guid="e534f409-aa25-4c19-9678-00796fcda595" ThisKey="TrademarkId" OtherKey="Id" Type="Trademark" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.role" Member="Roles">
+    <Type Name="Role" ed:Guid="7535cdb1-6009-43b0-882c-7f2808ba72c9">
+      <Column Name="ID" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="ef87f2fe-796e-4bd6-86be-e4424016b953" />
+      <Column Name="value" Member="Value" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="b61de18c-fcd0-4ee0-bab7-269811ffbe4f" />
+      <Association Name="Role_User" ed:AssociationGuid="70301253-0af6-4190-9bcc-8c9e6cb97b31" Member="Users" ed:Guid="22890203-4993-4e25-9d71-a90a85c09ba0" ThisKey="ID" OtherKey="Idrole" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.trademark" Member="Trademarks">
+    <Type Name="Trademark" ed:Guid="effb6c70-ee5a-4d92-addc-e2af93e5e34e">
+      <Column Name="Id" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="850c7d40-9abd-412a-8b93-316a5c2bf058" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="edef39ee-bafb-4c39-91e1-9d0d4102780b" />
+      <Association Name="Trademark_Product" ed:AssociationGuid="0e564f6a-5825-4d06-bfa7-c91d06a46ee1" Member="Products" ed:Guid="1abec255-d71f-4a1e-8f15-6d08fc689284" ThisKey="Id" OtherKey="TrademarkId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="pbl3.user" Member="Users">
+    <Type Name="User" ed:Guid="c811e6c5-4a18-4146-9a39-a8c9d58ce7cf">
+      <Column Name="ID" Type="System.Int32" DbType="INT NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="d5541d1e-26f2-46b6-b905-2e24cd7e89bc" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="55031a04-2bb2-4e72-a975-c58e53d9e5c1" />
+      <Column Name="sex" Member="Sex" Type="System.String" DbType="ENUM NULL" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="a9403bff-819e-4a23-b4ff-cfcc7ded9509" />
+      <Column Name="phone" Member="Phone" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8e6e032d-2043-4507-ad0b-b07bfa43f0a4" />
+      <Column Name="address" Member="Address" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="af7dab22-dd2a-4820-ad7f-679cd261073b" />
+      <Column Name="username" Member="Username" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="5a041b10-b96e-4b53-9270-32d7d1bb7bc0" />
+      <Column Name="email" Member="Email" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="820e078f-91f1-45ed-876b-768f09491dd4" />
+      <Column Name="`password`" Member="Password" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="87423e05-5b43-4c6f-a178-b76ced43284f" />
+      <Column Name="status" Member="Status" Type="System.String" DbType="VARCHAR(255) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="f9afac7b-b7b3-40b4-8d0c-340bfe1940b1" />
+      <Column Name="Idrole" Type="System.Int32" DbType="INT NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="08d341e2-a857-4096-9a27-a969cc68fa02" />
+      <Association Name="User_Cart" ed:AssociationGuid="73d4cd53-528d-4c24-a35f-77b8e1988fcd" Member="Cart" ed:Guid="072ad336-db81-4663-8e27-c4e96555948e" ThisKey="ID" OtherKey="UserId" Type="Cart" Cardinality="One" />
+      <Association Name="User_Orderr" ed:AssociationGuid="b8c26a8a-3195-44a6-8c8e-c680d2ef5117" Member="Orderrs" ed:Guid="30ba6be8-928c-4b52-90e3-3060de7491c4" ThisKey="ID" OtherKey="UserId" Type="Orderr" />
+      <Association Name="Role_User" ed:AssociationGuid="70301253-0af6-4190-9bcc-8c9e6cb97b31" Member="Role" ed:Guid="37bd780b-1866-4054-9906-51b477bdc9ce" ThisKey="Idrole" OtherKey="ID" Type="Role" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="pbl3.Create_New_User" Method="CreateNewUser" ed:Guid="27b8afc5-19bf-42f3-bf84-ca9283bc4ae1">
+    <Parameter Name="ID" Type="System.Int32" DbType="INT(10)" Precision="10" Scale="0" />
+    <Parameter Name="name" Type="System.String" DbType="VARCHAR(255)" FixedLength="true" MaxLength="255" />
+    <Parameter Name="sex" Type="System.String" DbType="ENUM" FixedLength="true" MaxLength="3" />
+    <Parameter Name="phone" Type="System.Int32" DbType="INT(10)" Precision="10" Scale="0" />
+    <Parameter Name="address" Type="System.String" DbType="VARCHAR(255)" FixedLength="true" MaxLength="255" />
+    <Parameter Name="username" Type="System.String" DbType="VARCHAR(255)" FixedLength="true" MaxLength="255" />
+    <Parameter Name="email" Type="System.String" DbType="VARCHAR(255)" FixedLength="true" MaxLength="255" />
+    <Parameter Name="password" Type="System.String" DbType="VARCHAR(255)" FixedLength="true" MaxLength="255" />
+    <Parameter Name="status" Type="System.String" DbType="VARCHAR(255)" FixedLength="true" MaxLength="255" />
+    <Parameter Name="Idrole" Type="System.Int32" DbType="INT(10)" Precision="10" Scale="0" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
