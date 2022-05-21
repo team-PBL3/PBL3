@@ -38,7 +38,7 @@ namespace PBL3.Controllers.Web
                     Session.Add(RouteController.Account_Session, i);    //Thêm tài khoản hiện hành đang hoạt động.
                     if (i.Idrole == 1) return RedirectToAction("Index", AdminHome.AdminHomeController.Name);
                     //Nếu là admin, đến trang chủ của admin
-                    else if (i.Idrole == 2) return RedirectToAction("Index", UserHome.UserHomeController.Name);
+                    else if (i.Idrole == 2) return RedirectToAction("Index", Member.MemberController.Name);
                     //Nếu là user, đến trang chủ của user
                     break;
                 }
