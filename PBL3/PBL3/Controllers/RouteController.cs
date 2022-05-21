@@ -17,7 +17,7 @@ namespace PBL3.Controllers
             string controller = this.ControllerContext.RouteData.Values["controller"].ToString();
             if (account == null)
             {
-                if (controller != "Home" && controller != "Login")
+                if (controller == Member.MemberController.Name || controller == AdminHome.AdminHomeController.Name)
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                     (new { controller = "Login", action = "Sign_in" }));
             }
@@ -28,10 +28,10 @@ namespace PBL3.Controllers
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                         (new { controller = AdminHome.AdminHomeController.Name, action = "Index" }));
                 }
-                else if (account.Idrole == 2 && controller != UserHome.UserHomeController.Name)
+                else if (account.Idrole == 2 && controller != Member.MemberController.Name)
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
-                        (new { controller = UserHome.UserHomeController.Name, action = "Index" }));
+                        (new { controller = Member.MemberController.Name, action = "Index" }));
                 }
             }
             base.OnActionExecuting(filterContext);

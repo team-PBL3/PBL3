@@ -196,3 +196,39 @@ E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.ca
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\PBL3.dll.config
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\PBL3.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\PBL3.pdb
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Devart.Data.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Devart.Data.Linq.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Devart.Data.MySql.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Devart.Data.MySql.Linq.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Newtonsoft.Json.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Buffers.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Memory.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.Helpers.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.Mvc.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.Optimization.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.Razor.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.WebPages.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.WebPages.Razor.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\K4os.Compression.LZ4.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\K4os.Compression.LZ4.Streams.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\K4os.Hash.xxHash.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Newtonsoft.Json.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.Helpers.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.Mvc.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.Optimization.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.Razor.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.WebPages.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\System.Web.WebPages.Razor.xml
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb

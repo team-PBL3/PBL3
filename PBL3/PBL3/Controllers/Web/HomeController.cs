@@ -9,8 +9,10 @@ namespace PBL3.Controllers
 {
     public class HomeController : RouteController
     {
-        public ActionResult Index()
+        public ActionResult Index(int id = 1)
         {
+
+
             return View();
         }
     }

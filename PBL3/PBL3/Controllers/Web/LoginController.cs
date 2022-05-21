@@ -38,7 +38,7 @@ namespace PBL3.Controllers.Web
                     Session.Add(RouteController.Account_Session, i);    //Thêm tài khoản hiện hành đang hoạt động.
                     if (i.Idrole == 1) return RedirectToAction("Index", AdminHome.AdminHomeController.Name);
                     //Nếu là admin, đến trang chủ của admin
-                    else if (i.Idrole == 2) return RedirectToAction("Index", UserHome.UserHomeController.Name);
+                    else if (i.Idrole == 2) return RedirectToAction("Index", Member.MemberController.Name);
                     //Nếu là user, đến trang chủ của user
                     break;
                 }
@@ -107,6 +107,14 @@ namespace PBL3.Controllers.Web
             else
             {
                 error.Email = "";
+                foreach(var data in  dataUsers)
+                {
+                    if (data.Email == model.Email)
+                    {
+                        success = false;
+                        error.Email = $"This email have been used.";
+                    }    
+                }    
             }
             if (model.Password == null) model.Password = "";
             if (model.Password.Length < 6) //Nếu mật khẩu có ít hơn 6 ký tự, hiện lỗi này.
