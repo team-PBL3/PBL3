@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Devart.Data.Linq;
-using Pbl3Context;
 using PBL3.Models;
 namespace PBL3.Controllers.Web
 {
     public class LoginController : RouteController
     {
-        Pbl3DataContext dataContext; //Biến dữ liệu từ database.
+        pbl3Entities dataContext; //Biến dữ liệu từ database.
         public LoginController()
         {
-            dataContext = new Pbl3DataContext();
+            
+             dataContext= new pbl3Entities();
         }    
         // GET: Login
         public ActionResult Sign_up()
@@ -29,16 +28,16 @@ namespace PBL3.Controllers.Web
         [HttpPost]
         public ActionResult Sign_in(string email, string password)
         {
-            List<User> dataUsers = dataContext.Users.ToList();  //Lấy dữ liệu bảng User.
+            List<user> dataUsers = dataContext.users.ToList();  //Lấy dữ liệu bảng User.
             ViewBag.isAccess = false;
             foreach (var i in dataUsers)
-                if (i.Email == email && i.Password == password) //Nếu mật khẩu và tài khoản nhập vào cùng tồn tại
+                if (i.email == email && i.password == password) //Nếu mật khẩu và tài khoản nhập vào cùng tồn tại
                 {
                     ViewBag.isAccess = true; //truyền dữ liệu thông báo đăng nhập thành công
                     Session.Add(RouteController.Account_Session, i);    //Thêm tài khoản hiện hành đang hoạt động.
                     if (i.Idrole == 1) return RedirectToAction("Index", AdminHome.AdminHomeController.Name);
                     //Nếu là admin, đến trang chủ của admin
-                    else if (i.Idrole == 2) return RedirectToAction("Index", Member.MemberController.Name);
+                    else if (i.Idrole == 2) return RedirectToAction("Index", "Home");
                     //Nếu là user, đến trang chủ của user
                     break;
                 }
@@ -46,12 +45,12 @@ namespace PBL3.Controllers.Web
             return View();
         }
         [HttpPost]
-        public ActionResult Sign_up(User model, string cfpass)
+        public ActionResult Sign_up(user model, string cfpass)
         {
-            List<User> dataUsers = dataContext.Users.ToList();
+            List<user> dataUsers = dataContext.users.ToList();
             SignUp_Errors error = new SignUp_Errors();
             bool success = true;
-            if (model.Name == null)
+            if (model.name == null)
             {
                 success = false;
                 error.Name = "Please fill the field \" Name \""; // Nếu chưa nhập tên, hiện lỗi này.
@@ -61,7 +60,7 @@ namespace PBL3.Controllers.Web
                 error.Name = ""; //ngược lại, xóa thông báo lỗi này.
             }
 
-            if (model.Sex == null)
+            if (model.sex == null)
             {
                 success = false;
                 error.Sex = "Please select a value in field \" Sex \"";
@@ -71,7 +70,7 @@ namespace PBL3.Controllers.Web
                 error.Sex = "";
             }
 
-            if (model.Address == null)
+            if (model.address == null)
             {
                 success = false;
                 error.Address = "Please fill the field \" Address \"";
@@ -81,7 +80,7 @@ namespace PBL3.Controllers.Web
                 error.Address = "";
             }
 
-            if (model.Username == null)
+            if (model.username == null)
             {
                 success = false;
                 error.Username = "Please fill the field \" Username \"";
@@ -91,15 +90,15 @@ namespace PBL3.Controllers.Web
                 error.Username = "";
                 foreach (var data in dataUsers)
                 {
-                    if (data.Username==model.Username) //Nếu tên tài khoản đã tồn tại, hiện lỗi này.
+                    if (data.username==model.username) //Nếu tên tài khoản đã tồn tại, hiện lỗi này.
                     {
                         success = false;
-                        error.Username = $"User \"{model.Username}\" have existed. Please use another name";
+                        error.Username = $"User \"{model.username}\" have existed. Please use another name";
                         break;
                     }    
                 }    
             }
-            if (model.Email == null || !model.Email.Contains("@"))
+            if (model.email == null || !model.email.Contains("@"))
             {
                 success = false;
                 error.Email = "Invail email"; //Nếu email không đúng, hiện lỗi này.
@@ -109,15 +108,15 @@ namespace PBL3.Controllers.Web
                 error.Email = "";
                 foreach(var data in  dataUsers)
                 {
-                    if (data.Email == model.Email)
+                    if (data.email == model.email)
                     {
                         success = false;
                         error.Email = $"This email have been used.";
                     }    
                 }    
             }
-            if (model.Password == null) model.Password = "";
-            if (model.Password.Length < 6) //Nếu mật khẩu có ít hơn 6 ký tự, hiện lỗi này.
+            if (model.password == null) model.password = "";
+            if (model.password.Length < 6) //Nếu mật khẩu có ít hơn 6 ký tự, hiện lỗi này.
             {
                 success = false;
                 error.Password = "Length of password must larger than 6 characters.";
@@ -126,7 +125,7 @@ namespace PBL3.Controllers.Web
             {
                 error.Password = "";
             }
-            if (model.Password!=cfpass) //Nếu mậu khẩu và mật khẩu nhập lại không trùng nhau, hiện lỗi này.
+            if (model.password!=cfpass) //Nếu mậu khẩu và mật khẩu nhập lại không trùng nhau, hiện lỗi này.
             {
                 success = false;
                 error.Cfpassword = "The confirm password don't match password.";
@@ -139,8 +138,8 @@ namespace PBL3.Controllers.Web
             if (success == false) error.result = "Sign up fail!"; //Nếu còn lỗi, thông báo thêm đăng ký thất bại.
             else
             {       //Nếu đăng ký thành công, thêm tài khoản vào database.
-                dataContext.CreateNewUser(model.Name, model.Sex, model.Phone, model.Address,
-                    model.Username, model.Email, model.Password, "INACTIVE", 2);
+                dataContext.CreateNewUser(model.name, model.sex, model.phone, model.address, model.username, model.email, 
+                    model.password, "INACTIVE", 2);
                 return View("Sign_in");
             }    
             ViewBag.SignUp_Check = error;

@@ -1,9 +1,9 @@
 ﻿function Check(txtID) {
     var x = document.getElementById(txtID).value;
+    var y = document.getElementById("LackCharacter");
     if (!x.includes("@")) {
-        var y = document.getElementById("LackCharacter");
         y.innerHTML = "This field must include '@'";
     }
-    if (x.includes("@")) y.innerHTML = "";
+    else y.innerHTML = "";
     return;
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Pbl3Context;
+using PBL3.Models;
+using PBL3.Controllers.AdminHome;
 using System.Web.Routing;
 namespace PBL3.Controllers
 {
@@ -13,22 +14,22 @@ namespace PBL3.Controllers
         public static string Account_Session = "Account_Session";
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            User account = (User)Session[RouteController.Account_Session];
+            user account = (user)Session[RouteController.Account_Session];
             string controller = this.ControllerContext.RouteData.Values["controller"].ToString();
             if (account == null)
             {
-                if (controller == Member.MemberController.Name || controller == AdminHome.AdminHomeController.Name)
+                if (controller == Member.MemberController.Name || controller == AdminHomeController.Name)
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                     (new { controller = "Login", action = "Sign_in" }));
             }
             else
             {
-                if (account.Idrole == 1 && controller != AdminHome.AdminHomeController.Name)
+                if (account.Idrole == 1 && controller != AdminHomeController.Name)
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                         (new { controller = AdminHome.AdminHomeController.Name, action = "Index" }));
                 }
-                else if (account.Idrole == 2 && controller != Member.MemberController.Name)
+                else if (account.Idrole == 2 && controller == AdminHomeController.Name)
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                         (new { controller = Member.MemberController.Name, action = "Index" }));

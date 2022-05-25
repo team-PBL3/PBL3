@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using PBL3.Models;
+@using System.Web.Mvc;
+@{ 
+    user a = (user)Session[PBL3.Controllers.RouteController.Account_Session];
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,8 +20,15 @@
             <div class="item">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Sign in</a></li>
-            <li><a href="#">Sign up</a></li>
+            @if (a == null)
+            {
+                <li><a href="~/Views/Login/Sign_in">Sign in</a></li>
+                <li><a href="~/Views/Login/Sign_up">Sign up</a></li>
+            }
+            else
+            {
+                <li>@a.username</li>
+            }
             </div>
             <li class="search-icon">
                 <input type="search" placeholder="Search">

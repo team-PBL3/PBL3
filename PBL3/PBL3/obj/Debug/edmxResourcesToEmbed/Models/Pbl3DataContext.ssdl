@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pbl3Model.Store" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 8.0.28" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cart">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="quantityBuy" Type="int" />
+  </EntityType>
+  <EntityType Name="cartdetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cartId" Type="int" />
+    <Property Name="productId" Type="int" />
+    <Property Name="quantityBuy" Type="int" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="PartOfBody" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="creditcard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="cardNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="productId" Type="int" />
+  </EntityType>
+  <EntityType Name="orderdetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="price" Type="float" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="orderId" Type="int" />
+    <Property Name="productId" Type="int" />
+  </EntityType>
+  <EntityType Name="orderr">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="enum" />
+    <Property Name="userId" Type="int" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="paymentDate" Type="date" />
+    <Property Name="amount" Type="int" />
+    <Property Name="totalPrice" Type="float" />
+    <Property Name="orderId" Type="int" />
+    <Property Name="creaditCardId" Type="int" />
+  </EntityType>
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="sex" Type="enum" />
+    <Property Name="phone" Type="int" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="categoryId" Type="int" />
+    <Property Name="trademarkId" Type="int" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="price" Type="float" />
+    <Property Name="Status" Type="enum" />
+    <Property Name="infoProduct" Type="varchar" MaxLength="255" />
+    <Property Name="quantityRemain" Type="int" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="trademark">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="sex" Type="varchar" MaxLength="255" />
+    <Property Name="phone" Type="int" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="varchar" MaxLength="255" />
+    <Property Name="Idrole" Type="int" />
+  </EntityType>
+  <Association Name="cart_ibfk_1">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="cart" Type="Self.cart" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="cart">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cartdetail_ibfk_1">
+    <End Role="cart" Type="Self.cart" Multiplicity="0..1" />
+    <End Role="cartdetail" Type="Self.cartdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cart">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="cartdetail">
+        <PropertyRef Name="cartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cartdetail_ibfk_2">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="cartdetail" Type="Self.cartdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="cartdetail">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Category">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_product1">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="image" Type="Self.image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="image">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_trademark">
+    <End Role="trademark" Type="Self.trademark" Multiplicity="0..1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trademark">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="trademarkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orderdetail_ibfk_1">
+    <End Role="orderr" Type="Self.orderr" Multiplicity="0..1" />
+    <End Role="orderdetail" Type="Self.orderdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orderr">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="orderdetail">
+        <PropertyRef Name="orderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orderdetail_ibfk_2">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="orderdetail" Type="Self.orderdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="orderdetail">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orderr_ibfk_1">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="orderr" Type="Self.orderr" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="orderr">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="payment_ibfk_1">
+    <End Role="orderr" Type="Self.orderr" Multiplicity="0..1" />
+    <End Role="payment" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orderr">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="payment">
+        <PropertyRef Name="orderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="payment_ibfk_2">
+    <End Role="creditcard" Type="Self.creditcard" Multiplicity="0..1" />
+    <End Role="payment" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="creditcard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="payment">
+        <PropertyRef Name="creaditCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_ibfk_1">
+    <End Role="role" Type="Self.role" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="Idrole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Create_New_User" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pbl3">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="sex" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="int" Mode="In" />
+    <Parameter Name="address" Type="varchar" Mode="In" />
+    <Parameter Name="username" Type="varchar" Mode="In" />
+    <Parameter Name="emailn" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="Idrole" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="pbl3ModelStoreContainer">
+    <EntitySet Name="cart" EntityType="Self.cart" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="cartdetail" EntityType="Self.cartdetail" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="creditcard" EntityType="Self.creditcard" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="image" EntityType="Self.image" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="orderdetail" EntityType="Self.orderdetail" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="orderr" EntityType="Self.orderr" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="payment" EntityType="Self.payment" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="person" EntityType="Self.person" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="role" EntityType="Self.role" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="trademark" EntityType="Self.trademark" Schema="pbl3" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="pbl3" store:Type="Tables" />
+    <AssociationSet Name="cart_ibfk_1" Association="Self.cart_ibfk_1">
+      <End Role="user" EntitySet="user" />
+      <End Role="cart" EntitySet="cart" />
+    </AssociationSet>
+    <AssociationSet Name="cartdetail_ibfk_1" Association="Self.cartdetail_ibfk_1">
+      <End Role="cart" EntitySet="cart" />
+      <End Role="cartdetail" EntitySet="cartdetail" />
+    </AssociationSet>
+    <AssociationSet Name="cartdetail_ibfk_2" Association="Self.cartdetail_ibfk_2">
+      <End Role="product" EntitySet="product" />
+      <End Role="cartdetail" EntitySet="cartdetail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Category" Association="Self.fk_Category">
+      <End Role="category" EntitySet="category" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="fk_product1" Association="Self.fk_product1">
+      <End Role="product" EntitySet="product" />
+      <End Role="image" EntitySet="image" />
+    </AssociationSet>
+    <AssociationSet Name="fk_trademark" Association="Self.fk_trademark">
+      <End Role="trademark" EntitySet="trademark" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="orderdetail_ibfk_1" Association="Self.orderdetail_ibfk_1">
+      <End Role="orderr" EntitySet="orderr" />
+      <End Role="orderdetail" EntitySet="orderdetail" />
+    </AssociationSet>
+    <AssociationSet Name="orderdetail_ibfk_2" Association="Self.orderdetail_ibfk_2">
+      <End Role="product" EntitySet="product" />
+      <End Role="orderdetail" EntitySet="orderdetail" />
+    </AssociationSet>
+    <AssociationSet Name="orderr_ibfk_1" Association="Self.orderr_ibfk_1">
+      <End Role="user" EntitySet="user" />
+      <End Role="orderr" EntitySet="orderr" />
+    </AssociationSet>
+    <AssociationSet Name="payment_ibfk_1" Association="Self.payment_ibfk_1">
+      <End Role="orderr" EntitySet="orderr" />
+      <End Role="payment" EntitySet="payment" />
+    </AssociationSet>
+    <AssociationSet Name="payment_ibfk_2" Association="Self.payment_ibfk_2">
+      <End Role="creditcard" EntitySet="creditcard" />
+      <End Role="payment" EntitySet="payment" />
+    </AssociationSet>
+    <AssociationSet Name="user_ibfk_1" Association="Self.user_ibfk_1">
+      <End Role="role" EntitySet="role" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

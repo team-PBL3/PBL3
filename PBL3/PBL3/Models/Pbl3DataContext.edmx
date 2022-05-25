@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="pbl3Model.Store" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 8.0.28" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cart">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="quantityBuy" Type="int" />
+        </EntityType>
+        <EntityType Name="cartdetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cartId" Type="int" />
+          <Property Name="productId" Type="int" />
+          <Property Name="quantityBuy" Type="int" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="PartOfBody" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="creditcard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="cardNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="productId" Type="int" />
+        </EntityType>
+        <EntityType Name="orderdetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="price" Type="float" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="orderId" Type="int" />
+          <Property Name="productId" Type="int" />
+        </EntityType>
+        <EntityType Name="orderr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="enum" />
+          <Property Name="userId" Type="int" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="paymentDate" Type="date" />
+          <Property Name="amount" Type="int" />
+          <Property Name="totalPrice" Type="float" />
+          <Property Name="orderId" Type="int" />
+          <Property Name="creaditCardId" Type="int" />
+        </EntityType>
+        <EntityType Name="person">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="sex" Type="enum" />
+          <Property Name="phone" Type="int" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="categoryId" Type="int" />
+          <Property Name="trademarkId" Type="int" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+          <Property Name="price" Type="float" />
+          <Property Name="Status" Type="enum" />
+          <Property Name="infoProduct" Type="varchar" MaxLength="255" />
+          <Property Name="quantityRemain" Type="int" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="trademark">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="sex" Type="varchar" MaxLength="255" />
+          <Property Name="phone" Type="int" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="username" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="varchar" MaxLength="255" />
+          <Property Name="Idrole" Type="int" />
+        </EntityType>
+        <Association Name="cart_ibfk_1">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="cart" Type="Self.cart" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="cart">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cartdetail_ibfk_1">
+          <End Role="cart" Type="Self.cart" Multiplicity="0..1" />
+          <End Role="cartdetail" Type="Self.cartdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cart">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="cartdetail">
+              <PropertyRef Name="cartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cartdetail_ibfk_2">
+          <End Role="product" Type="Self.product" Multiplicity="0..1" />
+          <End Role="cartdetail" Type="Self.cartdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="cartdetail">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Category">
+          <End Role="category" Type="Self.category" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_product1">
+          <End Role="product" Type="Self.product" Multiplicity="0..1" />
+          <End Role="image" Type="Self.image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="image">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_trademark">
+          <End Role="trademark" Type="Self.trademark" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trademark">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="trademarkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="orderdetail_ibfk_1">
+          <End Role="orderr" Type="Self.orderr" Multiplicity="0..1" />
+          <End Role="orderdetail" Type="Self.orderdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orderr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="orderdetail">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="orderdetail_ibfk_2">
+          <End Role="product" Type="Self.product" Multiplicity="0..1" />
+          <End Role="orderdetail" Type="Self.orderdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="orderdetail">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="orderr_ibfk_1">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="orderr" Type="Self.orderr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="orderr">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="payment_ibfk_1">
+          <End Role="orderr" Type="Self.orderr" Multiplicity="0..1" />
+          <End Role="payment" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orderr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="payment">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="payment_ibfk_2">
+          <End Role="creditcard" Type="Self.creditcard" Multiplicity="0..1" />
+          <End Role="payment" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="creditcard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="payment">
+              <PropertyRef Name="creaditCardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="user_ibfk_1">
+          <End Role="role" Type="Self.role" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="Idrole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Create_New_User" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="pbl3">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="sex" Type="varchar" Mode="In" />
+          <Parameter Name="phone" Type="int" Mode="In" />
+          <Parameter Name="address" Type="varchar" Mode="In" />
+          <Parameter Name="username" Type="varchar" Mode="In" />
+          <Parameter Name="emailn" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+          <Parameter Name="Idrole" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="pbl3ModelStoreContainer">
+          <EntitySet Name="cart" EntityType="Self.cart" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="cartdetail" EntityType="Self.cartdetail" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="category" EntityType="Self.category" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="creditcard" EntityType="Self.creditcard" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="image" EntityType="Self.image" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="orderdetail" EntityType="Self.orderdetail" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="orderr" EntityType="Self.orderr" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="payment" EntityType="Self.payment" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="person" EntityType="Self.person" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="role" EntityType="Self.role" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="trademark" EntityType="Self.trademark" Schema="pbl3" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="pbl3" store:Type="Tables" />
+          <AssociationSet Name="cart_ibfk_1" Association="Self.cart_ibfk_1">
+            <End Role="user" EntitySet="user" />
+            <End Role="cart" EntitySet="cart" />
+          </AssociationSet>
+          <AssociationSet Name="cartdetail_ibfk_1" Association="Self.cartdetail_ibfk_1">
+            <End Role="cart" EntitySet="cart" />
+            <End Role="cartdetail" EntitySet="cartdetail" />
+          </AssociationSet>
+          <AssociationSet Name="cartdetail_ibfk_2" Association="Self.cartdetail_ibfk_2">
+            <End Role="product" EntitySet="product" />
+            <End Role="cartdetail" EntitySet="cartdetail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Category" Association="Self.fk_Category">
+            <End Role="category" EntitySet="category" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product1" Association="Self.fk_product1">
+            <End Role="product" EntitySet="product" />
+            <End Role="image" EntitySet="image" />
+          </AssociationSet>
+          <AssociationSet Name="fk_trademark" Association="Self.fk_trademark">
+            <End Role="trademark" EntitySet="trademark" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="orderdetail_ibfk_1" Association="Self.orderdetail_ibfk_1">
+            <End Role="orderr" EntitySet="orderr" />
+            <End Role="orderdetail" EntitySet="orderdetail" />
+          </AssociationSet>
+          <AssociationSet Name="orderdetail_ibfk_2" Association="Self.orderdetail_ibfk_2">
+            <End Role="product" EntitySet="product" />
+            <End Role="orderdetail" EntitySet="orderdetail" />
+          </AssociationSet>
+          <AssociationSet Name="orderr_ibfk_1" Association="Self.orderr_ibfk_1">
+            <End Role="user" EntitySet="user" />
+            <End Role="orderr" EntitySet="orderr" />
+          </AssociationSet>
+          <AssociationSet Name="payment_ibfk_1" Association="Self.payment_ibfk_1">
+            <End Role="orderr" EntitySet="orderr" />
+            <End Role="payment" EntitySet="payment" />
+          </AssociationSet>
+          <AssociationSet Name="payment_ibfk_2" Association="Self.payment_ibfk_2">
+            <End Role="creditcard" EntitySet="creditcard" />
+            <End Role="payment" EntitySet="payment" />
+          </AssociationSet>
+          <AssociationSet Name="user_ibfk_1" Association="Self.user_ibfk_1">
+            <End Role="role" EntitySet="role" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pbl3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cart">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="quantityBuy" Type="Int32" />
+          <NavigationProperty Name="user" Relationship="Self.cart_ibfk_1" FromRole="cart" ToRole="user" />
+          <NavigationProperty Name="cartdetails" Relationship="Self.cartdetail_ibfk_1" FromRole="cart" ToRole="cartdetail" />
+        </EntityType>
+        <EntityType Name="cartdetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cartId" Type="Int32" />
+          <Property Name="productId" Type="Int32" />
+          <Property Name="quantityBuy" Type="Int32" />
+          <NavigationProperty Name="cart" Relationship="Self.cartdetail_ibfk_1" FromRole="cartdetail" ToRole="cart" />
+          <NavigationProperty Name="product" Relationship="Self.cartdetail_ibfk_2" FromRole="cartdetail" ToRole="product" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PartOfBody" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="products" Relationship="Self.fk_Category" FromRole="category" ToRole="product" />
+        </EntityType>
+        <EntityType Name="creditcard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="cardNumber" Type="Int32" />
+          <NavigationProperty Name="payments" Relationship="Self.payment_ibfk_2" FromRole="creditcard" ToRole="payment" />
+        </EntityType>
+        <EntityType Name="image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="productId" Type="Int32" />
+          <NavigationProperty Name="product" Relationship="Self.fk_product1" FromRole="image" ToRole="product" />
+        </EntityType>
+        <EntityType Name="orderdetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Single" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="orderId" Type="Int32" />
+          <Property Name="productId" Type="Int32" />
+          <NavigationProperty Name="orderr" Relationship="Self.orderdetail_ibfk_1" FromRole="orderdetail" ToRole="orderr" />
+          <NavigationProperty Name="product" Relationship="Self.orderdetail_ibfk_2" FromRole="orderdetail" ToRole="product" />
+        </EntityType>
+        <EntityType Name="orderr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="userId" Type="Int32" />
+          <NavigationProperty Name="orderdetails" Relationship="Self.orderdetail_ibfk_1" FromRole="orderr" ToRole="orderdetail" />
+          <NavigationProperty Name="user" Relationship="Self.orderr_ibfk_1" FromRole="orderr" ToRole="user" />
+          <NavigationProperty Name="payments" Relationship="Self.payment_ibfk_1" FromRole="orderr" ToRole="payment" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="paymentDate" Type="DateTime" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="totalPrice" Type="Single" />
+          <Property Name="orderId" Type="Int32" />
+          <Property Name="creaditCardId" Type="Int32" />
+          <NavigationProperty Name="creditcard" Relationship="Self.payment_ibfk_2" FromRole="payment" ToRole="creditcard" />
+          <NavigationProperty Name="orderr" Relationship="Self.payment_ibfk_1" FromRole="payment" ToRole="orderr" />
+        </EntityType>
+        <EntityType Name="person">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="categoryId" Type="Int32" />
+          <Property Name="trademarkId" Type="Int32" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Single" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="infoProduct" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="quantityRemain" Type="Int32" />
+          <NavigationProperty Name="cartdetails" Relationship="Self.cartdetail_ibfk_2" FromRole="product" ToRole="cartdetail" />
+          <NavigationProperty Name="category" Relationship="Self.fk_Category" FromRole="product" ToRole="category" />
+          <NavigationProperty Name="images" Relationship="Self.fk_product1" FromRole="product" ToRole="image" />
+          <NavigationProperty Name="orderdetails" Relationship="Self.orderdetail_ibfk_2" FromRole="product" ToRole="orderdetail" />
+          <NavigationProperty Name="trademark" Relationship="Self.fk_trademark" FromRole="product" ToRole="trademark" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="users" Relationship="Self.user_ibfk_1" FromRole="role" ToRole="user" />
+        </EntityType>
+        <EntityType Name="trademark">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="products" Relationship="Self.fk_trademark" FromRole="trademark" ToRole="product" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="String" MaxLength="Max" FixedLength="false" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Idrole" Type="Int32" />
+          <NavigationProperty Name="cart" Relationship="Self.cart_ibfk_1" FromRole="user" ToRole="cart" />
+          <NavigationProperty Name="orderrs" Relationship="Self.orderr_ibfk_1" FromRole="user" ToRole="orderr" />
+          <NavigationProperty Name="role" Relationship="Self.user_ibfk_1" FromRole="user" ToRole="role" />
+        </EntityType>
+        <Association Name="cart_ibfk_1">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="cart" Type="Self.cart" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="cart">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cartdetail_ibfk_1">
+          <End Role="cart" Type="Self.cart" Multiplicity="0..1" />
+          <End Role="cartdetail" Type="Self.cartdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cart">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="cartdetail">
+              <PropertyRef Name="cartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cartdetail_ibfk_2">
+          <End Role="product" Type="Self.product" Multiplicity="0..1" />
+          <End Role="cartdetail" Type="Self.cartdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="cartdetail">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Category">
+          <End Role="category" Type="Self.category" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="payment_ibfk_2">
+          <End Role="creditcard" Type="Self.creditcard" Multiplicity="0..1" />
+          <End Role="payment" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="creditcard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="payment">
+              <PropertyRef Name="creaditCardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_product1">
+          <End Role="product" Type="Self.product" Multiplicity="0..1" />
+          <End Role="image" Type="Self.image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="image">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="orderdetail_ibfk_1">
+          <End Role="orderr" Type="Self.orderr" Multiplicity="0..1" />
+          <End Role="orderdetail" Type="Self.orderdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orderr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="orderdetail">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="orderdetail_ibfk_2">
+          <End Role="product" Type="Self.product" Multiplicity="0..1" />
+          <End Role="orderdetail" Type="Self.orderdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="orderdetail">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="orderr_ibfk_1">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="orderr" Type="Self.orderr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="orderr">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="payment_ibfk_1">
+          <End Role="orderr" Type="Self.orderr" Multiplicity="0..1" />
+          <End Role="payment" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orderr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="payment">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_trademark">
+          <End Role="trademark" Type="Self.trademark" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trademark">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="trademarkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="user_ibfk_1">
+          <End Role="role" Type="Self.role" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="Idrole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="pbl3Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="carts" EntityType="Self.cart" />
+          <EntitySet Name="cartdetails" EntityType="Self.cartdetail" />
+          <EntitySet Name="categories" EntityType="Self.category" />
+          <EntitySet Name="creditcards" EntityType="Self.creditcard" />
+          <EntitySet Name="images" EntityType="Self.image" />
+          <EntitySet Name="orderdetails" EntityType="Self.orderdetail" />
+          <EntitySet Name="orderrs" EntityType="Self.orderr" />
+          <EntitySet Name="payments" EntityType="Self.payment" />
+          <EntitySet Name="people" EntityType="Self.person" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="roles" EntityType="Self.role" />
+          <EntitySet Name="trademarks" EntityType="Self.trademark" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <AssociationSet Name="cart_ibfk_1" Association="Self.cart_ibfk_1">
+            <End Role="user" EntitySet="users" />
+            <End Role="cart" EntitySet="carts" />
+          </AssociationSet>
+          <AssociationSet Name="cartdetail_ibfk_1" Association="Self.cartdetail_ibfk_1">
+            <End Role="cart" EntitySet="carts" />
+            <End Role="cartdetail" EntitySet="cartdetails" />
+          </AssociationSet>
+          <AssociationSet Name="cartdetail_ibfk_2" Association="Self.cartdetail_ibfk_2">
+            <End Role="product" EntitySet="products" />
+            <End Role="cartdetail" EntitySet="cartdetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Category" Association="Self.fk_Category">
+            <End Role="category" EntitySet="categories" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="payment_ibfk_2" Association="Self.payment_ibfk_2">
+            <End Role="creditcard" EntitySet="creditcards" />
+            <End Role="payment" EntitySet="payments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product1" Association="Self.fk_product1">
+            <End Role="product" EntitySet="products" />
+            <End Role="image" EntitySet="images" />
+          </AssociationSet>
+          <AssociationSet Name="orderdetail_ibfk_1" Association="Self.orderdetail_ibfk_1">
+            <End Role="orderr" EntitySet="orderrs" />
+            <End Role="orderdetail" EntitySet="orderdetails" />
+          </AssociationSet>
+          <AssociationSet Name="orderdetail_ibfk_2" Association="Self.orderdetail_ibfk_2">
+            <End Role="product" EntitySet="products" />
+            <End Role="orderdetail" EntitySet="orderdetails" />
+          </AssociationSet>
+          <AssociationSet Name="orderr_ibfk_1" Association="Self.orderr_ibfk_1">
+            <End Role="user" EntitySet="users" />
+            <End Role="orderr" EntitySet="orderrs" />
+          </AssociationSet>
+          <AssociationSet Name="payment_ibfk_1" Association="Self.payment_ibfk_1">
+            <End Role="orderr" EntitySet="orderrs" />
+            <End Role="payment" EntitySet="payments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_trademark" Association="Self.fk_trademark">
+            <End Role="trademark" EntitySet="trademarks" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="user_ibfk_1" Association="Self.user_ibfk_1">
+            <End Role="role" EntitySet="roles" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <FunctionImport Name="CreateNewUser">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="sex" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="Int32" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="emailn" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="Idrole" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pbl3ModelStoreContainer" CdmEntityContainer="pbl3Entities">
+          <EntitySetMapping Name="carts">
+            <EntityTypeMapping TypeName="pbl3Model.cart">
+              <MappingFragment StoreEntitySet="cart">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="quantityBuy" ColumnName="quantityBuy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cartdetails">
+            <EntityTypeMapping TypeName="pbl3Model.cartdetail">
+              <MappingFragment StoreEntitySet="cartdetail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="cartId" ColumnName="cartId" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="quantityBuy" ColumnName="quantityBuy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="pbl3Model.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="PartOfBody" ColumnName="PartOfBody" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="creditcards">
+            <EntityTypeMapping TypeName="pbl3Model.creditcard">
+              <MappingFragment StoreEntitySet="creditcard">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="cardNumber" ColumnName="cardNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="images">
+            <EntityTypeMapping TypeName="pbl3Model.image">
+              <MappingFragment StoreEntitySet="image">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orderdetails">
+            <EntityTypeMapping TypeName="pbl3Model.orderdetail">
+              <MappingFragment StoreEntitySet="orderdetail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orderrs">
+            <EntityTypeMapping TypeName="pbl3Model.orderr">
+              <MappingFragment StoreEntitySet="orderr">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payments">
+            <EntityTypeMapping TypeName="pbl3Model.payment">
+              <MappingFragment StoreEntitySet="payment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="creaditCardId" ColumnName="creaditCardId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="people">
+            <EntityTypeMapping TypeName="pbl3Model.person">
+              <MappingFragment StoreEntitySet="person">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="pbl3Model.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="trademarkId" ColumnName="trademarkId" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="infoProduct" ColumnName="infoProduct" />
+                <ScalarProperty Name="quantityRemain" ColumnName="quantityRemain" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles">
+            <EntityTypeMapping TypeName="pbl3Model.role">
+              <MappingFragment StoreEntitySet="role">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trademarks">
+            <EntityTypeMapping TypeName="pbl3Model.trademark">
+              <MappingFragment StoreEntitySet="trademark">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="pbl3Model.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Idrole" ColumnName="Idrole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CreateNewUser" FunctionName="pbl3Model.Store.Create_New_User" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
