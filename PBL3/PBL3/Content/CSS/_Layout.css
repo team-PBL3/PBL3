@@ -23,6 +23,7 @@ nav ul {
 }
 
 nav ul li.logo {
+    padding: 3px 0 0 0;
     flex: 1;
     font-size: 30px;
     font-weight: 700;
@@ -36,6 +37,7 @@ nav ul div.item {
 nav ul div.item a {
     font-size: 17px;
     padding: 5px 15px;
+    text-decoration: none;
 }
 
 nav ul div.item a:hover {
