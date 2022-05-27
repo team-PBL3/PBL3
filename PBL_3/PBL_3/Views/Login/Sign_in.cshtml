@@ -1,0 +1,23 @@
+﻿@model PBL3.Models.Account_Sign_in
+@{
+    ViewBag.Title = "Sign_in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<<<<<<< Updated upstream:PBL_3/PBL_3/Views/Login/Sign_in.cshtml
+=======
+@ViewBag.SignIn
+>>>>>>> Stashed changes:PBL3/PBL3/Views/Login/Sign_in.cshtml
+@using (Html.BeginForm("Sign_in", "Login", FormMethod.Post))
+{
+    <img src="~/Image/Untitled.png"/>
+    <label for="email">Email:</label>
+    <br>
+    <input type="text" id="email" name="email">
+    <br>
+    <label for="password">Password:</label>
+    <br>
+    <input type="password" id="password" name="password">
+    <input type="submit" value="Sign in" />
+}
+
+
