@@ -1,0 +1,53 @@
+﻿@model PBL3.Models.Account_Sign_Up
+
+@using PBL3.Models
+
+@{
+    ViewBag.Title = "Sign_up";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sign_up</h2>
+
+<script src="~/Scripts/JS/JavaScript.js" type="text/javascript"></script>
+@using (Html.BeginForm("Sign_Up", "Login", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.name)
+    @Html.TextBoxFor(model => model.name)
+    @Html.ValidationMessageFor(model => model.name)
+    <br>
+    @Html.LabelFor(model => model.sex)
+    @Html.DropDownListFor(model => model.sex, new List<SelectListItem>    {
+        new SelectListItem{Text="Nam" , Value="NAM"},
+        new SelectListItem{Text="Nữ" , Value="NU"} },
+                    "Chọn giới tính")
+    @Html.ValidationMessageFor(model => model.sex)
+    <br>
+    @Html.LabelFor(model => model.phone)
+    @Html.TextBoxFor(model => model.phone, new { type = "number", min = 1 })
+    @Html.ValidationMessageFor(model => model.phone)
+    <br>
+    @Html.LabelFor(model => model.address)
+    @Html.TextBoxFor(model => model.address)
+    @Html.ValidationMessageFor(model => model.address)
+    <br>
+    @Html.LabelFor(model => model.username)
+    @Html.TextBoxFor(model => model.username)
+    @Html.ValidationMessageFor(model => model.username)
+    <br>
+    @Html.LabelFor(model => model.email)
+    @Html.TextBoxFor(model => model.email)
+    @Html.ValidationMessageFor(model => model.email)
+    <br>
+    @Html.LabelFor(model => model.password)
+    @Html.PasswordFor(model => model.password, new { id = "password" })
+    @Html.ValidationMessageFor(model => model.password)
+    <br>
+    @Html.LabelFor(model => model.cfpassword)
+    @Html.PasswordFor(model => model.cfpassword)
+    @Html.ValidationMessageFor(model => model.cfpassword);
+    <input type="submit" value="Sign up"/>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
