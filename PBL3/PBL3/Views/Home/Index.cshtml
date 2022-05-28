@@ -34,7 +34,10 @@
     </tbody>
 </table>
 <div>
-    <button type="submit" name="id" value="2">2</button>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <button name="id" value="@(list.CurrentPage+1)">2</button>
+    }
 </div>
 <script>
 

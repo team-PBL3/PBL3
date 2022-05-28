@@ -1,20 +1,28 @@
 ﻿@model PBL3.Models.Account_Sign_in
 @{
     ViewBag.Title = "Sign_in";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutSignIn.cshtml";
 }
-@ViewBag.SignIn
+
+<h1>Login</h1>
 @using (Html.BeginForm("Sign_in", "Login", FormMethod.Post))
 {
-    <img src="~/Image/Untitled.png"/>
-    <label for="email">Email:</label>
-    <br>
-    <input type="text" id="email" name="email">
-    <br>
-    <label for="password">Password:</label>
-    <br>
-    <input type="password" id="password" name="password">
-    <input type="submit" value="Sign in" />
+    @ViewBag.SignIn
+    <div class="txt_field">
+        <input type="text" id="email" name="email" required>
+        <span></span>
+        <label>Username</label>
+    </div>
+    <div class="txt_field">
+        <input type="password" id="password" name="password" required>
+        <span></span>
+        <label>Password</label>
+    </div>
+    <div class="pass">Forgot Password?</div>
+    <input type="submit" value="Login">
+    <div class="signup_link">
+        Not a member? <a href="#">Sign up</a>
+    </div>
 }
 
 

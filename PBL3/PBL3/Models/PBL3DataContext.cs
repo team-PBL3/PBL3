@@ -142,9 +142,10 @@ namespace PBL3.Models
         {
             try
             {
-                foreach (var i in this.TradeMarks.ToList())
-                    if (i.name == trademark.name) throw new Exception("This trademark have existed");
-                this.TradeMarks.Add(trademark);
+                foreach(var i in this.TradeMarks.ToList())
+                {
+                    if (i.name == trademark.name) throw new Exception("This trademark already existed");
+                }    
                 return this.SaveChanges();
             }
             catch (Exception)

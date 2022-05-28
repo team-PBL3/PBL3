@@ -106,7 +106,7 @@
                         status = c.String(unicode: false),
                         infoproduct = c.String(unicode: false),
                         quantityremain = c.Int(nullable: false),
-                    })
+                })
                 .PrimaryKey(t => t.id)
                 .ForeignKey("dbo.Categories", t => t.categoryid, cascadeDelete: true)
                 .ForeignKey("dbo.TradeMarks", t => t.trademarkid, cascadeDelete: true)
