@@ -4,16 +4,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @ViewBag.isAccess
-@using (Html.BeginForm("Sign_in", "Login", FormMethod.Post))
-{
-    <label for="email">Email:</label>
-    <br>
-    <input type="text" id="email" name="email">
-    <br>
-    <label for="password">Password:</label>
-    <br>
-    <input type="password" id="password" name="password">
-    <input type="submit" value="Sign in" />
-}
-
-
+<h1>Login</h1>
+<form method="post">
+    <div class="txt_field">
+        <input type="text" required>
+        <span></span>
+        <label>Username</label>
+    </div>
+    <div class="txt_field">
+        <input type="password" required>
+        <span></span>
+        <label>Password</label>
+    </div>
+    <div class="pass">Forgot Password?</div>
+    <input type="submit" value="Login">
+    <div class="signup_link">
+        Not a member? <a href="#">Sign up</a>
+    </div>
+</form>

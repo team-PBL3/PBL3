@@ -277,6 +277,7 @@
     <Content Include="Theme\styles\product.css" />
     <Content Include="Theme\styles\product_responsive.css" />
     <Content Include="Theme\styles\responsive.css" />
+    <Content Include="Theme\styles\Sign_in.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -326,6 +327,7 @@
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Views\Shared\_LayoutSignIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
