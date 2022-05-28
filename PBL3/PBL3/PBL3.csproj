@@ -251,6 +251,10 @@
     <Compile Include="Migrations\202205271346436_Init.designer.cs">
       <DependentUpon>202205271346436_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205280401179_add_Product_quantityInit.cs" />
+    <Compile Include="Migrations\202205280401179_add_Product_quantityInit.designer.cs">
+      <DependentUpon>202205280401179_add_Product_quantityInit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
     <Compile Include="Models\Account_Sign_Up.cs" />
@@ -265,7 +269,7 @@
     <Compile Include="Models\PBL3DataContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Product_Display.cs" />
+    <Compile Include="Models\Product_View.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\TradeMark.cs" />
     <Compile Include="Models\User.cs" />
@@ -280,6 +284,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\s2172310-main-zoom.png" />
+    <Content Include="Image\s2514214-main-zoom.png" />
+    <Content Include="Image\s2579100-main-zoom.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -330,6 +337,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205271346436_Init.resx">
       <DependentUpon>202205271346436_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205280401179_add_Product_quantityInit.resx">
+      <DependentUpon>202205280401179_add_Product_quantityInit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -22,6 +22,7 @@ namespace PBL3.Models
         public string status { get; set; }
         public string infoproduct { get; set; }
         public int quantityremain { get; set; }
+        public int quantityInit { get; set; }
         public virtual Category category { get; set; }
         public virtual TradeMark trademark { get; set; }
         public virtual ICollection<Image> images { get; set; }
