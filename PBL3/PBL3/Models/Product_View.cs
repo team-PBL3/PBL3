@@ -45,7 +45,7 @@ namespace PBL3.Models
         public void Set_Product_View(int id, List<Product> datas)
         {
             int count = -1;
-            AvalMaxPage = datas.Count % ProductViewNumber + 1;
+            AvalMaxPage = (datas.Count-1) / ProductViewNumber + 1;
             if (id <= AvalMaxPage) CurrentPage = id;
             else throw new Exception("Page Not Found");
             foreach (var data in datas)

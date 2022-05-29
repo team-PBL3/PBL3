@@ -57,7 +57,6 @@ namespace PBL3.Models
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -65,12 +64,14 @@ namespace PBL3.Models
         {
             try
             {
+                product.status = "ACTIVE";
+                foreach (var i in this.Products.ToList())
+                    if (i.name == product.name) throw new Exception("This product have existed");
                 this.Products.Add(product);
                 return this.SaveChanges();
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -142,10 +143,9 @@ namespace PBL3.Models
         {
             try
             {
-                foreach(var i in this.TradeMarks.ToList())
-                {
-                    if (i.name == trademark.name) throw new Exception("This trademark already existed");
-                }    
+                foreach (var i in this.TradeMarks.ToList())
+                    if (i.name == trademark.name) throw new Exception("This trademark have existed");
+                this.TradeMarks.Add(trademark);
                 return this.SaveChanges();
             }
             catch (Exception)

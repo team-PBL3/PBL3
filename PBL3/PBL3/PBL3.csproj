@@ -288,6 +288,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\s2172310-main-zoom.png" />
+    <Content Include="Image\s2508869-main-zoom.png" />
     <Content Include="Image\s2514214-main-zoom.png" />
     <Content Include="Image\s2579100-main-zoom.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -303,6 +304,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Thien_JS\Home_Index.js" />
     <Content Include="Theme\images\avds_large.jpg" />
     <Content Include="Theme\images\avds_small.jpg" />
     <Content Include="Theme\images\avds_xl.jpg" />
@@ -394,7 +396,6 @@
     <Content Include="Views\Member\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\AdminHome\add.cshtml" />
     <Content Include="Views\Shared\_LayoutSignIn.cshtml" />
     <Content Include="Views\Shared\_LayoutSignUp.cshtml" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
@@ -430,6 +431,11 @@
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Views\AdminHome\addCategory.cshtml" />
+    <Content Include="Views\AdminHome\addProduct.cshtml" />
+    <Content Include="Views\AdminHome\addTradeMark.cshtml" />
+    <Content Include="Views\AdminHome\ShowProduct.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
