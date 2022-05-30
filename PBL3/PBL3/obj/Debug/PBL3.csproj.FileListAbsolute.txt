@@ -302,3 +302,4 @@ E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
+E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.add_ValidationModel.resources

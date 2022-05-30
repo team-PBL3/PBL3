@@ -256,6 +256,10 @@
     <Compile Include="Migrations\202205280401179_add_Product_quantityInit.designer.cs">
       <DependentUpon>202205280401179_add_Product_quantityInit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205301320414_add_ValidationModel.cs" />
+    <Compile Include="Migrations\202205301320414_add_ValidationModel.designer.cs">
+      <DependentUpon>202205301320414_add_ValidationModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
     <Compile Include="Models\Account_Sign_Up.cs" />
@@ -462,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205280401179_add_Product_quantityInit.resx">
       <DependentUpon>202205280401179_add_Product_quantityInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205301320414_add_ValidationModel.resx">
+      <DependentUpon>202205301320414_add_ValidationModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
