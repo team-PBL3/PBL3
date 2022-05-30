@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using PBL3.Models;
+@using System.Web.Mvc;
+@{
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>@ViewBag.Title</title>
@@ -13,6 +18,7 @@
     <link href="~/Theme/plugins/OwlCarousel2-2.2.1/animate.css" rel="stylesheet" />
     <link href="~/Theme/styles/main_styles.css" rel="stylesheet" />
     <link href="~/Theme/styles/responsive.css" rel="stylesheet" />
+    <link href="~/Theme/styles/Profile.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -50,8 +56,8 @@
                                             </ul>
                                         </li>
                                         <li><a href="#">Accessories</a></li>
-                                        <li><a href="#">Offers</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="~/Login/Sign_in">Sign in</a></li>
+                                        <li><a href="~/Login/Sign_up">Sign up</a></li>
                                     </ul>
                                 </nav>
                                 <div class="header_extra ml-auto">
@@ -116,12 +122,24 @@
 
             <!-- Social -->
             <div class="header_social">
-                <ul>
-                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                </ul>
+                <div class="action">
+                    <div class="profile" onclick="menuToggle();">
+                        <img src="~/Theme/images/profile.png">
+                    </div>
+                    <div class="menu">
+                        <h3>Someone Famous<br><span>Website designer</span></h3>
+                        <ul>
+                            <li><img src="~/Theme/images/user.png" /><a href="#">My profile</a></li>
+                            <li><img src="~/Theme/images/logout.png"><a href="#">Log out</a></li>
+                        </ul>
+                    </div>
+                    <script>
+                        function menuToggle() {
+                            const toggleMenu = document.querySelector('.menu');
+                            toggleMenu.classList.toggle('active')
+                        }
+                    </script>
+                </div>
             </div>
         </header>
 
@@ -292,7 +310,17 @@
                 </div>
             </div>
         </div>
-
+        <!--
+        @if (a == null)
+        {
+            <li><a href="~/Login/Sign_in">Sign in</a></li>
+            <li><a href="~/Login/Sign_up">Sign up</a></li>
+        }
+        else
+        {
+            <li>@a.username</li>
+        }
+        -->
         <!-- Products -->
 
         <div class="products">

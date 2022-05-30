@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Pbl3Context;
+using PBL3.Models;
+using PBL3.Controllers.AdminHome;
 using System.Web.Routing;
 namespace PBL3.Controllers
 {
@@ -17,21 +18,21 @@ namespace PBL3.Controllers
             string controller = this.ControllerContext.RouteData.Values["controller"].ToString();
             if (account == null)
             {
-                if (controller != "Home" && controller != "Login")
+                if (controller == Member.MemberController.Name || controller == AdminHomeController.Name)
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                     (new { controller = "Login", action = "Sign_in" }));
             }
             else
             {
-                if (account.Idrole == 1 && controller != AdminHome.AdminHomeController.Name)
+                if (account.Role.id == 1 && controller != AdminHomeController.Name)
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                         (new { controller = AdminHome.AdminHomeController.Name, action = "Index" }));
                 }
-                else if (account.Idrole == 2 && controller != UserHome.UserHomeController.Name)
+                else if (account.Role.id == 2 && controller == AdminHomeController.Name)
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
-                        (new { controller = UserHome.UserHomeController.Name, action = "Index" }));
+                        (new { controller = Member.MemberController.Name, action = "Index" }));
                 }
             }
             base.OnActionExecuting(filterContext);

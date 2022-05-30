@@ -1,24 +1,26 @@
-﻿@model Pbl3Context.User
+﻿@model PBL3.Models.Account_Sign_Up
 
 @using PBL3.Models
 
 @{
     ViewBag.Title = "Sign_up";
     Layout = "~/Views/Shared/_LayoutSignUp.cshtml";
-    SignUp_Errors Errors = ViewBag.SignUp_Check;
 }
-
 <div class="title">Sign up</div>
 
-<form action="#">
+@using (Html.BeginForm("Sign_Up", "Login", FormMethod.Post))
+{
     <div class="user-details1">
         <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            @Html.TextBoxFor(model => model.name, new { placeholder = "Enter your name" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.name)</div>
+            
         </div>
         <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1">
-            <input type="radio" name="gender" id="dot-2">
+            @Html.RadioButtonFor(model => model.sex, "NAM", new { id = "dot-1" })
+            @Html.RadioButtonFor(model => model.sex, "NU", new { id = "dot-2" })
             <span class="gender-title">Gender</span>
             <div class="category">
                 <label for="dot-1">
@@ -30,35 +32,48 @@
                     <span class="gender">Female</span>
                 </label>
             </div>
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.sex)</div>
         </div>
     </div>
     <div class="user-details2">
         <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            @Html.TextBoxFor(model => model.phone, new { type = "number", min = 1, placeholder = "Enter your number" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.phone)</div>
         </div>
         <div class="input-box">
             <span class="details">Address</span>
-            <input type="text" placeholder="Enter your address" required>
+            @Html.TextBoxFor(model => model.address, new { placeholder = "Enter your address" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.address)</div>
         </div>
         <div class="input-box">
             <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
+            @Html.TextBoxFor(model => model.username, new { placeholder = "Enter your username" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.username)</div>
         </div>
         <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            @Html.TextBoxFor(model => model.email, new { placeholder = "Enter your email" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.email)</div>
         </div>
         <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            @Html.PasswordFor(model => model.password, new { id = "password", placeholder = "Enter your password" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.password)</div>
         </div>
         <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            @Html.PasswordFor(model => model.cfpassword, new { placeholder = "Confirm your password" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.cfpassword)</div>
         </div>
     </div>
     <div class="button">
         <input type="submit" value="Sign up">
     </div>
-</form>
+}
