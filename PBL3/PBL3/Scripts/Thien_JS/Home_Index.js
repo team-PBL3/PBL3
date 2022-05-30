@@ -6,7 +6,6 @@ var currentPage = document.getElementById("Current-Page").innerHTML;
 var threedot2 = document.getElementById("Three-dot2");
 var nextPage = document.getElementsByClassName("Next-Page");
 var lastPage = document.getElementById("Last-Page");
-console.log(currentPage);
 if (currentPage == "1") {
     firstPage.style.display = "none";
     for (let i = 0; i < previousPage.length; i++) previousPage[i].style.display = "none";

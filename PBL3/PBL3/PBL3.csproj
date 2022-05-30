@@ -244,6 +244,7 @@
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
     <Compile Include="Controllers\Web\LoginController.cs" />
+    <Compile Include="Controllers\Web\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -436,6 +437,7 @@
     <Content Include="Views\AdminHome\addTradeMark.cshtml" />
     <Content Include="Views\AdminHome\ShowProduct.cshtml" />
     <Content Include="Views\Shared\_Layout_Admin.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

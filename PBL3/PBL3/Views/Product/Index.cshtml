@@ -1,0 +1,18 @@
+﻿@model PBL3.Models.Product_View_Detail
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet" />
+<div class="product-display-frame">
+    <img src="@Model.imageName" style="display:inline-block" />
+</div>
+<div style="display: inline-block; width: 700px; font-size: 20px; color: black">
+    <div style="color:blue">@Model.trademark</div>
+    <div>@Model.name</div>
+    <div style="font-weight: bold">@Model.Price.ToString()</div>
+    <div>@Model.productinfo</div>
+    <div>Quantity: @Model.remainquantity</div>
+    <div>Desciption: @Model.desciption</div>
+</div>
+

@@ -4,39 +4,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     List_ProductView list = Model;
 }
-<link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet"/>
-<table>
-    <thead>
-        <tr>
-            <th>name</th>
-            <th>category</th>
-            <th>trademark</th>
-            <th>desctiption</th>
-            <th>price</th>
-            <th>productinfo</th>
-            <th>quantityremain</th>
-            <th>imageUrl</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in list.data_views)
-        {
-            <tr>
-                <td>@item.name</td>
-                <td>@item.category</td>
-                <td>@item.trademark</td>
-                <td>@item.desciption</td>
-                <td>@item.Price.ToString()</td>
-                <td>@item.productinfo</td>
-                <td>@item.remainquantity</td>
-                <td>@item.imageName</td>
-            </tr>
-            
-        }
-    </tbody>
-</table>
+<link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet" />
+<div style="text-align: center">
+    @foreach (var item in list.data_views)
+    {
+        <div class="product-display-frame">
+            <a href="https://localhost:44325/Product/?name=@item.name&productid=@item.id">
+                <img src="@item.imageName" />
+                <div>@item.name</div>
+            </a>
+            <div>@item.Price.ToString()</div>
+        </div>
+    }
+</div>
 <br />
-<div class ="Page-buttons">
+<div class="Page-buttons">
     @using (Html.BeginForm("Index", "Home", FormMethod.Get))
     {
         <button name="id" id="First-Page" class="page-button" value="1">First</button>
