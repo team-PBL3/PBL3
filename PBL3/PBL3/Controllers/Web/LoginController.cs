@@ -28,23 +28,23 @@ namespace PBL3.Controllers.Web
         [HttpPost]
         public ActionResult Sign_in(string email, string password)
         {
-            List<User> datausers = datacontext.Users.ToList();  //lấy dữ liệu bảng user.
-            ViewBag.SignIn = "";
-            try
-            {
-                User user = Account_Sign_in.Check_Signing_In(datausers, email, password);
-                Session.Add(RouteController.Account_Session, user);    //thêm tài khoản hiện hành đang hoạt động.
-                if (user.roleid == 1) return RedirectToAction("Index", AdminHome.AdminHomeController.Name);
-                //nếu là admin, đến trang chủ của admin
-                else if (user.roleid == 2) return RedirectToAction("Index", "Home");
-                //nếu là user, đến trang chủ của user
-            }
-            catch (Exception e)
-            {
-                ViewBag.SignIn = e.Message;
-            }
+            List<User> dataUsers = dataContext.Users.ToList();  //Lấy dữ liệu bảng User.
+            ViewBag.isAccess = false;
+            foreach (var i in dataUsers)
+                if (i.Email == email && i.Password == password) //Nếu mật khẩu và tài khoản nhập vào cùng tồn tại
+                {
+                    ViewBag.isAccess = true; //truyền dữ liệu thông báo đăng nhập thành công
+                    Session.Add(RouteController.Account_Session, i);    //Thêm tài khoản hiện hành đang hoạt động.
+                    if (i.Idrole == 1) return RedirectToAction("Index", AdminHome.AdminHomeController.Name);
+                    //Nếu là admin, đến trang chủ của admin
+                    else if (i.Idrole == 2) return RedirectToAction("Index", Member.MemberController.Name);
+                    //Nếu là user, đến trang chủ của user
+                    break;
+                }
+                else ViewBag.isAccess = false; //truyền dữ liệu thông báo đăng nhập thất bại
             return View();
         }
+        
 
         [HttpPost]
         public ActionResult Sign_Up(Account_Sign_Up model)
