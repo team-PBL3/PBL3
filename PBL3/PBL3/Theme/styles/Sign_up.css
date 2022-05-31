@@ -204,3 +204,9 @@ form .button {
         width: 100%;
     }
 }
+
+@media (max-height: 588px) {
+    .container {
+        max-height: 550px;
+    }
+}

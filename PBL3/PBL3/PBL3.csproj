@@ -299,9 +299,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Theme\images\avds_large.jpg" />
-    <Content Include="Theme\images\avds_small.jpg" />
     <Content Include="Theme\images\avds_xl.jpg" />
+    <Content Include="Theme\images\background_1.jpg" />
+    <Content Include="Theme\images\background_2.jpg" />
+    <Content Include="Theme\images\background_3.jpg" />
     <Content Include="Theme\images\cart.jpg" />
     <Content Include="Theme\images\cart_1.jpg" />
     <Content Include="Theme\images\categories.jpg" />
@@ -318,6 +319,7 @@
     <Content Include="Theme\images\icon_1.svg" />
     <Content Include="Theme\images\icon_2.svg" />
     <Content Include="Theme\images\icon_3.svg" />
+    <Content Include="Theme\images\lipstick_background.jpg" />
     <Content Include="Theme\images\login.png" />
     <Content Include="Theme\images\logout.png" />
     <Content Include="Theme\images\product_1.jpg" />
@@ -335,6 +337,7 @@
     <Content Include="Theme\images\profile.png" />
     <Content Include="Theme\images\search.svg" />
     <Content Include="Theme\images\shopping.svg" />
+    <Content Include="Theme\images\skincare_background.jpg" />
     <Content Include="Theme\images\user.png" />
     <Content Include="Theme\js\cart.js" />
     <Content Include="Theme\js\categories.js" />
@@ -361,6 +364,7 @@
     <Content Include="Theme\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="Theme\plugins\parallax-js-master\parallax.min.js" />
     <Content Include="Theme\plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="Theme\styles\About.css" />
     <Content Include="Theme\styles\bootstrap4\bootstrap.min.css" />
     <Content Include="Theme\styles\bootstrap4\bootstrap.min.js" />
     <Content Include="Theme\styles\bootstrap4\popper.js" />
@@ -431,6 +435,7 @@
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

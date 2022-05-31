@@ -26,6 +26,11 @@ namespace PBL3.Controllers
             }
             return View(list);
         }
-        
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
     }
 }
