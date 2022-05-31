@@ -310,9 +310,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Thien_JS\Home_Index.js" />
+    <Content Include="Theme\images\1598713492-banner-my-pham-2.jpg" />
+    <Content Include="Theme\images\1640589116846x250.jpg" />
+    <Content Include="Theme\images\1653558352846x250.jpg" />
     <Content Include="Theme\images\avds_large.jpg" />
     <Content Include="Theme\images\avds_small.jpg" />
     <Content Include="Theme\images\avds_xl.jpg" />
+    <Content Include="Theme\images\banner-my-pham%2810%29.jpg" />
+    <Content Include="Theme\images\banner-my-pham-hinh-ve.jpg" />
     <Content Include="Theme\images\cart.jpg" />
     <Content Include="Theme\images\cart_1.jpg" />
     <Content Include="Theme\images\categories.jpg" />
@@ -442,6 +447,7 @@
     <Content Include="Views\AdminHome\ShowProduct.cshtml" />
     <Content Include="Views\Shared\_Layout_Admin.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\AdminHome\editProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

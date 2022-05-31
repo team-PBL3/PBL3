@@ -75,6 +75,8 @@ namespace PBL3.Models
                 throw;
             }
         }
+        
+        
         public int Adding(CartDetail cartDetail)
         {
             try

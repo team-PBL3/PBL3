@@ -86,6 +86,15 @@ namespace PBL3.Controllers.AdminHome
             return View();
         }
 
+        public ActionResult editProduct()
+        {
+            dataContext.Products.ToList().ElementAt(0).quantityInit += 10;
+            dataContext.SaveChanges();
+            return View("Error");
+        }
+        
+
+
 
     }
 }
