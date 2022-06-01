@@ -1,0 +1,11 @@
+﻿.super_container
+{
+    width: 100%;
+    overflow: visible;
+}
+.about_container
+{
+    position: relative;
+    top: 200px;
+    left: 100px;
+}

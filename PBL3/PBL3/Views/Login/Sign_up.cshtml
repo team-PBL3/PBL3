@@ -1,56 +1,79 @@
-﻿@model Pbl3Context.User
+﻿@model PBL3.Models.Account_Sign_Up
 
 @using PBL3.Models
 
 @{
     ViewBag.Title = "Sign_up";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    SignUp_Errors Errors = ViewBag.SignUp_Check;
+    Layout = "~/Views/Shared/_LayoutSignUp.cshtml";
 }
+<div class="title">Sign up</div>
 
-<h2>Sign_up</h2>
-
-<script src="~/Scripts/JS/JavaScript.js" type="text/javascript"></script>
-@using (Html.BeginForm("Sign_up", "Login"))
+@using (Html.BeginForm("Sign_Up", "Login", FormMethod.Post))
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
-    <div style="color:red"> @Errors.Name</div>
-    <br>
-    @Html.LabelFor(model => model.Sex)
-    @Html.DropDownListFor(model => model.Sex, new List<SelectListItem>    {
-        new SelectListItem{Text="Nam" , Value="NAM"},
-        new SelectListItem{Text="Nữ" , Value="NU"} },
-                    "Chọn giới tính")
-    <div style="color:red">@Errors.Sex</div>
-    <br>
-    @Html.LabelFor(model => model.Phone)
-    @Html.TextBoxFor(model => model.Phone, new { type = "number", min = 1 })
-    <div style="color:red"> @Errors.Phone</div>
-    <br>
-    @Html.LabelFor(model => model.Address)
-    @Html.TextBoxFor(model => model.Address)
-    <div style="color:red">@Errors.Address</div>
-    <br>
-    @Html.LabelFor(model => model.Username)
-    @Html.TextBoxFor(model => model.Username)
-    <div style="color:red">@Errors.Username</div>
-    <br>
-    @Html.LabelFor(model => model.Email)
-    @Html.TextBoxFor(model => model.Email, new { id = "email", onkeyup = "Check('email');" })
-    <div id="LackCharacter" style="color:red"></div>
-    <div style="color:red">@Errors.Email</div>
-    <br>
-    @Html.LabelFor(model => model.Password)
-    @Html.PasswordFor(model => model.Password, new { id = "password" })
-    <div style="color:red">@Errors.Password</div>
-    <br>
-    <label for="cfpass">Confirm password:</label>
-    <input type="password" id="cfpass" name="cfpass" />
-    <div style="color:red">@Errors.Cfpassword</div>
-    <div style="color:red">@Errors.result</div>
-    <input type="submit" value="Sign up" />
+    <div class="user-details1">
+        <div class="input-box">
+            <span class="details">Full Name</span>
+            @Html.TextBoxFor(model => model.name, new { placeholder = "Enter your name" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.name)</div>
+            
+        </div>
+        <div class="gender-details">
+            @Html.RadioButtonFor(model => model.sex, "NAM", new { id = "dot-1" })
+            @Html.RadioButtonFor(model => model.sex, "NU", new { id = "dot-2" })
+            <span class="gender-title">Gender</span>
+            <div class="category">
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Male</span>
+                </label>
+                <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Female</span>
+                </label>
+            </div>
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.sex)</div>
+        </div>
+    </div>
+    <div class="user-details2">
+        <div class="input-box">
+            <span class="details">Phone Number</span>
+            @Html.TextBoxFor(model => model.phone, new { type = "number", min = 1, placeholder = "Enter your number" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.phone)</div>
+        </div>
+        <div class="input-box">
+            <span class="details">Address</span>
+            @Html.TextBoxFor(model => model.address, new { placeholder = "Enter your address" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.address)</div>
+        </div>
+        <div class="input-box">
+            <span class="details">Username</span>
+            @Html.TextBoxFor(model => model.username, new { placeholder = "Enter your username" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.username)</div>
+        </div>
+        <div class="input-box">
+            <span class="details">Email</span>
+            @Html.TextBoxFor(model => model.email, new { placeholder = "Enter your email" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.email)</div>
+        </div>
+        <div class="input-box">
+            <span class="details">Password</span>
+            @Html.PasswordFor(model => model.password, new { id = "password", placeholder = "Enter your password" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.password)</div>
+        </div>
+        <div class="input-box">
+            <span class="details">Confirm Password</span>
+            @Html.PasswordFor(model => model.cfpassword, new { placeholder = "Confirm your password" })
+            <br />
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.cfpassword)</div>
+        </div>
+    </div>
+    <div class="button">
+        <input type="submit" value="Sign up">
+    </div>
 }
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
