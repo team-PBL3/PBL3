@@ -303,6 +303,7 @@ E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.add_ValidationModel.resources
 =======
 D:\PBL3\PBL3\PBL3\PBL3\bin\PBL3.dll.config
@@ -457,4 +458,11 @@ D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
+>>>>>>> Stashed changes
+=======
+E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.add_ValidationModel.resources
+E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.AddAdminHistory.resources
+E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.AddDatetime.resources
+E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.AddDatetime2.resources
+E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.AddDatetime3.resources
 >>>>>>> Stashed changes

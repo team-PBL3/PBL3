@@ -25,7 +25,11 @@ namespace PBL3.Models
     }
     public class List_ProductView
     {
+<<<<<<< Updated upstream
         public static int ProductViewNumber = 4;
+=======
+        public static int ProductViewNumber = 6;
+>>>>>>> Stashed changes
         public List<Product_View> data_views;
         public int AvalMaxPage;
         public int CurrentPage;
@@ -56,6 +60,32 @@ namespace PBL3.Models
                 data_views.Add(data_view);
             }
         }
+<<<<<<< Updated upstream
+=======
+        public void SortBy(string option)
+        {
+            switch (option)
+            {
+                case "Lowtohigh":
+                    this.data_views = this.data_views.OrderBy(x => x.Price.Amount).ToList();
+                    break;
+                case "Hightolow":
+                    this.data_views = this.data_views.OrderByDescending(x => x.Price.Amount).ToList();
+                    break;
+                case "Larger03":
+                    this.data_views = this.data_views.Where(x => x.Price.Amount > Money.Parse(1000000).Amount).OrderBy(x => x.Price.Amount).ToList();
+                    break;
+                case "Less03":
+                    this.data_views = this.data_views.Where(x => x.Price.Amount <= Money.Parse(1000000).Amount).OrderBy(x => x.Price.Amount).ToList();
+                    break;
+                case "Less02":
+                    this.data_views = this.data_views.Where(x => x.Price.Amount <= Money.Parse(100000).Amount).OrderBy(x => x.Price.Amount).ToList();
+                    break;
+                default:
+                    break;
+            }
+        }    
+>>>>>>> Stashed changes
     }
     public class Product_View_Detail
     {

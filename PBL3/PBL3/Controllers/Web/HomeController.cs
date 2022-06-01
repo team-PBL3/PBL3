@@ -13,12 +13,16 @@ namespace PBL3.Controllers
         {
             dataContext = new PBL3DataContext();
         }
-        public ActionResult Index(int id = 1)
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult AllProduct(int page = 1)
         {
             List_ProductView list = new List_ProductView();
             try
             {
-                list.Set_Product_View(id, dataContext.Products.ToList());
+                list.Set_Product_View(page, dataContext.Products.ToList());
             }
             catch (Exception e)
             {
@@ -26,6 +30,24 @@ namespace PBL3.Controllers
             }
             return View(list);
         }
+<<<<<<< Updated upstream
         
+=======
+        public ActionResult AllProduct2(string sort, int page=1)
+        {
+            List_ProductView list = new List_ProductView();
+            try
+            {
+                list.Set_Product_View(page, dataContext.Products.ToList());
+                list.SortBy(sort);
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+            ViewData.Model = list;
+            return View("AllProduct");
+        }
+>>>>>>> Stashed changes
     }
 }

@@ -28,7 +28,7 @@ namespace PBL3.Models
         public DbSet<Role> Roles { get; set; }
         public DbSet<TradeMark> TradeMarks { get; set; }
         public DbSet<User> Users { get; set; }
-           
+        public DbSet<Admin_Action_History> Admin_Actions_History { get; set; }
         public int Adding(User user)
         {
             try
@@ -81,6 +81,7 @@ namespace PBL3.Models
         {
             try
             {
+                cartDetail.Time = DateTime.Now;
                 this.CartDetails.Add(cartDetail);
                 return this.SaveChanges();
             }
@@ -94,6 +95,7 @@ namespace PBL3.Models
         {
             try
             {
+                orderdetail.Time = DateTime.Now;
                 this.Orderdetails.Add(orderdetail);
                 return this.SaveChanges();
             }
@@ -107,7 +109,24 @@ namespace PBL3.Models
         {
             try
             {
+                orderr.TimeConfirm = DateTime.Now;
+                orderr.status = "Waiting for confirmation.";
                 this.Orderrs.Add(orderr);
+                return this.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } 
+        public int Update(Orderr orderr)
+        {
+            try
+            {
+                if (orderr.name != null && orderr.name != "" && this.Orderrs.First(x => x.id == orderr.id).name != orderr.name) this.Orderrs.First(x => x.id == orderr.id).name = orderr.name;
+                if (orderr.status != null && orderr.status != "" && this.Orderrs.First(x => x.id == orderr.id).status != orderr.status) this.Orderrs.First(x => x.id == orderr.id).status = orderr.status;
+                this.Orderrs.First(x => x.id == orderr.id).TimeUpdate = DateTime.Now;
                 return this.SaveChanges();
             }
             catch (Exception)

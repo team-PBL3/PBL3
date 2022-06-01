@@ -13,7 +13,13 @@ namespace PBL3.Models
 
         }
         [Key]
+<<<<<<< Updated upstream
         public int id { get; set;}
+=======
+        public int id { get; set; }
+        [Required]
+        public DateTime Time { get; set; }
+>>>>>>> Stashed changes
         [Required]
         public int cartid { get; set;}
         [Required]

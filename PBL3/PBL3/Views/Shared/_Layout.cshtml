@@ -98,6 +98,11 @@
                                     </div>
                                     <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
                                 </div>
+<<<<<<< Updated upstream
+=======
+                                <div>Sign In</div>
+                                <div>Sign Up</div>
+>>>>>>> Stashed changes
                             </div>
                         </div>
                     </div>
@@ -121,6 +126,7 @@
 
             <!-- Social -->
             <div class="header_social">
+<<<<<<< Updated upstream
                 <ul>
                     <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -171,6 +177,8 @@
             <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
 
             <div class="menu_social">
+=======
+>>>>>>> Stashed changes
                 <ul>
                     <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -178,6 +186,7 @@
                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
+<<<<<<< Updated upstream
         </div>
 
         <!-- Home -->
@@ -392,10 +401,27 @@
                 </div>
             </div>
         </div>
+=======
+        </header>
+>>>>>>> Stashed changes
 
+        
+        @if (a == null)
+        {
+            <a href="~/Login/Sign_in">Sign in</a>
+            <a href="~/Login/Sign_up">Sign up</a>
+        }
+        else
+        {
+            @a.username
+        }
+        <!-- Products -->
+    <div style="z-index: 2; background-color: white; border-bottom: 3px solid #bbbbbb">
+        @RenderBody()
+    </div>
         <!-- Footer -->
 
-        <div class="footer_overlay"></div>
+        <div class="footer_overlay" style="z-index: -1;"></div>
         <footer class="footer">
             <div class="footer_background" style="background-image:url(Theme/images/footer.jpg)"></div>
             <div class="container">

@@ -20,6 +20,13 @@ namespace PBL3.Models
         [Required]
         public String status { get; set; }
         [Required]
+<<<<<<< Updated upstream
+=======
+        public DateTime TimeConfirm { get; set; }
+        [Required]
+        public DateTime TimeUpdate { get; set; }
+        [Required]
+>>>>>>> Stashed changes
         public int userid { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<Orderdetail> orderdetails { get; set; }

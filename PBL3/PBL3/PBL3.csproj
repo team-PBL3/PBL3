@@ -239,11 +239,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminHome\AdminHomeController.cs" />
+    <Compile Include="Controllers\Member\CartController.cs" />
     <Compile Include="Controllers\Member\MemberController.cs" />
     <Compile Include="Controllers\PageNotFoundController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
     <Compile Include="Controllers\Web\LoginController.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="Controllers\Web\PaymentController.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Controllers\Web\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -259,10 +264,30 @@
     <Compile Include="Migrations\202205301320414_add_ValidationModel.cs" />
     <Compile Include="Migrations\202205301320414_add_ValidationModel.designer.cs">
       <DependentUpon>202205301320414_add_ValidationModel.cs</DependentUpon>
+<<<<<<< Updated upstream
+=======
+    </Compile>
+    <Compile Include="Migrations\202205310903574_AddAdminHistory.cs" />
+    <Compile Include="Migrations\202205310903574_AddAdminHistory.designer.cs">
+      <DependentUpon>202205310903574_AddAdminHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205311701245_AddDatetime.cs" />
+    <Compile Include="Migrations\202205311701245_AddDatetime.designer.cs">
+      <DependentUpon>202205311701245_AddDatetime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205311708395_AddDatetime2.cs" />
+    <Compile Include="Migrations\202205311708395_AddDatetime2.designer.cs">
+      <DependentUpon>202205311708395_AddDatetime2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205311718071_AddDatetime3.cs" />
+    <Compile Include="Migrations\202205311718071_AddDatetime3.designer.cs">
+      <DependentUpon>202205311718071_AddDatetime3.cs</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
     <Compile Include="Models\Account_Sign_Up.cs" />
+    <Compile Include="Models\Admin_Action_History.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartDetail.cs" />
     <Compile Include="Models\Category.cs" />
@@ -288,6 +313,7 @@
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
     <Content Include="Content\Web\Home.css" />
+    <Content Include="Content\Web\Product.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -310,6 +336,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Thien_JS\Home_Index.js" />
+<<<<<<< Updated upstream
     <Content Include="Theme\images\1598713492-banner-my-pham-2.jpg" />
     <Content Include="Theme\images\1640589116846x250.jpg" />
     <Content Include="Theme\images\1653558352846x250.jpg" />
@@ -318,6 +345,11 @@
     <Content Include="Theme\images\avds_xl.jpg" />
     <Content Include="Theme\images\banner-my-pham%2810%29.jpg" />
     <Content Include="Theme\images\banner-my-pham-hinh-ve.jpg" />
+=======
+    <Content Include="Theme\images\avds_large.jpg" />
+    <Content Include="Theme\images\avds_small.jpg" />
+    <Content Include="Theme\images\avds_xl.jpg" />
+>>>>>>> Stashed changes
     <Content Include="Theme\images\cart.jpg" />
     <Content Include="Theme\images\cart_1.jpg" />
     <Content Include="Theme\images\categories.jpg" />
@@ -447,10 +479,17 @@
     <Content Include="Views\AdminHome\ShowProduct.cshtml" />
     <Content Include="Views\Shared\_Layout_Admin.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+<<<<<<< Updated upstream
     <Content Include="Views\AdminHome\editProduct.cshtml" />
+=======
+    <Content Include="Views\Home\AllProduct.cshtml" />
+    <Content Include="Views\Cart\AddToCart.cshtml" />
+    <Content Include="Views\AdminHome\ShowProduct1.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Payment\" />
     <Folder Include="Views\Route\" />
   </ItemGroup>
   <ItemGroup>
@@ -475,6 +514,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205301320414_add_ValidationModel.resx">
       <DependentUpon>202205301320414_add_ValidationModel.cs</DependentUpon>
+<<<<<<< Updated upstream
+=======
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205310903574_AddAdminHistory.resx">
+      <DependentUpon>202205310903574_AddAdminHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205311701245_AddDatetime.resx">
+      <DependentUpon>202205311701245_AddDatetime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205311708395_AddDatetime2.resx">
+      <DependentUpon>202205311708395_AddDatetime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205311718071_AddDatetime3.resx">
+      <DependentUpon>202205311718071_AddDatetime3.cs</DependentUpon>
+>>>>>>> Stashed changes
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

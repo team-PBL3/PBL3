@@ -20,8 +20,11 @@ namespace PBL3.Controllers.AdminHome
         {
             return View();
         }
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
         public ActionResult addCategory()
         {
             return View();
@@ -43,6 +46,15 @@ namespace PBL3.Controllers.AdminHome
         {
             return View();
         }
+<<<<<<< Updated upstream
+
+        [HttpPost]
+        public ActionResult addTradeMark(TradeMark trademark)
+        {
+            try
+            {
+                if (dataContext.Adding(trademark)>0) ViewBag.Message = $"Adding trademark {trademark.name} successfully.";
+=======
 
         [HttpPost]
         public ActionResult addTradeMark(TradeMark trademark)
@@ -55,6 +67,30 @@ namespace PBL3.Controllers.AdminHome
             {
                 ViewBag.Message = e.Message;
             }
+            return View();
+        }
+        public ActionResult addProduct()
+        {
+            ViewBag.Data = dataContext.Products.ToList();
+            return View();
+        }
+        [HttpPost]
+        public ActionResult addProduct(Product product, string imagee)
+        {
+            try
+            {
+                product.quantityremain = product.quantityInit;
+                product.images.Add(new Image() { name = imagee, productid = product.id });
+                dataContext.Adding(product);
+
+                return new RedirectResult($"https://localhost:44325/AdminHome/ShowProduct?productId={product.id}&image={imagee}");
+>>>>>>> Stashed changes
+            }
+            catch (Exception e)
+            {
+                ViewBag.Message = e.Message;
+            }
+<<<<<<< Updated upstream
             return View();
         }
         public ActionResult addProduct()
@@ -95,6 +131,21 @@ namespace PBL3.Controllers.AdminHome
         
 
 
+=======
+            return View();
+        }
+        public ActionResult ShowProduct(int productId, string image)
+        {
+            ViewData.Model = dataContext.Products.FirstOrDefault(x => x.id == productId);
+            ViewBag.Image = image;
+            return View();
+        }
+        public ActionResult ShowProduct1()
+        {
+            ViewData.Model = dataContext.Products;
+            return View();
+        }    
+>>>>>>> Stashed changes
 
     }
 }
