@@ -1,0 +1,42 @@
+﻿
+@using PBL3.Models;
+@{ ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+    List_ProductView list = Model;}
+
+<h2>ShowProduct</h2>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>category</th>
+            <th>trademark</th>
+            <th>desctiption</th>
+            <th>price</th>
+            <th>productinfo</th>
+            <th>quantityremain</th>
+            <th>imageUrl</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var i in list.data_views)
+        {
+        <tr>
+            <td>@i.name</td>
+            <td>@i.category</td>
+            <td>@i.trademark</td>
+            <td>@i.description</td>
+            <td>@i.Price.Amount</td>
+            <td>@i.infoproduct</td>
+            <td>@i.quantityremain</td>
+            <td style="background:url(@i.imageName); width:300px; height: 300px;display:inline-block"></td>
+            <td>@Html.ActionLink("Edit","Edit")</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

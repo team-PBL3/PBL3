@@ -1,0 +1,63 @@
+﻿@using PBL3.Models;
+@{
+    ViewBag.Title = "AllProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List_ProductView list = Model;
+}
+
+<link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet" />
+<div style="background-color: whitesmoke; margin-top: 50px; padding-top: 80px;">
+
+    <div style="text-align: right; display: block; height: 50px; padding-bottom: 40px; margin-right: 50px;">
+        @using (Html.BeginForm("AllProduct2", "Home", FormMethod.Get))
+        {
+            <lable title="">Giá</lable>
+            <select name="sort" id="sort" title="sắp xếp" onchange="this.form.submit()">
+                <option>Chọn sắp xếp</option>
+                <option value="Lowtohigh">Thấp đến cao</option>
+                <option value="Hightolow">Cao đến thấp</option>
+                <option value="Larger03">1.000.000VND trở lên</option>
+                <option value="Less03">1.000.000VND trở xuống</option>
+                <option value="Less02">100.000VND trở xuống</option>
+            </select>
+            <input type="text" name="page" style="display: none" value="@list.CurrentPage" />
+        }
+    </div>
+    <div style="display: inline-block; color: #bbbbbb; font-size: 15px; margin-left: 50px;">
+        Có hơn @(List_ProductView.ProductViewNumber*list.AvalMaxPage) kết quả.
+    </div>
+    <div style="text-align: center; padding-top: 20px">
+        @if (list.data_views.Count == 0)
+        {
+            <div style="display: block; text-align: center">
+                Hiện không có sản phẩm nào.
+            </div>
+        }
+        @foreach (var item in list.data_views)
+        {
+            <div class="product-display-frame">
+                <a href="https://localhost:44325/Product/?name=@item.name&productid=@item.id">
+                    <img src="@item.imageName" />
+                    <div>@item.name</div>
+                </a>
+                <div>@item.Price.ToString()</div>
+            </div>
+        }
+    </div>
+    <br />
+    <div class="Page-buttons">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <button name="id" id="First-Page" class="page-button" value="1">First</button>
+            <button name="id" class="Previous-Page" value="@(list.CurrentPage-1)"><</button>
+            <span id="Three-dot1" class="page-button">...</span>
+            <button name="id" class="Previous-Page" value="@(list.CurrentPage-1)">@(list.CurrentPage-1)</button>
+            <label id="Current-Page" class="page-button">@(list.CurrentPage)</label>
+            <button name="id" class="Next-Page" value="@(list.CurrentPage+1)">@(list.CurrentPage+1)</button>
+            <span id="Three-dot2" class="page-button">...</span>
+            <button name="id" class="Next-Page" value="@(list.CurrentPage+1)">></button>
+            <button name="id" id="Last-Page" class="page-button" value="@(list.AvalMaxPage)">Last</button>
+        }
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/Thien_JS/Home_Index.js"></script>

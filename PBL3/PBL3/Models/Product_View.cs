@@ -11,28 +11,31 @@ namespace PBL3.Models
     }    
     public class Product_View
     {
-        public string trademark;
-        public string category;
-        public string desciption;
-        public string productinfo;
-        public int remainquantity;
+        public int id;
         public string name;
         public string imageName;
+        public string description;
+        public string category;
+        public string trademark;
+        public string infoproduct;
+        public int quantityremain;
         public Money Price;
         public Product_View()
         {
-            trademark = "";
-            desciption = "";
-            productinfo = "";
-            remainquantity = 0;
+            id = 0;
             name = "";
             imageName = "";
+            category = "";
+            trademark = "";
+            infoproduct = "";
+            quantityremain = 0;
+            description = "";
             Price = new Money("VND");
         }
     }
     public class List_ProductView
     {
-        public static int ProductViewNumber = 2;
+        public static int ProductViewNumber = 6;
         public List<Product_View> data_views;
         public int AvalMaxPage;
         public int CurrentPage;
@@ -45,7 +48,7 @@ namespace PBL3.Models
         public void Set_Product_View(int id, List<Product> datas)
         {
             int count = -1;
-            AvalMaxPage = datas.Count % ProductViewNumber + 1;
+            AvalMaxPage = (datas.Count-1) / ProductViewNumber + 1;
             if (id <= AvalMaxPage) CurrentPage = id;
             else throw new Exception("Page Not Found");
             foreach (var data in datas)
@@ -55,19 +58,80 @@ namespace PBL3.Models
                 if (count >= id * ProductViewNumber) break;
                 Product_View data_view = new Product_View()
                 {
+                    id = data.id,
+                    name = data.name,
+                    Price = Money.Parse(data.price),
                     trademark = data.trademark.name,
                     category = data.category.name,
-                    name = data.name,
-                    desciption = data.description,
-                    productinfo = data.infoproduct,
-                    Price = Money.Parse(data.price),
-                    remainquantity = data.quantityremain
+                    description = data.description,
+                    infoproduct = data.infoproduct,
+                    quantityremain = data.quantityremain
+
                 };
                 data_view.imageName = Image_Url.urlImage + data.images.First(x => x.productid == data.id).name;
                 data_views.Add(data_view);
             }
         }
-    }    
+        
+        public void SortBy(string option)
+        {
+            switch (option)
+            {
+                case "Lowtohigh":
+                    this.data_views = this.data_views.OrderBy(x => x.Price.Amount).ToList();
+                    break;
+                case "Hightolow":
+                    this.data_views = this.data_views.OrderByDescending(x => x.Price.Amount).ToList();
+                    break;
+                case "Larger03":
+                    this.data_views = this.data_views.Where(x => x.Price.Amount > Money.Parse(1000000).Amount).OrderBy(x => x.Price.Amount).ToList();
+                    break;
+                case "Less03":
+                    this.data_views = this.data_views.Where(x => x.Price.Amount <= Money.Parse(1000000).Amount).OrderBy(x => x.Price.Amount).ToList();
+                    break;
+                case "Less02":
+                    this.data_views = this.data_views.Where(x => x.Price.Amount <= Money.Parse(100000).Amount).OrderBy(x => x.Price.Amount).ToList();
+                    break;
+                default:
+                    break;
+            }
+        }    
+    }
+    public class Product_View_Detail
+    {
+        public string trademark;
+        public string category;
+        public string desciption;
+        public string productinfo;
+        public int remainquantity;
+        public string name;
+        public string imageName;
+        public Money Price;
+        public Product_View_Detail()
+        {
+            trademark = "";
+            category = "";
+            desciption = "";
+            productinfo = "";
+            remainquantity = 0;
+            name = "";
+            imageName = "";
+            Price = new Money("VND");
+        }
+        public void Set_Product_Detail(int productid)
+        {
+            PBL3DataContext dataContext = new PBL3DataContext();
+            Product dataSource = dataContext.Products.First(x => x.id == productid);
+            this.trademark = dataSource.trademark.name;
+            this.category = dataSource.category.name;
+            this.desciption = dataSource.description;
+            this.productinfo = dataSource.infoproduct;
+            this.remainquantity = dataSource.quantityremain;
+            this.name = dataSource.name;
+            this.imageName = Image_Url.urlImage+dataSource.images.First().name;
+            this.Price = Money.Parse(dataSource.price);
+        }    
+    }
     public class Money
     {
         private string Unit;
