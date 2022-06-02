@@ -31,7 +31,9 @@
             <td>@i.infoproduct</td>
             <td>@i.quantityremain</td>
             <td style="background:url(@i.imageName); width:300px; height: 300px;display:inline-block"></td>
-            <td>@Html.ActionLink("Edit","Edit")</td>
+            
+            <td>@Html.ActionLink("Edit", "EditProduct", new { productId =i.id})</td>
+            <td>@Html.ActionLink("Delete", "DeleteProduct",new { productId = i.id })</td>
         </tr>
         }
     </tbody>

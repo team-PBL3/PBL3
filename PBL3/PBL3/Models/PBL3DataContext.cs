@@ -77,12 +77,24 @@ namespace PBL3.Models
         }
         public int Edit(Product product)
         {
-           
+
+            this.Products.ToList().First(x => x.id == product.id).name= product.name;
+            this.Products.ToList().First(x => x.id == product.id).categoryid = product.categoryid;
+            this.Products.ToList().First(x => x.id == product.id).trademarkid = product.trademarkid;
+            this.Products.ToList().First(x => x.id == product.id).description = product.description;
+            this.Products.ToList().First(x => x.id == product.id).price = product.price;
+            this.Products.ToList().First(x => x.id == product.id).quantityInit = product.quantityInit;
             
-               this.Products.ToList().ElementAt(0).quantityInit += 10;
-               
+
             return this.SaveChanges(); 
             
+        }
+        
+        public int Delete(int productId)
+        {
+            Product product = this.Products.First(x => x.id == productId);
+            product = this.Products.Remove(product);
+            return this.SaveChanges();
         }
         
         public int Adding(CartDetail cartDetail)

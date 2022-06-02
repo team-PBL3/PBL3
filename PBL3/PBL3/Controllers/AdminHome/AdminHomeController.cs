@@ -19,7 +19,7 @@ namespace PBL3.Controllers.AdminHome
         public ActionResult Index()
         {
             return View();
-        }
+        } 
         public ActionResult addCategory()
         {
             return View();
@@ -90,14 +90,26 @@ namespace PBL3.Controllers.AdminHome
             }
             return View(list);
         }
+        [HttpGet]
         public ActionResult EditProduct(int productId)
         {
             Product product = new Product();
             product = dataContext.Products.First(x=>x.id==productId);
-
-
+            ViewBag.images =  product.images.First().name;
             
             return View(product);
+        }
+        [HttpPost]
+        public ActionResult EditProduct2(Product product)
+        {
+            dataContext.Edit(product);
+            return View("ShowProduct");
+        }
+        public ActionResult DeleteProduct(int productId)
+        {
+            
+            dataContext.Delete(productId);
+            return View("ShowProduct");
         }
         public ActionResult AllProduct(int page = 1)
         {

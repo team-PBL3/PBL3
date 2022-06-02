@@ -13,7 +13,7 @@ namespace PBL3.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202206010416201_ahihi"; }
+            get { return "202206011408078_ahihi"; }
         }
         
         string IMigrationMetadata.Source

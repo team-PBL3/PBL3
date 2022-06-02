@@ -250,9 +250,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206010416201_ahihi.cs" />
-    <Compile Include="Migrations\202206010416201_ahihi.designer.cs">
-      <DependentUpon>202206010416201_ahihi.cs</DependentUpon>
+    <Compile Include="Migrations\202206011408078_ahihi.cs" />
+    <Compile Include="Migrations\202206011408078_ahihi.designer.cs">
+      <DependentUpon>202206011408078_ahihi.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
@@ -288,6 +288,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\banner-my-pham-hinh-ve.jpg" />
     <Content Include="Image\s2172310-main-zoom.png" />
     <Content Include="Image\s2508869-main-zoom.png" />
     <Content Include="Image\s2514214-main-zoom.png" />
@@ -464,8 +465,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206010416201_ahihi.resx">
-      <DependentUpon>202206010416201_ahihi.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206011408078_ahihi.resx">
+      <DependentUpon>202206011408078_ahihi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
