@@ -79,7 +79,6 @@ namespace PBL3.Models
         {
             try
             {
-                cartDetail.Time = DateTime.Now;
                 this.CartDetails.Add(cartDetail);
                 return this.SaveChanges();
             }
@@ -89,11 +88,35 @@ namespace PBL3.Models
                 throw;
             }
         }
+        public int DeleteCD(int id)
+        {
+            try
+            {
+                this.CartDetails.Remove(this.CartDetails.First(i => i.id == id));
+                return this.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }    
+        public int DeleteCDAll()
+        {
+            try
+            {
+                foreach( var i in this.CartDetails)
+                this.CartDetails.Remove(i);
+                return this.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }    
         public int Adding(Orderdetail orderdetail)
         {
             try
             {
-                orderdetail.Time = DateTime.Now;
                 this.Orderdetails.Add(orderdetail);
                 return this.SaveChanges();
             }
@@ -103,12 +126,37 @@ namespace PBL3.Models
                 throw;
             }
         }
+        public void CreateOrder(List<Orderdetail> LOD, User user, List<int> CDid)
+        {
+            try
+            {
+                foreach(var id in CDid)
+                {
+                    this.CartDetails.Remove(this.CartDetails.ToList().First(x => x.id == id));
+                }    
+                foreach(var OD in LOD)
+                {
+                    this.Products.First(x => x.id == OD.productid).quantityremain -= OD.quantity;
+                    int i=this.SaveChanges();
+                    Orderr order = new Orderr() { status = "Đã xác nhận", TimeUpdate = DateTime.Now, userid = user.id, TimeConfirm = DateTime.Now, };
+                    Adding(order);
+                    List<Orderr> a = this.Orderrs.ToList();
+                    OD.orderid = a.Last().id;
+                    Adding(OD);
+                    Payment b;
+                    b = new Payment() { amount = OD.quantity, paymentdate = DateTime.Now, totalPrice = OD.price, orderid = OD.orderid, userid = user.id };
+                    Adding(b);
+                }   
+            }
+            catch (DbEntityValidationException e)
+            {
+                throw;
+            }
+        }    
         public int Adding(Orderr orderr)
         {
             try
             {
-                orderr.TimeConfirm = DateTime.Now;
-                orderr.status = "Waiting for confirmation.";
                 this.Orderrs.Add(orderr);
                 return this.SaveChanges();
             }
@@ -122,7 +170,6 @@ namespace PBL3.Models
         {
             try
             {
-                if (orderr.name != null && orderr.name != "" && this.Orderrs.First(x => x.id == orderr.id).name != orderr.name) this.Orderrs.First(x => x.id == orderr.id).name = orderr.name;
                 if (orderr.status != null && orderr.status != "" && this.Orderrs.First(x => x.id == orderr.id).status != orderr.status) this.Orderrs.First(x => x.id == orderr.id).status = orderr.status;
                 this.Orderrs.First(x => x.id == orderr.id).TimeUpdate = DateTime.Now;
                 return this.SaveChanges();

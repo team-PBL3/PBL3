@@ -1,0 +1,109 @@
+﻿@model PBL3.Models.Cart_View
+@using PBL3.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    CartDetail_View newCD = ViewBag.NewCD;
+}
+
+<h2>Index</h2>
+<button id="ChooseAll" style="margin:55px 0px 5px 0px">Chọn tất cả</button>
+<button id="NotChooseAll" style="margin:5px 0px 30px 0px">Bỏ chọn tất cả</button>
+@Html.ActionLink("Xóa tất cả", "DeleteAll")
+@using (Html.BeginForm("Buy2", "Order", FormMethod.Post))
+{
+    if (newCD != null)
+    {
+        <img src="@newCD.product_view.imageName" />
+        <div>@newCD.product_view.name</div>
+        <div>@newCD.product_view.Price.ToString()</div>
+        <label class="quantity_input"><input id="quantity_input" class="@newCD.id" name="quantity_input" type="number" pattern="[0-9]*" value="1" onkeydown="SaveOld()" onkeyup="Validate(@(newCD.product_view.quantityRemain))" onchange="Validate2(@(newCD.product_view.quantityRemain),@newCD.id, @(newCD.product_view.Price.Amount))"/></label>
+        <div style="display:inline-block; height:57px;">
+            <p class="button-quantity" id="up-button" onclick="Btnc('up-button',@newCD.id, @(newCD.product_view.quantityRemain),@(newCD.product_view.Price.Amount))">+</p>
+            <p class="button-quantity" id="down-button" onclick="Btnc('down-button',@newCD.id, @(newCD.product_view.quantityRemain),@(newCD.product_view.Price.Amount))">-</p>
+        </div>
+        <div class="totalPrice@(newCD.id)">@(newCD.quantity * newCD.product_view.Price.Amount)</div>
+        <input id="new_product" class="Choose_to_buy" type="checkbox" name="CDid" value="@newCD.id" />
+        @Html.ActionLink("Xóa", "Delete", new { id = newCD.id });
+    }
+    <br />
+    foreach (var i in Model.lViews.dataViews.ToList())
+    {
+        if (newCD != null)
+        {
+            if (newCD.id == i.id) { continue; }
+        }
+        <img src="@i.product_view.imageName" style="width:350px" />
+        <div>@i.product_view.name</div>
+        <div>@i.product_view.quantityRemain</div>
+        <div>@i.product_view.Price.ToString()</div>
+        <label class="quantity_input"><input id="quantity_input" class="@i.id" name="quantity_input" type="number" pattern="[0-9]*" value="1" onkeydown="SaveOld()" onkeyup="Validate(@(i.product_view.quantityRemain))" onchange="Validate2(@(i.product_view.quantityRemain),@i.id, @(i.product_view.Price.Amount))"/></label>
+        <div style="display:inline-block; height:57px;">
+            <p class="button-quantity" onclick="Btnc('up-button',@i.id, @(i.product_view.quantityRemain),@(i.product_view.Price.Amount))">+</p>
+            <p class="button-quantity" onclick="Btnc('down-button',@i.id, @(i.product_view.quantityRemain),@(i.product_view.Price.Amount))">-</p>
+        </div>
+        <div class="totalPrice@(i.id)">@(i.quantity * i.product_view.Price.Amount)</div>
+        <input class="Choose_to_buy" type="checkbox" name="CDid" value="@i.id" />
+        @Html.ActionLink("Delete", "Delete", new { id = i.id });
+        <br />
+    }
+    <input type="text" name="cartid" style="display:none" value="@Model.cart.id" />
+    <input type="submit" value="Mua Hàng" id="Buy"/>
+    <div id="error"></div>
+}
+<script>
+    document.getElementById("Buy").disabled = true;
+    var error = document.getElementById("error");
+    error.innerHTML = "Bạn chưa chọn hàng để mua";
+
+    document.getElementById('ChooseAll').onclick = function () {
+        var checkboxes = document.getElementsByClassName('Choose_to_buy');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = true;
+        }
+    }
+    document.getElementById('NotChooseAll').onclick = function () {
+        var checkboxes = document.getElementsByClassName('Choose_to_buy');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = false;
+        }
+    }
+    var c = document.getElementsByClassName('Choose_to_buy');
+    for (var ci of c) {
+        ci.onclick = function () {
+            var list = document.getElementsByClassName("Choose_to_buy");
+            document.getElementById("Buy").disabled = true;
+            var error = document.getElementById("error");
+            error.innerHTML = "Bạn chưa chọn hàng để mua";
+            for (var i of list) {
+                if (i.checked == true) {
+                    document.getElementById("Buy").disabled = false;
+                    error.innerHTML = "";
+                    break;
+                }
+            }
+        }
+    }
+    var check;
+    function SaveOld() {
+        check = document.getElementById("quantity_input").value;
+    }
+    function Validate(Max) {
+        var i = document.getElementById("quantity_input");
+        if (i.value < 1 || i.value>Max) i.value = check;
+    }
+    function Validate2(Max,id,price) {
+        var i = document.getElementById("quantity_input");
+        if (i.value < 1) i.value = 1;
+        if (i.value > Max) i.value = Max;
+        var y = document.getElementsByClassName("totalPrice" + id).item(0);
+        y.innerHTML = i.value * price;
+    }
+    function Btnc(text, id, Max,price) {
+        var i = document.getElementsByClassName(id).item(0);
+        if (text == 'up-button' && i.value<Max) i.value++;
+        if (text == 'down-button' && i.value > 1) i.value--;
+        var y = document.getElementsByClassName("totalPrice" + id).item(0);
+        y.innerHTML = i.value * price;
+    }
+</script>

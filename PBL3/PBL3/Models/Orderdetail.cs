@@ -15,8 +15,6 @@ namespace PBL3.Models
         [Key]
         public int id { get; set; }
         [Required]
-        public string name { get; set; }
-        [Required]
         public double price { get; set; }
         [Required]
         public int quantity { get; set; }

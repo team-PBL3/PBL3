@@ -54,14 +54,14 @@
 
                     <div style="margin-top: 10px">Quantity: @Model.remainquantity</div>
                     <div class="product_quantity_container" style="margin-top: 70px">
-                        <form action="/Product/RedirectType" method="get">
+                        <form action="/Product/RedirectType" method="post">
                             <div style="display: inline-block; vertical-align: top; padding: 0px; border: 2px solid black; border-radius: 5px; height: 61px">
                                 <label class="quantity_input"><input id="quantity_input" name="quantity_input" type="number" pattern="[0-9]*" value="1" onkeydown="SaveOld()" onkeyup="Validate()" /></label>
                                 <div style="display:inline-block; height:57px;">
                                     <p class="button-quantity" id="up-button" onclick="Btnc('up-button')">+</p>
                                     <p class="button-quantity" id="down-button" onclick="Btnc('down-button')">-</p>
                                 </div>
-                                <label><input type="text" id="product" name="product" style="display: none" value="@Model.name" /></label>
+                                <label><input type="text" id="product" name="id" style="display: none" value="@Model.id" /></label>
                             </div>
                             <div style="border: 2px solid black; height:61px; border-radius:5px; display: inline-block">
                                 <input class="button cart_button" name="type" type="submit" style="height: inherit; background: none; border: none;border-radius:5px; display: inline-block" value="Add to cart" />
@@ -71,6 +71,7 @@
                             </div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>

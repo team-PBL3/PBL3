@@ -16,14 +16,11 @@ namespace PBL3.Models
         [Key]
         public int id { get; set; }
         [Required]
-        public String name { get; set; }
-        [Required]
         public String status { get; set; }
         [Required]
         public DateTime TimeConfirm { get; set; }
         [Required]
         public DateTime TimeUpdate { get; set; }
-        [Required]
         public int userid { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<Orderdetail> orderdetails { get; set; }

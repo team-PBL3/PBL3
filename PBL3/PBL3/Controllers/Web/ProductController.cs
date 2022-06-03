@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace PBL3.Controllers.Web
 {
-    public class ProductController : Controller
+    public class ProductController : RouteController
     {
         public ProductController()
         {
@@ -20,18 +20,18 @@ namespace PBL3.Controllers.Web
             data.Set_Product_Detail(productid);
             return View(data);
         }
-        [HttpGet]
-        public ActionResult RedirectType(int quantity_input,string product, string type)
+        [HttpPost]
+        public ActionResult RedirectType(int quantity_input,int id, string type)
         {
             if (type == "Add to cart") return RedirectToAction("AddToCart", "Cart", new
             {
                 quantity_input = quantity_input,
-                product = product
-            });
-            else if (type == "Buy") return RedirectToAction("Buy", "Payment", new
+                productid = id,
+            }) ; 
+            else if (type == "Buy") return RedirectToAction("Buy", "Order", new
             {
                 quantity_input = quantity_input,
-                product = product
+                productid = id,
             });
             return new EmptyResult();
         }    
