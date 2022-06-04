@@ -280,6 +280,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
     <Content Include="Content\Web\Home.css" />
@@ -294,6 +295,7 @@
     <Content Include="Image\s2514214-main-zoom.png" />
     <Content Include="Image\s2579100-main-zoom.png" />
     <Content Include="Image\son-tint-min-li-cao-cap-l-oreal-paris-mau-cam-dat-138-honored-7ml-1_img_300x300_b798dd_fit_center.jpg" />
+    <Content Include="Image\thanhthuy.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />

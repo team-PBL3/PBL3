@@ -75,16 +75,16 @@ namespace PBL3.Models
                 throw;
             }
         }
-        public int Edit(Product product)
+        public int Edit(Product product, string imagee)
         {
-
+           
             this.Products.ToList().First(x => x.id == product.id).name= product.name;
             this.Products.ToList().First(x => x.id == product.id).categoryid = product.categoryid;
             this.Products.ToList().First(x => x.id == product.id).trademarkid = product.trademarkid;
             this.Products.ToList().First(x => x.id == product.id).description = product.description;
             this.Products.ToList().First(x => x.id == product.id).price = product.price;
             this.Products.ToList().First(x => x.id == product.id).quantityInit = product.quantityInit;
-            
+            this.Products.ToList().First(x => x.id == product.id).images.First().name = imagee;
 
             return this.SaveChanges(); 
             

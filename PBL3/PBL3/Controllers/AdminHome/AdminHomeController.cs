@@ -91,7 +91,7 @@ namespace PBL3.Controllers.AdminHome
             return View(list);
         }
         [HttpGet]
-        public ActionResult EditProduct(int productId)
+        public ActionResult EditProduct(int productId=4)
         {
             Product product = new Product();
             product = dataContext.Products.First(x=>x.id==productId);
@@ -100,16 +100,17 @@ namespace PBL3.Controllers.AdminHome
             return View(product);
         }
         [HttpPost]
-        public ActionResult EditProduct2(Product product)
+        public ActionResult EditProduct2(Product product, string imagee)
         {
-            dataContext.Edit(product);
-            return View("ShowProduct");
+
+            dataContext.Edit(product, imagee);
+            return RedirectToAction("ShowProduct");
         }
         public ActionResult DeleteProduct(int productId)
         {
             
             dataContext.Delete(productId);
-            return View("ShowProduct");
+            return RedirectToAction("ShowProduct");
         }
         public ActionResult AllProduct(int page = 1)
         {
