@@ -1,0 +1,26 @@
+﻿    @using PBL3.Models
+@{
+    ViewBag.Title = "Buy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Product_View_Detail x = ViewBag.PVD;
+}
+
+<h2>Buy</h2>
+
+<div style="margin-top:60px">
+    @using (Html.BeginForm("OrderProduct", "Order", new
+    {
+        price = x.Price.Amount * ViewBag.quantity,
+        quantity = ViewBag.quantity,
+        Time = DateTime.Now,
+        productid = x.id
+
+    }, FormMethod.Post))
+    {
+        <div>@x.name</div>
+        <div>@ViewBag.quantity</div>
+        <div>@x.Price.Amount</div>
+        <div>@(x.Price.Amount * ViewBag.quantity)</div>
+        <input type="submit" value="Xác nhận" />
+    }
+</div>

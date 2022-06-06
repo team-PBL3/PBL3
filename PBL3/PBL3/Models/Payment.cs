@@ -12,12 +12,18 @@ namespace PBL3.Models
         {
 
         }
+        [Key]
         public int id { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime paymentdate { get; set; }
+        [Required]
         public int amount { get; set; }
+        [Required]
         public double totalPrice { get; set; }
+        [Required]
         public int orderid { get; set; }
+        public int userid { get; set; }
+        public virtual User User { get; set; }
         public virtual Orderr order { get; set; }
     }
 }

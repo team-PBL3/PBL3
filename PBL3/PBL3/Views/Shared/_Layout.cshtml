@@ -2,6 +2,14 @@
 @using System.Web.Mvc;
 @{
     User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
+    int b = 0;
+    if (a!=null)
+    {
+        foreach (var i in a.carts.ToList())
+        {
+            b = i.cartdetails.Count();
+        }
+    }
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +26,6 @@
     <link href="~/Theme/plugins/OwlCarousel2-2.2.1/animate.css" rel="stylesheet" />
     <link href="~/Theme/styles/main_styles.css" rel="stylesheet" />
     <link href="~/Theme/styles/responsive.css" rel="stylesheet" />
-    <link href="~/Theme/styles/Profile.css" rel="stylesheet" />
-    <link href="~/Theme/styles/About.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -33,7 +39,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                                <div class="logo"><a href="#">HTCC</a></div>
+                                <div class="logo"><a href="#">HTCC-Beauty</a></div>
                                 <nav class="main_nav">
                                     <ul>
                                         <li class="hassubs active">
@@ -43,7 +49,7 @@
                                                 <li><a href="product.html">Product</a></li>
                                                 <li><a href="cart.html">Cart</a></li>
                                                 <li><a href="checkout.html">Check out</a></li>
-                                                <li><a href="contact.html">About</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
                                             </ul>
                                         </li>
                                         <li class="hassubs">
@@ -57,8 +63,8 @@
                                             </ul>
                                         </li>
                                         <li><a href="#">Accessories</a></li>
-                                        <li><a href="~/Login/Sign_in">Sign in</a></li>
-                                        <li><a href="~/Login/Sign_up">About</a></li>
+                                        <li><a href="#">Offers</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                                 <div class="header_extra ml-auto">
@@ -74,7 +80,7 @@
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z" />
 											</g>
 										</svg>
-                                            <div>Cart <span>(0)</span></div>
+                                            <div>@Html.ActionLink("Cart","Index","Cart") <span>(@b)</span></div>
                                         </a>
                                     </div>
                                     <div class="search">
@@ -100,10 +106,8 @@
                                     </div>
                                     <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
                                 </div>
-                                <ul>
-                                    <li class="sign_in"><a href="~/Login/Sign_in">Sign in</a></li>
-                                    <li class="sign_up"><a href="~/Login/Sign_up">Sign up</a></li>
-                                </ul>
+                                <div>Sign In</div>
+                                <div>Sign Up</div>
                             </div>
                         </div>
                     </div>
@@ -127,68 +131,6 @@
 
             <!-- Social -->
             <div class="header_social">
-                <div class="action">
-                    <div class="profile" onclick="menuToggle();">
-                        <img src="~/Theme/images/profile.png">
-                    </div>
-                    <div class="menu">
-                        <h3>Someone Famous<br><span>Website designer</span></h3>
-                        <ul>
-                            <li><img src="~/Theme/images/user.png" /><a href="#">My profile</a></li>
-                            <li><img src="~/Theme/images/logout.png"><a href="#">Log out</a></li>
-                        </ul>
-                    </div>
-                    <script>
-                        function menuToggle() {
-                            const toggleMenu = document.querySelector('.menu');
-                            toggleMenu.classList.toggle('active')
-                        }
-                    </script>
-                </div>
-            </div>
-        </header>
-
-        <!-- Menu -->
-
-        <div class="menu menu_mm trans_300">
-            <div class="menu_container menu_mm">
-                <div class="page_menu_content">
-
-                    <div class="page_menu_search menu_mm">
-                        <form action="#">
-                            <input type="search" required="required" class="page_menu_search_input menu_mm" placeholder="Search for products...">
-                        </form>
-                    </div>
-                    <ul class="page_menu_nav menu_mm">
-                        <li class="page_menu_item has-children menu_mm">
-                            <a href="index.html">Home<i class="fa fa-angle-down"></i></a>
-                            <ul class="page_menu_selection menu_mm">
-                                <li class="page_menu_item menu_mm"><a href="categories.html">Categories<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
-                            </ul>
-                        </li>
-                        <li class="page_menu_item has-children menu_mm">
-                            <a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
-                            <ul class="page_menu_selection menu_mm">
-                                <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                            </ul>
-                        </li>
-                        <li class="page_menu_item menu_mm"><a href="index.html">Accessories<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-            <!--
-            <div class="menu_social">
                 <ul>
                     <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -196,14 +138,25 @@
                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
-            -->
-        </div>
+        </header>
 
-        @RenderBody();
-
+        
+        @if (a == null)
+        {
+            <a href="~/Login/Sign_in">Sign in</a>
+            <a href="~/Login/Sign_up">Sign up</a>
+        }
+        else
+        {
+            @a.username
+        }
+        <!-- Products -->
+    <div style="z-index: 2; background-color: white; border-bottom: 3px solid #bbbbbb">
+        @RenderBody()
+    </div>
         <!-- Footer -->
 
-        <div class="footer_overlay"></div>
+        <div class="footer_overlay" style="z-index: -1;"></div>
         <footer class="footer">
             <div class="footer_background" style="background-image:url(Theme/images/footer.jpg)"></div>
             <div class="container">

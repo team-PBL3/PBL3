@@ -1,10 +1,58 @@
 ﻿@using PBL3.Models;
-@{ 
+@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
     List_ProductView list = Model;
-    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
 }
+<!-- Menu -->
+
+<div class="menu menu_mm trans_300">
+    <div class="menu_container menu_mm">
+        <div class="page_menu_content">
+
+            <div class="page_menu_search menu_mm">
+                <form action="#">
+                    <input type="search" required="required" class="page_menu_search_input menu_mm" placeholder="Search for products...">
+                </form>
+            </div>
+            <ul class="page_menu_nav menu_mm">
+                <li class="page_menu_item has-children menu_mm">
+                    <a href="index.html">Home<i class="fa fa-angle-down"></i></a>
+                    <ul class="page_menu_selection menu_mm">
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Categories<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+                    </ul>
+                </li>
+                <li class="page_menu_item has-children menu_mm">
+                    <a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
+                    <ul class="page_menu_selection menu_mm">
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                    </ul>
+                </li>
+                <li class="page_menu_item menu_mm"><a href="index.html">Accessories<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+    <div class="menu_social">
+        <ul>
+            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</div>
 
 <!-- Home -->
 <div class="home">
@@ -15,7 +63,7 @@
 
             <!-- Slider Item -->
             <div class="owl-item home_slider_item">
-                <div class="home_slider_background_1"></div>
+                <div class="home_slider_background" style="background-image:url(Theme/images/home_slider_1.jpg)"></div>
                 <div class="home_slider_content_container">
                     <div class="container">
                         <div class="row">
@@ -33,7 +81,7 @@
 
             <!-- Slider Item -->
             <div class="owl-item home_slider_item">
-                <div class="home_slider_background_2"></div>
+                <div class="home_slider_background" style="background-image:url(Theme/images/home_slider_1.jpg)"></div>
                 <div class="home_slider_content_container">
                     <div class="container">
                         <div class="row">
@@ -51,7 +99,7 @@
 
             <!-- Slider Item -->
             <div class="owl-item home_slider_item">
-                <div class="home_slider_background_3"></div>
+                <div class="home_slider_background" style="background-image:url(Theme/images/home_slider_1.jpg)"></div>
                 <div class="home_slider_content_container">
                     <div class="container">
                         <div class="row">
@@ -94,10 +142,10 @@
 <div class="avds">
     <div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
         <div class="avds_small">
-            <div class="avds_background"></div>
+            <div class="avds_background" style="background-image:url(Theme/images/avds_small.jpg)"></div>
             <div class="avds_small_inner">
                 <div class="avds_discount_container">
-                    <img src="~/Theme/images/discount.png" />
+                    <img src="Theme/images/discount.png" alt="">
                     <div>
                         <div class="avds_discount">
                             <div>20<span>%</span></div>
@@ -112,7 +160,7 @@
             </div>
         </div>
         <div class="avds_large">
-            <div class="avds_background"></div>
+            <div class="avds_background" style="background-image:url(Theme/images/avds_large.jpg)"></div>
             <div class="avds_large_container">
                 <div class="avds_large_content">
                     <div class="avds_title">Professional Cameras</div>
@@ -124,61 +172,9 @@
     </div>
 </div>
 
-<!--
-@if (a == null)
-{
-    <li><a href="~/Login/Sign_in">Sign in</a></li>
-    <li><a href="~/Login/Sign_up">Sign up</a></li>
-}
-else
-{
-    <li>@a.username</li>
-}
--->
-
-<!-- Products -->
-
 <div class="products">
-    <table>
-        <thead>
-            <tr>
-                <th>name</th>
-                <th>category</th>
-                <th>trademark</th>
-                <th>desctiption</th>
-                <th>price</th>
-                <th>productinfo</th>
-                <th>quantityremain</th>
-                <th>imageUrl</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in list.data_views)
-            {
-                <tr>
-                    <td>@item.name</td>
-                    <td>@item.category</td>
-                    <td>@item.trademark</td>
-                    <td>@item.desciption</td>
-                    <td>@item.Price.Amount</td>
-                    <td>@item.productinfo</td>
-                    <td>@item.remainquantity</td>
-                    <td>@item.imageName</td>
-                </tr>
-                }
-        </tbody>
-    </table>
-    <div>
-        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
-         {
-            <button name="id" value="@(list.CurrentPage+1)">2</button>
-         }
-    </div>
-    <script>
-
-    </script>
+    <div>@Html.ActionLink("Xem các sản phẩm", "AllProduct")</div>
 </div>
-
 <!-- Ad -->
 
 <div class="avds_xl">
@@ -186,7 +182,7 @@ else
         <div class="row">
             <div class="col">
                 <div class="avds_xl_container clearfix">
-                    <div class="avds_xl_background"></div>
+                    <div class="avds_xl_background" style="background-image:url(Theme/images/avds_xl.jpg)"></div>
                     <div class="avds_xl_content">
                         <div class="avds_title">Amazing Devices</div>
                         <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus.</div>
