@@ -10,6 +10,7 @@ namespace PBL3.Models
         public int id;
         public Product_View product_view;
         public int quantity;
+        public int quantityRemain;
         public CartDetail_View()
         {
             id = 0;

@@ -205,20 +205,6 @@ namespace PBL3.Models
 
                 throw;
             }
-        } 
-        public int Update(Orderr orderr)
-        {
-            try
-            {
-                if (orderr.status != null && orderr.status != "" && this.Orderrs.First(x => x.id == orderr.id).status != orderr.status) this.Orderrs.First(x => x.id == orderr.id).status = orderr.status;
-                this.Orderrs.First(x => x.id == orderr.id).TimeUpdate = DateTime.Now;
-                return this.SaveChanges();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
         }
         public int Adding(Payment payment)
         {

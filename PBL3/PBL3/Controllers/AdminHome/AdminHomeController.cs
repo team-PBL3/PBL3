@@ -68,7 +68,11 @@ namespace PBL3.Controllers.AdminHome
                 product.quantityremain = product.quantityInit;
                 product.images.Add(new Image() { name = imagee, productid = product.id });
                 dataContext.Adding(product);
-
+            }
+            catch(Exception)
+            {
+                throw;
+            }
             return View();
         }
         public ActionResult ShowProduct(int id=1)

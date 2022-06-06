@@ -18,7 +18,7 @@ namespace PBL3.Models
         public string category;
         public string trademark;
         public string infoproduct;
-        public int quantityremain;
+        public int quantityRemain;
         public Money Price;
         public Product_View()
         {
@@ -28,7 +28,7 @@ namespace PBL3.Models
             category = "";
             trademark = "";
             infoproduct = "";
-            quantityremain = 0;
+            quantityRemain = 0;
             description = "";
             Price = new Money("VND");
         }
@@ -38,7 +38,7 @@ namespace PBL3.Models
             Product dataSource = dataContext.Products.First(x => x.id == productid);
             this.id = productid;
             this.name = dataSource.name;
-            this.quantityremain = dataSource.quantityremain;
+            this.quantityRemain = dataSource.quantityremain;
             this.imageName = Image_Url.urlImage + dataSource.images.First().name;
             this.Price = Money.Parse(dataSource.price);
         }
@@ -71,7 +71,7 @@ namespace PBL3.Models
                     id = data.id,
                     name = data.name,
                     Price = Money.Parse(data.price),
-                    quantityremain = data.quantityremain,
+                    quantityRemain = data.quantityremain,
                 };
                 data_view.imageName = Image_Url.urlImage + data.images.First(x => x.productid == data.id).name;
                 data_views.Add(data_view);
