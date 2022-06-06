@@ -22,6 +22,8 @@ namespace PBL3.Models
         public double totalPrice { get; set; }
         [Required]
         public int orderid { get; set; }
+        public int userid { get; set; }
+        public virtual User User { get; set; }
         public virtual Orderr order { get; set; }
     }
 }

@@ -40,6 +40,5 @@ namespace PBL3.Models
         public virtual ICollection<Orderdetail> orderdetails { get; set; }
         public virtual ICollection<CartDetail> cartdetails { get; set; }
     }
-
     
 }

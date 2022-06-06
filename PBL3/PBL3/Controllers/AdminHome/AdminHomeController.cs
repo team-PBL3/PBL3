@@ -77,12 +77,12 @@ namespace PBL3.Controllers.AdminHome
             }
             return View();
         }
-        public ActionResult ShowProduct(int page=1)
+        public ActionResult ShowProduct(int id=1)
         {
             List_ProductView list = new List_ProductView();
             try
             {
-                list.Set_Product_View(page, dataContext.Products.ToList());
+                list.Set_Product_View(id, dataContext.Products.ToList());
             }
             catch (Exception e)
             {
@@ -91,7 +91,7 @@ namespace PBL3.Controllers.AdminHome
             return View(list);
         }
         [HttpGet]
-        public ActionResult EditProduct(int productId=4)
+        public ActionResult EditProduct(int productId)
         {
             Product product = new Product();
             product = dataContext.Products.First(x=>x.id==productId);
@@ -125,7 +125,19 @@ namespace PBL3.Controllers.AdminHome
             }
             return View(list);
         }
-        
+        public ActionResult Statistics()
+        {
+            
+            List<Product> products = dataContext.Products.ToList();
+            
+            ViewBag.Total = dataContext.TotalPrice();
+            return View(products);
+
+        }
+       
+
+
+
 
     }
 }
