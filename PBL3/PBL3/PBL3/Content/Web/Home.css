@@ -1,0 +1,39 @@
+﻿body {
+}
+div.product-display-frame {
+    display: inline-block;
+    width: 350px;
+    vertical-align: top;
+    margin: 15px;
+}
+div.Page-buttons {
+    display: block; 
+    position:center;
+    margin: 0px 0px 0px 30px;
+}
+    div.Page-buttons button.Next-Page, button.Previous-Page, .page-button {
+        min-width: 45px;
+        min-height: 45px;
+        margin: 2px;
+        padding: 5px;
+        border-radius: 50%;
+        text-align: center;
+        border: 2px solid;
+        border-color: lightblue;
+        transition-duration: 0.25s;
+    }
+    div.Page-buttons button:hover {
+        min-width: 50px;
+        min-height: 50px;
+        margin: 2px;
+        padding: 5px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: cornflowerblue;
+        border-color: cornflowerblue;
+    }
+    div.Page-buttons label#Current-Page {
+        background-color: cornflowerblue;
+        padding: 12px 0px 0px 0px;
+        color: black;
+    }

@@ -1,0 +1,23 @@
+﻿@model PBL3.Models.Payment_View
+@{
+    ViewBag.Title = "New Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Payment</h2>
+<div style="margin-top:80px">
+    <div style="font-size: 30px; color: black">HTCC - Beauty</div>
+    <div>@Model.nameCustomer</div>
+    <div>@Model.address</div>
+    <div>@Model.phone</div>
+    <div>@DateTime.Now</div>
+    @foreach (var i in Model.LOD)
+    {
+        <div>@i.product.name</div>
+        <div>@i.quantity</div>
+        <div>@i.product.price.ToString()</div>
+        <div>@i.price</div>
+    }
+    <div>@Model.TotalPrice</div>
+    @Html.ActionLink("Go to cart", "Index", "Cart");
+</div>

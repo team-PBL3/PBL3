@@ -1,0 +1,39 @@
+﻿@model PBL3.Models.Product
+@{
+    ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>ShowProduct</h2>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>category</th>
+            <th>trademark</th>
+            <th>desctiption</th>
+            <th>price</th>
+            <th>productinfo</th>
+            <th>quantityremain</th>
+            <th>imageUrl</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <tr>
+            <td>@Model.name</td>
+            <td>@Model.category.name</td>
+            <td>@Model.trademark.name</td>
+            <td>@Model.description</td>
+            <td>@Model.price</td>
+            <td>@Model.infoproduct</td>
+            <td>@Model.quantityremain</td>
+            
+        </tr>
+    </tbody>
+</table>
+<img src="/Image/@ViewBag.Image" ></img>
+
+
+

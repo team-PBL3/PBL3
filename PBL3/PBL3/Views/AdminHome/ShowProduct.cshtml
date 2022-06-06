@@ -1,0 +1,69 @@
+﻿@model PBL3.Models.Product
+@{
+    ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+@using PBL3.Models;
+@{ ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+    List_ProductView list = Model;}
+<link href="~/Content/Web/Home.css" rel="stylesheet" />
+<h2>ShowProduct</h2>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>category</th>
+            <th>trademark</th>
+            <th>desctiption</th>
+            <th>price</th>
+            <th>productinfo</th>
+            <th>quantityremain</th>
+            <th>imageUrl</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var i in list.data_views)
+        {
+        <tr>
+                <td>@i.name</td>
+                <td>@i.category</td>
+                <td>@i.trademark</td>
+                <td>@i.description</td>
+                <td>@i.Price.Amount</td>
+                <td>@i.infoproduct</td>
+                <td>@i.quantityremain</td>
+                <td style="background:url(@i.imageName); width:400px; height: 400px;display:inline-block"></td>
+            
+                <td>@Html.ActionLink("Edit", "EditProduct", new { productId = i.id })</td>
+                <td>@Html.ActionLink("Delete", "DeleteProduct", new { productId = i.id })</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div class="Page-buttons">
+    @using (Html.BeginForm("ShowProduct", "AdminHome", FormMethod.Get))
+    {
+<button name="id" id="First-Page" class="page-button" value="1">First</button>
+                <button name="id" class="Previous-Page" value="@(list.CurrentPage-1)"><</button>
+                                <span id="Three-dot1" class="page-button">...</span>
+                                                <button name="id" class="Previous-Page" value="@(list.CurrentPage-1)">@(list.CurrentPage-1)</button>
+                                                                <label id="Current-Page" class="page-button">@(list.CurrentPage)</label>
+                                                                                <button name="id" class="Next-Page" value="@(list.CurrentPage+1)">@(list.CurrentPage+1)</button>
+                                                                                                <span id="Three-dot2" class="page-button">...</span>
+                                                                                                                <button name="id" class="Next-Page" value="@(list.CurrentPage+1)">></button>
+                                                                                                                                <button name="id" id="Last-Page" class="page-button" value="@(list.AvalMaxPage)">Last</button>}
+ 
+</div>
+<script type="text/javascript" src="~/Scripts/Thien_JS/Home_Index.js">
+
+
+</script>
+
+
+
+
+

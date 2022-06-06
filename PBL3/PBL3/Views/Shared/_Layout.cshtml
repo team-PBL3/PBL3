@@ -2,6 +2,14 @@
 @using System.Web.Mvc;
 @{
     User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
+    int b = 0;
+    if (a!=null)
+    {
+        foreach (var i in a.carts.ToList())
+        {
+            b = i.cartdetails.Count();
+        }
+    }
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +26,6 @@
     <link href="~/Theme/plugins/OwlCarousel2-2.2.1/animate.css" rel="stylesheet" />
     <link href="~/Theme/styles/main_styles.css" rel="stylesheet" />
     <link href="~/Theme/styles/responsive.css" rel="stylesheet" />
-    <link href="~/Theme/styles/Profile.css" rel="stylesheet" />
-    <link href="~/Theme/styles/About.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -74,7 +80,7 @@
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z" />
 											</g>
 										</svg>
-                                            <div>Cart <span>(0)</span></div>
+                                            <div>@Html.ActionLink("Cart","Index","Cart") <span>(@b)</span></div>
                                         </a>
                                     </div>
                                     <div class="search">
@@ -202,14 +208,13 @@
                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
-            -->
-        </div>
+        </header>
 
         @RenderBody();
 
         <!-- Footer -->
 
-        <div class="footer_overlay"></div>
+        <div class="footer_overlay" style="z-index: -1;"></div>
         <footer class="footer">
             <div class="footer_background" style="background-image:url(Theme/images/footer.jpg)"></div>
             <div class="container">
