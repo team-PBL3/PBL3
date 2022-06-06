@@ -1,0 +1,70 @@
+﻿@model PBL3.Models.Product
+@using PBL3.Models
+@{
+    ViewBag.Title = "Edit Product";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+    PBL3DataContext dataContext = new PBL3DataContext();
+}
+
+<link href="~/Content/CSS/EditProduct.css" rel="stylesheet" />
+<h2>addProduct</h2>
+@ViewBag.Message
+@using (Html.BeginForm("EditProduct2", "AdminHome"))
+{
+
+    @Html.LabelFor(model => model.name)
+    @Html.TextBoxFor(model => model.name)
+
+    @Html.DropDownListFor(model => model.categoryid, new SelectList(dataContext.Categories.ToList(), "id", "name"), "Choose a category")
+
+    @Html.DropDownListFor(model => model.trademarkid, new SelectList(dataContext.TradeMarks.ToList(), "id", "name"), "Choose a trademark")
+
+    @Html.LabelFor(model => model.description)
+    @Html.TextBoxFor(model => model.description)
+
+    @Html.LabelFor(model => model.price)
+    @Html.TextBoxFor(model => model.price)
+
+    @Html.LabelFor(model => model.infoproduct)
+    @Html.TextBoxFor(model => model.infoproduct)
+
+    @Html.LabelFor(model => model.quantityInit)
+    @Html.TextBoxFor(model => model.quantityInit)
+    <input type="text" style="display: none" name="id" value="@Model.id" />
+    <br />
+    
+   
+    <label for="file">Choose a file</label>
+    <input type="file" name="imagee" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+    <img id="ahihi" src="~/Image/@ViewBag.images" />
+    <br>
+    <br>
+
+    <input type="submit" value="Edit Product" />
+}
+<script>
+
+
+        document.getElementById("file").onchange = function () {
+        document.getElementById("ahihi").src = @Image_Url.urlImage + this.files.item(0).name;
+    }
+    var inputs = document.querySelectorAll('.inputfile');
+    Array.prototype.forEach.call(inputs, function (input) {
+        var label = input.nextElementSibling,
+            labelVal = label.innerHTML;
+
+        input.addEventListener('change', function (e) {
+            var fileName = '';
+            if (this.files && this.files.length > 1)
+                fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+            else
+                fileName = e.target.value.split('\\').pop();
+
+            if (fileName)
+                label.querySelector('span').innerHTML = fileName;
+            else
+                label.innerHTML = labelVal;
+        });
+    });
+
+</script>

@@ -275,6 +275,7 @@
     <Compile Include="Models\PBL3DataContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Product_Display.cs" />
     <Compile Include="Models\Product_View.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\TradeMark.cs" />
@@ -286,6 +287,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
     <Content Include="Content\Web\Home.css" />
@@ -516,6 +518,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Payment\" />
     <Folder Include="Views\Route\" />
   </ItemGroup>
   <ItemGroup>

@@ -88,6 +88,27 @@ namespace PBL3.Models
                 throw;
             }
         }
+        public int Edit(Product product, string imagee)
+        {
+
+            this.Products.ToList().First(x => x.id == product.id).name = product.name;
+            this.Products.ToList().First(x => x.id == product.id).categoryid = product.categoryid;
+            this.Products.ToList().First(x => x.id == product.id).trademarkid = product.trademarkid;
+            this.Products.ToList().First(x => x.id == product.id).description = product.description;
+            this.Products.ToList().First(x => x.id == product.id).price = product.price;
+            this.Products.ToList().First(x => x.id == product.id).quantityInit = product.quantityInit;
+            this.Products.ToList().First(x => x.id == product.id).images.First().name = imagee;
+
+            return this.SaveChanges();
+
+        }
+
+        public int Delete(int productId)
+        {
+            Product product = this.Products.First(x => x.id == productId);
+            product = this.Products.Remove(product);
+            return this.SaveChanges();
+        }
         public int DeleteCD(int id)
         {
             try
@@ -223,6 +244,16 @@ namespace PBL3.Models
             {
                 throw;
             }
+        }
+        public double TotalPrice()
+        {
+            double total = 0; ;
+            foreach(var i in this.Products.ToList())
+            {
+                total += i.price * (i.quantityInit - i.quantityremain);
+
+            }
+            return total;
         }
     }
 }

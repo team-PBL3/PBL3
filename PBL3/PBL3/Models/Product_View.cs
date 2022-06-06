@@ -14,6 +14,10 @@ namespace PBL3.Models
         public int id;
         public string name;
         public string imageName;
+        public string description;
+        public string category;
+        public string trademark;
+        public string infoproduct;
         public int quantityRemain;
         public Money Price;
         public Product_View()
@@ -21,7 +25,11 @@ namespace PBL3.Models
             id = 0;
             name = "";
             imageName = "";
+            category = "";
+            trademark = "";
+            infoproduct = "";
             quantityRemain = 0;
+            description = "";
             Price = new Money("VND");
         }
         public void Set_Product_View(int productid)
@@ -131,27 +139,5 @@ namespace PBL3.Models
             this.Price = Money.Parse(dataSource.price);
         }    
     }
-    public class Money
-    {
-        private string Unit;
-        public double Amount;
-        public Money()
-        {
-            Amount = 0.0;
-            Unit = "VND";
-        }
-        public Money(string unit)
-        {
-            Amount = 0.0;
-            Unit = unit;
-        }
-        public override string ToString()
-        {
-            return Amount + " " + Unit;
-        }
-        public static Money Parse(double amount)
-        {
-            return new Money() { Amount = amount};
-        }
-    }    
+      
 }
