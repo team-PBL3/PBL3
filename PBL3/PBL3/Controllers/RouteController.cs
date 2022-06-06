@@ -14,11 +14,14 @@ namespace PBL3.Controllers
         public static string Account_Session = "Account_Session";
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            User account = (User)Session[RouteController.Account_Session];
+            User account = (User)Session[Account_Session];
+            //Cập nhật Session từ database.
+            if (account != null) Session[Account_Session] = (new PBL3DataContext()).Users.First(x => x.id == account.id);
             string controller = this.ControllerContext.RouteData.Values["controller"].ToString();
             if (account == null)
             {
-                if (controller == Member.MemberController.Name || controller == AdminHomeController.Name)
+                if (controller == Member.MemberController.Name || controller == AdminHomeController.Name
+                    || controller == Member.CartController.Name || controller == "Order" || controller == "Payment")
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                     (new { controller = "Login", action = "Sign_in" }));
             }

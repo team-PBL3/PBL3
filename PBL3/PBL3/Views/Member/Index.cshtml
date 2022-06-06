@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Index</h2>
-
+<div style="margin-top: 60px;">
+    <div>@Html.ActionLink("Cart", "Index", "Cart")</div>
+    <div>@Html.ActionLink("All Order", "Index", "Order")</div>
+</div>

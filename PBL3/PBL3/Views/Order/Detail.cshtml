@@ -1,0 +1,24 @@
+﻿@model PBL3.Models.Orderr
+    @using PBL3.Models
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>@Model.id</div>
+<div>@Model.status</div>
+<div>@Model.TimeConfirm</div>
+@foreach (var item in Model.orderdetails)
+{
+    foreach (var y in item.product.images)
+    {
+        <img style="height: 200px;" src="@(Image_Url.urlImage + y.name)">
+    }
+    <div>@item.product.trademark</div>
+    <div>@item.product.name</div>
+    <div>@item.product.price</div>
+    <div>@item.quantity</div>
+    <div>@item.price</div>
+}

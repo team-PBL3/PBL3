@@ -57,7 +57,7 @@ namespace PBL3.Models
                     imageName = i.product.images.First().name,
                     name = i.product.name,
                     Price = Money.Parse(i.product.price),
-                    quantityremain = i.product.quantityremain,
+                    quantityRemain = i.product.quantityremain,
                 }; 
                 dataViews.Add(x);
             }    
@@ -78,7 +78,7 @@ namespace PBL3.Models
                         name = x.product.name,
                         Price = Money.Parse(x.product.price),
                         imageName = x.product.images.First().name,
-                        quantityremain = x.product.quantityremain,
+                        quantityRemain = x.product.quantityremain,
                     },
                 });
             }

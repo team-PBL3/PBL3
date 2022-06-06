@@ -19,7 +19,7 @@ namespace PBL3.Controllers.AdminHome
         public ActionResult Index()
         {
             return View();
-        } 
+        }
         public ActionResult addCategory()
         {
             return View();
@@ -69,12 +69,6 @@ namespace PBL3.Controllers.AdminHome
                 product.images.Add(new Image() { name = imagee, productid = product.id });
                 dataContext.Adding(product);
 
-                return new RedirectResult($"https://localhost:44325/AdminHome/ShowProduct?productId={product.id}&image={imagee}");
-            }
-            catch (Exception e)
-            {
-                ViewBag.Message = e.Message;
-            }
             return View();
         }
         public ActionResult ShowProduct(int id=1)

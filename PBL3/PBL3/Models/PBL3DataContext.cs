@@ -187,6 +187,25 @@ namespace PBL3.Models
                 throw;
             }
         } 
+        public int DeleteOrder(int Orderid)
+        {
+            this.Orderrs.Remove(this.Orderrs.First(x => x.id == Orderid));
+            return this.SaveChanges();
+        }    
+        public int Update(Orderr orderr)
+        {
+            try
+            {
+                if (orderr.status != null && orderr.status != "" && this.Orderrs.First(x => x.id == orderr.id).status != orderr.status) this.Orderrs.First(x => x.id == orderr.id).status = orderr.status;
+                this.Orderrs.First(x => x.id == orderr.id).TimeUpdate = DateTime.Now;
+                return this.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } 
         public int Update(Orderr orderr)
         {
             try
@@ -233,7 +252,6 @@ namespace PBL3.Models
                 foreach (var i in this.TradeMarks.ToList())
                     if (i.name == trademark.name) throw new Exception("This trademark have existed");
                 this.TradeMarks.Add(trademark);
-                
                 return this.SaveChanges();
             }
             catch (Exception)

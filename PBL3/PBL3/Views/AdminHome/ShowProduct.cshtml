@@ -1,4 +1,9 @@
-﻿
+﻿@model PBL3.Models.Product
+@{
+    ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
 @using PBL3.Models;
 @{ ViewBag.Title = "ShowProduct";
     Layout = "~/Views/Shared/_Layout_Admin.cshtml";
@@ -19,10 +24,10 @@
         </tr>
     </thead>
     <tbody>
-        
+
         @foreach (var i in list.data_views)
         {
-            <tr>
+        <tr>
                 <td>@i.name</td>
                 <td>@i.category</td>
                 <td>@i.trademark</td>
@@ -31,10 +36,10 @@
                 <td>@i.infoproduct</td>
                 <td>@i.quantityremain</td>
                 <td style="background:url(@i.imageName); width:400px; height: 400px;display:inline-block"></td>
-
+            
                 <td>@Html.ActionLink("Edit", "EditProduct", new { productId = i.id })</td>
                 <td>@Html.ActionLink("Delete", "DeleteProduct", new { productId = i.id })</td>
-            </tr>
+        </tr>
         }
     </tbody>
 </table>
