@@ -67,6 +67,12 @@ namespace PBL3.Controllers.Member
                 throw;
             }
             return RedirectToAction("NewPay","Payment");
+        }
+        public ActionResult DeleteOrder(int Orderid)
+        {
+            PBL3DataContext dataContext = new PBL3DataContext();
+            dataContext.DeleteOrder(Orderid);
+            return RedirectToAction("Index");
         }    
         public JsonResult Check_Number(Person person)
         {

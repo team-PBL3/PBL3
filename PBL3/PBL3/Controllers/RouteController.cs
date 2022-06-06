@@ -15,6 +15,8 @@ namespace PBL3.Controllers
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             User account = (User)Session[Account_Session];
+            //Cập nhật Session từ database.
+            if (account != null) Session[Account_Session] = (new PBL3DataContext()).Users.First(x => x.id == account.id);
             string controller = this.ControllerContext.RouteData.Values["controller"].ToString();
             if (account == null)
             {

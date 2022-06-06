@@ -166,6 +166,11 @@ namespace PBL3.Models
                 throw;
             }
         } 
+        public int DeleteOrder(int Orderid)
+        {
+            this.Orderrs.Remove(this.Orderrs.First(x => x.id == Orderid));
+            return this.SaveChanges();
+        }    
         public int Update(Orderr orderr)
         {
             try
