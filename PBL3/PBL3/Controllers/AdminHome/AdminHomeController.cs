@@ -137,5 +137,10 @@ namespace PBL3.Controllers.AdminHome
 
 
 
+        }    
+        public ActionResult Member()
+        {
+            return View();
+        }
     }
 }

@@ -393,6 +393,13 @@
     <Content Include="Theme\images\icon_1.svg" />
     <Content Include="Theme\images\icon_2.svg" />
     <Content Include="Theme\images\icon_3.svg" />
+    <Content Include="Theme\images\img_1.jpg" />
+    <Content Include="Theme\images\img_2.jpg" />
+    <Content Include="Theme\images\img_3.jpg" />
+    <Content Include="Theme\images\img_4.jpg" />
+    <Content Include="Theme\images\lipstick_background.jpg" />
+    <Content Include="Theme\images\login.png" />
+    <Content Include="Theme\images\logout.png" />
     <Content Include="Theme\images\product_1.jpg" />
     <Content Include="Theme\images\product_10.jpg" />
     <Content Include="Theme\images\product_11.jpg" />
@@ -432,6 +439,8 @@
     <Content Include="Theme\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="Theme\plugins\parallax-js-master\parallax.min.js" />
     <Content Include="Theme\plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="Theme\styles\About.css" />
+    <Content Include="Theme\styles\AdminPage.css" />
     <Content Include="Theme\styles\bootstrap4\bootstrap.min.css" />
     <Content Include="Theme\styles\bootstrap4\bootstrap.min.js" />
     <Content Include="Theme\styles\bootstrap4\popper.js" />
@@ -439,11 +448,13 @@
     <Content Include="Theme\styles\cart_responsive.css" />
     <Content Include="Theme\styles\categories.css" />
     <Content Include="Theme\styles\categories_responsive.css" />
+    <Content Include="Theme\styles\CategoryPage.css" />
     <Content Include="Theme\styles\checkout.css" />
     <Content Include="Theme\styles\checkout_responsive.css" />
     <Content Include="Theme\styles\contact.css" />
     <Content Include="Theme\styles\contact_responsive.css" />
     <Content Include="Theme\styles\main_styles.css" />
+    <Content Include="Theme\styles\MemberPage.css" />
     <Content Include="Theme\styles\product.css" />
     <Content Include="Theme\styles\product_responsive.css" />
     <Content Include="Theme\styles\responsive.css" />
@@ -515,6 +526,9 @@
     <Content Include="Views\Order\Buy2.cshtml" />
     <Content Include="Views\Payment\NewPay.cshtml" />
     <Content Include="Views\Order\Detail.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\AdminHome\Member.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
