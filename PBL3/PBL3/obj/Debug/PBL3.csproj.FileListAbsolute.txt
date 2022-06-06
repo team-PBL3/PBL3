@@ -458,3 +458,7 @@ E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.Change.resources
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.Change.resources
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
+C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
