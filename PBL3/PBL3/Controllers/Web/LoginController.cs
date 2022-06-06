@@ -45,7 +45,6 @@ namespace PBL3.Controllers.Web
             }
             return View();
         }
-        
 
         [HttpPost]
         public ActionResult Sign_Up(Account_Sign_Up model)

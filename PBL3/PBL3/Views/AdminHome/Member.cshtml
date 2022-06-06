@@ -1,6 +1,7 @@
-﻿@{ 
-    ViewBag.Title = "Admin Home";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; 
+﻿
+@{
+    ViewBag.Title = "Member";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <input type="checkbox" id="nav-toggle">
@@ -12,13 +13,13 @@
     <div class="sidebar-menu">
         <ul>
             <li>
-                <a href="~/AdminHome/Index" class="active">
+                <a href="~/AdminHome/Index">
                     <span class="fa-solid fa-store"></span>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="~/AdminHome/Member">
+                <a href="~/AdminHome/Member" class="active">
                     <span class="fa-solid fa-user"></span>
                     <span>Member</span>
                 </a>
@@ -51,8 +52,7 @@
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
             </label>
-
-            Dashboard
+            Member
         </h2>
 
         <div class="search-wrapper">
@@ -111,11 +111,12 @@
                 </div>
             </div>
         </div>
+
         <div class="recent-grid">
             <div class="projects">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Products</h3>
+                        <h3>Members</h3>
 
                         <button>
                             See all <span class="fa-solid fa-arrow-right">
@@ -130,12 +131,12 @@
                                    data-id-table="advancedTable">
                                 <thead>
                                     <tr>
-                                        <th data-field="product">Product</th>
-                                        <th data-field="category">Category</th>
-                                        <th data-field="trademark">Trademark</th>
-                                        <th data-field="status">Status</th>
-                                        <th data-field="quantity">Quantity</th>
-                                        <th data-field="price">Price</th>
+                                        <th>Name</th>
+                                        <th>Sex</th>
+                                        <th>Address</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Username</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -146,7 +147,7 @@
                                         <td>
                                             <span class="status_purple">ACTIVE</span>
                                         </td>
-                                        <td>10</td>
+                                        <td>abcaaaa123@gmail.com</td>
                                         <td>10000000</td>
                                     </tr>
                                     <tr>
@@ -496,133 +497,6 @@
                 </div>
             </div>
 
-            <div class="members">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>New member</h3>
-
-                        <button>
-                            See all <span class="fa-solid fa-arrow-right">
-                            </span>
-                        </button>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_1.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Hoàng</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_2.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Thiện</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_3.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Quốc Cường</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_4.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Phan Cường</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_1.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Song Hoàng</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_2.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Thiện</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_3.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Quốc Cường</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_4.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Phan Cường</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 </div>
-

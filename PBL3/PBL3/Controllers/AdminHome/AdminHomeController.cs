@@ -21,5 +21,9 @@ namespace PBL3.Controllers.AdminHome
 
             return View();
         }    
+        public ActionResult Member()
+        {
+            return View();
+        }
     }
 }
