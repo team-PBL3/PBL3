@@ -9,7 +9,7 @@
 }
 
 .sidebar {
-    width: 345px;
+    width: 320px;
     position: fixed;
     height: 100%;
     left: 0;
@@ -90,7 +90,7 @@
 
 .main-content {
     transition: margin-left 300ms;
-    margin-left: 345px;
+    margin-left: 320px;
 }
 
 header {
@@ -100,7 +100,7 @@ header {
     padding: 1rem 1.5rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     position: fixed;
-    left: 345px;
+    left: 320px;
     width: calc(100% - 345px);
     top: 0;
     z-index: 100;
@@ -199,37 +199,37 @@ main {
     color: #fff;
 }
 
-.recent-grid {
+.recent-grid_1 {
     margin-top: 3.5rem;
     grid-gap: 1.5rem;
     grid-template-columns: 100%;
 }
 
-.card {
+.card_1 {
     background: #fff;
     border-radius: 15px;
 }
 
-.card-header,
-.card-body {
+.card-header_1,
+.card-body_1 {
     padding: 1rem;
 }
 
-.card-header {
+.card-header_1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #f0f0f0;
 }
 
-.card-header button {
-    background: #ff7979;
-    border-radius: 10px;
-    color: #fff;
-    font-size: .8rem;
-    padding: .5rem 1rem;
-    border: 1px solid #ff7979;
-}
+    .card-header_1 button {
+        background: #ff7979;
+        border-radius: 10px;
+        color: #fff;
+        font-size: .8rem;
+        padding: .5rem 1rem;
+        border: 1px solid #ff7979;
+    }
 
 table {
     border-collapse: collapse;

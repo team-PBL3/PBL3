@@ -7,7 +7,7 @@ using PBL3.Models;
 
 namespace PBL3.Controllers.AdminHome
 {
-    public class AdminHomeController : Controller
+    public class AdminHomeController : RouteController
     {
         public static string Name = "AdminHome";
         PBL3DataContext dataContext;
@@ -88,6 +88,20 @@ namespace PBL3.Controllers.AdminHome
             }
             return View(list);
         }
+        public ActionResult ShowCustomer(int id = 1)
+        {
+            List_CustomerView list2 = new List_CustomerView();
+            try
+            {
+                list2.Set_Customer_View(id, dataContext.Users.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+
+            return View(list2);
+        }
         [HttpGet]
         public ActionResult EditProduct(int productId)
         {
@@ -101,7 +115,7 @@ namespace PBL3.Controllers.AdminHome
         public ActionResult EditProduct2(Product product, string imagee)
         {
 
-            dataContext.Edit(product, imagee);
+            dataContext.Edit(product, imagee, (User)Session["Account_Session"]);
             return RedirectToAction("ShowProduct");
         }
         public ActionResult DeleteProduct(int productId)
@@ -132,13 +146,15 @@ namespace PBL3.Controllers.AdminHome
             return View(products);
 
         }
-       
-
-
-
-
-        }    
         public ActionResult Member()
+        {
+            return View();
+        }
+        public ActionResult Category()
+        {
+            return View();
+        }
+        public ActionResult Product()
         {
             return View();
         }

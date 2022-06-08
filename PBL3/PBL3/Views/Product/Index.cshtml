@@ -50,9 +50,9 @@
                     <div style="font-size: 25px">@Model.name</div>
                     <div style="font-weight: bolder; font-family: sans-serif, ' Helvetica Neue', 'Lucida Grande' , Arial; font-stretch: expanded;">@Model.Price.ToString()</div>
 
-                    <div style="margin-top: 10px">@Model.productinfo</div>
+                    <div style="margin-top: 10px">Thông tin sản phẩm: @Model.productinfo</div>
 
-                    <div style="margin-top: 10px">Quantity: @Model.remainquantity</div>
+                    <div style="margin-top: 10px">Số lượng: @Model.remainquantity</div>
                     <div class="product_quantity_container" style="margin-top: 70px">
                         <form action="/Product/RedirectType" method="post">
                             <div style="display: inline-block; vertical-align: top; padding: 0px; border: 2px solid black; border-radius: 5px; height: 61px">
@@ -79,7 +79,7 @@
         <div class="row description_row">
             <div class="col">
                 <div class="description_title_container">
-                    <div class="description_title">Description</div>
+                    <div class="description_title">Mô tả</div>
                 </div>
                 <div class="description_text">
                     <p style="color: black">@Model.desciption</p>

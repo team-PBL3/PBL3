@@ -26,6 +26,7 @@
     <link href="~/Theme/plugins/OwlCarousel2-2.2.1/animate.css" rel="stylesheet" />
     <link href="~/Theme/styles/main_styles.css" rel="stylesheet" />
     <link href="~/Theme/styles/responsive.css" rel="stylesheet" />
+    <link href="~/Theme/styles/Profile.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -39,7 +40,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                                <div class="logo"><a href="#">HTCC</a></div>
+                                <div class="logo"><a href="#">HTCC-Beauty</a></div>
                                 <nav class="main_nav">
                                     <ul>
                                         <li class="hassubs active">
@@ -63,8 +64,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="#">Accessories</a></li>
-                                        <li><a href="~/Login/Sign_in">Sign in</a></li>
-                                        <li><a href="~/Login/Sign_up">About</a></li>
+                                        <li><a href="">About</a></li>
                                     </ul>
                                 </nav>
                                 <div class="header_extra ml-auto">
@@ -80,7 +80,7 @@
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z" />
 											</g>
 										</svg>
-                                            <div>@Html.ActionLink("Cart","Index","Cart") <span>(@b)</span></div>
+                                            <div> Cart <span>(@b)</span></div>
                                         </a>
                                     </div>
                                     <div class="search">
@@ -199,19 +199,22 @@
             </div>
 
             <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+        </div>
             <!--
-            <div class="menu_social">
-                <ul>
-                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                </ul>
+    <div class="menu_social">
+        <ul>
+            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+        </header>-->
+        
+        
+            <div style="z-index: 2; background-color: white; border-bottom: 3px solid #bbbbbb">
+                @RenderBody()
             </div>
-        </header>
-
-        @RenderBody();
-
         <!-- Footer -->
 
         <div class="footer_overlay" style="z-index: -1;"></div>

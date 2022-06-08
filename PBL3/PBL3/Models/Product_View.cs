@@ -45,18 +45,24 @@ namespace PBL3.Models
     }
     public class List_ProductView
     {
+        public List<Category> list_categories;
+        public static string sort = "";
         public static int ProductViewNumber = 6;
         public List<Product_View> data_views;
         public int AvalMaxPage;
         public int CurrentPage;
+        public int Amount;
         public List_ProductView()
         {
+            list_categories = new List<Category>();
             data_views = new List<Product_View>();
+            Amount = 0;
             AvalMaxPage = 0;
             CurrentPage = 1;
         }
         public void Set_Product_View(int page, List<Product> datas)
         {
+            Amount = datas.Count;
             int count = -1;
             AvalMaxPage = (datas.Count-1) / ProductViewNumber + 1;
             if (page <= AvalMaxPage) CurrentPage = page;
@@ -72,33 +78,40 @@ namespace PBL3.Models
                     name = data.name,
                     Price = Money.Parse(data.price),
                     quantityRemain = data.quantityremain,
+                    category = data.category.name,
+                    trademark = data.trademark.name,
+                    description = data.description,
+                    infoproduct = data.infoproduct,
                 };
                 data_view.imageName = Image_Url.urlImage + data.images.First(x => x.productid == data.id).name;
                 data_views.Add(data_view);
             }
         }
-        public void SortBy(string option)
+        public List<Product> SortBy(string option, List<Product> datas)
         {
+            sort = option;
             switch (option)
             {
                 case "Lowtohigh":
-                    this.data_views = this.data_views.OrderBy(x => x.Price.Amount).ToList();
-                    break;
+                    return datas.OrderBy(x => x.price).ToList();
                 case "Hightolow":
-                    this.data_views = this.data_views.OrderByDescending(x => x.Price.Amount).ToList();
-                    break;
+                    return datas.OrderByDescending(x => x.price).ToList();
                 case "Larger03":
-                    this.data_views = this.data_views.Where(x => x.Price.Amount > Money.Parse(1000000).Amount).OrderBy(x => x.Price.Amount).ToList();
-                    break;
+                    return datas.Where(x => x.price > Money.Parse(1000000).Amount).OrderBy(x => x.price).ToList();
                 case "Less03":
-                    this.data_views = this.data_views.Where(x => x.Price.Amount <= Money.Parse(1000000).Amount).OrderBy(x => x.Price.Amount).ToList();
-                    break;
+                    return datas.Where(x => x.price <= Money.Parse(1000000).Amount).OrderBy(x => x.price).ToList();
                 case "Less02":
-                    this.data_views = this.data_views.Where(x => x.Price.Amount <= Money.Parse(100000).Amount).OrderBy(x => x.Price.Amount).ToList();
-                    break;
+                    return datas.Where(x => x.price <= Money.Parse(100000).Amount).OrderBy(x => x.price).ToList();
                 default:
                     break;
             }
+            if (option != "")
+            foreach (var i in this.list_categories)
+            {
+                if (int.Parse(option) == i.id) return datas.Where(x => x.categoryid == i.id).ToList();
+            }
+                
+            return datas;
         }    
     }
     public class Product_View_Detail

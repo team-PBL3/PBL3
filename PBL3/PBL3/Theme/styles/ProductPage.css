@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 * {
     margin: 0;
@@ -199,61 +199,30 @@ main {
             color: #fff;
         }
 
-.recent-grid_2 {
-    display: grid;
+.recent-grid_4 {
     margin-top: 3.5rem;
-    grid-gap: 1rem;
-    grid-template-columns: 55% auto;
+    grid-gap: 1.5rem;
+    grid-template-columns: 100%;
 }
 
-.card_2 {
+.card_4 {
     background: #fff;
     border-radius: 15px;
 }
 
-.card-header_2,
-.card-body_2 {
+.card-header_4,
+.card-body_4 {
     padding: 1rem;
 }
 
-.card-header_2 {
+.card-header_4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #f0f0f0;
 }
 
-    .card-header_2 button {
-        background: #ff7979;
-        border-radius: 10px;
-        color: #fff;
-        font-size: .8rem;
-        padding: .5rem 1rem;
-        border: 1px solid #ff7979;
-    }
-
-.projects_3 {
-    width: 100%;
-}
-
-.card_3 {
-    background: #fff;
-    border-radius: 15px;
-}
-
-.card-header_3,
-.card-body_3 {
-    padding: 1rem;
-}
-
-.card-header_3 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #f0f0f0;
-}
-
-    .card-header_3 button {
+    .card-header_4 button {
         background: #ff7979;
         border-radius: 10px;
         color: #fff;
@@ -280,6 +249,26 @@ td {
     font-size: .9rem;
     color: #222;
 }
+
+    td .status_purple {
+        color: #fff;
+        background: #be2edd;
+        height: 10px;
+        width: 80px;
+        border-radius: 10px;
+        padding: 0 10px;
+        margin-right: .5rem;
+    }
+
+    td .status_orange {
+        columns: #fff;
+        background: #ff6348;
+        height: 10px;
+        width: 80px;
+        border-radius: 10px;
+        padding: 0 10px;
+        margin-right: .5rem;
+    }
 
 tr td:last-child {
     display: flex;

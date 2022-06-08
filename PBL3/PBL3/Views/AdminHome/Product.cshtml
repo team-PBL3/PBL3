@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Member";
+    ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a href="~/AdminHome/Member" class="active">
+                <a href="~/AdminHome/Member">
                     <span class="fa-solid fa-user"></span>
                     <span>Member</span>
                 </a>
@@ -30,15 +30,9 @@
                 </a>
             </li>
             <li>
-                <a href="~/AdminHome/Product">
+                <a href="~/AdminHome/Product" class="active">
                     <span class="fa-solid fa-bag-shopping"></span>
                     <span>Product</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="fa-solid fa-circle-info"></span>
-                    <span>About</span>
                 </a>
             </li>
         </ul>
@@ -111,11 +105,11 @@
             </div>
         </div>
 
-        <div class="recent-grid_1">
-            <div class="projects_1">
-                <div class="card_1">
-                    <div class="card-header_1">
-                        <h3>Members</h3>
+        <div class="recent-grid_4">
+            <div class="projects_4">
+                <div class="card_4">
+                    <div class="card-header_4">
+                        <h3>Products</h3>
 
                         <button>
                             See all <span class="fa-solid fa-arrow-right">
@@ -123,19 +117,19 @@
                         </button>
                     </div>
 
-                    <div class="card-body_1">
+                    <div class="card-body_4">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered mydatatable" id="table" style="width: 100%"
                                    data-toggle="table"
                                    data-id-table="advancedTable">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Sex</th>
-                                        <th>Address</th>
-                                        <th>Phone</th>
-                                        <th>Email</th>
-                                        <th>Username</th>
+                                        <th data-field="product">Product</th>
+                                        <th data-field="category">Category</th>
+                                        <th data-field="trademark">Trademark</th>
+                                        <th data-field="status">Status</th>
+                                        <th data-field="quantity">Quantity</th>
+                                        <th data-field="price">Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -146,7 +140,7 @@
                                         <td>
                                             <span class="status_purple">ACTIVE</span>
                                         </td>
-                                        <td>abcaaaa123@gmail.com</td>
+                                        <td>10</td>
                                         <td>10000000</td>
                                     </tr>
                                     <tr>

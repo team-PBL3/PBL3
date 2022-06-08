@@ -17,26 +17,28 @@ namespace PBL3.Controllers
         {
             return View();
         }
-        public ActionResult AllProduct(int page = 1)
+        public ActionResult AllProduct(int id = 1)
         {
             List_ProductView list = new List_ProductView();
             try
             {
-                list.Set_Product_View(page, dataContext.Products.ToList());
             }
             catch (Exception e)
             {
                 if (e.Message == "Page Not Found") return View("Error");
+                throw;
             }
+            list.list_categories = dataContext.Categories.ToList();
+            list.Set_Product_View(id, list.SortBy(List_ProductView.sort, dataContext.Products.ToList()));
             return View(list);
         }
-        public ActionResult AllProduct2(string sort, int page=1)
+        public ActionResult AllProduct2(string sort)
         {
             List_ProductView list = new List_ProductView();
             try
             {
-                list.Set_Product_View(page, dataContext.Products.ToList());
-                list.SortBy(sort);
+                list.list_categories = dataContext.Categories.ToList();
+                list.Set_Product_View(1, list.SortBy(sort, dataContext.Products.ToList()));
             }
             catch (Exception e)
             {

@@ -127,44 +127,7 @@
 <!-- Products -->
 
 <div class="products">
-    <table>
-        <thead>
-            <tr>
-                <th>name</th>
-                <th>category</th>
-                <th>trademark</th>
-                <th>desctiption</th>
-                <th>price</th>
-                <th>productinfo</th>
-                <th>quantityremain</th>
-                <th>imageUrl</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in list.data_views)
-            {
-                <tr>
-                    <td>@item.name</td>
-                    <td>@item.category</td>
-                    <td>@item.trademark</td>
-                    <td>@item.desciption</td>
-                    <td>@item.Price.Amount</td>
-                    <td>@item.productinfo</td>
-                    <td>@item.remainquantity</td>
-                    <td>@item.imageName</td>
-                </tr>
-                }
-        </tbody>
-    </table>
-    <div>
-        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
-         {
-            <button name="id" value="@(list.CurrentPage+1)">2</button>
-         }
-    </div>
-    <script>
-
-    </script>
+    
 </div>
 <!-- Ad -->
 
