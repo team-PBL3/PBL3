@@ -1,10 +1,10 @@
 ﻿@using PBL3.Models;
-@{ 
+@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
     List_ProductView list = Model;
-    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
 }
+<!-- Menu -->
 
 <!-- Home -->
 <div class="home">
@@ -124,18 +124,6 @@
     </div>
 </div>
 
-<!--
-@if (a == null)
-{
-    <li><a href="~/Login/Sign_in">Sign in</a></li>
-    <li><a href="~/Login/Sign_up">Sign up</a></li>
-}
-else
-{
-    <li>@a.username</li>
-}
--->
-
 <!-- Products -->
 
 <div class="products">
@@ -178,7 +166,6 @@ else
 
     </script>
 </div>
-
 <!-- Ad -->
 
 <div class="avds_xl">

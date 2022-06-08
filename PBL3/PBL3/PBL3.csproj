@@ -239,32 +239,43 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminHome\AdminHomeController.cs" />
+    <Compile Include="Controllers\Member\CartController.cs" />
     <Compile Include="Controllers\Member\MemberController.cs" />
     <Compile Include="Controllers\PageNotFoundController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
     <Compile Include="Controllers\Web\LoginController.cs" />
+    <Compile Include="Controllers\Member\OrderController.cs" />
+    <Compile Include="Controllers\Member\PaymentController.cs" />
+    <Compile Include="Controllers\Web\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206080242338_sghoang.cs" />
-    <Compile Include="Migrations\202206080242338_sghoang.designer.cs">
-      <DependentUpon>202206080242338_sghoang.cs</DependentUpon>
+    <Compile Include="Migrations\202206020856391_Change.cs" />
+    <Compile Include="Migrations\202206020856391_Change.designer.cs">
+      <DependentUpon>202206020856391_Change.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
     <Compile Include="Models\Account_Sign_Up.cs" />
+    <Compile Include="Models\Admin_Action_History.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartDetail.cs" />
+    <Compile Include="Models\CartDetail_View.cs" />
+    <Compile Include="Models\Cart_View.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Encrypt.cs" />
     <Compile Include="Models\Errors.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Orderdetail.cs" />
+    <Compile Include="Models\OrderDetail_View.cs" />
     <Compile Include="Models\Orderr.cs" />
     <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Payment_View.cs" />
     <Compile Include="Models\PBL3DataContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Product_Display.cs" />
     <Compile Include="Models\Product_View.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\TradeMark.cs" />
@@ -276,14 +287,76 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
     <Content Include="Content\Web\Home.css" />
+    <Content Include="Content\Web\Product.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\101101.png" />
+    <Content Include="Image\101103.png" />
+    <Content Include="Image\101104.png" />
+    <Content Include="Image\101201.png" />
+    <Content Include="Image\101301.png" />
+    <Content Include="Image\101302.png" />
+    <Content Include="Image\102101.png" />
+    <Content Include="Image\102201.png" />
+    <Content Include="Image\102302.png" />
+    <Content Include="Image\102401.png" />
+    <Content Include="Image\103101.png" />
+    <Content Include="Image\103102.png" />
+    <Content Include="Image\103201.png" />
+    <Content Include="Image\103202.png" />
+    <Content Include="Image\103203.png" />
+    <Content Include="Image\104201.png" />
+    <Content Include="Image\201101.png" />
+    <Content Include="Image\201103.png" />
+    <Content Include="Image\201104.png" />
+    <Content Include="Image\201201.png" />
+    <Content Include="Image\202101.png" />
+    <Content Include="Image\202201.png" />
+    <Content Include="Image\202202.png" />
+    <Content Include="Image\202301.png" />
+    <Content Include="Image\203101.png" />
+    <Content Include="Image\203102.png" />
+    <Content Include="Image\203103.png" />
+    <Content Include="Image\204101.png" />
+    <Content Include="Image\204102.png" />
+    <Content Include="Image\204103.png" />
+    <Content Include="Image\204104.png" />
+    <Content Include="Image\301301.png" />
+    <Content Include="Image\301302.png" />
+    <Content Include="Image\301303.png" />
+    <Content Include="Image\301401.png" />
+    <Content Include="Image\301501.png" />
+    <Content Include="Image\401101.png" />
+    <Content Include="Image\402201.png" />
+    <Content Include="Image\402202.png" />
+    <Content Include="Image\402301.png" />
+    <Content Include="Image\402401.png" />
+    <Content Include="Image\403101.png" />
+    <Content Include="Image\404101.png" />
+    <Content Include="Image\404102.png" />
+    <Content Include="Image\501101.png" />
+    <Content Include="Image\501102.png" />
+    <Content Include="Image\501201.png" />
+    <Content Include="Image\501202.png" />
+    <Content Include="Image\502101.png" />
+    <Content Include="Image\502301.png" />
+    <Content Include="Image\503101.png" />
+    <Content Include="Image\503102.png" />
+    <Content Include="Image\601301.png" />
+    <Content Include="Image\701401.png" />
+    <Content Include="Image\701402.png" />
+    <Content Include="Image\701501.png" />
+    <Content Include="Image\701502.png" />
+    <Content Include="Image\704201.png" />
+    <Content Include="Image\704202.png" />
     <Content Include="Image\s2172310-main-zoom.png" />
+    <Content Include="Image\s2508869-main-zoom.png" />
     <Content Include="Image\s2514214-main-zoom.png" />
     <Content Include="Image\s2579100-main-zoom.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -299,10 +372,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Thien_JS\Cart_Index.js" />
+    <Content Include="Scripts\Thien_JS\Home_Index.js" />
+    <Content Include="Theme\images\avds_large.jpg" />
+    <Content Include="Theme\images\avds_small.jpg" />
     <Content Include="Theme\images\avds_xl.jpg" />
-    <Content Include="Theme\images\background_1.jpg" />
-    <Content Include="Theme\images\background_2.jpg" />
-    <Content Include="Theme\images\background_3.jpg" />
     <Content Include="Theme\images\cart.jpg" />
     <Content Include="Theme\images\cart_1.jpg" />
     <Content Include="Theme\images\categories.jpg" />
@@ -319,6 +393,10 @@
     <Content Include="Theme\images\icon_1.svg" />
     <Content Include="Theme\images\icon_2.svg" />
     <Content Include="Theme\images\icon_3.svg" />
+    <Content Include="Theme\images\img_1.jpg" />
+    <Content Include="Theme\images\img_2.jpg" />
+    <Content Include="Theme\images\img_3.jpg" />
+    <Content Include="Theme\images\img_4.jpg" />
     <Content Include="Theme\images\lipstick_background.jpg" />
     <Content Include="Theme\images\login.png" />
     <Content Include="Theme\images\logout.png" />
@@ -334,11 +412,8 @@
     <Content Include="Theme\images\product_7.jpg" />
     <Content Include="Theme\images\product_8.jpg" />
     <Content Include="Theme\images\product_9.jpg" />
-    <Content Include="Theme\images\profile.png" />
     <Content Include="Theme\images\search.svg" />
     <Content Include="Theme\images\shopping.svg" />
-    <Content Include="Theme\images\skincare_background.jpg" />
-    <Content Include="Theme\images\user.png" />
     <Content Include="Theme\js\cart.js" />
     <Content Include="Theme\js\categories.js" />
     <Content Include="Theme\js\checkout.js" />
@@ -365,6 +440,7 @@
     <Content Include="Theme\plugins\parallax-js-master\parallax.min.js" />
     <Content Include="Theme\plugins\scrollmagic\ScrollMagic.min.js" />
     <Content Include="Theme\styles\About.css" />
+    <Content Include="Theme\styles\AdminPage.css" />
     <Content Include="Theme\styles\bootstrap4\bootstrap.min.css" />
     <Content Include="Theme\styles\bootstrap4\bootstrap.min.js" />
     <Content Include="Theme\styles\bootstrap4\popper.js" />
@@ -372,14 +448,15 @@
     <Content Include="Theme\styles\cart_responsive.css" />
     <Content Include="Theme\styles\categories.css" />
     <Content Include="Theme\styles\categories_responsive.css" />
+    <Content Include="Theme\styles\CategoryPage.css" />
     <Content Include="Theme\styles\checkout.css" />
     <Content Include="Theme\styles\checkout_responsive.css" />
     <Content Include="Theme\styles\contact.css" />
     <Content Include="Theme\styles\contact_responsive.css" />
     <Content Include="Theme\styles\main_styles.css" />
+    <Content Include="Theme\styles\MemberPage.css" />
     <Content Include="Theme\styles\product.css" />
     <Content Include="Theme\styles\product_responsive.css" />
-    <Content Include="Theme\styles\Profile.css" />
     <Content Include="Theme\styles\responsive.css" />
     <Content Include="Theme\styles\Sign_in.css" />
     <Content Include="Theme\styles\Sign_up.css" />
@@ -399,7 +476,6 @@
     <Content Include="Views\Member\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\AdminHome\add.cshtml" />
     <Content Include="Views\Shared\_LayoutSignIn.cshtml" />
     <Content Include="Views\Shared\_LayoutSignUp.cshtml" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
@@ -435,10 +511,28 @@
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Theme\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Views\AdminHome\addCategory.cshtml" />
+    <Content Include="Views\AdminHome\addProduct.cshtml" />
+    <Content Include="Views\AdminHome\addTradeMark.cshtml" />
+    <Content Include="Views\AdminHome\ShowProduct.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Home\AllProduct.cshtml" />
+    <Content Include="Views\AdminHome\ShowProduct1.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Buy.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
+    <Content Include="Views\Order\Buy2.cshtml" />
+    <Content Include="Views\Payment\NewPay.cshtml" />
+    <Content Include="Views\Order\Detail.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\AdminHome\Member.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Payment\" />
     <Folder Include="Views\Route\" />
   </ItemGroup>
   <ItemGroup>
@@ -455,8 +549,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206080242338_sghoang.resx">
-      <DependentUpon>202206080242338_sghoang.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206020856391_Change.resx">
+      <DependentUpon>202206020856391_Change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

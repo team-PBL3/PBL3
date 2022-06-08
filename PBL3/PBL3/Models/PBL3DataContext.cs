@@ -28,7 +28,7 @@ namespace PBL3.Models
         public DbSet<Role> Roles { get; set; }
         public DbSet<TradeMark> TradeMarks { get; set; }
         public DbSet<User> Users { get; set; }
-           
+        public DbSet<Admin_Action_History> Admin_Actions_History { get; set; }
         public int Adding(User user)
         {
             try
@@ -57,7 +57,6 @@ namespace PBL3.Models
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -65,12 +64,14 @@ namespace PBL3.Models
         {
             try
             {
+                product.status = "ACTIVE";
+                foreach (var i in this.Products.ToList())
+                    if (i.name == product.name) throw new Exception("This product have existed");
                 this.Products.Add(product);
                 return this.SaveChanges();
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -87,6 +88,52 @@ namespace PBL3.Models
                 throw;
             }
         }
+        public int Edit(Product product, string imagee)
+        {
+
+            this.Products.ToList().First(x => x.id == product.id).name = product.name;
+            this.Products.ToList().First(x => x.id == product.id).categoryid = product.categoryid;
+            this.Products.ToList().First(x => x.id == product.id).trademarkid = product.trademarkid;
+            this.Products.ToList().First(x => x.id == product.id).description = product.description;
+            this.Products.ToList().First(x => x.id == product.id).price = product.price;
+            this.Products.ToList().First(x => x.id == product.id).quantityInit = product.quantityInit;
+            this.Products.ToList().First(x => x.id == product.id).images.First().name = imagee;
+
+            return this.SaveChanges();
+
+        }
+
+        public int Delete(int productId)
+        {
+            Product product = this.Products.First(x => x.id == productId);
+            product = this.Products.Remove(product);
+            return this.SaveChanges();
+        }
+        public int DeleteCD(int id)
+        {
+            try
+            {
+                this.CartDetails.Remove(this.CartDetails.First(i => i.id == id));
+                return this.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }    
+        public int DeleteCDAll()
+        {
+            try
+            {
+                foreach( var i in this.CartDetails)
+                this.CartDetails.Remove(i);
+                return this.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }    
         public int Adding(Orderdetail orderdetail)
         {
             try
@@ -100,11 +147,57 @@ namespace PBL3.Models
                 throw;
             }
         }
+        public void CreateOrder(List<Orderdetail> LOD, User user, List<int> CDid)
+        {
+            try
+            {
+                foreach(var id in CDid)
+                {
+                    this.CartDetails.Remove(this.CartDetails.ToList().First(x => x.id == id));
+                }    
+                foreach(var OD in LOD)
+                {
+                    this.Products.First(x => x.id == OD.productid).quantityremain -= OD.quantity;
+                    int i=this.SaveChanges();
+                    Orderr order = new Orderr() { status = "Đã xác nhận", TimeUpdate = DateTime.Now, userid = user.id, TimeConfirm = DateTime.Now, };
+                    Adding(order);
+                    List<Orderr> a = this.Orderrs.ToList();
+                    OD.orderid = a.Last().id;
+                    Adding(OD);
+                    Payment b;
+                    b = new Payment() { amount = OD.quantity, paymentdate = DateTime.Now, totalPrice = OD.price, orderid = OD.orderid, userid = user.id };
+                    Adding(b);
+                }   
+            }
+            catch (DbEntityValidationException e)
+            {
+                throw;
+            }
+        }    
         public int Adding(Orderr orderr)
         {
             try
             {
                 this.Orderrs.Add(orderr);
+                return this.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } 
+        public int DeleteOrder(int Orderid)
+        {
+            this.Orderrs.Remove(this.Orderrs.First(x => x.id == Orderid));
+            return this.SaveChanges();
+        }    
+        public int Update(Orderr orderr)
+        {
+            try
+            {
+                if (orderr.status != null && orderr.status != "" && this.Orderrs.First(x => x.id == orderr.id).status != orderr.status) this.Orderrs.First(x => x.id == orderr.id).status = orderr.status;
+                this.Orderrs.First(x => x.id == orderr.id).TimeUpdate = DateTime.Now;
                 return this.SaveChanges();
             }
             catch (Exception)
@@ -142,16 +235,25 @@ namespace PBL3.Models
         {
             try
             {
-                foreach(var i in this.TradeMarks.ToList())
-                {
-                    if (i.name == trademark.name) throw new Exception("This trademark already existed");
-                }    
+                foreach (var i in this.TradeMarks.ToList())
+                    if (i.name == trademark.name) throw new Exception("This trademark have existed");
+                this.TradeMarks.Add(trademark);
                 return this.SaveChanges();
             }
             catch (Exception)
             {
                 throw;
             }
+        }
+        public double TotalPrice()
+        {
+            double total = 0; ;
+            foreach(var i in this.Products.ToList())
+            {
+                total += i.price * (i.quantityInit - i.quantityremain);
+
+            }
+            return total;
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿@model PBL3.Models.List_CD_View
+@using PBL3.Models
+@{
+    ViewBag.Title = "Buy2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Orderdetail e = new Orderdetail();
+}
+
+<h2>Buy2</h2>
+
+<div style="margin-top:60px">
+    @using (Html.BeginForm("OrderProduct", "Order", FormMethod.Post))
+    {
+        foreach (var i in Model.dataViews)
+        {
+            <div>@i.product_view.name</div>
+            <div>@i.quantity</div>
+            <div>@i.product_view.Price.Amount</div>
+            <div>@(i.product_view.Price.Amount * i.quantity)</div>
+
+            <input name="price" value=" @(i.product_view.Price.Amount * i.quantity)" style="display:none" />
+            <input name="quantity" value=" @(i.quantity)" style="display:none" />
+            <input name="productid" value=" @(i.product_view.id)" style="display:none" />
+            <input name="CDid" value=" @(i.id)" style="display:none" />
+        }
+        <input type="submit" value="Xác nhận" />
+    }
+</div>
