@@ -7,13 +7,13 @@ namespace PBL3.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class songhoang : IMigrationMetadata
+    public sealed partial class sghoang : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(songhoang));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(sghoang));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205290129540_songhoang"; }
+            get { return "202206080242338_sghoang"; }
         }
         
         string IMigrationMetadata.Source

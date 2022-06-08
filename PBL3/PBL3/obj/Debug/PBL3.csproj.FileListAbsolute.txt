@@ -598,8 +598,6 @@ C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Newtonsoft.Json.xml
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Antlr3.Runtime.pdb
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
-C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.songhoang.resources
-C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll

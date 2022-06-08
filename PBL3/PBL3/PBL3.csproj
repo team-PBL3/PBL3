@@ -247,9 +247,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205290129540_songhoang.cs" />
-    <Compile Include="Migrations\202205290129540_songhoang.designer.cs">
-      <DependentUpon>202205290129540_songhoang.cs</DependentUpon>
+    <Compile Include="Migrations\202206080242338_sghoang.cs" />
+    <Compile Include="Migrations\202206080242338_sghoang.designer.cs">
+      <DependentUpon>202206080242338_sghoang.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
@@ -455,8 +455,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205290129540_songhoang.resx">
-      <DependentUpon>202205290129540_songhoang.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206080242338_sghoang.resx">
+      <DependentUpon>202206080242338_sghoang.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
