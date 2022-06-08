@@ -39,9 +39,7 @@ namespace PBL3.Models
         [Required]
         [DataType(DataType.Password)]
         public String password { get; set; }
-        [Required]
         public String status { get; set; }
-        [Required]
         public int roleid { get; set; }
         public virtual Role Role { get; set; }
         public virtual ICollection<Cart> carts { get; set; }

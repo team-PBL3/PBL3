@@ -27,24 +27,14 @@ namespace PBL3.Models
     public class Money
     {
         private string Unit;
-        public double Amount;
-        public Money()
-        {
-            Amount = 0.0;
-            Unit = "VND";
-        }
+        public float Amount;
         public Money(string unit)
         {
-            Amount = 0.0;
             Unit = unit;
         }
         public override string ToString()
         {
             return Amount + " " + Unit;
         }
-        public static Money Parse(double amount)
-        {
-            return new Money() { Amount = amount };
-        }
-    }
+    }    
 }

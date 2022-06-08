@@ -16,7 +16,6 @@ namespace PBL3.Models
         }
         [Key]
         public int id { get; set; }
-        [Required]
         public String name { get; set; }
         public virtual ICollection<Product> Products { get; set; }
 
