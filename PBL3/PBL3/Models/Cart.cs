@@ -15,7 +15,6 @@ namespace PBL3.Models
         }
         [Key]
         public int id { get; set; }
-        [Required]
         public int quantityBuy { get; set; }
         public virtual User user { get; set; }
         public virtual ICollection<CartDetail> cartdetails { get; set; }

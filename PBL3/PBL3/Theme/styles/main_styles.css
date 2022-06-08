@@ -529,8 +529,30 @@ section
 	font-size: 18px;
 	color: #1b1b1b;
 }
-.search_panel
+.sign_in
 {
+	padding: 0 20px 0 30px;
+}
+	.sign_in a {
+		font-size: 15px;
+		font-weight: 500;
+		color: #767676;
+		text-decoration: none;
+	}
+.sign_up {
+	padding: 0 20px 0 30px;
+}
+	.sign_up a {
+		font-size: 15px;
+		font-weight: 500;
+		color: #767676;
+		text-decoration: none;
+	}
+	.sign_in a:hover,
+	.sign_up a:hover {
+		color: #1b1b1b;
+	}
+.search_panel {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -819,8 +841,31 @@ section
 	padding-right: 60px;
 	padding-bottom: 30px;
 }
-.home_slider_background
+.home_slider_background_1 
 {
+	background-image: url('../images/background_1.jpg');
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.home_slider_background_2 {
+	background-image: url('../images/background_2.jpg');
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.home_slider_background_3 {
+	background-image: url('../images/background_3.jpg');
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -938,17 +983,17 @@ section
 	height: 100%;
 	padding: 30px;
 }
-.avds_background
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
+	.avds_small .avds_background {
+		background-image: url('../images/lipstick_background.jpg');
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
 .avds_small_inner
 {
 	width: 100%;
@@ -1041,14 +1086,24 @@ section
 	width: calc((100% * 0.608) - 15px);
 	height: 100%;
 }
-.avds_large_container
-{
-	width: 100%;
-	height: 100%;
-	padding-top: 39px;
-	padding-left: 32px;
-	padding-bottom: 44px;
-}
+	.avds_large .avds_background {
+		background-image: url('../images/skincare_background.jpg');
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
+	.avds_large_container {
+		width: 100%;
+		height: 100%;
+		padding-top: 39px;
+		padding-left: 32px;
+		padding-bottom: 44px;
+	}
 .avds_large_content
 {
 	max-width: 567px;
@@ -1184,6 +1239,7 @@ section
 }
 .avds_xl_background
 {
+	background-image: url('../images/avds_xl.jpg');
 	position: absolute;
 	top: 0;
 	left: 0;

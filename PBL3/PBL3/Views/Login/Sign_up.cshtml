@@ -15,7 +15,8 @@
             <span class="details">Full Name</span>
             @Html.TextBoxFor(model => model.name, new { placeholder = "Enter your name" })
             <br />
-            @Html.ValidationMessageFor(model => model.name)
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.name)</div>
+            
         </div>
         <div class="gender-details">
             @Html.RadioButtonFor(model => model.sex, "NAM", new { id = "dot-1" })
@@ -31,7 +32,7 @@
                     <span class="gender">Female</span>
                 </label>
             </div>
-            @Html.ValidationMessageFor(model => model.sex)
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.sex)</div>
         </div>
     </div>
     <div class="user-details2">
@@ -39,37 +40,37 @@
             <span class="details">Phone Number</span>
             @Html.TextBoxFor(model => model.phone, new { type = "number", min = 1, placeholder = "Enter your number" })
             <br />
-            @Html.ValidationMessageFor(model => model.phone)
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.phone)</div>
         </div>
         <div class="input-box">
             <span class="details">Address</span>
             @Html.TextBoxFor(model => model.address, new { placeholder = "Enter your address" })
             <br />
-            @Html.ValidationMessageFor(model => model.address)
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.address)</div>
         </div>
         <div class="input-box">
             <span class="details">Username</span>
             @Html.TextBoxFor(model => model.username, new { placeholder = "Enter your username" })
             <br />
-            @Html.ValidationMessageFor(model => model.username)
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.username)</div>
         </div>
         <div class="input-box">
             <span class="details">Email</span>
             @Html.TextBoxFor(model => model.email, new { placeholder = "Enter your email" })
             <br />
-            @Html.ValidationMessageFor(model => model.email)
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.email)</div>
         </div>
         <div class="input-box">
             <span class="details">Password</span>
             @Html.PasswordFor(model => model.password, new { id = "password", placeholder = "Enter your password" })
             <br />
-            @Html.ValidationMessageFor(model => model.password)
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.password)</div>
         </div>
         <div class="input-box">
             <span class="details">Confirm Password</span>
             @Html.PasswordFor(model => model.cfpassword, new { placeholder = "Confirm your password" })
             <br />
-            @Html.ValidationMessageFor(model => model.cfpassword)
+            <div style="color:red;font-size:14px">@Html.ValidationMessageFor(model => model.cfpassword)</div>
         </div>
     </div>
     <div class="button">

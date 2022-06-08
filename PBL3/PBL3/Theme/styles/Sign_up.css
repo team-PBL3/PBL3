@@ -57,6 +57,11 @@ form .user-details1 .input-box {
     margin-bottom: 5px;
 }
 
+.user-details1 .input-box div {
+    color: red;
+    font-size: 14px;
+}
+
 .user-details1 .input-box input {
     height: 45px;
     width: 100%;
@@ -197,5 +202,11 @@ form .button {
     form .user-details2 .input-box {
         margin-bottom: 15px;
         width: 100%;
+    }
+}
+
+@media (max-height: 588px) {
+    .container {
+        max-height: 550px;
     }
 }
