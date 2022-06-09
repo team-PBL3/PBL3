@@ -432,6 +432,7 @@
     <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
+    <Content Include="Content\Web\Category.css" />
     <Content Include="Content\Web\Home.css" />
     <Content Include="Content\Web\Product.css" />
     <Content Include="favicon.ico" />
@@ -497,10 +498,7 @@
     <Content Include="Image\701502.png" />
     <Content Include="Image\704201.png" />
     <Content Include="Image\704202.png" />
-    <Content Include="Image\s2172310-main-zoom.png" />
-    <Content Include="Image\s2508869-main-zoom.png" />
-    <Content Include="Image\s2514214-main-zoom.png" />
-    <Content Include="Image\s2579100-main-zoom.png" />
+    <Content Include="Image\borderImage-nightsky.gif" />
     <Content Include="obj\Debug\PBL3.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\PBL3.dll" />
     <Content Include="obj\Debug\PBL3.pdb" />

@@ -4,7 +4,8 @@
     ViewBag.Title = "Thể loại";
 }
 <link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet" />
-<link type="text/css" href="~/Theme/styles/categories.css" rel="stylesheet"/>
+<link type="text/css" href="~/Theme/styles/categories.css" rel="stylesheet" />
+<link type="text/css" href="~/Content/Web/Category.css" rel="stylesheet" />
 <!-- Home -->
 
 <div class="home">
@@ -33,59 +34,66 @@
             <div class="col">
 
                 <!-- Product Sorting -->
-                <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start" style="padding: 50px 0px 30px 0px">
-                    <div class="results">Showing <span>12</span> results</div>
-                    <div class="sorting_container ml-md-auto">
-                        <div class="sorting">
-                            <ul class="item_sorting">
-                                <li>
-                                    <span class="sorting_text">Sort by</span>
-                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    <ul>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default</span></li>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Name</span></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start" style="padding: 50px 0px 0px 0px">
+                    <div>
+                        <ul>
+                            @foreach (var partofbody in Model.list)
+                            {
+                                <li id="Select_@Model.list.IndexOf(partofbody)" class="View_select" onclick="ChangePOB(@Model.list.Count,@Model.list.IndexOf(partofbody))">@partofbody.Name</li>
+                            }
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <div style="text-align: center">
+                <div>
                     @foreach (var partofbody in Model.list)
                     {
-                        <div>@(partofbody.Name)</div>
-                        foreach (var category in partofbody.categorylist)
-                        {
-                            <div>@category.name</div>
+                    <div id="Select_View_@Model.list.IndexOf(partofbody)" class="Selection_view">
+                        @foreach (var category in partofbody.categorylist)
+                        {   
+                            <div class="category_name">@Html.ActionLink(category.name, "AllProduct2", "Home", new { sort = category.name }, new { })</div>
                             foreach (var product in category.productlist)
                             {
-                                <div class="product-display-frame">
-                                    <a href="https://localhost:44325/Product/?name=@product.Name&productid=@product.id">
-                                        <img style="width: 300px; height: 300px; text-align:center; border: 5px solid pink; border-radius:5px" src="@(product.urlImage)" />
-                                        <div>@product.Name</div>
-                                    </a>
-                                    <div style="color:black">@product.Price VND </div>
-                                </div>
+                            <div class="product-display-frame">
+                                <a href="https://localhost:44325/Product/?name=@product.Name&productid=@product.id">
+                                    <img style="width: 300px; height: 300px; text-align:center; border: 5px solid pink; border-radius:5px" src="@(product.urlImage)" />
+                                    <div>@product.Name</div>
+                                </a>
+                                <div style="color:black">@product.Price VND </div>
+                            </div>
                             }
                         }
+                    </div>
                     }
                 </div>
-                    <div class="product_pagination">
-                        <ul>
-                            <li class="active"><a href="#">01.</a></li>
-                            <li><a href="#">02.</a></li>
-                            <li><a href="#">03.</a></li>
-                        </ul>
-                    </div>
-
-                </div>
             </div>
+        </div>
     </div>
 </div>
+<script>
+    function ChangePOB(max,index) {
+        for (var i = 0; i < max; i++)
+        {
+            document.getElementById("Select_View_" + i).style.display = 'none';
+            var x = document.getElementById("Select_" + i).style;
+            x.zIndex = "1";
+            x.border = "6px solid #aaaaaa";
+            x.borderRadius = "10px";
+            x.borderBottomColor = "white";
 
+        }
+        document.getElementById("Select_View_" + index).style.display = 'block';
+        var x = document.getElementById("Select_" + index).style;
+        x.zIndex = "2";
+        x.position = "relative";
+        x.border = "6px solid #010365";
+        x.backgroundColor = "white";
+        x.borderBottomLeftRadius = "0px";
+        x.borderBottomRightRadius = "0px";
+        x.borderBottomColor = "white";
+    }
+</script>
 

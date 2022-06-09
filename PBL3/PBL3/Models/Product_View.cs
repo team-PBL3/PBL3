@@ -108,7 +108,7 @@ namespace PBL3.Models
             if (option != "")
             foreach (var i in this.list_categories)
             {
-                if (int.Parse(option) == i.id) return datas.Where(x => x.categoryid == i.id).ToList();
+                if (option == i.id.ToString() || option == i.name) return datas.Where(x => x.categoryid == i.id).ToList();
             }
                 
             return datas;
