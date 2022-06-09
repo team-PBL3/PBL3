@@ -243,6 +243,7 @@
     <Compile Include="Controllers\Member\MemberController.cs" />
     <Compile Include="Controllers\PageNotFoundController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
+    <Compile Include="Controllers\Web\CategoryController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
     <Compile Include="Controllers\Web\LoginController.cs" />
     <Compile Include="Controllers\Member\OrderController.cs" />
@@ -268,6 +269,7 @@
     <Compile Include="Models\CartDetail_View.cs" />
     <Compile Include="Models\Cart_View.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Category_View.cs" />
     <Compile Include="Models\Customer_View.cs" />
     <Compile Include="Models\Encrypt.cs" />
     <Compile Include="Models\Errors.cs" />
@@ -1265,6 +1267,7 @@
     <Content Include="Theme\images\cart.jpg" />
     <Content Include="Theme\images\cart_1.jpg" />
     <Content Include="Theme\images\categories.jpg" />
+    <Content Include="Theme\images\category_post_top.jpg" />
     <Content Include="Theme\images\check.png" />
     <Content Include="Theme\images\contact.jpg" />
     <Content Include="Theme\images\details_1.jpg" />
@@ -1421,6 +1424,7 @@
     <Content Include="Views\AdminHome\ShowCustomer.cshtml" />
     <Content Include="Views\AdminHome\Category.cshtml" />
     <Content Include="Views\AdminHome\Product.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

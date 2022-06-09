@@ -1,0 +1,91 @@
+﻿@using PBL3.Models
+@model PBL3.Models.Category_View_List
+@{
+    ViewBag.Title = "Thể loại";
+}
+<link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet" />
+<link type="text/css" href="~/Theme/styles/categories.css" rel="stylesheet"/>
+<!-- Home -->
+
+<div class="home">
+    <div class="home_container">
+        <div class="home_background" style="background-image: url('/Theme/images/category_post_top.jpg');"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content" style="width: 780px">
+                            <div class="home_title" style="color: gold; padding-left:8px; border-left: red solid 3px">Trang điểm & Sắc đẹp<span>.</span></div>
+                            <div class="home_text" style="margin-top: 20px; padding-left: 8px; border-left: red solid 3px"><p style="color:black; font-size: 20px">Các dụng cụ và sản phẩm hỗ trợ và cải thiện vẻ ngoài. <br />Nâng niu và bảo vệ vẻ đẹp của bản.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Products -->
+
+<div class="products" style="padding-top:0px">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <!-- Product Sorting -->
+                <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start" style="padding: 50px 0px 30px 0px">
+                    <div class="results">Showing <span>12</span> results</div>
+                    <div class="sorting_container ml-md-auto">
+                        <div class="sorting">
+                            <ul class="item_sorting">
+                                <li>
+                                    <span class="sorting_text">Sort by</span>
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    <ul>
+                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default</span></li>
+                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
+                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Name</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div style="text-align: center">
+                    @foreach (var partofbody in Model.list)
+                    {
+                        <div>@(partofbody.Name)</div>
+                        foreach (var category in partofbody.categorylist)
+                        {
+                            <div>@category.name</div>
+                            foreach (var product in category.productlist)
+                            {
+                                <div class="product-display-frame">
+                                    <a href="https://localhost:44325/Product/?name=@product.Name&productid=@product.id">
+                                        <img style="width: 300px; height: 300px; text-align:center; border: 5px solid pink; border-radius:5px" src="@(product.urlImage)" />
+                                        <div>@product.Name</div>
+                                    </a>
+                                    <div style="color:black">@product.Price VND </div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+                    <div class="product_pagination">
+                        <ul>
+                            <li class="active"><a href="#">01.</a></li>
+                            <li><a href="#">02.</a></li>
+                            <li><a href="#">03.</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+</div>
+
+

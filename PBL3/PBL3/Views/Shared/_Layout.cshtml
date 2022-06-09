@@ -1,6 +1,8 @@
 ﻿@using PBL3.Models;
 @using System.Web.Mvc;
 @{
+    PBL3DataContext dataContext = new PBL3DataContext();
+    List<Category> categories = dataContext.Categories.ToList();
     User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
     int b = 0;
     if (a!=null)
@@ -44,7 +46,7 @@
                                 <nav class="main_nav">
                                     <ul>
                                         <li class="hassubs active">
-                                            <a href="index.html">Home</a>
+                                            <a href="index.html">Trang chủ</a>
                                             <ul>
                                                 <li><a href="categories.html">Categories</a></li>
                                                 <li><a href="product.html">Product</a></li>
@@ -54,22 +56,20 @@
                                             </ul>
                                         </li>
                                         <li class="hassubs">
-                                            <a href="categories.html">Categories</a>
+                                            <a href="/Category/Index">Thể loại</a>
                                             <ul>
-                                                <li><a href="categories.html">Category</a></li>
-                                                <li><a href="categories.html">Category</a></li>
-                                                <li><a href="categories.html">Category</a></li>
-                                                <li><a href="categories.html">Category</a></li>
-                                                <li><a href="categories.html">Category</a></li>
+                                                @foreach (var i in categories)
+                                                {
+                                                    <li><a href="#">@i.name</a></li>
+                                                }
                                             </ul>
                                         </li>
-                                        <li><a href="#">Accessories</a></li>
-                                        <li><a href="">About</a></li>
+                                        <li><a href="">Liên lạc</a></li>
                                     </ul>
                                 </nav>
                                 <div class="header_extra ml-auto">
                                     <div class="shopping_cart">
-                                        <a href="cart.html">
+                                        <a href="/Cart/Index">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                  viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
                                             <g>
