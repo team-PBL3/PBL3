@@ -1,6 +1,14 @@
-﻿@{
-    ViewBag.Title = "Category";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+﻿@model PBL3.Models.PBL3DataContext
+
+@using PBL3.Models
+@{ ViewBag.Title = "Category";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+                List<Category> lc = Model.Categories.ToList();
+                List<TradeMark> lt = Model.TradeMarks.ToList();
+                User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
+                List_CustomerView list2 = ViewBag.ShowCustomer;
+                List_ProductView list = ViewBag.ProductTotal;
+
 }
 
 <input type="checkbox" id="nav-toggle">
@@ -45,7 +53,7 @@
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
             </label>
-            Category
+            @ViewBag.Title 
         </h2>
 
         <div class="search-wrapper">
@@ -56,7 +64,7 @@
         <div class="user-wrapper">
             <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
             <div>
-                <h4>Name</h4>
+                <li><a href="#">@a.name</a></li>
                 <small>Admin</small>
             </div>
         </div>
@@ -66,7 +74,7 @@
         <div class="cards">
             <div class="card-single">
                 <div>
-                    <h1>54</h1>
+                    <h1>@list2.data_views.Count</h1>
                     <span>Members</span>
                 </div>
                 <div>
@@ -76,7 +84,7 @@
 
             <div class="card-single">
                 <div>
-                    <h1>59</h1>
+                    <h1>@list.data_views.Count</h1>
                     <span>Products</span>
                 </div>
                 <div>
@@ -94,15 +102,7 @@
                 </div>
             </div>
 
-            <div class="card-single">
-                <div>
-                    <h1>10m VND</h1>
-                    <span>Income</span>
-                </div>
-                <div>
-                    <span class="fa-solid fa-wallet"></span>
-                </div>
-            </div>
+
         </div>
 
         <div class="recent-grid_2">
@@ -130,106 +130,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                    </tr>
+                                    @foreach (var i in lc)
+                                    {
+                        <tr>
+                            <td>@i.id</td>
+                            <td>@i.name</td>
+                            <td>@i.partofbody</td>
+                        </tr>
+}
+
+
+
+
+
                                 </tbody>
                             </table>
                         </div>
@@ -260,86 +173,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Trademark</td>
-                                    </tr>
+                                    @foreach (var i in lt)
+                                    {
+                                        <tr>
+                                            <td>@i.id</td>
+                                            <td>@i.name</td>
+                                        </tr>
+                                    }
+
+
+
+
                                 </tbody>
                             </table>
                         </div>

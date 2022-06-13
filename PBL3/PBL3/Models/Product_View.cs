@@ -17,6 +17,7 @@ namespace PBL3.Models
         public string description;
         public string category;
         public string trademark;
+        public string status;
         public string infoproduct;
         public int quantityRemain;
         public Money Price;
@@ -27,6 +28,7 @@ namespace PBL3.Models
             imageName = "";
             category = "";
             trademark = "";
+            status = "";
             infoproduct = "";
             quantityRemain = 0;
             description = "";
@@ -39,6 +41,9 @@ namespace PBL3.Models
             this.id = productid;
             this.name = dataSource.name;
             this.quantityRemain = dataSource.quantityremain;
+            this.description = dataSource.description;
+            this.status = dataSource.status;
+            this.infoproduct = dataSource.infoproduct;
             this.imageName = Image_Url.urlImage + dataSource.images.First().name;
             this.Price = Money.Parse(dataSource.price);
         }
@@ -87,6 +92,32 @@ namespace PBL3.Models
                 data_views.Add(data_view);
             }
         }
+        public void Set_Product_View2(int page, List<Product> datas)
+        {
+            Amount = datas.Count;
+            int count = -1;
+            AvalMaxPage = (datas.Count - 1) / ProductViewNumber + 1;
+            if (page <= AvalMaxPage) CurrentPage = page;
+            else throw new Exception("Page Not Found");
+            foreach (var data in datas)
+            {
+                Product_View data_view = new Product_View()
+                {
+                    id = data.id,
+                    name = data.name,
+                    Price = Money.Parse(data.price),
+                    quantityRemain = data.quantityremain,
+                    category = data.category.name,
+                    trademark = data.trademark.name,
+                    description = data.description,
+                    infoproduct = data.infoproduct,
+                    status=data.status
+
+                };
+                data_view.imageName = Image_Url.urlImage + data.images.First(x => x.productid == data.id).name;
+                data_views.Add(data_view);
+            }
+        }
         public List<Product> SortBy(string option, List<Product> datas)
         {
             sort = option;
@@ -122,6 +153,7 @@ namespace PBL3.Models
         public string desciption;
         public string productinfo;
         public int remainquantity;
+        public string status;
         public string name;
         public string imageName;
         public Money Price;
@@ -133,6 +165,7 @@ namespace PBL3.Models
             desciption = "";
             productinfo = "";
             remainquantity = 0;
+            status = "";
             name = "";
             imageName = "";
             Price = new Money("VND");
@@ -147,6 +180,7 @@ namespace PBL3.Models
             this.desciption = dataSource.description;
             this.productinfo = dataSource.infoproduct;
             this.remainquantity = dataSource.quantityremain;
+            this.status = dataSource.status;
             this.name = dataSource.name;
             this.imageName = Image_Url.urlImage+dataSource.images.First().name;
             this.Price = Money.Parse(dataSource.price);

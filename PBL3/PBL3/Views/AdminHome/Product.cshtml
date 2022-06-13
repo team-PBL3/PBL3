@@ -1,7 +1,11 @@
-﻿@{
-    ViewBag.Title = "Product";
+﻿@model PBL3.Models.List_ProductView
+@using PBL3.Models;
+@{ ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
+    PBL3DataContext dataContext = new PBL3DataContext();
+    List_CustomerView list2 = ViewBag.ShowCustomer;
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session]; }
+@{ List_ProductView list = Model;}
 
 <input type="checkbox" id="nav-toggle">
 <div class="sidebar">
@@ -56,7 +60,7 @@
         <div class="user-wrapper">
             <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
             <div>
-                <h4>Name</h4>
+                <li><a href="#">@a.name</a></li>
                 <small>Admin</small>
             </div>
         </div>
@@ -66,7 +70,7 @@
         <div class="cards">
             <div class="card-single">
                 <div>
-                    <h1>54</h1>
+                    <h1>@list2.data_views.Count</h1>
                     <span>Members</span>
                 </div>
                 <div>
@@ -76,7 +80,7 @@
 
             <div class="card-single">
                 <div>
-                    <h1>59</h1>
+                    <h1>@list.data_views.Count</h1>
                     <span>Products</span>
                 </div>
                 <div>
@@ -94,15 +98,7 @@
                 </div>
             </div>
 
-            <div class="card-single">
-                <div>
-                    <h1>10m VND</h1>
-                    <span>Income</span>
-                </div>
-                <div>
-                    <span class="fa-solid fa-wallet"></span>
-                </div>
-            </div>
+
         </div>
 
         <div class="recent-grid_4">
@@ -133,356 +129,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>10000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
+                                    @foreach (var i in list.data_views)
+                                    {
+                        <tr>
+
+                            <td>@i.name</td>
+                            <td>@i.category</td>
+                            <td>@i.trademark</td>
+                            <td>
+                                <span class="status_orange">@i.status</span>
+                            </td>
+                            <td>@i.quantityRemain</td>
+                            <td>@i.Price</td>
+                        </tr>}
+                                    @*<tr>
+                                            <td>Product</td>
+                                            <td>Category</td>
+                                            <td>Dior</td>
+                                            <td>
+                                                <span class="status_orange">INACTIVE</span>
+                                            </td>
+                                            <td>10</td>
+                                            <td>1000000</td>
+                                        </tr>*@
                                 </tbody>
                             </table>
                         </div>
@@ -493,3 +162,7 @@
         </div>
     </main>
 </div>
+<script>var i = document.getElementsByClassName("status_orange");
+    for (var element of i) {
+        if (element.innerHTML == "SOLD_OUT") element.className ="status_purple";
+    }</script>

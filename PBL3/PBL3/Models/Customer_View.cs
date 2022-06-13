@@ -70,13 +70,10 @@ namespace PBL3.Models
             else throw new Exception("Page Not Found");
             foreach (var data in datas)
             {
-                if (data.Role.value == "MEMBER")
+                if (data.Role.value == "ADMIN")
                 {
                     continue;
                 }
-                count++;
-                if (count < (page - 1) * CustomerViewNumber) continue;
-                if (count >= page * CustomerViewNumber) break;
                 Customer_View customer_View = new Customer_View()
                 {
                     id = data.id,

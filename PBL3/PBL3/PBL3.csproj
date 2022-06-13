@@ -1430,6 +1430,7 @@
     <Content Include="Views\AdminHome\Category.cshtml" />
     <Content Include="Views\AdminHome\Product.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\AdminHome\EditProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

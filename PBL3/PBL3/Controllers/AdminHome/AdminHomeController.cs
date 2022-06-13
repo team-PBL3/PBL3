@@ -16,9 +16,37 @@ namespace PBL3.Controllers.AdminHome
         {
             dataContext = new PBL3DataContext();
         }
-        public ActionResult Index()
+        public ActionResult Index(int id=1)
         {
-            return View();
+            List<Product> products = dataContext.Products.ToList();
+
+            ViewBag.Total = dataContext.TotalPrice();
+
+
+            List_CustomerView list2 = new List_CustomerView();
+            try
+            {
+                list2.Set_Customer_View(id, dataContext.Users.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+            ViewBag.ShowCustomer = list2;
+            List_ProductView list = new List_ProductView();
+            try
+            {
+                list.Set_Product_View2(id, dataContext.Products.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+            ViewBag.ProductTotal = list;
+
+            return View(products);
+
+
         }
         public ActionResult addCategory()
         {
@@ -146,17 +174,81 @@ namespace PBL3.Controllers.AdminHome
             return View(products);
 
         }
-        public ActionResult Member()
+        public ActionResult Member(int id = 1)
         {
-            return View();
+
+            List_CustomerView list2 = new List_CustomerView();
+            try
+            {
+                list2.Set_Customer_View(id, dataContext.Users.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+            List_ProductView list = new List_ProductView();
+            try
+            {
+                list.Set_Product_View2(id, dataContext.Products.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+            ViewBag.ProductTotal = list;
+
+            return View(list2);
         }
-        public ActionResult Category()
+        public ActionResult Category(int id = 1)
         {
-            return View();
+            PBL3DataContext dataContext = new PBL3DataContext();
+            List_CustomerView list2 = new List_CustomerView();
+            try
+            {
+                list2.Set_Customer_View(id, dataContext.Users.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+            ViewBag.ShowCustomer = list2;
+            List_ProductView list = new List_ProductView();
+            try
+            {
+                list.Set_Product_View2(id, dataContext.Products.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+            ViewBag.ProductTotal = list;
+            return View(dataContext);
         }
-        public ActionResult Product()
+        public ActionResult Product(int id = 1)
         {
-            return View();
+            List_ProductView list = new List_ProductView();
+            try
+            {
+                list.Set_Product_View2(id, dataContext.Products.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+
+
+            List_CustomerView list2 = new List_CustomerView();
+            try
+            {
+                list2.Set_Customer_View(id, dataContext.Users.ToList());
+            }
+            catch (Exception e)
+            {
+                if (e.Message == "Page Not Found") return View("Error");
+            }
+            ViewBag.ShowCustomer = list2;
+            return View(list);
+
         }
     }
 }

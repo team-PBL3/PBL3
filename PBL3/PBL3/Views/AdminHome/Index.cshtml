@@ -1,7 +1,14 @@
-﻿@{ 
-    ViewBag.Title = "Admin Home";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; 
-}
+﻿
+
+
+@using PBL3.Models;
+@{ ViewBag.Title = "Admin Home";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    List<Product> products = Model;
+    List_CustomerView list2 = ViewBag.ShowCustomer;
+    PBL3DataContext dataContext = new PBL3DataContext();
+    List_ProductView list = ViewBag.ProductTotal;
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session]; }
 
 <input type="checkbox" id="nav-toggle">
 <div class="sidebar">
@@ -57,7 +64,9 @@
         <div class="user-wrapper">
             <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
             <div>
-                <h4>Name</h4>
+
+                <li><a href="#">@a.name</a></li>
+
                 <small>Admin</small>
             </div>
         </div>
@@ -67,7 +76,7 @@
         <div class="cards">
             <div class="card-single">
                 <div>
-                    <h1>54</h1>
+                    <h1>@list2.data_views.Count</h1>
                     <span>Members</span>
                 </div>
                 <div>
@@ -77,7 +86,7 @@
 
             <div class="card-single">
                 <div>
-                    <h1>59</h1>
+                    <h1>@list.data_views.Count</h1>
                     <span>Products</span>
                 </div>
                 <div>
@@ -97,8 +106,8 @@
 
             <div class="card-single">
                 <div>
-                    <h1>10m VND</h1>
-                    <span>Income</span>
+                    <h1>@ViewBag.Total  VNĐ</h1>
+                    <span>DOANH THU </span>
                 </div>
                 <div>
                     <span class="fa-solid fa-wallet"></span>
@@ -109,12 +118,9 @@
             <div class="projects">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Products</h3>
+                        <h3>Thống Kê</h3>
 
-                        <button>
-                            See all <span class="fa-solid fa-arrow-right">
-                            </span>
-                        </button>
+
                     </div>
 
                     <div class="card-body">
@@ -125,366 +131,36 @@
                                 <thead>
                                     <tr>
                                         <th data-field="product">Product</th>
-                                        <th data-field="category">Category</th>
-                                        <th data-field="trademark">Trademark</th>
-                                        <th data-field="status">Status</th>
+
                                         <th data-field="quantity">Quantity</th>
-                                        <th data-field="price">Price</th>
+                                        <th data-field="quantity">Price</th>
+                                        <th data-field="price">Tong Gia</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>10000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_purple">ACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product</td>
-                                        <td>Category</td>
-                                        <td>Dior</td>
-                                        <td>
-                                            <span class="status_orange">INACTIVE</span>
-                                        </td>
-                                        <td>10</td>
-                                        <td>1000000</td>
-                                    </tr>
+                                    @foreach (var i in products)
+                                    {
+                        <tr>
+                            <td>@i.name</td>
+                            <td>@(i.quantityInit-i.quantityremain)</td>
+
+                            <td>@i.price</td>
+                            <td>@(i.price*(i.quantityInit-i.quantityremain))</td>
+
+
+
+
+                        </tr>}
+
+
+
+
+
+
+
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
                 </div>
@@ -495,131 +171,48 @@
                     <div class="card-header">
                         <h3>New member</h3>
 
-                        <button>
-                            See all <span class="fa-solid fa-arrow-right">
-                            </span>
-                        </button>
+                        <li>
+                            <a href="~/AdminHome/Member">
+                                <span class="fa-solid fa-user"></span>
+                                <span>See All</span>
+                            </a>
+                        </li>
                     </div>
 
-                    <div class="card-body">
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_1.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Hoàng</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
 
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_2.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Thiện</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
 
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_3.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Quốc Cường</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
 
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_4.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Phan Cường</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
 
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_1.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Song Hoàng</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
+                    @foreach (var i in list2.data_views)
+                    {
+        <div class="member">
+            <div class="info">
+                <img src="~/Theme/images/img_4.jpg" width="40px"
+                     height="40px" alt="">
+                <div>
+                    <h4>@i.name</h4>
+                    <small>@i.phone</small>
+                </div>
+            </div>
+            <div class="details">
+                <span class="fa-solid fa-id-card"></span>
+            </div>
+        </div>}
 
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_2.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Thiện</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_3.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Quốc Cường</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_4.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>Phan Cường</h4>
-                                    <small>102200257</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+</div>
     </main>
 </div>
-@Html.ActionLink("Add Category", "addCategory")
-@Html.ActionLink("Add Trademark", "addTradeMark")
-@Html.ActionLink("Add Product", "addProduct")
+<script>
+    var i = document.getElementsByClassName("form - control form - control - sm");
+    var search = i[0];
+    search.addEventListener("change", Function() {
+       
+    });
+
+
+
+</script>
 
