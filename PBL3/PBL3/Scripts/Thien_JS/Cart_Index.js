@@ -6,12 +6,16 @@ document.getElementById('ChooseAll').onclick = function () {
     var checkboxes = document.getElementsByClassName('Choose_to_buy');
     for (var checkbox of checkboxes) {
         checkbox.checked = true;
+        document.getElementById("Buy").disabled = false;
+        error.innerHTML = "";
     }
 }
 document.getElementById('NotChooseAll').onclick = function () {
     var checkboxes = document.getElementsByClassName('Choose_to_buy');
     for (var checkbox of checkboxes) {
         checkbox.checked = false;
+        error.innerHTML = "Bạn chưa chọn hàng để mua";
+        document.getElementById("Buy").disabled = true;
     }
 }
 var c = document.getElementsByClassName('Choose_to_buy');

@@ -260,6 +260,10 @@
     <Compile Include="Migrations\202206081013515_Update_AdminHistory.designer.cs">
       <DependentUpon>202206081013515_Update_AdminHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206130734321_foreignkey.cs" />
+    <Compile Include="Migrations\202206130734321_foreignkey.designer.cs">
+      <DependentUpon>202206130734321_foreignkey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
     <Compile Include="Models\Account_Sign_Up.cs" />
@@ -432,6 +436,8 @@
     <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
+    <Content Include="Content\Web\cart.css" />
+    <Content Include="Content\Web\cart_responsive.css" />
     <Content Include="Content\Web\Category.css" />
     <Content Include="Content\Web\Home.css" />
     <Content Include="Content\Web\Product.css" />
@@ -499,6 +505,7 @@
     <Content Include="Image\704201.png" />
     <Content Include="Image\704202.png" />
     <Content Include="Image\borderImage-nightsky.gif" />
+    <Content Include="Image\Cart_poster.jpg" />
     <Content Include="obj\Debug\PBL3.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\PBL3.dll" />
     <Content Include="obj\Debug\PBL3.pdb" />
@@ -1448,6 +1455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206081013515_Update_AdminHistory.resx">
       <DependentUpon>202206081013515_Update_AdminHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206130734321_foreignkey.resx">
+      <DependentUpon>202206130734321_foreignkey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\PBL3.Migrations.ahihi.resources" />
     <EmbeddedResource Include="obj\Debug\PBL3.Migrations.Change.resources" />

@@ -11,7 +11,7 @@ namespace PBL3.Models
     {
         public Person()
         {
-
+            orderrs = new List<Orderr>();
         }
         [Key]
         public int id { get; set; }
@@ -26,5 +26,7 @@ namespace PBL3.Models
         public String address { get; set; }
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
         public String email { get; set; }
+        [Required]
+        public virtual ICollection<Orderr> orderrs { get; set; }
     }
 }

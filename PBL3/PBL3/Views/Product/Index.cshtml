@@ -55,11 +55,11 @@
                     <div style="margin-top: 10px">Số lượng: @Model.remainquantity</div>
                     <div class="product_quantity_container" style="margin-top: 70px">
                         <form action="/Product/RedirectType" method="post">
-                            <div style="display: inline-block; vertical-align: top; padding: 0px; border: 2px solid black; border-radius: 5px; height: 61px">
+                            <div style="display: inline-block; vertical-align: top; padding: 0px; border: 2px solid black; border-radius: 5px; height: 61px; text-align: right">
                                 <label class="quantity_input"><input id="quantity_input" name="quantity_input" type="number" pattern="[0-9]*" value="1" onkeydown="SaveOld()" onkeyup="Validate()" /></label>
-                                <div style="display:inline-block; height:57px;">
-                                    <p class="button-quantity" id="up-button" onclick="Btnc('up-button')">+</p>
-                                    <p class="button-quantity" id="down-button" onclick="Btnc('down-button')">-</p>
+                                <div style="display:inline-block; height:57px; width: 30%">
+                                    <p class="button-quantity" style="border-color: black" id="up-button" onclick="Btnc('up-button')">+</p>
+                                    <p class="button-quantity" style="border-color: black" id="down-button" onclick="Btnc('down-button')">-</p>
                                 </div>
                                 <label><input type="text" id="product" name="id" style="display: none" value="@Model.id" /></label>
                             </div>

@@ -4,25 +4,40 @@
     ViewBag.Title = "Buy2";
     Layout = "~/Views/Shared/_Layout.cshtml";
     Orderdetail e = new Orderdetail();
+    Person a = new Person();
 }
 
 <h2>Buy2</h2>
 
-<div style="margin-top:60px">
+<div style="margin-top:100px">
+
     @using (Html.BeginForm("OrderProduct", "Order", FormMethod.Post))
     {
+        <label for="name">Tên</label>
+        <input id="name" name="name" type="text" value="" required/>
+        <br />
+        <label for="phone">Điện thoại</label>
+        <input id="phone" name="phone" type="text" value="" required/>
+        <br />
+        <label for="sex">Giới tính</label>
+        <input id="sex" name="sex" type="radio" value="NAM" required/><span>Nam</span>
+        <input id="sex" name="sex" type="radio" value="NU" /><span>Nữ</span>
+        <br />
+        <label for="address">Địa chỉ</label>
+        <input id="address" name="address" type="text" value="" required />
+        <br />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" value="" required/>
         foreach (var i in Model.dataViews)
         {
-            <div>@i.product_view.name</div>
-            <div>@i.quantity</div>
-            <div>@i.product_view.Price.Amount</div>
-            <div>@(i.product_view.Price.Amount * i.quantity)</div>
+        <div>@i.product_view.name</div>
+        <div>@i.quantity</div>
+        <div>@i.product_view.Price.Amount</div>
+        <div>@(i.product_view.Price.Amount * i.quantity)</div>
 
-            <input name="price" value=" @(i.product_view.Price.Amount * i.quantity)" style="display:none" />
-            <input name="quantity" value=" @(i.quantity)" style="display:none" />
-            <input name="productid" value=" @(i.product_view.id)" style="display:none" />
-            <input name="CDid" value=" @(i.id)" style="display:none" />
-        }
-        <input type="submit" value="Xác nhận" />
-    }
+        <input name="price" value=" @(i.product_view.Price.Amount * i.quantity)" style="display:none" />
+        <input name="quantity" value=" @(i.quantity)" style="display:none" />
+        <input name="productid" value=" @(i.product_view.id)" style="display:none" />
+        <input name="CDid" value=" @(i.id)" style="display:none" /> }
+        <input type="submit" value="Xác nhận" />}
 </div>

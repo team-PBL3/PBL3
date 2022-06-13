@@ -50,7 +50,7 @@ namespace PBL3.Controllers.Member
             }
         }
         [HttpPost]
-        public ActionResult OrderProduct(List<double> price, List<int> quantity, List<int> productid, List<int> CDid)
+        public ActionResult OrderProduct(List<double> price, List<int> quantity, List<int> productid, List<int> CDid, Person toPerson)
         {
             try
             {

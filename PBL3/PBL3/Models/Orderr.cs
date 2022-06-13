@@ -22,7 +22,9 @@ namespace PBL3.Models
         [Required]
         public DateTime TimeUpdate { get; set; }
         public int userid { get; set; }
+        public int personid { get; set; }
         public virtual User User { get; set; }
+        public virtual Person Person { get; set; }
         public virtual ICollection<Orderdetail> orderdetails { get; set; }
         public virtual ICollection<Payment> payments { get; set; }
     }
