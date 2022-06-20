@@ -70,8 +70,12 @@ namespace PBL3.Models
                 this.Products.Add(product);
                 return this.SaveChanges();
             }
-            catch (Exception)
+            catch (DbEntityValidationException e)
             {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+
+                }
                 throw;
             }
         }
@@ -88,9 +92,10 @@ namespace PBL3.Models
                 throw;
             }
         }
-        public int Edit(Product product, string imagee)
+        public int Edit(Product product, string imagee, User user)
         {
-
+            if (imagee == "") imagee = this.Images.ToList().First(x => x.id == product.id).name;
+            else this.Products.ToList().First(x => x.id == product.id).images.First().name = imagee;
             this.Products.ToList().First(x => x.id == product.id).name = product.name;
             this.Products.ToList().First(x => x.id == product.id).categoryid = product.categoryid;
             this.Products.ToList().First(x => x.id == product.id).trademarkid = product.trademarkid;
@@ -99,7 +104,27 @@ namespace PBL3.Models
             this.Products.ToList().First(x => x.id == product.id).quantityInit = product.quantityInit;
             this.Products.ToList().First(x => x.id == product.id).images.First().name = imagee;
 
-            return this.SaveChanges();
+            Admin_Action_History admin_Action_History = new Admin_Action_History();
+            admin_Action_History.CreateBy = user.id;
+            admin_Action_History.EditBy = user.id;
+            admin_Action_History.actionType = ActionType.Update;
+            admin_Action_History.impactedObjectType = ImpactedObjectType.Product;
+            admin_Action_History.ActionTime = DateTime.Now;
+            admin_Action_History.impactedObjectTypeId = product.id;
+            this.Admin_Actions_History.Add(admin_Action_History);
+
+            try
+            {
+                return this.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+
+                }
+                throw;
+            }
 
         }
 
@@ -147,6 +172,7 @@ namespace PBL3.Models
                 throw;
             }
         }
+       
         public void CreateOrder(List<Orderdetail> LOD, User user, List<int> CDid)
         {
             try
@@ -254,6 +280,12 @@ namespace PBL3.Models
 
             }
             return total;
+        }
+        public void UpdatePW(User user,string pwmuondoi)
+        {
+
+            this.Users.First(i => i.id == user.id).password = pwmuondoi;
+            this.SaveChanges();
         }
     }
 }

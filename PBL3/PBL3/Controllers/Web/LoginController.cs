@@ -54,7 +54,7 @@ namespace PBL3.Controllers.Web
                 User NewUser = new User() {
                     name = model.name, sex = model.sex, phone = model.phone,
                     address = model.address, username = model.username, email = model.email,
-                    password = model.password, status = "INACTIVE", roleid = 2};
+                    password = Encrypt.ToEncrypt( model.password), status = "INACTIVE", roleid = 2};
                 datacontext.Adding(NewUser);
                 
                 return RedirectToAction("Sign_in", "Login");

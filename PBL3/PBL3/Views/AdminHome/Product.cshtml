@@ -1,0 +1,177 @@
+﻿@model PBL3.Models.Product
+@using PBL3.Models;
+@{ ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    PBL3DataContext dataContext = new PBL3DataContext();
+   
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session]; }
+@{ List_ProductView list =  ViewBag.ShowProduct;}
+
+
+
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="fa-solid fa-bars"></span>
+            </label>
+            @ViewBag.Title
+        </h2>
+
+        <div class="search-wrapper">
+            <span class="fa-solid fa-magnifying-glass"></span>
+            <input type="search" placeholder="Search here" />
+        </div>
+
+        <div class="user-wrapper" onclick="menuToggle();">
+            <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
+            <div>
+                <h4>@a.name</h4>
+                <small>Admin</small>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><span class="fa-solid fa-user"></span><a href="#">My profile</a></li>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="#">Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="button">
+            <input type="submit" value="Add Product" id="btn-add">
+        </div>
+      
+
+        <div class="recent-grid_4">
+            <div class="projects_4">
+                <div class="card_4">
+                    <div class="card-header_4">
+                        <h3>Products</h3>
+
+                        <a href="~/AdminHome/TableDetail" id="btn-see-all">
+                            See all <span class="fa-solid fa-arrow-right">
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-body_4">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered mydatatable" id="table" style="width: 100%"
+                                   data-toggle="table"
+                                   data-id-table="advancedTable">
+                                <thead>
+                                    <tr>
+                                        <th data-field="product">Product</th>
+                                        <th data-field="category">Category</th>
+                                        <th data-field="trademark">Trademark</th>
+                                        <th data-field="status">Status</th>
+                                        <th data-field="quantity">Quantity</th>
+                                        <th data-field="price">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var i in list.data_views)
+                                    {
+                                        <tr>
+
+                                            <td>@i.name</td>
+                                            <td>@i.category</td>
+                                            <td>@i.trademark</td>
+                                            <td>
+                                                <span class="status_orange">@i.status</span>
+                                            </td>
+                                            <td>@i.quantityRemain</td>
+                                            <td>@i.Price</td>
+                                        </tr>
+                                     }
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+<div class="bg-modal">
+    <div class="cards-bg-modal">
+        <div class="close">+</div>
+        <div class="title">Add product</div>
+        <div class="add-form">
+            <form action="/AdminHome/addProduct" method="post">
+                <div class="product-details">
+                    <div class="input-box">
+                        <span class="details">Name</span>
+                        
+                        @Html.TextBoxFor(model => model.name, new { @class = "input" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Category</span>
+                        <div class="search_select_box">
+                            @Html.DropDownListFor(model => model.categoryid, new SelectList(dataContext.Categories.ToList(), "id", "name"), "Choose a category" )
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Trademark</span>
+                        <div class="search_select_box">
+                            @Html.DropDownListFor(model => model.trademarkid, new SelectList(dataContext.TradeMarks.ToList(), "id", "name"), "Choose a trademark")
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Discription</span>
+                        @Html.TextBoxFor(model => model.description, new { @class = "input" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Price</span>
+                        @Html.TextBoxFor(model => model.price, new { @class = "input" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Status</span>
+                        <select class="options" data-live-search="true" style="width: 89%; height: 40px;border-radius: 8px; padding-left: 15px;">
+                            <option>SOLD_OUT</option>
+                            <option>ACTIVE</option>
+
+                        </select>
+                      
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Remain quantity</span>
+                        <input type="text" placeholder="Enter remain quantity" required style=" margin-left: 0px;">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Image URL</span>
+                       
+                        <input type="file" id="myfile" name="imagee" style=" margin-left: 0px;"><br><br>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Product information</span>
+                        <textarea id="productinfo" type="text" rows="4" placeholder="Enter product information" required name="infoproduct"></textarea>
+                        
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Add Product">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var i = document.getElementsByClassName("status_orange");
+    for (var element of i) {
+        if (element.innerHTML == "SOLD_OUT") element.className ="status_purple";
+    }
+</script>
+<script>
+    document.getElementById('btn-add').addEventListener('click', function () {
+        document.querySelector('.bg-modal').style.display = 'flex';
+    });
+
+    document.querySelector('.close').addEventListener('click', function () {
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+</script>

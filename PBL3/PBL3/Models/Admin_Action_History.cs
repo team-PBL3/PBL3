@@ -36,6 +36,7 @@ namespace PBL3.Models
         [Required]
         public ImpactedObjectType impactedObjectType { get; set; }
         [Required]
+        public int impactedObjectTypeId { get; set; }
         public DateTime ActionTime { get; set; }
         public virtual User user { get; set; }
     }

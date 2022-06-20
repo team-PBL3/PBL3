@@ -1,13 +1,10 @@
-﻿@model PBL3.Models.Product
-@{
-    ViewBag.Title = "ShowProduct";
-    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
-}
+﻿@model PBL3.Models.List_ProductView
+@{ ViewBag.Title = "ShowProduct";
+              
+                <a href="~/Views/Shared/_LayoutAdmin.cshtml">~/Views/Shared/_LayoutAdmin.cshtml</a> }
 
 @using PBL3.Models;
-@{ ViewBag.Title = "ShowProduct";
-    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
-    List_ProductView list = Model;}
+@{ List_ProductView list = Model;}
 <link href="~/Content/Web/Home.css" rel="stylesheet" />
 <h2>ShowProduct</h2>
 <table>
@@ -27,20 +24,19 @@
 
         @foreach (var i in list.data_views)
         {
-        <tr>
-                <td>@i.name</td>
-                <td>@i.category</td>
-                <td>@i.trademark</td>
-                <td>@i.description</td>
-                <td>@i.Price.Amount</td>
-                <td>@i.infoproduct</td>
-                <td>@i.quantityremain</td>
-                <td style="background:url(@i.imageName); width:400px; height: 400px;display:inline-block"></td>
-            
-                <td>@Html.ActionLink("Edit", "EditProduct", new { productId = i.id })</td>
-                <td>@Html.ActionLink("Delete", "DeleteProduct", new { productId = i.id })</td>
-        </tr>
-        }
+<tr>
+    <td>@i.name</td>
+    <td>@i.category</td>
+    <td>@i.trademark</td>
+    <td>@i.description</td>
+    <td>@i.Price.Amount</td>
+    <td>@i.infoproduct</td>
+    <td>@i.quantityRemain</td>
+    <td style="background:url(@i.imageName); width:400px; height: 400px;display:inline-block"></td>
+
+    <td>@Html.ActionLink("Edit", "EditProduct", new { productId = i.id })</td>
+    <td>@Html.ActionLink("Delete", "DeleteProduct", new { productId = i.id })</td>
+</tr>}
     </tbody>
 </table>
 <br />
@@ -56,12 +52,9 @@
                                                                                                 <span id="Three-dot2" class="page-button">...</span>
                                                                                                                 <button name="id" class="Next-Page" value="@(list.CurrentPage+1)">></button>
                                                                                                                                 <button name="id" id="Last-Page" class="page-button" value="@(list.AvalMaxPage)">Last</button>}
- 
+
 </div>
-<script type="text/javascript" src="~/Scripts/Thien_JS/Home_Index.js">
-
-
-</script>
+<script type="text/javascript" src="~/Scripts/Thien_JS/Home_Index.js"></script>
 
 
 

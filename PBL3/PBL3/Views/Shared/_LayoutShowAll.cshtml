@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link href="~/Theme/styles/TableDetail.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c562b97dfd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    @RenderBody()
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
+
+    <script>
+        document.querySelector('.close-1').addEventListener('click', function () {
+            document.querySelector('.bg-modal-1').style.display = 'none';
+        });
+        document.querySelector('.close-2').addEventListener('click', function () {
+            document.querySelector('.bg-modal-2').style.display = 'none';
+        });
+
+        document.querySelector('edit').addEventListener('click', function () {
+            document.querySelector('.bg-modal-1').style.display = 'flex';
+        });
+        document.getElementById('delete').addEventListener('click', function () {
+            document.querySelector('.bg-modal-2').style.display = 'flex';
+        });
+
+
+        //function buttonedit() {
+        //    console.log(100);
+        //};
+        //console.log(document.getElementsByClassName(".button-edit")[0].tagName);
+        //document.getElementsByClassName(".button-edit")[0].onclick = function () {
+        //    console.log(100);
+        //}
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.search_select_box select').selectpicker();
+        })
+    </script>
+
+    <script>
+        function detailFormatter(index, row) {
+            var html = []
+            $.each(row, function (key, value) {
+                html.push('<p class="row" style="width:100%"><b class="col-md-2">' + key + '</b><span class="col-md-10">: ' + value + '</span></p>')
+            })
+            return html.join('')
+        }
+
+        //function actionFormatter(index, row) {
+        //    var html = []
+        //    $.each(row, function (key, value) {
+        //        if (key == 'name') {
+
+        //           html.push('<input type="submit" value="Edit" class="button-edit"></input>')
+        //            html.push('<input type="submit" value="Remove" class="button-remove"></input>')
+
+
+
+        //             }
+        //    })
+        //    return html.join('')
+        //}
+    </script>
+    <script>
+        $(document).on('click', '.button-edit', function () {
+            
+            document.querySelector('.bg-modal-1').style.display = 'flex';
+            document.querySelector('#name').value = document.querySelector('#name_' + this.id).innerHTML;
+            document.querySelector('#category').value = document.querySelector('#category_' + this.id).innerHTML;
+            document.querySelector('#trademark').value = document.querySelector('#trademark_' + this.id).innerHTML;
+            document.querySelector('#description').value = document.querySelector('#description_' + this.id).innerHTML;
+            document.querySelector('#quantityRemain').value = document.querySelector('#quantityRemain_' + this.id).innerHTML;
+            document.querySelector('#infoproduct').value = document.querySelector('#infoproduct_' + this.id).innerHTML;
+            document.querySelector('#status').value = document.querySelector('#status_' + this.id).innerHTML;
+            document.querySelector('#PriceAmount').value = document.querySelector('#PriceAmount_' + this.id).innerHTML;
+            document.querySelector('#status').value = document.querySelector('#status_' + this.id).innerHTML;
+            document.querySelector('#ahihi').src = document.querySelector('#imageName_' + this.id).src;
+        });
+
+        $(document).on('click', '.button-delete', function () {
+            document.querySelector('.bg-modal-2').style.display = 'flex';
+            document.querySelector('.btn-yes').href += this.id;
+            console.log(document.querySelector('.btn-yes').href);
+
+        });
+
+        $(document).on('click', '.btn-no', function () {
+            document.querySelector('.bg-modal-2').style.display = 'none';
+        });
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
