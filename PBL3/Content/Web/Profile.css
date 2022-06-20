@@ -1,0 +1,41 @@
+﻿.Content {
+    margin: 0px 50px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background: white;
+}
+img.ava {
+    width: 20%;
+    border-radius: 50%;
+}
+.backgroundAva {
+    text-align: center;
+    background: pink;
+    padding: 10px 0px;
+}
+.side-menu {
+    display: block;
+    width: 25%;
+    padding: 20px 10px;
+    background: #eeeeee;
+}
+    .side-menu div {
+        font-size: 18px;
+        color: black;
+        padding: 0.1cm 0.1cm 0.1cm 0.4cm;
+        margin-top: 0.4cm;
+        background: white;
+        border-radius: 5px;
+        cursor: pointer;
+        line-height: 1.3cm;
+    }
+        .side-menu div:first-child {
+            margin-top: 0cm;
+        }
+    .side-menu div:hover {
+        background: pink;
+        transition-duration: 1s;
+    }
+.Member-function {
+    width: 100%;
+}

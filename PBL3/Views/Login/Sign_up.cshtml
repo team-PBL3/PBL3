@@ -1,0 +1,78 @@
+﻿@model PBL3.Models.Account_Sign_Up
+
+@using PBL3.Models
+
+@{
+    ViewBag.Title = "Sign_up";
+    Layout = "~/Views/Shared/_LayoutSignUp.cshtml";
+}
+<div class="title">Sign up</div>
+
+@using (Html.BeginForm("Sign_Up", "Login", FormMethod.Post))
+{
+    <div class="user-details1">
+        <div class="input-box">
+            <span class="details">Full Name</span>
+            @Html.TextBoxFor(model => model.name, new { placeholder = "Enter your name" })
+            <br />
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+        <div class="gender-details">
+            @Html.RadioButtonFor(model => model.sex, "NAM", new { id = "dot-1" })
+            @Html.RadioButtonFor(model => model.sex, "NU", new { id = "dot-2" })
+            <span class="gender-title">Gender</span>
+            <div class="category">
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Male</span>
+                </label>
+                <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Female</span>
+                </label>
+            </div>
+            @Html.ValidationMessageFor(model => model.sex)
+        </div>
+    </div>
+    <div class="user-details2">
+        <div class="input-box">
+            <span class="details">Phone Number</span>
+            @Html.TextBoxFor(model => model.phone, new { type = "number", min = 1, placeholder = "Enter your number" })
+            <br />
+            @Html.ValidationMessageFor(model => model.phone)
+        </div>
+        <div class="input-box">
+            <span class="details">Address</span>
+            @Html.TextBoxFor(model => model.address, new { placeholder = "Enter your address" })
+            <br />
+            @Html.ValidationMessageFor(model => model.address)
+        </div>
+        <div class="input-box">
+            <span class="details">Username</span>
+            @Html.TextBoxFor(model => model.username, new { placeholder = "Enter your username" })
+            <br />
+            @Html.ValidationMessageFor(model => model.username)
+        </div>
+        <div class="input-box">
+            <span class="details">Email</span>
+            @Html.TextBoxFor(model => model.email, new { placeholder = "Enter your email" })
+            <br />
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+        <div class="input-box">
+            <span class="details">Password</span>
+            @Html.PasswordFor(model => model.password, new { id = "password", placeholder = "Enter your password" })
+            <br />
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+        <div class="input-box">
+            <span class="details">Confirm Password</span>
+            @Html.PasswordFor(model => model.cfpassword, new { placeholder = "Confirm your password" })
+            <br />
+            @Html.ValidationMessageFor(model => model.cfpassword)
+        </div>
+    </div>
+    <div class="button">
+        <input type="submit" value="Sign up">
+    </div>
+}

@@ -1,0 +1,88 @@
+﻿body {
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.quantity_input {
+    text-align: center;
+    border: none;
+    font-size: 20px;
+    display: inline-block;
+    width: 50px;
+    height: 57px;
+    vertical-align: top;
+}
+    .quantity_input input[type=text],input[type=number] {
+        text-align: center;
+        border: none;
+        font-size: 20px;
+        display: inline-block;
+        width: 100% !important;
+        height: 57px;
+        vertical-align: top;
+    }
+textarea:focus, input:focus {
+    outline: none;
+}
+.button-quantity {
+    text-align: center;
+    display: block;
+    height: 50%;
+    padding: 0px 5px 0px 5px;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    margin-bottom: 0px;
+    -webkit-user-select: none;
+    border-left: solid 2px #d0d0d0;
+    border-top: solid 2px #d0d0d0;
+}
+.button-quantity:first-child {
+    border-top: none;
+}
+.description_title {
+    color: black;
+    display: inline-block;
+    border: 2px solid black;
+    border-bottom-color: white;
+    font-size: 30px;
+    margin-top: 30px;
+    padding: 0px 6px 2px 6px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.description_text {
+    font-size: 20px;
+    padding-top: 10px;
+    border-top: 2px solid black;
+    margin-bottom: 40px;
+}
+.Form_info_recipient{
+    font-size:20px;
+    margin-bottom: 15px;
+}
+.Form_info {
+    margin: 20px;
+    color: black;
+}
+    .Form_info label{
+        width: 20%;
+    }
+    .Form_info input[type=text],input[type=number]{
+        width: 30%
+    }
+    .Form_info span {
+        margin: 0px 20px 0px 5px;
+    }
+    .Form_info .row2 {
+        margin: 10px;
+    }
+    .Form_info .Input_info_Form {
+        background: #eeeeee;
+        border: 2px solid #eeeeee;
+        border-radius: 5px;
+        padding: 10px;
+    }

@@ -1,0 +1,30 @@
+﻿@model PBL3.Models.User
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Web/Profile.css" rel="stylesheet" />
+<div style="padding: 150px 0px 30px 0px; background: #eeeeee">
+    <div class="Content">
+        <div class="backgroundAva">
+            <img src="~/Image/avatarFrofile.png" class="ava" />
+        </div>
+        <h2 style="padding: 10px; background: pink; color: black">Trang cá nhân</h2>
+        <div class="Member-function">
+            <div class="cart"></div>
+            <div class="order"></div>
+            <div class="history"></div>
+        </div>
+        <div class="Member-function">
+            <div class="side-menu">
+                <div>Thông tin cá nhân</div>
+                <div>Đơn hàng</div>
+                <div>Số tích lũy</div>
+            </div>
+            <div>
+                <div>@Html.ActionLink("Cart", "Index", "Cart")</div>
+                <div>@Html.ActionLink("All Order", "Index", "Order")</div>
+            </div>
+        </div>
+    </div>
+</div>

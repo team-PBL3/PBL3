@@ -1,0 +1,49 @@
+﻿@using PBL3.Models;
+@{
+    ViewBag.Title = "Statistics";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Product> products = Model;
+}
+
+<h2>Statistics</h2>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>So luong da ban </th>
+            <th>price</th>
+
+            <th>Tong gia </th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var i in products)
+        {
+            <tr>
+                <td>@i.name</td>
+                <td>@(i.quantityInit-i.quantityremain)</td>
+
+                <td>@i.price</td>
+                <td>@(i.price*(i.quantityInit-i.quantityremain))</td>
+
+
+
+
+            </tr>
+
+        }
+    <tr>
+        <th> Tong Hoa Don </th>
+        <th></th>
+        <th></th>
+        <td> @ViewBag.Total </td>
+    </tr>
+    
+    </tbody>
+
+</table>
+

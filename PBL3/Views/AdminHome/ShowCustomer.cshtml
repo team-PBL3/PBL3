@@ -1,0 +1,39 @@
+﻿@using PBL3.Models;
+@{
+    ViewBag.Title = "ShowCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List_CustomerView list2 = Model;
+}
+
+<h2>ShowCustomer</h2>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>sex</th>
+            <th>phone </th>
+            <th>address</th>
+            <th>username</th>
+            <th>email</th>
+            <th>password</th>
+            <th>ROLE</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var i in list2.data_views)
+        {
+            <tr>
+                <td>@i.name</td>
+                <td>@i.sex</td>
+                <td>@i.phone</td>
+                <td>@i.address</td>
+                <td>@i.username</td>
+                <td>@i.email</td>
+                <td>@i.password</td>
+                <td>@i.Role</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

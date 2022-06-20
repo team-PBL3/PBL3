@@ -1,0 +1,193 @@
+﻿@model PBL3.Models.Cart_View
+@using PBL3.Models
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+                CartDetail_View newCD = ViewBag.NewCD; }
+
+<link href="~/Content/Web/cart.css" rel="stylesheet" />
+<link href="~/Content/Web/cart_responsive.css" rel="stylesheet" />
+<link href="~/Content/Web/Product.css" rel="stylesheet" />
+<!-- Home -->
+
+<div class="home" style="height:600px">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url('/Image/Cart_poster.jpg');background-size:contain"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Trang cá nhân</a></li>
+                                    <li>Giỏ hàng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Info -->
+
+<div class="cart_info">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Column Titles -->
+                <div class="cart_info_columns clearfix" style="border:2px solid #a0a0a0; padding: 10px">
+                    <div class="cart_info_col cart_info_col_product" style="font-size: 20px">Sản phẩm</div>
+                    <div class="cart_info_col cart_info_col_price" style="font-size: 20px">Giá</div>
+                    <div class="cart_info_col cart_info_col_quantity" style="font-size: 20px">Số lượng</div>
+                    <div class="cart_info_col cart_info_col_total" style="font-size: 20px">Tổng giá</div>
+                </div>
+            </div>
+        </div>
+        <div class="row cart_items_row">
+            <div class="col">
+                @if (Model.lViews.dataViews.Count == 0)
+                {<div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">Hiện không có sản phẩm nào trong giỏ.</div> <br />}
+                else
+                { <form onsubmit=""></form>
+    <div>
+        @using (Html.BeginForm("Buy2", "Order", FormMethod.Post, new { onsubmit = "return ValiSubmit()" }))
+        {
+            if (newCD != null)
+            {
+                <!-- Cart Item -->
+                        <div style="border: 2px solid black;">
+                        <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" style="padding-right:10px;">
+                            <!-- Name -->
+                            <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
+                                <div class="cart_item_image">
+                                    <div><img src="@(Image_Url.urlImage + newCD.product_view.imageName)" style="height: 100%; width: 100%" alt=""></div>
+                                </div>
+                                <div class="cart_item_name_container">
+                                    <div class="cart_item_name"><a href="https://localhost:44325/Product/?name=@newCD.product_view.name&productid=@newCD.product_view.id">@newCD.product_view.name</a></div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="cart_item_price">@newCD.product_view.Price.ToString()</div>
+                            <!-- Quantity -->
+                            <div class="cart_item_quantity">
+                                <div class="product_quantity_container">
+                                    <div class="product_quantity clearfix">
+                                        <div class="quantity_input" style="color: #808080; font-size: 13px; width: 40%; vertical-align: middle">MAX: @(newCD.product_view.quantityRemain) </div>
+                                        <label class="quantity_input" style="border-left: solid 2px #d0d0d0">
+                                        <input id="quantity_input_@newCD.id" class="@newCD.id" name="quantity_input" type="number" pattern="[0-9]*" value="1" onkeyup="Validate(@(newCD.product_view.quantityRemain),@newCD.id,@(newCD.product_view.Price.Amount))" onchange="Validate2(@(newCD.product_view.quantityRemain),@newCD.id, @(newCD.product_view.Price.Amount))" />
+                                        </label>
+                                        <div style="display:inline-block; height:57px;">
+                                            <p class="button-quantity" onclick="Btnc('up-button',@newCD.id, @(newCD.product_view.quantityRemain),@(newCD.product_view.Price.Amount))">+</p>
+                                            <p class="button-quantity" onclick="Btnc('down-button',@newCD.id, @(newCD.product_view.quantityRemain),@(newCD.product_view.Price.Amount))">-</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Total -->
+                            <div class="totalPrice@(newCD.id)" style="color: black;width: 10%; text-align: right;">@(newCD.quantity * newCD.product_view.Price.Amount) <span>VND</span></div>
+                            
+                        </div> 
+                        <div style="text-align: right; height: 25px">
+                            <div style="text-align: center; display: inline-block; height:100%; width: 25px">
+                                <input class="Choose_to_buy" id="choose_@newCD.id" type="checkbox" name="CDid" style="display:none" value="@newCD.id" />
+                                <label for="choose_@newCD.id" id="label_choose_@newCD.id" style="height: 100%; display:block; border: 2px solid green"></label>
+                            </div>
+                            <div style="text-align: center; display: inline-block; vertical-align:top; height:100%; width: 25px; border: 2px solid red;">
+                                @Html.ActionLink(" ", "Delete", new { id = newCD.id }, new { style = "color:white; display: block;height:100%;width:100%; background-image: url('/Image/red-x2.png');background-size:cover;" })
+                            </div>
+                        </div>
+                        </div>
+                    }
+                    foreach (var i in Model.lViews.dataViews.ToList())
+                    {
+                        if (newCD != null)
+                        {
+                            if (newCD.id == i.id) { continue; }
+                        } <!-- Cart Item -->
+                        <div style="border: 2px solid black;">
+                        <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" style="padding-right:10px;">
+                            <!-- Name -->
+                            <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
+                                <div class="cart_item_image">
+                                    <div><img src="@(Image_Url.urlImage + i.product_view.imageName)" style="height: 100%; width: 100%" alt=""></div>
+                                </div>
+                                <div class="cart_item_name_container">
+                                    <div class="cart_item_name"><a href="https://localhost:44325/Product/?name=@i.product_view.name&productid=@i.product_view.id">@i.product_view.name</a></div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="cart_item_price">@i.product_view.Price.ToString()</div>
+                            <!-- Quantity -->
+                            <div class="cart_item_quantity">
+                                <div class="product_quantity_container">
+                                    <div class="product_quantity clearfix">
+                                        <div class="quantity_input" style="color: #808080; font-size: 13px; width: 40%; vertical-align: middle">MAX: @(i.product_view.quantityRemain) </div>
+                                        <label class="quantity_input" style="border-left: solid 2px #d0d0d0">
+                                        <input id="quantity_input_@i.id" class="@i.id" name="quantity_input" type="number" pattern="[0-9]*" value="1" onkeyup="Validate(@(i.product_view.quantityRemain),@i.id,@(i.product_view.Price.Amount))" onchange="Validate2(@(i.product_view.quantityRemain),@i.id, @(i.product_view.Price.Amount))" />
+                                        </label>
+                                        <div style="display:inline-block; height:57px;">
+                                            <p class="button-quantity" onclick="Btnc('up-button',@i.id, @(i.product_view.quantityRemain),@(i.product_view.Price.Amount))">+</p>
+                                            <p class="button-quantity" onclick="Btnc('down-button',@i.id, @(i.product_view.quantityRemain),@(i.product_view.Price.Amount))">-</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Total -->
+                            <div class="totalPrice@(i.id)" style="color: black;width: 10%; text-align: right;">@(i.quantity * i.product_view.Price.Amount)</div> <span style="color:black; margin-left:5px"> VND</span>
+                            
+                            </div> 
+                            <div style="text-align: right; height: 25px">
+                                <div style="text-align: center; display: inline-block; height:100%; width: 25px">
+                                    <input class="Choose_to_buy" id="choose_@i.id" type="checkbox" name="CDid" style="display:none" value="@i.id" />
+                                    <label for="choose_@i.id" id="label_choose_@i.id" style="height: 100%; display:block; border: 2px solid green"></label>
+                                </div>
+                                <div style="text-align: center; display: inline-block; vertical-align:top; height:100%; width: 25px; border: 2px solid red;">
+                                    @Html.ActionLink(" ", "Delete", new { id = i.id }, new { style = "color:white; display: block;height:100%;width:100%; background-image: url('/Image/red-x2.png');background-size:cover;" })
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <input type="text" name="cartid" style="display:none" value="@Model.cart.id" />
+                    <div id="error" style="height: 30px"></div>
+                    
+        <div class="row row_cart_buttons">
+            <div class="col"  style="text-align:right;">
+                <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                    <div class="cart_buttons_right ml-lg-auto">
+                        <div class="button clear_cart_button">
+                            <div style="display:block; width: 100%; text-align:center; border:none" class="sd2" id="ChooseAll">Chọn tất cả</div>
+                        </div>
+                        <div class="button update_cart_button">
+                            <div style="display:block; width: 100%; text-align:center; border:none" class="sd2" id="NotChooseAll">Bỏ chọn tất cả</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row_cart_buttons">
+            <div class="col">
+                <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                    <div class="button continue_shopping_button"><a href="/Home/AllProduct">Thêm sản phẩm</a></div>
+                    <div class="cart_buttons_right ml-lg-auto">
+                        <div class="button clear_cart_button">@Html.ActionLink("Xóa tất cả", "DeleteAll")</div>
+                        <div class="button update_cart_button">
+                        <input class="sd" style="display:block; width: 100%; text-align:center; border:none" type="submit" value="Mua Hàng" id="Buy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         }
+
+                </div>}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/Thien_JS/Cart_Index.js"></script>

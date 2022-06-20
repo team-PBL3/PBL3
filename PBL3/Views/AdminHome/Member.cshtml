@@ -1,0 +1,131 @@
+﻿
+@using PBL3.Models;
+@{ ViewBag.Title = "Member";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    PBL3DataContext dataContext = new PBL3DataContext();
+    List_CustomerView list2 = Model;
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
+    List_ProductView list = ViewBag.ProductTotal;
+
+    }
+
+
+
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="fa-solid fa-bars"></span>
+            </label>
+           @ViewBag.Title
+        </h2>
+
+        <div class="search-wrapper">
+            <span class="fa-solid fa-magnifying-glass"></span>
+            <input type="search" placeholder="Search here" />
+        </div>
+
+        <div class="user-wrapper" onclick="menuToggle();">
+            <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
+            <div>
+                <h4>@a.name</h4>
+                <small>Admin</small>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><span class="fa-solid fa-user"></span><a href="#">My profile</a></li>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="#">Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="cards">
+            <div class="card-single">
+                <div>
+                    <h1>@list2.data_views.Count</h1>
+                    <span>Members</span>
+                </div>
+                <div>
+                    <span class="fa-solid fa-users"></span>
+                </div>
+            </div>
+
+            <div class="card-single">
+                <div>
+                    <h1>@list.data_views.Count</h1>
+                    <span>Products</span>
+                </div>
+                <div>
+                    <span class="fa-solid fa-cart-shopping"></span>
+                </div>
+            </div>
+
+            <div class="card-single">
+                <div>
+                    <h1>200</h1>
+                    <span>Order</span>
+                </div>
+                <div>
+                    <span class="fa-solid fa-bag-shopping"></span>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="recent-grid_1">
+            <div class="projects_1">
+                <div class="card_1">
+                    <div class="card-header_1">
+                        <h3>Members</h3>
+
+                        <button>
+                            See all <span class="fa-solid fa-arrow-right">
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body_1">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered mydatatable" id="table" style="width: 100%"
+                                   data-toggle="table"
+                                   data-id-table="advancedTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Sex</th>
+                                        <th>Address</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var i in list2.data_views)
+                                    {
+                        <tr>
+                            <td>@i.name</td>
+                            <td>@i.sex</td>
+                            <td>@i.address</td>
+                            <td>@i.phone</td>
+                            <td>@i.email</td>
+                            <td>@i.username</td>
+
+
+
+                        </tr>}
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
