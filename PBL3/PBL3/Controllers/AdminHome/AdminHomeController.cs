@@ -250,5 +250,15 @@ namespace PBL3.Controllers.AdminHome
             return View(list);
 
         }
+        public ActionResult TableDetail()
+        {
+            return View();
+        }
+        public ActionResult Logout()
+        {
+            Session.Remove(RouteController.Account_Session);
+            return RedirectToAction("Index", "Home");
+        }
+            
     }
 }

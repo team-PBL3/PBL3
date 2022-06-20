@@ -2,50 +2,14 @@
 
 @using PBL3.Models
 @{ ViewBag.Title = "Category";
-                Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-                List<Category> lc = Model.Categories.ToList();
-                List<TradeMark> lt = Model.TradeMarks.ToList();
-                User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
-                List_CustomerView list2 = ViewBag.ShowCustomer;
-                List_ProductView list = ViewBag.ProductTotal;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    List<Category> lc = Model.Categories.ToList();
+    List<TradeMark> lt = Model.TradeMarks.ToList();
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
+    List_CustomerView list2 = ViewBag.ShowCustomer;
+    List_ProductView list = ViewBag.ProductTotal;
 
 }
-
-<input type="checkbox" id="nav-toggle">
-<div class="sidebar">
-    <div class="sidebar-brand">
-        <h2><span class="fa-solid fa-helicopter-symbol"></span><span>HTCC</span></h2>
-    </div>
-
-    <div class="sidebar-menu">
-        <ul>
-            <li>
-                <a href="~/AdminHome/Index">
-                    <span class="fa-solid fa-store"></span>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Member">
-                    <span class="fa-solid fa-user"></span>
-                    <span>Member</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Category" class="active">
-                    <span class="fa-solid fa-list"></span>
-                    <span>Category</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Product">
-                    <span class="fa-solid fa-bag-shopping"></span>
-                    <span>Product</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
 
 <div class="main-content">
     <header>
@@ -53,7 +17,7 @@
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
             </label>
-            @ViewBag.Title 
+            @ViewBag.Title
         </h2>
 
         <div class="search-wrapper">
@@ -180,10 +144,6 @@
                                             <td>@i.name</td>
                                         </tr>
                                     }
-
-
-
-
                                 </tbody>
                             </table>
                         </div>

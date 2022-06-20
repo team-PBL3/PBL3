@@ -65,6 +65,7 @@ namespace PBL3.Models
         }
         public void Set_CD_View(List<int> CDid, List<int> quantity_input)
         {
+            quantity_input.RemoveAll(i => i == 0);
             List<CartDetail> data = cart.cartdetails.ToList();
             for (int i =0; i<CDid.Count;i++)
             {

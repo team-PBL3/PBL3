@@ -8,55 +8,13 @@
     List_ProductView list = ViewBag.ProductTotal;
 }
 
-<input type="checkbox" id="nav-toggle">
-<div class="sidebar">
-    <div class="sidebar-brand">
-        <h2><span class="fa-solid fa-helicopter-symbol"></span><span>HTCC</span></h2>
-    </div>
-
-    <div class="sidebar-menu">
-        <ul>
-            <li>
-                <a href="~/AdminHome/Index">
-                    <span class="fa-solid fa-store"></span>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Member" class="active">
-                    <span class="fa-solid fa-user"></span>
-                    <span>Member</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Category">
-                    <span class="fa-solid fa-list"></span>
-                    <span>Category</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Product">
-                    <span class="fa-solid fa-bag-shopping"></span>
-                    <span>Product</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="fa-solid fa-circle-info"></span>
-                    <span>About</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-
 <div class="main-content">
     <header>
         <h2>
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
             </label>
-            Member
+            @ViewBag.Title
         </h2>
 
         <div class="search-wrapper">

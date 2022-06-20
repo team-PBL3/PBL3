@@ -168,19 +168,15 @@ namespace PBL3.Models
                 throw;
             }
         }
-        public void CreateOrder(List<Orderdetail> LOD, User user, List<int> CDid)
+        public void CreateOrder(List<Orderdetail> LOD, User user, List<int> CDid, Person toPerson)
         {
             try
             {
-                foreach(var id in CDid)
-                {
-                    this.CartDetails.Remove(this.CartDetails.ToList().First(x => x.id == id));
-                }    
                 foreach(var OD in LOD)
                 {
                     this.Products.First(x => x.id == OD.productid).quantityremain -= OD.quantity;
                     int i=this.SaveChanges();
-                    Orderr order = new Orderr() { status = "Đã xác nhận", TimeUpdate = DateTime.Now, userid = user.id, TimeConfirm = DateTime.Now, };
+                    Orderr order = new Orderr() { status = "Đã xác nhận", TimeUpdate = DateTime.Now, userid = user.id, TimeConfirm = DateTime.Now, Person=toPerson};
                     Adding(order);
                     List<Orderr> a = this.Orderrs.ToList();
                     OD.orderid = a.Last().id;
@@ -188,7 +184,12 @@ namespace PBL3.Models
                     Payment b;
                     b = new Payment() { amount = OD.quantity, paymentdate = DateTime.Now, totalPrice = OD.price, orderid = OD.orderid, userid = user.id };
                     Adding(b);
-                }   
+                }
+
+                foreach (var id in CDid)
+                {
+                    this.CartDetails.Remove(this.CartDetails.ToList().First(x => x.id == id));
+                }
             }
             catch (DbEntityValidationException e)
             {

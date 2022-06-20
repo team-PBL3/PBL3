@@ -165,39 +165,203 @@ main {
     min-height: calc(100vh - 90px);
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
-    margin-top: 1rem;
+.button input#btn-add {
+    height: 30px;
+    width: 135px;
+    margin-left: 5px;
+    outline: none;
+    color: #Fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: linear-gradient(30deg,#686de0, #ff6b81);
 }
 
-.card-single {
+    .button input#btn-add:hover {
+        background: linear-gradient(-135deg,#686de0, #ff6b81);
+    }
+
+.bg-modal {
+    display: table-cell;
+    height: 100%;
+    width: 95%;
+    position: fixed;
+    top: 25px;
+    left: 70px;
+    right: 40px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 500;
+}
+
+.cards-bg-modal {
+    height: 547px;
+    width: 800px;
+    font-size: 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    font-size: 36px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.title {
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 5px 0 5px 25px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(30deg,#686de0, #ff6b81);
+    width: 90%;
+    border-bottom: 2px solid #ff6b81;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.add-form {
     display: flex;
-    justify-content: space-between;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 5px;
+    height: 450px;
+    width: 90%;
+    padding: 0 25px;
+    padding-top: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #ff6b81;
+    line-height: 14px;
 }
 
-    .card-single div:last-child span {
-        font-size: 2rem;
-        color: #eb4d4b;
+    .add-form form .product-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
-    .card-single div:first-child span {
-        color: grey;
+form .product-details .input-box {
+    margin-bottom: 10px;
+    width: calc(100% / 2 - 90px);
+}
+
+.product-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.product-details .input-box input {
+    height: 40px;
+    width: 89%;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+    .product-details .input-box input:focus,
+    .product-details .input-box input:valid {
+        border-color: #686de0;
+        background: #ffffff;
     }
 
-    .card-single:last-child {
-        background: #f06161;
+form .button {
+    height: 45px;
+    margin: 0 0;
+}
+
+    form .button input {
+        height: 70%;
+        width: 15%;
+        outline: none;
+        color: #Fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        background: linear-gradient(30deg,#686de0, #ff6b81);
     }
 
-        .card-single:last-child h1,
-        .card-single:last-child div:last-child span,
-        .card-single:last-child div:first-child span {
-            color: #fff;
+        form .button input:hover {
+            background: linear-gradient(-135deg,#686de0, #ff6b81);
         }
+
+.search_select_box button {
+    width: 218px !important;
+    border-radius: 8px !important;
+}
+
+.search_select_box .dropdown-menu {
+    max-height: 140px;
+    overflow-y: auto !important;
+}
+
+.search_select_box .dropdown-menu {
+    width: 170px !important;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    width: 7px !important;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 25px !important;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #ccc !important;
+    border-radius: 25px !important;
+}
+
+.search_select_box .dropdown-menu .bs-searchbox {
+    width: 140px !important;
+}
+
+    .search_select_box .dropdown-menu .bs-searchbox .form-control {
+        width: 200px !important;
+    }
+
+.input-box textarea {
+    padding: 10px 0 0 10px;
+    width: 400px !important;
+    height: 85px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.product-details .input-box textarea:focus,
+.product-details .input-box textarea:valid {
+    border-color: #8e44ad;
+    background: #ffffff;
+}
+
+#btn-see-all {
+    background: #ff7979;
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid #ff7979;
+    text-decoration: none;
+}
 
 .recent-grid_4 {
     margin-top: 3.5rem;

@@ -42,21 +42,20 @@
                     <div class="row">
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                                <div class="logo"><a href="#">HTCC-Beauty</a></div>
+                                <div class="logo"><a href="/Home">HTCC-Beauty</a></div>
                                 <nav class="main_nav">
                                     <ul>
                                         <li class="hassubs active">
-                                            <a href="index.html">Trang chủ</a>
+                                            <a href="/Home">Trang chủ</a>
                                             <ul>
-                                                <li><a href="categories.html">Categories</a></li>
-                                                <li><a href="product.html">Product</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Check out</a></li>
-                                                <li><a href="contact.html">About</a></li>
+                                                <li><a href="/Category">Thể loại</a></li>
+                                                <li><a href="/Home/AllProduct">Sản phẩm</a></li>
+                                                <li><a href="/Cart">Cart</a></li>
+                                                <li><a href="contact.html">Về chúng tôi</a></li>
                                             </ul>
                                         </li>
                                         <li class="hassubs">
-                                            <a href="/Category/Index">Thể loại</a>
+                                            <a href="/Category">Thể loại</a>
                                             <ul>
                                                 @foreach (var i in categories)
                                                 {
@@ -69,7 +68,7 @@
                                 </nav>
                                 <div class="header_extra ml-auto">
                                     <div class="shopping_cart">
-                                        <a href="/Cart/Index">
+                                        <a href="/Cart">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                  viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
                                             <g>
@@ -145,7 +144,7 @@
                         <div class="menu">
                             <h3>Someone Famous<br><span>Website designer</span></h3>
                             <ul>
-                                <li><img src="~/Theme/images/user.png" /><a href="#">My profile</a></li>
+                                <li><img src="~/Theme/images/user.png" /><a href="/Member">My profile</a></li>
                                 <li><img src="~/Theme/images/logout.png">@Html.ActionLink("Log out","Logout","Home")</li>
                             </ul>
                         </div>

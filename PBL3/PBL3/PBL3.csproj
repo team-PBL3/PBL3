@@ -281,6 +281,7 @@
     <Compile Include="Models\Orderdetail.cs" />
     <Compile Include="Models\OrderDetail_View.cs" />
     <Compile Include="Models\Orderr.cs" />
+    <Compile Include="Models\OrderView.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Payment_View.cs" />
     <Compile Include="Models\PBL3DataContext.cs" />
@@ -436,11 +437,14 @@
     <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
+    <Content Include="Content\Web\Buy2.css" />
     <Content Include="Content\Web\cart.css" />
     <Content Include="Content\Web\cart_responsive.css" />
     <Content Include="Content\Web\Category.css" />
     <Content Include="Content\Web\Home.css" />
+    <Content Include="Content\Web\Order.css" />
     <Content Include="Content\Web\Product.css" />
+    <Content Include="Content\Web\Profile.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -506,6 +510,7 @@
     <Content Include="Image\704202.png" />
     <Content Include="Image\borderImage-nightsky.gif" />
     <Content Include="Image\Cart_poster.jpg" />
+    <Content Include="Image\OIP.jpg" />
     <Content Include="obj\Debug\PBL3.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\PBL3.dll" />
     <Content Include="obj\Debug\PBL3.pdb" />
@@ -1263,6 +1268,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Thien_JS\Cart_Index.js" />
     <Content Include="Scripts\Thien_JS\Home_Index.js" />
+    <Content Include="Scripts\Thien_JS\Order_Index.js" />
     <Content Include="Theme\images\avds_xl.jpg" />
     <Content Include="Theme\images\avds_large.jpg" />
     <Content Include="Theme\images\avds_small.jpg" />
@@ -1358,6 +1364,7 @@
     <Content Include="Theme\styles\responsive.css" />
     <Content Include="Theme\styles\Sign_in.css" />
     <Content Include="Theme\styles\Sign_up.css" />
+    <Content Include="Theme\styles\TableDetail.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1431,10 +1438,14 @@
     <Content Include="Views\AdminHome\Product.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\AdminHome\EditProduct.cshtml" />
+    <Content Include="Views\AdminHome\TableDetail.cshtml" />
+    <Content Include="Views\Shared\_LayoutShowAll.cshtml" />
+    <Content Include="Views\AdminHome\Statistics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Profile\" />
     <Folder Include="Views\Route\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,27 +1,68 @@
-﻿
+﻿@model PBL3.Models.ListOrderView
 @using PBL3.Models
-@{
-    ViewBag.Title = "Index";
+@{ ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<Orderr> ListOrder = Model;
-}
-<h2>Index</h2>
-<div style="margin-top: 60px">
-    <div>
-        @foreach (var i in ListOrder)
-        {
-            <a href="https://localhost:44325/Order/Detail?Orderid=@i.id">
-            <div> Đơn hàng: @Encrypt.ToEncrypt("000" + i.id)</div>
-            <div></div>
-            <div>Thời gian đặt hàng: @i.TimeConfirm</div>
-            <div>@i.status</div>
-            @foreach (var ip in i.payments)
-            {   
-                <div>@(ip.totalPrice)</div>
-            }
-            </a>
-            @Html.ActionLink("Delete", "DeleteOrder",new { Orderid = i.id})
-        }
+    }
+<!-- Home -->
+
+<link href="~/Content/Web/cart.css" rel="stylesheet" />
+<link href="~/Content/Web/Order.css" rel="stylesheet" />
+<div class="home" style="height:600px">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url('/Image/Cart_poster.jpg');background-size:contain"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Trang cá nhân</a></li>
+                                    <li>Đơn hàng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
+<div class="poster">
+    <img src="~/Image/post1.gif"/>
+</div>
+<div class="list_order">
+    <div style="padding: 30px">
+        <div>
+            @foreach (var i in Model.list)
+            {
+            <div class="FrameOrder">
+                <a href="https://localhost:44325/Order/Detail?Orderid=@i.order.id">
+                    <div class="OrderCode">Đơn hàng: @Encrypt.ToEncrypt("000" + i.order.id)</div>
+                    <div class="OrderContent">
+                        <img class="Order_image" src="@i.image"></img>
+                        <div class="Info2Order">
+                            <div>
+                                @foreach (var io in i.order.orderdetails)
+                                {
+                                    <span>@io.product.name .</span>
+                                }
+                            </div>
+                            <div>Tổng số hàng: @i.order.orderdetails.Count</div>
+                            <div>Thời gian đặt hàng: @i.order.TimeConfirm</div>
+                            <div>Địa chỉ giao hàng: @i.order.Person.address</div>
+                            <div>Trạng thái: @i.order.status</div>
+                        </div>
+                        @foreach (var ip in i.order.payments)
+                        {
+                    <div class="InfoOrder">Tổng tiền: @(Money.Parse(ip.totalPrice).ToString())</div>}
+                    </div>
+                </a>
+                @Html.ActionLink("Hóa đơn", "Index", "Payment", new { orderid = i.order.id }, new { @class = "ToPayment" })
+            </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="poster"></div>
+<script src="~/Scripts/Thien_JS/Order_Index.js"></script>

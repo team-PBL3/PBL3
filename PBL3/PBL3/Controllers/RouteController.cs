@@ -32,7 +32,7 @@ namespace PBL3.Controllers
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                         (new { controller = AdminHome.AdminHomeController.Name, action = "Index" }));
                 }
-                else if (account.Role.id == 2 && controller == AdminHomeController.Name)
+                else if (account.Role.id == 2 && (controller == AdminHomeController.Name || controller == "Login"))
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                         (new { controller = Member.MemberController.Name, action = "Index" }));
