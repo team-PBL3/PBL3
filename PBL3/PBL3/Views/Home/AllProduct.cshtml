@@ -1,27 +1,97 @@
 ﻿@using PBL3.Models;
-@{
-    ViewBag.Title = "AllProduct";
+@{ ViewBag.Title = "AllProduct";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List_ProductView list = Model;
-}
+    List_ProductView list = Model; }
 
 <link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet" />
-<div style="background-color: whitesmoke; margin-top: 50px; padding-top: 80px;">
+<link href="~/Theme/styles/bootstrap4/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Theme/plugins/OwlCarousel2-2.2.1/owl.carousel.css" rel="stylesheet" />
+<link href="~/Theme/plugins/OwlCarousel2-2.2.1/owl.theme.default.css" rel="stylesheet" />
+<link href="~/Theme/plugins/OwlCarousel2-2.2.1/animate.css" rel="stylesheet" />
+<link href="~/Theme/styles/main_styles.css" rel="stylesheet" />
+<link href="~/Theme/styles/responsive.css" rel="stylesheet" />
 
-    <div style="text-align: right; display: block; height: 50px; padding: 0px 50px 40px 0px; background-color: burlywood">
-        @using (Html.BeginForm("AllProduct2", "Home", FormMethod.Get, new { style="display:inline-block; margin: 10px;"}))
-        {
+<div class="home" style="height: 550px !important;">
+    <div class="home_slider_container">
+
+        <!-- Home Slider -->
+        <div class="owl-carousel owl-theme home_slider">
+
+            <!-- Slider Item -->
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background" style="background-image: url('/Image/GifCategory_Background_1.gif');"></div>
+                <div class="home_slider_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Item -->
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background" style="background-image: url('/Image/GifCategory_Background_2.gif');"></div>
+                <div class="home_slider_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Item -->
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background" style="background-image: url('/Image/GifCategory_Background_3.gif');"></div>
+                <div class="home_slider_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="home_slider_dots_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_slider_dots">
+                            <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+                                <li class="home_slider_custom_dot active">01.</li>
+                                <li class="home_slider_custom_dot">02.</li>
+                                <li class="home_slider_custom_dot">03.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div style="background-color: whitesmoke; margin-top: 0px; padding-top: 30px;">
+    <div style="text-align: right; display: block; height: 50px; padding: 0px 50px 40px 0px; background-color: lightcoral">
+        @using (Html.BeginForm("AllProduct2", "Home", FormMethod.Get, new { style = "display:inline-block; margin: 10px;" }))
+         {
             <lable title=""></lable>
             <select name="sort" id="sort" title="sắp xếp" onchange="this.form.submit()">
                 <option>Thể loại</option>
-                @foreach(var item in list.list_categories)
-                {
+                @foreach (var item in list.list_categories)
+                 {
                     <option value="@item.id">@item.name</option>
-                }
+                 }
             </select>
-        }
+         }
         @using (Html.BeginForm("AllProduct2", "Home", FormMethod.Get, new { style = "display:inline-block; margin: 10px;" }))
-        {
+         {
             <lable title=""></lable>
             <select name="sort" id="sort" title="sắp xếp" onchange="this.form.submit()">
                 <option>Giá</option>
@@ -31,20 +101,20 @@
                 <option value="Less03">1.000.000VND trở xuống</option>
                 <option value="Less02">100.000VND trở xuống</option>
             </select>
-        }
+         }
     </div>
     <div style="display: inline-block; color: #bbbbbb; font-size: 15px; margin: 5px 0px 0px 50px; color: black">
         Có @(list.Amount) sản phẩm.
     </div>
     <div style="text-align: center; padding-top: 5px">
         @if (list.data_views.Count == 0)
-        {
-            <div style="display: block; text-align: center">
+         {
+             <div style="display: block; text-align: center;">
                 Hiện không có sản phẩm nào.
-            </div>
-        }
+             </div>
+         }
         @foreach (var item in list.data_views)
-        {
+         {
             <div class="product-display-frame">
                 <a href="https://localhost:44325/Product/?name=@item.name&productid=@item.id">
                     <img style="width: 350px; height: 350px; text-align:center; border: 5px solid pink; border-radius:5px" src="@item.imageName" />
@@ -52,12 +122,12 @@
                 </a>
                 <div style="color:black">@item.Price.ToString()</div>
             </div>
-        }
+         }
     </div>
     <br />
     <div class="Page-buttons">
         @using (Html.BeginForm("AllProduct", "Home", FormMethod.Get))
-        {
+         {
             <button name="id" id="First-Page" class="page-button" value="1">First</button>
             <button name="id" class="Previous-Page" value="@(list.CurrentPage-1)"><</button>
             <span id="Three-dot1" class="page-button">...</span>
@@ -67,8 +137,7 @@
             <span id="Three-dot2" class="page-button">...</span>
             <button name="id" class="Next-Page" value="@(list.CurrentPage+1)">></button>
             <button name="id" id="Last-Page" class="page-button" value="@(list.AvalMaxPage)">Last</button>
-            
-        }
+         }
     </div>
 </div>
 <script type="text/javascript" src="~/Scripts/Thien_JS/Home_Index.js"></script>

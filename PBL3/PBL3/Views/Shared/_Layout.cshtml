@@ -42,22 +42,21 @@
                     <div class="row">
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                                <div class="logo"><a href="#">HTCC-Beauty</a></div>
+                                <div class="logo"><a href="/Home">HTCC-Beauty</a></div>
                                 <nav class="main_nav">
                                     <ul>
                                         <li class="hassubs active">
-                                            <a href="index.html">Trang chủ</a>
-                                            <ul>
-                                                <li><a href="categories.html">Categories</a></li>
-                                                <li><a href="product.html">Product</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Check out</a></li>
-                                                <li><a href="contact.html">About</a></li>
+                                            <a href="/Home">Trang chủ</a>
+                                            <ul style="padding: 15px !important; width: 120px !important;">
+                                                <li><a href="/Category">Thể loại</a></li>
+                                                <li><a href="/Home/AllProduct">Sản phẩm</a></li>
+                                                <li><a href="/Cart">Cart</a></li>
+                                                <li><a href="contact.html">Về chúng tôi</a></li>
                                             </ul>
                                         </li>
                                         <li class="hassubs">
-                                            <a href="/Category/Index">Thể loại</a>
-                                            <ul>
+                                            <a href="/Category">Thể loại</a>
+                                            <ul id="category-scrollbar">
                                                 @foreach (var i in categories)
                                                 {
                                                     <li><a href="#">@i.name</a></li>
@@ -69,7 +68,7 @@
                                 </nav>
                                 <div class="header_extra ml-auto">
                                     <div class="shopping_cart">
-                                        <a href="/Cart/Index">
+                                        <a href="/Cart">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                  viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
                                             <g>
@@ -145,8 +144,9 @@
                         <div class="menu">
                             <h3>Someone Famous<br><span>Website designer</span></h3>
                             <ul>
-                                <li><img src="~/Theme/images/user.png" /><a href="#">My profile</a></li>
-                                <li><img src="~/Theme/images/logout.png">@Html.ActionLink("Log out","Logout","Home")</li>
+                                <li><img src="~/Theme/images/user.png" /><a href="/Member">My profile</a></li>
+                                <li><img src="~/Theme/images/logout.png">@Html.ActionLink("Log out", "Logout", "Home")</li>
+                                <li>@Html.ActionLink("Order", "Index", "Order")</li>
                             </ul>
                         </div>
                         <script>
@@ -200,16 +200,6 @@
 
             <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
         </div>
-            <!--
-    <div class="menu_social">
-        <ul>
-            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        </ul>
-    </div>
-        </header>-->
         
         
             <div style="z-index: 2; background-color: white; border-bottom: 3px solid #bbbbbb">
@@ -230,14 +220,6 @@
                                 Copyright &copy;
                                 <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </div>
-                            <div class="footer_social ml-lg-auto">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>

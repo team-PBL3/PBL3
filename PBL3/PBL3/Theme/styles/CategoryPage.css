@@ -102,7 +102,7 @@ header {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     position: fixed;
     left: 320px;
-    width: calc(100% - 345px);
+    width: calc(100% - 320px);
     top: 0;
     z-index: 100;
     transition: left 300ms;
@@ -198,6 +198,237 @@ main {
         .card-single:last-child div:first-child span {
             color: #fff;
         }
+
+.button input {
+    height: 30px;
+    width: 20%;
+    margin-left: 5px;
+    margin-top: 15px;
+    outline: none;
+    color: #Fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: linear-gradient(30deg,#686de0, #ff6b81);
+}
+
+    .button input:hover {
+        background: linear-gradient(-135deg,#686de0, #ff6b81);
+    }
+
+form .button {
+    height: 45px;
+    margin: 0 0;
+}
+
+    form .button input {
+        height: 70%;
+        width: 15%;
+        outline: none;
+        color: #Fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        background: linear-gradient(30deg,#686de0, #ff6b81);
+    }
+
+        form .button input:hover {
+            background: linear-gradient(-135deg,#686de0, #ff6b81);
+        }
+
+.bg-modal-Y {
+    height: 100%;
+    width: 95%;
+    position: fixed;
+    top: 60px;
+    left: 90px;
+    right: 40px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 100;
+}
+
+.cards-Y {
+    height: 370px;
+    width: 560px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.close-Y {
+    position: absolute;
+    float: right;
+    top: -5px;
+    right: 70px;
+    font-size: 36px !important;
+    font-weight: 700;
+    transform: rotate(45deg);
+    cursor: pointer;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+    .close-Y:hover {
+        color: black !important;
+        opacity: .8;
+    }
+
+.title-Y {
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 5px 0 5px 25px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(30deg,#686de0, #ff6b81);
+    ;
+    width: 90%;
+    border-bottom: 2px solid #ff6b81;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.add-category-form {
+    display: flex;
+    height: 240px;
+    width: 90%;
+    padding: 0 25px;
+    padding-top: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #ff6b81;
+    line-height: 18px;
+}
+
+    .add-category-form form .input-box {
+        padding: 0 0 15px 0;
+        display: flex;
+        justify-content: space-between;
+        width: 110%;
+    }
+
+.input-box-password input {
+    margin-left: 25px;
+    border-radius: 8px;
+    padding-left: 10px;
+    width: 50%;
+    outline: none;
+    border: 2px solid;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    border-color: #686de0;
+    background: #ffffff;
+}
+
+.add-category-form form .button {
+    padding-top: 5px;
+    width: 250%;
+}
+
+.bg-modal-Z {
+    height: 100%;
+    width: 95%;
+    position: fixed;
+    top: 60px;
+    left: 90px;
+    right: 40px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 100;
+}
+
+.cards-Z {
+    height: 370px;
+    width: 560px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.close-Z {
+    position: absolute;
+    float: right;
+    top: 0px;
+    right: 75px;
+    font-size: 32px;
+    font-weight: 700;
+    transform: rotate(45deg);
+    cursor: pointer;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+    .close-Z:hover {
+        color: black !important;
+        opacity: .8;
+    }
+
+.title-Z {
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 5px 0 5px 25px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(30deg,#686de0, #ff6b81);
+    ;
+    width: 90%;
+    border-bottom: 2px solid #ff6b81;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.add-trademark-form {
+    display: flex;
+    height: 150px;
+    width: 90%;
+    padding: 0 25px;
+    padding-top: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #ff6b81;
+    line-height: 18px;
+}
+
+    .add-trademark-form form .input-box {
+        padding: 0 0 10px 0;
+        display: flex;
+        justify-content: space-between;
+        width: 110%;
+    }
+
+.input-box input {
+    margin-left: 25px;
+    border-radius: 8px;
+    padding-left: 10px;
+    width: 50%;
+    outline: none;
+    border: 2px solid;
+}
+
+    .input-box input:focus,
+    .input-box input:valid {
+        border-color: #686de0;
+        background: #ffffff;
+    }
+
+.add-trademark-form form .button {
+    padding-top: 0px;
+    width: 250%;
+}
 
 .recent-grid_2 {
     display: grid;

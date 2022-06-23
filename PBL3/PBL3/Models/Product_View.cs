@@ -92,13 +92,11 @@ namespace PBL3.Models
                 data_views.Add(data_view);
             }
         }
-        public void Set_Product_View2(int page, List<Product> datas)
+        public void Set_Product_View2(List<Product> datas)
         {
             Amount = datas.Count;
-            int count = -1;
-            AvalMaxPage = (datas.Count - 1) / ProductViewNumber + 1;
-            if (page <= AvalMaxPage) CurrentPage = page;
-            else throw new Exception("Page Not Found");
+
+
             foreach (var data in datas)
             {
                 Product_View data_view = new Product_View()
@@ -111,7 +109,7 @@ namespace PBL3.Models
                     trademark = data.trademark.name,
                     description = data.description,
                     infoproduct = data.infoproduct,
-                    status=data.status
+                    status = data.status
 
                 };
                 data_view.imageName = Image_Url.urlImage + data.images.First(x => x.productid == data.id).name;
