@@ -1,50 +1,14 @@
 ﻿
-
-
 @using PBL3.Models;
-@{ ViewBag.Title = "Admin Home";
+@{ ViewBag.Title = "Thống Kê";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     List<Product> products = Model;
     List_CustomerView list2 = ViewBag.ShowCustomer;
     PBL3DataContext dataContext = new PBL3DataContext();
     List_ProductView list = ViewBag.ProductTotal;
-    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session]; }
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
+}
 
-<input type="checkbox" id="nav-toggle">
-<div class="sidebar">
-    <div class="sidebar-brand">
-        <h2><span class="fa-solid fa-helicopter-symbol"></span><span>HTCC</span></h2>
-    </div>
-
-    <div class="sidebar-menu">
-        <ul>
-            <li>
-                <a href="~/AdminHome/Index" class="active">
-                    <span class="fa-solid fa-store"></span>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Member">
-                    <span class="fa-solid fa-user"></span>
-                    <span>Member</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Category">
-                    <span class="fa-solid fa-list"></span>
-                    <span>Category</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Product">
-                    <span class="fa-solid fa-bag-shopping"></span>
-                    <span>Product</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
 
 <div class="main-content">
     <header>
@@ -52,8 +16,7 @@
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
             </label>
-
-            Dashboard
+            @ViewBag.Title
         </h2>
 
         <div class="search-wrapper">
@@ -61,13 +24,17 @@
             <input type="search" placeholder="Search here" />
         </div>
 
-        <div class="user-wrapper">
+
+        <div class="user-wrapper" onclick="menuToggle();">
             <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
             <div>
-
-                <li><a href="#">@a.name</a></li>
-
+                <h4>@a.name</h4>
                 <small>Admin</small>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="~/AdminHome/Logout">Log out</a></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -77,7 +44,7 @@
             <div class="card-single">
                 <div>
                     <h1>@list2.data_views.Count</h1>
-                    <span>Members</span>
+                    <span>Thành viên</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-users"></span>
@@ -87,7 +54,7 @@
             <div class="card-single">
                 <div>
                     <h1>@list.data_views.Count</h1>
-                    <span>Products</span>
+                    <span>Sản phẩm</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-cart-shopping"></span>
@@ -97,7 +64,7 @@
             <div class="card-single">
                 <div>
                     <h1>200</h1>
-                    <span>Order</span>
+                    <span>Đơn đặt hàng</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-bag-shopping"></span>
@@ -139,25 +106,15 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in products)
-                                    {
-                        <tr>
-                            <td>@i.name</td>
-                            <td>@(i.quantityInit-i.quantityremain)</td>
+                                     {
+                                        <tr>
+                                            <td>@i.name</td>
+                                            <td>@(i.quantityInit-i.quantityremain)</td>
 
-                            <td>@i.price</td>
-                            <td>@(i.price*(i.quantityInit-i.quantityremain))</td>
-
-
-
-
-                        </tr>}
-
-
-
-
-
-
-
+                                            <td>@i.price</td>
+                                            <td>@(i.price*(i.quantityInit-i.quantityremain))</td>
+                                        </tr>
+                                     }
                                 </tbody>
                             </table>
 
@@ -169,50 +126,39 @@
             <div class="members">
                 <div class="card">
                     <div class="card-header">
-                        <h3>New member</h3>
-
-                        <li>
-                            <a href="~/AdminHome/Member">
-                                <span class="fa-solid fa-user"></span>
-                                <span>See All</span>
-                            </a>
-                        </li>
+                        <h3>Thành Viên</h3>
+                        <a href="~/AdminHome/Member">
+                            <span class="fa-solid fa-user"></span>
+                            <span>Xem tất cả</span>
+                        </a>
                     </div>
-
-
-
-
-
                     @foreach (var i in list2.data_views)
-                    {
-        <div class="member">
-            <div class="info">
-                <img src="~/Theme/images/img_4.jpg" width="40px"
-                     height="40px" alt="">
-                <div>
-                    <h4>@i.name</h4>
-                    <small>@i.phone</small>
-                </div>
-            </div>
-            <div class="details">
-                <span class="fa-solid fa-id-card"></span>
-            </div>
-        </div>}
-
+                     {
+                        <div class="member">
+                            <div class="info">
+                                <img src="~/Theme/images/img_4.jpg" width="40px"
+                                     height="40px" alt="">
+                                <div>
+                                    <h4>@i.name</h4>
+                                    <small>@i.phone</small>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <span class="fa-solid fa-id-card"></span>
+                            </div>
+                        </div>
+                     }
                 </div>
             </div>
         </div>
-</div>
     </main>
 </div>
+
 <script>
     var i = document.getElementsByClassName("form - control form - control - sm");
     var search = i[0];
     search.addEventListener("change", Function() {
-       
+        document.getElementById("demo").innerHTML = "Hello World";
     });
-
-
-
 </script>
 

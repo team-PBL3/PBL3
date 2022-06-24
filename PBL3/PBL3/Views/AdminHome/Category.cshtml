@@ -1,51 +1,15 @@
 ﻿@model PBL3.Models.PBL3DataContext
 
 @using PBL3.Models
-@{ ViewBag.Title = "Category";
-                Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-                List<Category> lc = Model.Categories.ToList();
-                List<TradeMark> lt = Model.TradeMarks.ToList();
-                User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
-                List_CustomerView list2 = ViewBag.ShowCustomer;
-                List_ProductView list = ViewBag.ProductTotal;
-
+@{ ViewBag.Title = "Thể loại";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    List<Category> lc = Model.Categories.ToList();
+    List<TradeMark> lt = Model.TradeMarks.ToList();
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
+    List_CustomerView list2 = ViewBag.ShowCustomer;
+    List_ProductView list = ViewBag.ProductTotal; 
 }
 
-<input type="checkbox" id="nav-toggle">
-<div class="sidebar">
-    <div class="sidebar-brand">
-        <h2><span class="fa-solid fa-helicopter-symbol"></span><span>HTCC</span></h2>
-    </div>
-
-    <div class="sidebar-menu">
-        <ul>
-            <li>
-                <a href="~/AdminHome/Index">
-                    <span class="fa-solid fa-store"></span>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Member">
-                    <span class="fa-solid fa-user"></span>
-                    <span>Member</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Category" class="active">
-                    <span class="fa-solid fa-list"></span>
-                    <span>Category</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Product">
-                    <span class="fa-solid fa-bag-shopping"></span>
-                    <span>Product</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
 
 <div class="main-content">
     <header>
@@ -53,7 +17,7 @@
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
             </label>
-            @ViewBag.Title 
+            @ViewBag.Title
         </h2>
 
         <div class="search-wrapper">
@@ -61,11 +25,16 @@
             <input type="search" placeholder="Search here" />
         </div>
 
-        <div class="user-wrapper">
+        <div class="user-wrapper" onclick="menuToggle();">
             <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
             <div>
-                <li><a href="#">@a.name</a></li>
+                <h4>@a.name</h4>
                 <small>Admin</small>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="~/AdminHome/Logout">Log out</a></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -75,7 +44,7 @@
             <div class="card-single">
                 <div>
                     <h1>@list2.data_views.Count</h1>
-                    <span>Members</span>
+                    <span>Thành viên</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-users"></span>
@@ -85,7 +54,7 @@
             <div class="card-single">
                 <div>
                     <h1>@list.data_views.Count</h1>
-                    <span>Products</span>
+                    <span>Sản phẩm</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-cart-shopping"></span>
@@ -95,24 +64,27 @@
             <div class="card-single">
                 <div>
                     <h1>200</h1>
-                    <span>Order</span>
+                    <span>Đơn đặt hàng</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-bag-shopping"></span>
                 </div>
             </div>
+        </div>
 
-
+        <div class="button">
+            <input type="submit" value="Thêm thể loại" id="btn-add-category">
+            <input type="submit" value="Thêm thương hiệu" id="btn-add-trademark">
         </div>
 
         <div class="recent-grid_2">
             <div class="projects_2">
                 <div class="card_2">
                     <div class="card-header_2">
-                        <h3>Categories</h3>
+                        <h3>Thể loại</h3>
 
                         <button>
-                            See all <span class="fa-solid fa-arrow-right">
+                            Xem tất cả <span class="fa-solid fa-arrow-right">
                             </span>
                         </button>
                     </div>
@@ -131,18 +103,13 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in lc)
-                                    {
-                        <tr>
-                            <td>@i.id</td>
-                            <td>@i.name</td>
-                            <td>@i.partofbody</td>
-                        </tr>
-}
-
-
-
-
-
+                                     {
+                                        <tr>
+                                            <td>@i.id</td>
+                                            <td>@i.name</td>
+                                            <td>@i.partofbody</td>
+                                        </tr>
+                                     }
                                 </tbody>
                             </table>
                         </div>
@@ -156,7 +123,7 @@
                         <h3>Trademarks</h3>
 
                         <button>
-                            See all <span class="fa-solid fa-arrow-right">
+                            Xem tất cả <span class="fa-solid fa-arrow-right">
                             </span>
                         </button>
                     </div>
@@ -174,16 +141,12 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in lt)
-                                    {
+                                     {
                                         <tr>
                                             <td>@i.id</td>
                                             <td>@i.name</td>
                                         </tr>
-                                    }
-
-
-
-
+                                     }
                                 </tbody>
                             </table>
                         </div>
@@ -194,3 +157,85 @@
         </div>
     </main>
 </div>
+
+<div class="bg-modal-Y">
+    <div class="cards-Y">
+        <div class="close-Y">+</div>
+        <div class="title-Y">Thêm thể loại</div>
+        <div class="add-category-form">
+            <form action="/AdminHome/addCategory" method="post">
+                <div class="input-box">
+                    <span class="category">Category name</span>
+                    <input data-val="true"
+                           data-val-required=" Category bị trống"
+                           id="password" name="name" type="text">
+                </div>
+                <div class="error" style="height: 36px; padding: 5px 0 5px 0;">
+                    <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>
+                </div>
+                <div class="input-box">
+                    <span class="category">Part of body</span>
+                    <select data-val="true" data-val-remote="Category bị trùng"
+                            data-val-remote-additionalfields="*.partofbody,*.name"
+                            data-val-remote-url="/AdminHome/ktraCategory"
+                            id="password" name="partofbody" type="text" style="width: 224.71px; height: 36px; border-radius: 8px;">
+                        <option></option>
+                        <option>Eye</option>
+                        <option>Face</option>
+                        <option>Lip</option>
+                        <option>Body</option>
+                    </select>
+                </div>
+                <div class="error" style="height: 36px; padding-top: 5px;">
+                    <span class="field-validation-valid" data-valmsg-for="partofbody" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>
+                </div>
+                <div class="button">
+                    <input type="submit" id="add-category" value="Add category" style=" margin-top: 5px;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="bg-modal-Z">
+    <div class="cards-Z">
+        <div class="close-Z">+</div>
+        <div class="title-Z">Thêm Thương Hiệu</div>
+        <div class="add-trademark-form">
+            <form action="/AdminHome/addTradeMark" method="post">
+                <div class="input-box">
+                    <span class="trademark">Tên Thương Hiệu</span>
+                    <input data-val="true" data-val-remote="Trademark bị trùng"
+                           data-val-remote-additionalfields="*.name"
+                           data-val-remote-url="/AdminHome/ktratrademark"
+                           data-val-required="Trademark bị trống"
+                           id="password" name="nametm" type="text">
+                </div>
+                <div class="error" style="height: 36px; padding-top: 5px;">
+                    <span class="field-validation-valid" data-valmsg-for="nametm" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>
+                </div>
+                <div class="button">
+                    <input type="submit" id="btn-add-trademark" value="Thêm Thương Hiệu" style=" margin-top: 5px;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('btn-add-category').addEventListener('click', function () {
+        document.querySelector('.bg-modal-Y').style.display = 'flex';
+    });
+
+    document.getElementById('btn-add-trademark').addEventListener('click', function () {
+        document.querySelector('.bg-modal-Z').style.display = 'flex';
+    });
+
+    document.querySelector('.close-Y').addEventListener('click', function () {
+        document.querySelector('.bg-modal-Y').style.display = 'none';
+    });
+
+    document.querySelector('.close-Z').addEventListener('click', function () {
+        document.querySelector('.bg-modal-Z').style.display = 'none';
+    });
+</script>

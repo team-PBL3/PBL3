@@ -825,7 +825,7 @@ section
 	height: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center center;
+	background-position: bottom center;
 }
 .home_content_container
 {

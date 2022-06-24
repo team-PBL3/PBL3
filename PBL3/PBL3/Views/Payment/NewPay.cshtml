@@ -7,9 +7,9 @@
 <h2>New Payment</h2>
 <div style="margin-top:80px">
     <div style="font-size: 30px; color: black">HTCC - Beauty</div>
-    <div>@Model.nameCustomer</div>
-    <div>@Model.address</div>
-    <div>@Model.phone</div>
+    <div>@Model.Account.name</div>
+    <div>@Model.Account.address</div>
+    <div>@Model.Account.phone</div>
     <div>@DateTime.Now</div>
     @foreach (var i in Model.LOD)
     {

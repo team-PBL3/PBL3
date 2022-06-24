@@ -252,18 +252,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206020856391_Change.cs" />
-    <Compile Include="Migrations\202206020856391_Change.designer.cs">
-      <DependentUpon>202206020856391_Change.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206081013515_Update_AdminHistory.cs" />
-    <Compile Include="Migrations\202206081013515_Update_AdminHistory.designer.cs">
-      <DependentUpon>202206081013515_Update_AdminHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206130734321_foreignkey.cs" />
-    <Compile Include="Migrations\202206130734321_foreignkey.designer.cs">
-      <DependentUpon>202206130734321_foreignkey.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
     <Compile Include="Models\Account_Sign_Up.cs" />
@@ -281,6 +269,7 @@
     <Compile Include="Models\Orderdetail.cs" />
     <Compile Include="Models\OrderDetail_View.cs" />
     <Compile Include="Models\Orderr.cs" />
+    <Compile Include="Models\OrderView.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Payment_View.cs" />
     <Compile Include="Models\PBL3DataContext.cs" />
@@ -436,11 +425,14 @@
     <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
+    <Content Include="Content\Web\Buy2.css" />
     <Content Include="Content\Web\cart.css" />
     <Content Include="Content\Web\cart_responsive.css" />
     <Content Include="Content\Web\Category.css" />
     <Content Include="Content\Web\Home.css" />
+    <Content Include="Content\Web\Order.css" />
     <Content Include="Content\Web\Product.css" />
+    <Content Include="Content\Web\Profile.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -504,8 +496,41 @@
     <Content Include="Image\701502.png" />
     <Content Include="Image\704201.png" />
     <Content Include="Image\704202.png" />
+    <Content Include="Image\BodySuncream_1.jpg" />
+    <Content Include="Image\BodySuncream_2.jpg" />
     <Content Include="Image\borderImage-nightsky.gif" />
     <Content Include="Image\Cart_poster.jpg" />
+    <Content Include="Image\Category_Background.jpg" />
+    <Content Include="Image\Category_Background_1.jpg" />
+    <Content Include="Image\Eyebrow_1.jpg" />
+    <Content Include="Image\Eyebrow_2.jpg" />
+    <Content Include="Image\Eyeliner_1.jpg" />
+    <Content Include="Image\Eyeliner_2.jpg" />
+    <Content Include="Image\EyePalettes_1.jpeg" />
+    <Content Include="Image\FaceSuncream_1.jpg" />
+    <Content Include="Image\FaceSuncream_2.jpg" />
+    <Content Include="Image\Foundation_1.png" />
+    <Content Include="Image\Foundation_2.jpg" />
+    <Content Include="Image\GifCategory_Background_1.gif" />
+    <Content Include="Image\GifCategory_Background_2.gif" />
+    <Content Include="Image\GifCategory_Background_3.gif" />
+    <Content Include="Image\Highlighter_1.jpg" />
+    <Content Include="Image\Highlighter_2.jpg" />
+    <Content Include="Image\Lipbalm.jpg" />
+    <Content Include="Image\Lipstick_1.jpg" />
+    <Content Include="Image\Lipstick_2.jpg" />
+    <Content Include="Image\Mascara_1.jpg" />
+    <Content Include="Image\Mascara_2.jpg" />
+    <Content Include="Image\OIP.jpg" />
+    <Content Include="Image\Perfume_1.png" />
+    <Content Include="Image\Perfume_2.jpg" />
+    <Content Include="Image\Perfume_3.jpg" />
+    <Content Include="Image\Serum_1.jpg" />
+    <Content Include="Image\Serum_2.jpg" />
+    <Content Include="Image\Serum_3.jpg" />
+    <Content Include="Image\Toner_1.jpg" />
+    <Content Include="Image\Toner_2.jpg" />
+    <Content Include="Image\Toner_3.jpg" />
     <Content Include="obj\Debug\PBL3.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\PBL3.dll" />
     <Content Include="obj\Debug\PBL3.pdb" />
@@ -1263,6 +1288,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Thien_JS\Cart_Index.js" />
     <Content Include="Scripts\Thien_JS\Home_Index.js" />
+    <Content Include="Scripts\Thien_JS\Order_Index.js" />
     <Content Include="Theme\images\avds_xl.jpg" />
     <Content Include="Theme\images\avds_large.jpg" />
     <Content Include="Theme\images\avds_small.jpg" />
@@ -1358,6 +1384,7 @@
     <Content Include="Theme\styles\responsive.css" />
     <Content Include="Theme\styles\Sign_in.css" />
     <Content Include="Theme\styles\Sign_up.css" />
+    <Content Include="Theme\styles\TableDetail.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1412,10 +1439,8 @@
     <Content Include="Views\AdminHome\addCategory.cshtml" />
     <Content Include="Views\AdminHome\addProduct.cshtml" />
     <Content Include="Views\AdminHome\addTradeMark.cshtml" />
-    <Content Include="Views\AdminHome\ShowProduct.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Home\AllProduct.cshtml" />
-    <Content Include="Views\AdminHome\ShowProduct1.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Buy.cshtml" />
@@ -1426,15 +1451,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\AdminHome\Member.cshtml" />
-    <Content Include="Views\AdminHome\ShowCustomer.cshtml" />
     <Content Include="Views\AdminHome\Category.cshtml" />
     <Content Include="Views\AdminHome\Product.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\AdminHome\EditProduct.cshtml" />
+    <Content Include="Views\AdminHome\TableDetail.cshtml" />
+    <Content Include="Views\Shared\_LayoutShowAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Profile\" />
     <Folder Include="Views\Route\" />
   </ItemGroup>
   <ItemGroup>
@@ -1451,19 +1478,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206020856391_Change.resx">
-      <DependentUpon>202206020856391_Change.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206081013515_Update_AdminHistory.resx">
-      <DependentUpon>202206081013515_Update_AdminHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206130734321_foreignkey.resx">
-      <DependentUpon>202206130734321_foreignkey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\PBL3.Migrations.ahihi.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3.Migrations.Change.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3.Migrations.songhoang.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3.Migrations.Update_AdminHistory.resources" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

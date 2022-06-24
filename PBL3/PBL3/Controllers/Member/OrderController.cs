@@ -16,7 +16,8 @@ namespace PBL3.Controllers.Member
         public ActionResult Index()
         {
             User user = (User)Session[Account_Session];
-            return View((new PBL3DataContext()).Orderrs.Where(x=>x.userid == user.id).ToList());
+            ListOrderView list = new ListOrderView((new PBL3DataContext()).Orderrs.Where(x => x.userid == user.id).ToList());
+            return View(list);
         }
         public ActionResult Detail(int Orderid)
         {
@@ -41,7 +42,8 @@ namespace PBL3.Controllers.Member
                 }    
                 List_CD_View la = new List_CD_View(((User)Session[Account_Session]).carts.First());
                 la.Set_CD_View(CDid, quantity_input);
-                return View(la);
+                ViewBag.list = la;
+                return View();
             }
             catch (Exception e)
             {
@@ -60,7 +62,7 @@ namespace PBL3.Controllers.Member
                     LOD.Add(new Orderdetail() { price = price.ElementAt(i), quantity = quantity.ElementAt(i), Time = DateTime.Now, productid = productid.ElementAt(i)});
                 }    
                 PBL3DataContext dataContext = new PBL3DataContext();
-                dataContext.CreateOrder(LOD, (User)Session[Account_Session], CDid);
+                dataContext.CreateOrder(LOD, (User)Session[Account_Session], CDid, toPerson);
             }
             catch (Exception)
             {

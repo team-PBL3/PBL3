@@ -1,6 +1,6 @@
 ﻿
 @using PBL3.Models;
-@{ ViewBag.Title = "Member";
+@{ ViewBag.Title = "Thành Viên";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     PBL3DataContext dataContext = new PBL3DataContext();
     List_CustomerView list2 = Model;
@@ -8,47 +8,6 @@
     List_ProductView list = ViewBag.ProductTotal;
 }
 
-<input type="checkbox" id="nav-toggle">
-<div class="sidebar">
-    <div class="sidebar-brand">
-        <h2><span class="fa-solid fa-helicopter-symbol"></span><span>HTCC</span></h2>
-    </div>
-
-    <div class="sidebar-menu">
-        <ul>
-            <li>
-                <a href="~/AdminHome/Index">
-                    <span class="fa-solid fa-store"></span>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Member" class="active">
-                    <span class="fa-solid fa-user"></span>
-                    <span>Member</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Category">
-                    <span class="fa-solid fa-list"></span>
-                    <span>Category</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Product">
-                    <span class="fa-solid fa-bag-shopping"></span>
-                    <span>Product</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="fa-solid fa-circle-info"></span>
-                    <span>About</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
 
 <div class="main-content">
     <header>
@@ -56,7 +15,7 @@
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
             </label>
-            Member
+            @ViewBag.Title
         </h2>
 
         <div class="search-wrapper">
@@ -64,11 +23,17 @@
             <input type="search" placeholder="Search here" />
         </div>
 
-        <div class="user-wrapper">
+        <div class="user-wrapper" onclick="menuToggle();">
             <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
             <div>
-                <li><a href="#">@a.name</a></li>
+                <h4>@a.name</h4>
                 <small>Admin</small>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><span class="fa-solid fa-user"></span><a href="#">My profile</a></li>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="#">Log out</a></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -78,7 +43,7 @@
             <div class="card-single">
                 <div>
                     <h1>@list2.data_views.Count</h1>
-                    <span>Members</span>
+                    <span>Thành Viên</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-users"></span>
@@ -88,7 +53,7 @@
             <div class="card-single">
                 <div>
                     <h1>@list.data_views.Count</h1>
-                    <span>Products</span>
+                    <span>Sản phẩm</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-cart-shopping"></span>
@@ -98,7 +63,7 @@
             <div class="card-single">
                 <div>
                     <h1>200</h1>
-                    <span>Order</span>
+                    <span>Đơn đặt hàng</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-bag-shopping"></span>
@@ -112,10 +77,10 @@
             <div class="projects_1">
                 <div class="card_1">
                     <div class="card-header_1">
-                        <h3>Members</h3>
+                        <h3>Thành Viên</h3>
 
                         <button>
-                            See all <span class="fa-solid fa-arrow-right">
+                            Xem tất cả <span class="fa-solid fa-arrow-right">
                             </span>
                         </button>
                     </div>
@@ -137,21 +102,19 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in list2.data_views)
-                                    {
-                        <tr>
-                            <td>@i.name</td>
-                            <td>@i.sex</td>
-                            <td>@i.address</td>
-                            <td>@i.phone</td>
-                            <td>@i.email</td>
-                            <td>@i.username</td>
+                                     {
+                                        <tr>
+                                            <td>@i.name</td>
+                                            <td>@i.sex</td>
+                                            <td>@i.address</td>
+                                            <td>@i.phone</td>
+                                            <td>@i.email</td>
+                                            <td>@i.username</td>
 
 
 
-                        </tr>
-}
-
-
+                                        </tr>
+                                     }
 
                                 </tbody>
                             </table>

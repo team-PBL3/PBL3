@@ -1,47 +1,15 @@
-﻿@model PBL3.Models.List_ProductView
+﻿@model PBL3.Models.Product
 @using PBL3.Models;
-@{ ViewBag.Title = "Product";
+@{ ViewBag.Title = "Sản phẩm";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     PBL3DataContext dataContext = new PBL3DataContext();
-    List_CustomerView list2 = ViewBag.ShowCustomer;
-    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session]; }
-@{ List_ProductView list = Model;}
 
-<input type="checkbox" id="nav-toggle">
-<div class="sidebar">
-    <div class="sidebar-brand">
-        <h2><span class="fa-solid fa-helicopter-symbol"></span><span>HTCC</span></h2>
-    </div>
+    User a = (User)Session[PBL3.Controllers.RouteController.Account_Session]; 
+}
+@{ 
+    List_ProductView list = ViewBag.ShowProduct;
+}
 
-    <div class="sidebar-menu">
-        <ul>
-            <li>
-                <a href="~/AdminHome/Index">
-                    <span class="fa-solid fa-store"></span>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Member">
-                    <span class="fa-solid fa-user"></span>
-                    <span>Member</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Category">
-                    <span class="fa-solid fa-list"></span>
-                    <span>Category</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/AdminHome/Product" class="active">
-                    <span class="fa-solid fa-bag-shopping"></span>
-                    <span>Product</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
 
 <div class="main-content">
     <header>
@@ -49,7 +17,7 @@
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
             </label>
-            Member
+            @ViewBag.Title
         </h2>
 
         <div class="search-wrapper">
@@ -57,60 +25,36 @@
             <input type="search" placeholder="Search here" />
         </div>
 
-        <div class="user-wrapper">
+        <div class="user-wrapper" onclick="menuToggle();">
             <img src="~/Theme/images/profile.png" alt="" width="30px" height="30px">
             <div>
-                <li><a href="#">@a.name</a></li>
+                <h4>@a.name</h4>
                 <small>Admin</small>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><span class="fa-solid fa-user"></span><a href="#">My profile</a></li>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="#">Log out</a></li>
+                </ul>
             </div>
         </div>
     </header>
 
     <main>
-        <div class="cards">
-            <div class="card-single">
-                <div>
-                    <h1>@list2.data_views.Count</h1>
-                    <span>Members</span>
-                </div>
-                <div>
-                    <span class="fa-solid fa-users"></span>
-                </div>
-            </div>
-
-            <div class="card-single">
-                <div>
-                    <h1>@list.data_views.Count</h1>
-                    <span>Products</span>
-                </div>
-                <div>
-                    <span class="fa-solid fa-cart-shopping"></span>
-                </div>
-            </div>
-
-            <div class="card-single">
-                <div>
-                    <h1>200</h1>
-                    <span>Order</span>
-                </div>
-                <div>
-                    <span class="fa-solid fa-bag-shopping"></span>
-                </div>
-            </div>
-
-
+        <div class="button">
+            <input type="submit" value="Thêm sản phẩm" id="btn-add">
         </div>
 
         <div class="recent-grid_4">
             <div class="projects_4">
                 <div class="card_4">
                     <div class="card-header_4">
-                        <h3>Products</h3>
+                        <h3>Sản phẩm</h3>
 
-                        <button>
-                            See all <span class="fa-solid fa-arrow-right">
+                        <a href="~/AdminHome/TableDetail" id="btn-see-all">
+                            Xem tất cả <span class="fa-solid fa-arrow-right">
                             </span>
-                        </button>
+                        </a>
                     </div>
 
                     <div class="card-body_4">
@@ -130,28 +74,18 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in list.data_views)
-                                    {
-                        <tr>
-
-                            <td>@i.name</td>
-                            <td>@i.category</td>
-                            <td>@i.trademark</td>
-                            <td>
-                                <span class="status_orange">@i.status</span>
-                            </td>
-                            <td>@i.quantityRemain</td>
-                            <td>@i.Price</td>
-                        </tr>}
-                                    @*<tr>
-                                            <td>Product</td>
-                                            <td>Category</td>
-                                            <td>Dior</td>
+                                     {
+                                        <tr>
+                                            <td>@i.name</td>
+                                            <td>@i.category</td>
+                                            <td>@i.trademark</td>
                                             <td>
-                                                <span class="status_orange">INACTIVE</span>
+                                                <span class="status_orange">@i.status</span>
                                             </td>
-                                            <td>10</td>
-                                            <td>1000000</td>
-                                        </tr>*@
+                                            <td>@i.quantityRemain</td>
+                                            <td>@i.Price</td>
+                                        </tr>
+                                     }
                                 </tbody>
                             </table>
                         </div>
@@ -162,7 +96,81 @@
         </div>
     </main>
 </div>
-<script>var i = document.getElementsByClassName("status_orange");
+<div class="bg-modal">
+    <div class="cards-bg-modal">
+        <div class="close">+</div>
+        <div class="title">Thêm sản phẩm</div>
+        <div class="add-form">
+            <form action="/AdminHome/addProduct" method="post">
+                <div class="product-details">
+                    <div class="input-box">
+                        <span class="details">Name</span>
+
+                        @Html.TextBoxFor(model => model.name, new { @class = "input" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Category</span>
+                        <div class="search_select_box">
+                            @Html.DropDownListFor(model => model.categoryid, new SelectList(dataContext.Categories.ToList(), "id", "name"), "Choose a category")
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Trademark</span>
+                        <div class="search_select_box">
+                            @Html.DropDownListFor(model => model.trademarkid, new SelectList(dataContext.TradeMarks.ToList(), "id", "name"), "Choose a trademark")
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Discription</span>
+                        @Html.TextBoxFor(model => model.description, new { @class = "input" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Price</span>
+                        @Html.TextBoxFor(model => model.price, new { @class = "input" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Status</span>
+                        <select class="options" data-live-search="true" style="width: 89%; height: 40px;border-radius: 8px; padding-left: 15px;">
+                            <option>SOLD_OUT</option>
+                            <option>ACTIVE</option>
+
+                        </select>
+
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Remain quantity</span>
+                        <input type="text" placeholder="Enter remain quantity" required style=" margin-left: 0px;">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Image URL</span>
+
+                        <input type="file" id="myfile" name="imagee" style=" margin-left: 0px;"><br><br>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Product information</span>
+                        <textarea id="productinfo" type="text" rows="4" placeholder="Enter product information" required name="infoproduct"></textarea>
+
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Add Product">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var i = document.getElementsByClassName("status_orange");
     for (var element of i) {
-        if (element.innerHTML == "SOLD_OUT") element.className ="status_purple";
-    }</script>
+        if (element.innerHTML == "SOLD_OUT") element.className = "status_purple";
+    }
+</script>
+<script>
+    document.getElementById('btn-add').addEventListener('click', function () {
+        document.querySelector('.bg-modal').style.display = 'flex';
+    });
+
+    document.querySelector('.close').addEventListener('click', function () {
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+</script>

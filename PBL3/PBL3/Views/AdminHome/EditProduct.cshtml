@@ -2,12 +2,12 @@
 @using PBL3.Models
 @{
     ViewBag.Title = "Edit Product";
-    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     PBL3DataContext dataContext = new PBL3DataContext();
 }
 
 <link href="~/Content/CSS/EditProduct.css" rel="stylesheet" />
-<h2>addProduct</h2>
+<h2>Edit</h2>
 @ViewBag.Message
 @using (Html.BeginForm("EditProduct2", "AdminHome"))
 {
