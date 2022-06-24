@@ -1,0 +1,171 @@
+﻿@model  PBL3.Models.Product
+@using PBL3.Models;
+@{
+    ViewBag.Title = "Product Detail";
+    Layout = "~/Views/Shared/_LayoutShowAll.cshtml";
+    PBL3DataContext dataContext = new PBL3DataContext();
+    var a = Model;
+}
+@{
+    List_ProductView list = ViewBag.ListProduct;
+}
+
+
+<div class="btn-back">
+    <a href="/AdminHome/Product">
+        <i class="fa-solid fa-left-long"></i>
+    </a>
+</div>
+<div class="container mt-2 mb-2" style="margin-left: 20px;width:1770px;padding-top:40px">
+
+    <table style="width: 1820px;"
+           data-toggle="table"
+           data-pagination="true"
+           data-search="true"
+           data-height="600"
+           data-detail-view="true"
+           data-detail-formatter="detailFormatter">
+        <thead>
+            <tr>
+                <th data-field="Name" data-sortable="true" class="col-name">Name</th>
+                <th data-field="Category" data-sortable="true" class="col-category">Category</th>
+                <th data-field="Trademark" data-sortable="true" class="col-trademark">Trademark</th>
+                <th data-field="Discription" data-sortable="true" class="col-description">Description</th>
+                <th data-field="Remain_quantity" data-sortable="true" class="col-remainquantity">Remain Quantity</th>
+                <th data-field="Product_info" data-sortable="true" class="col-productinfo">Product Info</th>
+                <th data-field="Status" data-sortable="true" class="col-status">STATUS</th>
+                <th data-field="ImageUrl" data-sortable="true" class="col-img">Image URL</th>
+                <th data-field="Price" data-sortable="true" class="col-price">Price</th>
+                <th data-field="Action" data-formatter="" class="col-action">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in list.data_views)
+             {
+                <tr>
+                    <td id="name_@i.id">@i.name</td>
+                    <td id="category_@i.id">@i.category</td>
+                    <td id="trademark_@i.id">@i.trademark</td>
+                    <td id="description_@i.id">@i.description</td>
+                    <td id="quantityRemain_@i.id">@i.quantityRemain</td>
+                    <td id="infoproduct_@i.id">@i.infoproduct</td>
+                    <td id="status_@i.id">@i.status</td>
+                    <td><img id="imageName_@i.id" src="@i.imageName" width="200px" height="200px"></td>
+                    <td id="PriceAmount_@i.id">@i.Price.Amount</td>
+                    <td>
+                        <input type="submit" value="Edit" class="button-edit" id="@i.id" />
+                        <input type="submit" value="Delete" class="button-delete" id="@i.id" />
+                    </td>
+                </tr>
+             }
+        </tbody>
+    </table>
+
+</div>
+
+<div class="bg-modal-1">
+    <div class="cards-1">
+        <div class="close-1">+</div>
+        <div class="title-1">Chỉnh sửa</div>
+        <div class="edit-form">
+            <form action="/AdminHome/EditProduct2" method="post">
+                <input type="text" style="display: none" name="id" value="@Model.id" />
+                <div class="product-details">
+                    <div class="input-box">
+                        <span class="details">Name</span>
+
+                        @Html.TextBoxFor(model => model.name, new { @id = "name" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Category</span>
+                        <div class="search_select_box">
+                            @Html.DropDownListFor(model => model.categoryid, new SelectList(dataContext.Categories.ToList(), "id", "name"), new { @class = "options", @id = "category" })
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Trademark</span>
+                        <div class="search_select_box">
+                            @Html.DropDownListFor(model => model.trademarkid, new SelectList(dataContext.TradeMarks.ToList(), "id", "name"), new { @class = "option", @id = "trademark" })
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Description</span>
+                        @Html.TextBoxFor(model => model.description, new { @id = "description" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Price</span>
+                        @Html.TextBoxFor(model => model.price, new { @id = "PriceAmount" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Status</span>
+                        @Html.TextBoxFor(model => model.status, new { @id = "status" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Remain quantity</span>
+                        @Html.TextBoxFor(model => model.quantityInit, new { @id = "quantityRemain" })
+                    </div>
+                    <div class="input-box">
+                        <label for="file">Choose a file</label>
+                        <input type="file" name="imagee" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                        <img id="ahihi" src="~/Image/@ViewBag.images" width="100px" height="100px" />
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Product information</span>
+                        @Html.TextBoxFor(model => model.infoproduct, new { @id = "infoproduct" })
+                    </div>
+
+                </div>
+                <div class="button">
+                    <input type="submit" value="Edit Product" style="width:25%;" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="bg-modal-2">
+    <div class="cards-2">
+        <div class="close-2">+</div>
+        <div class="title-2">Xoá</div>
+        <div class="delete-form">
+            <form action="#">
+                <div class="confirm">
+                    <span>Bạn có chắc chắn muốn xóa sản phẩm này?</span>
+                </div>
+                <div class="button">
+                    <a class="btn-yes" href="https://localhost:44325/AdminHome/DeleteProduct?productId=">Yes</a>
+                    <input type="submit" class="btn-no" value="No">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("file").onchange = function () {
+        document.getElementById("ahihi").src = @Image_Url.urlImage + this.files.item(0).name;
+    }
+    var inputs = document.querySelectorAll('.inputfile');
+    Array.prototype.forEach.call(inputs, function (input) {
+        var label = input.nextElementSibling,
+            labelVal = label.innerHTML;
+
+        input.addEventListener('change', function (e) {
+            var fileName = '';
+            if (this.files && this.files.length > 1)
+                fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+            else
+                fileName = e.target.value.split('\\').pop();
+
+            if (fileName)
+                label.querySelector('span').innerHTML = fileName;
+            else
+                label.innerHTML = labelVal;
+        });
+    });
+</script>
+
+
+
+
+
+

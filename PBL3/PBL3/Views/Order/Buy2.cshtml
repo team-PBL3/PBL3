@@ -1,0 +1,145 @@
+﻿@model PBL3.Models.Person
+
+@using PBL3.Models
+@{ ViewBag.Title = "Buy2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List_CD_View list = ViewBag.list;
+    }
+
+
+<link href="~/Content/Web/cart.css" rel="stylesheet" />
+<link href="~/Content/Web/cart_responsive.css" rel="stylesheet" />
+<link href="~/Content/Web/Product.css" rel="stylesheet" />
+<!-- Home -->
+
+<div class="home" style="height:600px">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url('/Image/Cart_poster.jpg');background-size:contain"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Trang cá nhân</a></li>
+                                    <li><a href="categories.html">Giỏ hàng</a></li>
+                                    <li>Mua hàng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Info -->
+
+<div class="cart_info">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Column Titles -->
+                <div class="cart_info_columns clearfix" style="border:2px solid #a0a0a0; padding: 10px">
+                    <div class="cart_info_col cart_info_col_product" style="font-size: 20px">Sản phẩm</div>
+                    <div class="cart_info_col cart_info_col_price" style="font-size: 20px">Giá</div>
+                    <div class="cart_info_col cart_info_col_quantity" style="font-size: 20px">Số lượng</div>
+                    <div class="cart_info_col cart_info_col_total" style="font-size: 20px">Tổng giá</div>
+                </div>
+            </div>
+        </div>
+        <div class="row cart_items_row">
+            <div class="col">
+                <div>
+                    @using (Html.BeginForm("OrderProduct", "Order", FormMethod.Post, new { onsubmit = "return Validate()" }))
+                    {
+                        foreach (var i in list.dataViews)
+                        {
+                             <!-- Cart Item -->
+                            <div style="border: 2px solid black;">
+                            <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" style="padding-right:10px;">
+                                <!-- Name -->
+                                <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_item_image">
+                                        <div><img src="@(Image_Url.urlImage + i.product_view.imageName)" style="height: 100%; width: 100%" alt=""></div>
+                                    </div>
+                                    <div class="cart_item_name_container">
+                                        <div class="cart_item_name"><a href="#">@i.product_view.name</a></div>
+                                    </div>
+                                </div>
+                                <!-- Price -->
+                                <div class="cart_item_price">@i.product_view.Price.ToString()</div>
+                                <!-- Quantity -->
+                                <div class="cart_item_quantity">
+                                    <div class="product_quantity_container">
+                                        <div class="product_quantity clearfix" style="border: none">
+                                            <label class="quantity_input" style="text-align: center; width: 70%">
+                                            <input id="quantity_input" class="@i.id" name="quantity_input" type="number" pattern="[0-9]*" value="@i.quantity" onkeydown="SaveOld()" onkeyup="Validate(@(i.product_view.quantityRemain))" onchange="Validate2(@(i.product_view.quantityRemain),@i.id, @(i.product_view.Price.Amount))" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Total -->
+                                <div class="totalPrice@(i.id)" style="color: black;width: 10%; text-align: right;">@(i.quantity * i.product_view.Price.Amount) VND</div>
+                            
+                                </div> 
+                            </div>
+                            <input name="price" value=" @(i.product_view.Price.Amount * i.quantity)" style="display:none" />
+                            <input name="quantity" value=" @(i.quantity)" style="display:none" />
+                            <input name="productid" value=" @(i.product_view.id)" style="display:none" />
+                            <input name="CDid" value=" @(i.id)" style="display:none" /> 
+                        }
+                        <div style="border: 2px solid black; margin-top: 10px">
+                            <div class="Form_info">
+                                <div class="Form_info_recipient">Thông tin giao hàng:</div>
+                                <div class="Input_info_Form">
+                                    <div class="row2">
+                                        <label style="" for="name">Tên</label>
+                                        <input type="text" id="name" name="name"/>
+                                        <span id="errorname"></span>
+                                    </div>
+                                    <div class="row2">
+                                        <label for="phone">Điện thoại</label>
+                                        <input type="text" id="phone" name="phone" />
+                                        <span id="errorphone"></span>
+                                    </div>
+                                    <div class="row2">
+                                        <label for="sex">Giới tính</label>
+                                        <input type="radio" id="sex" name="sex" value="NAM" />
+                                        <span>NAM</span>
+                                        <input type="radio" id="sex" name="sex" value="NU" />
+                                        <span>NU</span>
+                                        <span id="errorsex"></span>
+                                    </div>
+                                    <div class="row2">
+                                        <label for="address">Địa chỉ</label>
+                                        <input type="text" id="address" name="address"/>
+                                        <span id="erroraddress"></span>
+                                    </div>
+                                    <div class="row2">
+                                        <label for="email">Email</label>
+                                        <input type="text" id="email" name="email" value="" />
+                                        <span id="erroremail"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                        <div class="row row_cart_buttons">
+                            <div class="col">
+                                <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                                    <div class="cart_buttons_right ml-lg-auto">
+                                        <div class="button update_cart_button">
+                                            <input class="sd" style="display:block; width: 100%; text-align:center; border:none" type="submit" value="Xác nhận" id="Buy" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

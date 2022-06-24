@@ -1,0 +1,100 @@
+﻿@using PBL3.Models
+@model PBL3.Models.Category_View_List
+@{
+    ViewBag.Title = "Thể loại";
+}
+<link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet" />
+<link type="text/css" href="~/Theme/styles/categories.css" rel="stylesheet" />
+<link type="text/css" href="~/Content/Web/Category.css" rel="stylesheet" />
+<!-- Home -->
+
+<div class="home">
+    <div class="home_container">
+        <div class="home_background" style="background-image: url('/Image/Category_Background_1.jpg');"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content" style="font-family: 'Charis SIL', serif; width: 780px; padding-left: 100px;">
+                            <div class="home_title" style="font-weight: 500; color: #70a1ff; padding-left: 8px; border-left: red solid 2px ">Trang điểm & Sắc đẹp<span style="color: #70a1ff;">.</span></div>
+                            <div class="home_text" style="margin-top: 20px; padding-left: 8px; border-left: red solid 2px"><p style="font-family: 'Charis SIL', serif; color: white; font-size: 24px">Các dụng cụ và sản phẩm hỗ trợ cải thiện vẻ ngoài. <br />Nâng niu và bảo vệ vẻ đẹp của bản thân.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Products -->
+
+<div class="products" style="padding-top:0px">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <!-- Product Sorting -->
+                <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start" style="padding: 50px 0px 0px 0px">
+                    <div>
+                        <ul>
+                            @foreach (var partofbody in Model.list)
+                            {
+                                <li id="Select_@Model.list.IndexOf(partofbody)" class="View_select" onclick="ChangePOB(@Model.list.Count,@Model.list.IndexOf(partofbody))">@partofbody.Name</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    @foreach (var partofbody in Model.list)
+                    {
+                    <div id="Select_View_@Model.list.IndexOf(partofbody)" class="Selection_view">
+                        @foreach (var category in partofbody.categorylist)
+                        {   
+                            <div class="category_name">@Html.ActionLink(category.name, "AllProduct2", "Home", new { sort = category.name }, new { })</div>
+                            foreach (var product in category.productlist)
+                            {
+                            <div class="product-display-frame">
+                                <a href="https://localhost:44325/Product/?name=@product.Name&productid=@product.id">
+                                    <img style="width: 300px; height: 300px; text-align:center; border: 5px solid pink; border-radius:5px" src="@(product.urlImage)" />
+                                    <div>@product.Name</div>
+                                </a>
+                                <div style="color:black">@product.Price VND </div>
+                            </div>
+                            }
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    ChangePOB(@Model.list.Count, 0);
+    function ChangePOB(max,index) {
+        for (var i = 0; i < max; i++)
+        {
+            document.getElementById("Select_View_" + i).style.display = 'none';
+            var x = document.getElementById("Select_" + i).style;
+            x.zIndex = "1";
+            x.border = "6px solid #aaaaaa";
+            x.borderRadius = "10px";
+            x.borderBottomColor = "white";
+
+        }
+        document.getElementById("Select_View_" + index).style.display = 'block';
+        var x = document.getElementById("Select_" + index).style;
+        x.zIndex = "2";
+        x.position = "relative";
+        x.border = "6px solid #010365";
+        x.backgroundColor = "white";
+        x.borderBottomLeftRadius = "0px";
+        x.borderBottomRightRadius = "0px";
+        x.borderBottomColor = "white";
+    }
+</script>
+
