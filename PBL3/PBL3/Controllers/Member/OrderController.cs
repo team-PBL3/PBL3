@@ -43,7 +43,9 @@ namespace PBL3.Controllers.Member
                 List_CD_View la = new List_CD_View(((User)Session[Account_Session]).carts.First());
                 la.Set_CD_View(CDid, quantity_input);
                 ViewBag.list = la;
-                return View();
+                User user = (User)Session[Account_Session];
+                Person person = new Person() { name = user.name, email = user.email, address = user.address, phone = user.phone, sex = user.sex };
+                return View(person);
             }
             catch (Exception e)
             {

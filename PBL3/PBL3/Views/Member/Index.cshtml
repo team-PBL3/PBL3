@@ -1,56 +1,364 @@
 ﻿@model PBL3.Models.User
+    @using PBL3.Models
 @{ ViewBag.Title = "Trang cá nhân";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Cart cart = ViewBag.Cart;
+    }
 <link href="~/Content/Web/Profile.css" rel="stylesheet" />
 <div style="padding: 150px 0px 30px 0px; background: #eeeeee">
     <div class="Content">
         <div class="backgroundAva">
             <img src="~/Image/avatarFrofile.png" class="ava" />
+            <div>Trang cá nhân</div>
         </div>
-        <h2 style="padding: 10px; background: pink; color: black">Trang cá nhân</h2>
         <div class="Member-function">
-            <div class="cart"></div>
-            <div class="order"></div>
-            <div class="history"></div>
+            <div class="Member-function-block">
+                <a href="/Order/Index">
+                    <div style="display: inline-block; width: 80%; text-align: center; height:100%">
+                        <div style="font-size: 36px; display: inline-block;">
+                            <div style="display:inline-block">
+                                <div style="vertical-align: middle; height: 100px; display: table-cell">Xem Đơn Hàng</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: inline-block; width: 18%; text-align: center; vertical-align: top; font-size: 17px;">
+                        <div style="display:inline-block">
+                            <div style="vertical-align: middle; height: 100px; display: table-cell; text-align:left">
+                                <img src="~/Image/order-icon.png" style="width:100%"/>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="Member-function-block">
+                <a href="/Cart/Index">
+                    <div style="display: inline-block; width: 80%; text-align: center; height: 100%">
+                        <div style="font-size: 36px; display: inline-block;">
+                            <div style="display:inline-block">
+                                <div style="vertical-align: middle; height: 100px; display: table-cell">Đến Giỏ Hàng</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: inline-block; width: 18%; text-align: center; vertical-align: top; font-size: 17px;">
+                        <div style="display:inline-block">
+                            <div style="vertical-align: middle; height: 100px; display: table-cell; text-align:left">
+                                <img src="~/Image/cart-icon.png" style="width:100%" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="Member-function-block">
+                <a href="/Home/AllProduct">
+                    <div style="display: inline-block; width: 80%; text-align: center; height: 100% ">
+                        <div style="font-size: 36px; display: inline-block;">
+                            <div style="display:inline-block">
+                                <div style="vertical-align: middle; height: 100px; display: table-cell">Mua Sản Phẩm</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: inline-block; width: 18%; text-align: center; vertical-align: top; font-size: 17px;">
+                        <div style="display:inline-block">
+                            <div style="vertical-align: middle; height: 100px; display: table-cell; text-align:left">
+                                <img src="~/Image/shop-icon.png" style="width:100%" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="Member-function" style="background-color:#eeeeee;">
+        <div class="Member-function" style="background-color: #00dddd; padding-right:20px">
             <div class="side-menu">
-                <div>Thông tin cá nhân</div>
-                <div>Đơn hàng</div>
-                <div>Số tích lũy</div>
+                <div class="chooseone">Thông tin cá nhân</div>
+                <div class="chooseone">Đơn hàng</div>
+                <div class="chooseone">Giỏ hàng</div>
             </div>
             <div class="Content_Menu">
                 <div class="back_Content_Menu">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td style="width:49.8%">Tài khoản:</td>
-                                <td style="width:49.8%">@Model.username</td>
-                            </tr>
-                            <tr>
-                                <td style="width:49.8%">Tên:</td>
-                                <td style="width:49.8%">@Model.name</td>
-                            </tr>
-                            <tr>
-                                <td style="width:49.8%">Giới tính:</td>
-                                <td style="width:49.8%">@Model.sex</td>
-                            </tr>
-                            <tr>
-                                <td style="width:49.8%">Số điện thoại:</td>
-                                <td style="width:49.8%">@Model.phone</td>
-                            </tr>
-                            <tr>
-                                <td style="width:49.8%">Email:</td>
-                                <td style="width:49.8%">@Model.email</td>
-                            </tr>
-                            <tr>
-                                <td style="width:49.8%">Địa chỉ:</td>
-                                <td style="width:49.8%">@Model.address</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="Member-info">
+                        <div>Thông tin cá nhân</div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Tài khoản:</td>
+                                    <td>@Model.username</td>
+                                </tr>
+                                <tr>
+                                    <td>Tên:</td>
+                                    <td>@Model.name</td>
+                                </tr>
+                                <tr>
+                                    <td>Giới tính:</td>
+                                    <td>
+                                        @if (Model.sex == "NAM")
+                                        {<span>Nam</span>}
+                                        else
+                                        {<span>Nữ</span>}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Số điện thoại:</td>
+                                    <td>@Model.phone</td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td>@Model.email</td>
+                                </tr>
+                                <tr>
+                                    <td>Địa chỉ:</td>
+                                    <td>@Model.address</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="Member-info" style="display:none">
+                        <div>Chỉnh sửa thông tin cá nhân</div>
+                        <form action="/Member/ChangInfo" method="post">
+                            <input name="id" value="@Model.id" style="display:none" />
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Tài khoản:</td>
+                                        <td>
+                                            <input data-val="true" data-val-required="Bạn chưa nhập tên tài khoản."
+                                                   id="username" name="username" type="text" value="@Model.username" />
+                                            <div>
+                                                <span class="field-validation-valid" data-valmsg-for="username" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tên:</td>
+                                        <td>
+                                            <input data-val="true" data-val-required="Bạn chưa nhập tên."
+                                                   id="name" name="name" type="text" value="@Model.name" />
+                                            <div>
+                                                <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Giới tính:</td>
+                                        <td>
+                                            Nam
+                                            <input data-val="true" data-val-required="Bạn chưa chọn giới tính."
+                                                   id="sex" name="sex" type="radio" value="NAM" style="margin-right:1cm" />
+                                            Nữ
+                                            <input type="radio" value="NU" />
+                                            <div>
+                                                <span class="field-validation-valid" data-valmsg-for="sex" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Số điện thoại:</td>
+                                        <td>
+                                            <input data-val="true" data-val-required="Bạn chưa nhập số điện thoại."
+                                                   id="phone" name="phone" type="text" value="@Model.phone" />
+                                            <div>
+                                                <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa chỉ:</td>
+                                        <td>
+                                            <input data-val="true" data-val-required="Bạn chưa nhập địa chỉ." id="address" name="address"
+                                                   type="text" value="@Model.address">
+                                            <div>
+                                                <span class="field-validation-valid" data-valmsg-for="address" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="text-align:right"><input class="button_k" type="submit" value="Xác nhận" /></div>
+                        </form>
+                    </div>
+                    <div class="Member-info" style="display:none">
+                        <div>Thay đổi mật khẩu</div>
+                        <form action="/Member/ChangPwd" method="post">
+                            <input name="id" value="@Model.id" style="display:none" />
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Mật khẩu cũ:</td>
+                                        <td>
+                                            <input data-val="true" data-val-required="Mật khẩu sai."
+                                                   data-val-remote="Mật khẩu sai." data-val-remote-additionalfields="*.oldpwd"
+                                                   data-val-remote-url="/Member/CheckPwd" id="oldpwd" name="oldpwd" type="password" value="" />
+                                            <div>
+                                                <span class="field-validation-valid" data-valmsg-for="oldpwd" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mật khẩu mới:</td>
+                                        <td>
+                                            <input data-val="true" data-val-required="Bạn chưa nhập mật khẩu."
+                                                   data-val-maxlength="Độ dài của mật khẩu nên gồm 8-14 ký tự" data-val-maxlength-max="14"
+                                                   data-val-minlength="Độ dài của mật khẩu nên gồm 8-14 ký tự" data-val-minlength-min="8"
+                                                   data-val-remote="Mật khẩu nên có ít nhất một ký tự số, viết hoa và ký tự đặc biệt." data-val-remote-additionalfields="*.password"
+                                                   data-val-remote-url="/Member/Check_Val_Pwd" id="password" name="password" type="password" value="" />
+                                            <div>
+                                                <span class="field-validation-valid" data-valmsg-for="password" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Xác nhận mật khẩu mới:</td>
+                                        <td>
+                                            <input data-val="true" data-val-remote="Mật khẩu nhập lại không khớp." data-val-remote-additionalfields="*.cfpassword,*.password"
+                                                   data-val-remote-url="/Member/Is_Matched_Password" id="cfpassword" name="cfpassword" type="password" value="" />
+                                            <div>
+                                                <span class="field-validation-valid" data-valmsg-for="cfpassword" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="text-align:right"><input class="button_k" type="submit" value="Xác nhận" /></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="side-menu2">
+                    <div class="slash">
+                        <canvas class="slash_canvas" width="200" height="50" style="vertical-align: bottom;"></canvas>
+                    </div>
+                    <div class="side-menu2-content">
+                        <div id="see_info">Xem thông tin cá nhân</div>
+                        <div id="change_info">Chỉnh sửa thông tin cá nhân</div>
+                        <div id="change_pwd">Đổi mật khẩu</div>
+                    </div>
+                </div>
+            </div>
+            <div class="Content_Menu" style="display:none">
+                <div class="back_Content_Menu">
+                    <div class="Member-info">
+                        <div>Đơn hàng của bạn</div>
+                        <div style="padding: 10px 0px; font-size: 17px;">
+                            <a class="Block-order">
+                                <div style="width: 160px; height:120px; background: #e91616; border-radius: 10px">
+                                    Đã xác nhận
+                                    <div style="display:block">@ViewBag.Cof</div>
+                                </div>
+                            </a>
+                            <a class="Block-order">
+                                <div style="width: 160px; height:120px; background: #e9c209; border-radius: 10px">
+                                    Đang giao
+                                    <div style="display:block">@ViewBag.Ship</div>
+                                </div>
+                            </a>
+                            <a class="Block-order">
+                                <div style="width: 160px; height:120px; background: #4cff00; border-radius: 10px">
+                                    Đã hoàn thành
+                                    <div style="display:block">@ViewBag.Com</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-menu2">
+                    <div class="slash">
+                        <canvas class="slash_canvas" width="200" height="50" style="vertical-align: bottom;"></canvas>
+                    </div>
+                    <div class="side-menu2-content">
+                        <a href="/Order/Index"><div style="color:black">Xem chi tiết</div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="Content_Menu" style="display:none">
+                <div class="back_Content_Menu">
+                    <div class="Member-info">
+                        <div>Thông tin cá nhân</div>
+                        <table class="table-cart"style="max-height:400px; overflow: scroll">
+                            <thead>
+                                <tr>
+                                    <th>Tên</th>
+                                    <th>Thể loại</th>
+                                    <th>Hãng</th>
+                                    <th>Giá</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in cart.cartdetails)
+                                {
+                                <tr>
+                                    <td>@i.product.name</td>
+                                    <td>@i.product.category.name</td>
+                                    <td>@i.product.trademark.name</td>
+                                    <td>@Money.Parse(i.product.price).ToString()</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="side-menu2">
+                    <div class="slash">
+                        <canvas class="slash_canvas" width="200" height="50" style="vertical-align: bottom;"></canvas>
+                    </div>
+                    <div class="side-menu2-content">
+                        <a href="/Cart/Index"><div style="color:black">Xem chi tiết</div></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    if ("@Model.sex"== "NAM") document.getElementsByName("sex")[0].checked = true;
+    else if ("@Model.sex"== "NU") document.getElementsByName("sex")[1].checked = true;
+</script>
+<script>
+    var canvass = document.getElementsByClassName('slash_canvas');
+    for (var canvas of canvass) {
+        console.log(canvass.length);
+        if (canvas.getContext) {
+            var context = canvas.getContext('2d');
+            context.beginPath();
+            context.lineWidth = 3;
+            context.strokeStyle = "white";
+            context.moveTo(200, 50);
+            context.lineTo(180, 30);
+            context.stroke();
+        }
+    }
+    var choose = document.getElementsByClassName("chooseone");
+    var ChooseContent = document.getElementsByClassName("Content_Menu");
+    var Memberinfo = document.getElementsByClassName("Member-info");
+
+    choose[0].onclick = function () {
+        ChooseContent[0].style.display = "";
+        ChooseContent[1].style.display = "none";
+        ChooseContent[2].style.display = "none";
+    }
+    choose[1].onclick = function () {
+        ChooseContent[1].style.display = "";
+        ChooseContent[0].style.display = "none";
+        ChooseContent[2].style.display = "none";
+    }
+    choose[2].onclick = function () {
+        ChooseContent[2].style.display = "";
+        ChooseContent[1].style.display = "none";
+        ChooseContent[0].style.display = "none";
+    }
+    document.getElementById("see_info").onclick = function () {
+        Memberinfo[0].style.display = "";
+        Memberinfo[1].style.display = "none";
+        Memberinfo[2].style.display = "none";
+    }
+    document.getElementById("change_info").onclick = function () {
+        Memberinfo[0].style.display = "none";
+        Memberinfo[1].style.display = "";
+        Memberinfo[2].style.display = "none";
+    }
+    document.getElementById("change_pwd").onclick = function () {
+        Memberinfo[0].style.display = "none";
+        Memberinfo[1].style.display = "none";
+        Memberinfo[2].style.display = "";
+    }
+</script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -74,6 +75,12 @@ namespace PBL3.Controllers.Web
         public ActionResult Is_Matched_Passwork(string cfpassword, string password)
         {
             if (cfpassword != password) return Json(false, JsonRequestBehavior.AllowGet);
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Check_Val_Pwd(string password)
+        {
+            bool i = Regex.IsMatch(password, @".*([A-Z])+.*") && Regex.IsMatch(password, @".*(\d)+.*") && Regex.IsMatch(password, @".*(^[\w\s])+.*");
+            if (!i) return Json(false, JsonRequestBehavior.AllowGet);
             return Json(true, JsonRequestBehavior.AllowGet);
         }
     }

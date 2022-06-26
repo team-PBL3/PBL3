@@ -9,9 +9,8 @@
 @{ 
     List_ProductView list = ViewBag.ShowProduct;
 }
-
-
 <div class="main-content">
+    <div class="Action-page-name" style="display:none">Product</div>
     <header>
         <h2>
             <label for="nav-toggle">
@@ -33,8 +32,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><span class="fa-solid fa-user"></span><a href="#">My profile</a></li>
-                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="#">Log out</a></li>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="~/AdminHome/Logout">Log out</a></li>
                 </ul>
             </div>
         </div>
@@ -74,18 +72,17 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in list.data_views)
-                                     {
-                                        <tr>
-                                            <td>@i.name</td>
-                                            <td>@i.category</td>
-                                            <td>@i.trademark</td>
-                                            <td>
-                                                <span class="status_orange">@i.status</span>
-                                            </td>
-                                            <td>@i.quantityRemain</td>
-                                            <td>@i.Price</td>
-                                        </tr>
-                                     }
+                                    {
+                        <tr>
+                            <td>@i.name</td>
+                            <td>@i.category</td>
+                            <td>@i.trademark</td>
+                            <td>
+                                <span class="status_orange">@i.status</span>
+                            </td>
+                            <td>@i.quantityRemain</td>
+                            <td>@i.Price</td>
+                        </tr>}
                                 </tbody>
                             </table>
                         </div>

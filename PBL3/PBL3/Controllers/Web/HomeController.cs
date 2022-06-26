@@ -51,6 +51,10 @@ namespace PBL3.Controllers
             ViewData.Model = list;
             return View("AllProduct");
         }
+        public ActionResult About()
+        {
+            return View();
+        }
         public ActionResult Logout()
         {
             Session.Remove(RouteController.Account_Session);

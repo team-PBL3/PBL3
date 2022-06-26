@@ -46,6 +46,24 @@ namespace PBL3.Models
                 throw;
             }
         }
+        public int Edit(User user)
+        {
+            try
+            {
+                User a = this.Users.First(i => i.id == user.id);
+                if (user.name != null) a.name = user.name;
+                if (user.username != null) a.username = user.username;
+                if (user.sex != null) a.sex = user.sex;
+                if (user.phone !="0")a.phone = user.phone;
+                if (user.address != null) a.address = user.address;
+                if (user.password != null) a.password = user.password;
+                return this.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                throw;
+            }
+        }
         public int Adding(Category category)
         {
             try
@@ -72,10 +90,6 @@ namespace PBL3.Models
             }
             catch (DbEntityValidationException e)
             {
-                foreach (var eve in e.EntityValidationErrors)
-                {
-
-                }
                 throw;
             }
         }
@@ -88,7 +102,19 @@ namespace PBL3.Models
             }
             catch (Exception)
             {
-
+                throw;
+            }
+        }
+        public int Edit2(Orderr orderr)
+        {
+            try
+            {
+                Orderr orderr1 = this.Orderrs.First(i => i.id == orderr.id);
+                orderr1.status = orderr.status;
+                return this.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
                 throw;
             }
         }

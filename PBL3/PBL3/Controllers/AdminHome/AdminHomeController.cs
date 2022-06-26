@@ -45,12 +45,6 @@ namespace PBL3.Controllers.AdminHome
             ViewBag.ProductTotal = list;
 
             return View(products);
-
-
-
-
-
-
         }
         public ActionResult addCategory()
         {
@@ -245,12 +239,7 @@ namespace PBL3.Controllers.AdminHome
                 if (e.Message == "Page Not Found") return View("Error");
             }
             ViewBag.ShowProduct = list;
-
-
-
-
             return View();
-
         }
         public ActionResult TableDetail()
         {
@@ -270,7 +259,6 @@ namespace PBL3.Controllers.AdminHome
             ViewBag.images = product.images.First().name;
 
             return View(product);
-
         }
         public ActionResult Logout()
         {
@@ -281,15 +269,18 @@ namespace PBL3.Controllers.AdminHome
         [HttpPost]
         public ActionResult ChangePassWord(string pwcurrent, string pwmuondoi, string pwxacnhan)
         {
-            try
+            if (ModelState.IsValid)
             {
-                User user = (User)Session[Account_Session];
-                (new PBL3DataContext()).UpdatePW(user, pwmuondoi);
+                try
+                {
+                    User user = (User)Session[Account_Session];
+                    (new PBL3DataContext()).UpdatePW(user, pwmuondoi);
 
-            }
-            catch (Exception e)
-            {
-                throw;
+                }
+                catch (Exception e)
+                {
+                    throw;
+                }
             }
             return View("Index");
         }
@@ -323,6 +314,15 @@ namespace PBL3.Controllers.AdminHome
             }
             return Json(true, JsonRequestBehavior.AllowGet);
         }
-
+        public ActionResult Order()
+        {
+            List<Orderr> orderrs = dataContext.Orderrs.ToList();
+            return View(orderrs);
+        }
+        public ActionResult EditOrder(Orderr orderr)
+        {
+            dataContext.Edit2(orderr);
+            return RedirectToAction("Order");
+        }
     }
 }

@@ -9,9 +9,8 @@
     List_CustomerView list2 = ViewBag.ShowCustomer;
     List_ProductView list = ViewBag.ProductTotal; 
 }
-
-
 <div class="main-content">
+    <div class="Action-page-name" style="display:none">Category</div>
     <header>
         <h2>
             <label for="nav-toggle">
@@ -103,13 +102,12 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in lc)
-                                     {
-                                        <tr>
-                                            <td>@i.id</td>
-                                            <td>@i.name</td>
-                                            <td>@i.partofbody</td>
-                                        </tr>
-                                     }
+                                    {
+                        <tr>
+                            <td>@i.id</td>
+                            <td>@i.name</td>
+                            <td>@i.partofbody</td>
+                        </tr>}
                                 </tbody>
                             </table>
                         </div>
@@ -141,12 +139,11 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in lt)
-                                     {
-                                        <tr>
-                                            <td>@i.id</td>
-                                            <td>@i.name</td>
-                                        </tr>
-                                     }
+                                    {
+                        <tr>
+                            <td>@i.id</td>
+                            <td>@i.name</td>
+                        </tr>}
                                 </tbody>
                             </table>
                         </div>

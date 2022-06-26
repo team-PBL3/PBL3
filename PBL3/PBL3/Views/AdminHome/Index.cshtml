@@ -9,8 +9,8 @@
     User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
 }
 
-
 <div class="main-content">
+    <div class="Action-page-name" style="display:none">Dashboard</div>
     <header>
         <h2>
             <label for="nav-toggle">
@@ -106,15 +106,14 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in products)
-                                     {
-                                        <tr>
-                                            <td>@i.name</td>
-                                            <td>@(i.quantityInit-i.quantityremain)</td>
+                                    {
+                        <tr>
+                            <td>@i.name</td>
+                            <td>@(i.quantityInit-i.quantityremain)</td>
 
-                                            <td>@i.price</td>
-                                            <td>@(i.price*(i.quantityInit-i.quantityremain))</td>
-                                        </tr>
-                                     }
+                            <td>@i.price</td>
+                            <td>@(i.price*(i.quantityInit-i.quantityremain))</td>
+                        </tr>}
                                 </tbody>
                             </table>
 
@@ -133,21 +132,20 @@
                         </a>
                     </div>
                     @foreach (var i in list2.data_views)
-                     {
-                        <div class="member">
-                            <div class="info">
-                                <img src="~/Theme/images/img_4.jpg" width="40px"
-                                     height="40px" alt="">
-                                <div>
-                                    <h4>@i.name</h4>
-                                    <small>@i.phone</small>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <span class="fa-solid fa-id-card"></span>
-                            </div>
-                        </div>
-                     }
+                    {
+        <div class="member">
+            <div class="info">
+                <img src="~/Theme/images/img_4.jpg" width="40px"
+                     height="40px" alt="">
+                <div>
+                    <h4>@i.name</h4>
+                    <small>@i.phone</small>
+                </div>
+            </div>
+            <div class="details">
+                <span class="fa-solid fa-id-card"></span>
+            </div>
+        </div>}
                 </div>
             </div>
         </div>

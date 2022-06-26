@@ -96,32 +96,47 @@
                                 <div class="Form_info_recipient">Thông tin giao hàng:</div>
                                 <div class="Input_info_Form">
                                     <div class="row2">
-                                        <label style="" for="name">Tên</label>
-                                        <input type="text" id="name" name="name"/>
-                                        <span id="errorname"></span>
+                                        <label for="name">Tên</label>
+                                        <input data-val="true" data-val-required="Bạn chưa nhập trường tên."
+                                               id="name" name="name" type="text" value="">
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+                                        </div>
                                     </div>
                                     <div class="row2">
                                         <label for="phone">Điện thoại</label>
-                                        <input type="text" id="phone" name="phone" />
-                                        <span id="errorphone"></span>
+                                        <input data-val="true" data-val-required="Bạn chưa nhập số điện thoại."
+                                               id="phone" min="1" name="phone" type="number" value="">
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="true"></span>
+                                        </div>
                                     </div>
                                     <div class="row2">
                                         <label for="sex">Giới tính</label>
-                                        <input type="radio" id="sex" name="sex" value="NAM" />
-                                        <span>NAM</span>
-                                        <input type="radio" id="sex" name="sex" value="NU" />
-                                        <span>NU</span>
-                                        <span id="errorsex"></span>
+                                        Nam
+                                        <input data-val="true" data-val-required="Bạn chưa chọn giới tính."
+                                               id="sex" name="sex" type="radio" value="NAM" style="margin-right:1cm" />
+                                        Nữ
+                                        <input type="radio" value="NU" />
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="sex" data-valmsg-replace="true"></span>
+                                        </div>
                                     </div>
                                     <div class="row2">
                                         <label for="address">Địa chỉ</label>
-                                        <input type="text" id="address" name="address"/>
-                                        <span id="erroraddress"></span>
+                                        <input data-val="true" data-val-required="Bạn chưa nhập địa chỉ." id="address" name="address"
+                                               type="text" value="@Model.address">
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="address" data-valmsg-replace="true"></span>
+                                        </div>
                                     </div>
                                     <div class="row2">
                                         <label for="email">Email</label>
-                                        <input type="text" id="email" name="email" value="" />
-                                        <span id="erroremail"></span>
+                                        <input data-val="true" data-val-email="Email không hợp lệ."
+                                               id="email" name="email" type="text" value="">
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -143,3 +158,6 @@
         </div>
     </div>
 </div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

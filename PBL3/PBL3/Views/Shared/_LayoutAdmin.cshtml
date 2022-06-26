@@ -27,13 +27,13 @@
                 <li>
                     <a href="~/AdminHome/Index" class="active1">
                         <span class="fa-solid fa-store"></span>
-                        <span>Thống Kê</span>
+                        <span>Thống kê</span>
                     </a>
                 </li>
                 <li>
                     <a href="~/AdminHome/Member" class="active1">
                         <span class="fa-solid fa-user"></span>
-                        <span>Thành Viên</span>
+                        <span>Thành viên</span>
                     </a>
                 </li>
                 <li>
@@ -132,12 +132,13 @@
     </script>
 
     <script>
-        var title = "@ViewBag.Title";
+        var title = document.getElementsByClassName('Action-page-name')[0].innerHTML;
+        console.log(title);
         var i = document.getElementsByClassName('active1');
-        if (title == 'Thống Kê') i[0].className = 'active';
-        if (title == 'Thành Viên') i[1].className = 'active';
-        if (title == 'Thể loại') i[2].className = 'active';
-        if (title == 'Sản phẩm') i[3].className = 'active';
+        if (title == 'Dashboard') i[0].className = 'active';
+        if (title == 'Member') i[1].className = 'active';
+        if (title == 'Category') i[2].className = 'active';
+        if (title == 'Product') i[3].className = 'active';
     </script>
 
     <script>

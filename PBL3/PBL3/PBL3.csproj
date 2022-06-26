@@ -422,6 +422,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\About2.css" />
     <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
@@ -496,6 +497,8 @@
     <Content Include="Image\701502.png" />
     <Content Include="Image\704201.png" />
     <Content Include="Image\704202.png" />
+    <Content Include="Image\background.jpg" />
+    <Content Include="Image\bg-img.jpg" />
     <Content Include="Image\BodySuncream_1.jpg" />
     <Content Include="Image\BodySuncream_2.jpg" />
     <Content Include="Image\borderImage-nightsky.gif" />
@@ -522,6 +525,10 @@
     <Content Include="Image\Mascara_1.jpg" />
     <Content Include="Image\Mascara_2.jpg" />
     <Content Include="Image\OIP.jpg" />
+    <Content Include="Image\p1.jpg" />
+    <Content Include="Image\p2.jpg" />
+    <Content Include="Image\p3.jpg" />
+    <Content Include="Image\p4.jpg" />
     <Content Include="Image\Perfume_1.png" />
     <Content Include="Image\Perfume_2.jpg" />
     <Content Include="Image\Perfume_3.jpg" />
@@ -1377,6 +1384,7 @@
     <Content Include="Theme\styles\contact_responsive.css" />
     <Content Include="Theme\styles\main_styles.css" />
     <Content Include="Theme\styles\MemberPage.css" />
+    <Content Include="Theme\styles\OrderPage.css" />
     <Content Include="Theme\styles\product.css" />
     <Content Include="Theme\styles\ProductPage.css" />
     <Content Include="Theme\styles\product_responsive.css" />
@@ -1457,6 +1465,7 @@
     <Content Include="Views\AdminHome\EditProduct.cshtml" />
     <Content Include="Views\AdminHome\TableDetail.cshtml" />
     <Content Include="Views\Shared\_LayoutShowAll.cshtml" />
+    <Content Include="Views\AdminHome\Order.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

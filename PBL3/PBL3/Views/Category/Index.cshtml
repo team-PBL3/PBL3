@@ -54,7 +54,7 @@
                     <div id="Select_View_@Model.list.IndexOf(partofbody)" class="Selection_view">
                         @foreach (var category in partofbody.categorylist)
                         {   
-                            <div class="category_name">@Html.ActionLink(category.name, "AllProduct2", "Home", new { sort = category.name }, new { })</div>
+                            <div class="category_name"><a href="https://localhost:44325/Home/AllProduct2?sort=@category.name&sort=+">@category.name</a></div>
                             foreach (var product in category.productlist)
                             {
                             <div class="product-display-frame">

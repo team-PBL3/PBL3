@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Oswald:wght@300&display=swap');
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    font-family: Garamond;
+}
+
+body{
+    background: #130f40;
+}
+
+h1{
+    font-size: 50px;
+    margin-top: 20px;
+    text-align: center;
+    color: #00cec9;
+}
+
+blockquote{
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #81ecec;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    height: 500px;
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0 3px 5px #aaa69d;
+    border-radius: 30px;
+    overflow: hidden;
+    text-align: center;
+    background: #c7ecee;
+}
+
+.card .bg-image img{
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0%, 100% 70%, 45% 100%, 0 70%);
+}
+
+.card .Pic img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 10px solid #84817a;
+    margin-top: -90px;
+    position: relative;
+}
+
+.card .info h4{
+    font-size: 20px;
+    padding: 10px 0;
+    color: #2f3542;
+}
+
+.card .info h6{
+    font-size: 20px;
+    padding: 10px 0;
+    color: #2f3542;
+}
+
+.card .info h5{
+    font-size: 20px;
+    padding: 10px 0;
+    color: #2f3542;
+}

@@ -8,8 +8,8 @@
     List_ProductView list = ViewBag.ProductTotal;
 }
 
-
 <div class="main-content">
+    <div class="Action-page-name" style="display:none">Member</div>
     <header>
         <h2>
             <label for="nav-toggle">
@@ -31,8 +31,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><span class="fa-solid fa-user"></span><a href="#">My profile</a></li>
-                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="#">Log out</a></li>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="~/AdminHome/Logout">Log out</a></li>
                 </ul>
             </div>
         </div>
@@ -102,19 +101,18 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in list2.data_views)
-                                     {
-                                        <tr>
-                                            <td>@i.name</td>
-                                            <td>@i.sex</td>
-                                            <td>@i.address</td>
-                                            <td>@i.phone</td>
-                                            <td>@i.email</td>
-                                            <td>@i.username</td>
+                                    {
+                        <tr>
+                            <td>@i.name</td>
+                            <td>@i.sex</td>
+                            <td>@i.address</td>
+                            <td>@i.phone</td>
+                            <td>@i.email</td>
+                            <td>@i.username</td>
 
 
 
-                                        </tr>
-                                     }
+                        </tr>}
 
                                 </tbody>
                             </table>

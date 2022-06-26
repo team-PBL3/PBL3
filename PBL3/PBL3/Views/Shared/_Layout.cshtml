@@ -51,7 +51,7 @@
                                                 <li><a href="/Category">Thể loại</a></li>
                                                 <li><a href="/Home/AllProduct">Sản phẩm</a></li>
                                                 <li><a href="/Cart">Cart</a></li>
-                                                <li><a href="contact.html">Về chúng tôi</a></li>
+                                                <li><a href="/Home/About">Về chúng tôi</a></li>
                                             </ul>
                                         </li>
                                         <li class="hassubs">
@@ -59,8 +59,7 @@
                                             <ul id="category-scrollbar">
                                                 @foreach (var i in categories)
                                                 {
-                                                    <li><a href="#">@i.name</a></li>
-                                                }
+                                    <li><a href="https://localhost:44325/Home/AllProduct2?sort=@i.name&sort=+">@i.name</a></li>}
                                             </ul>
                                         </li>
                                         <li><a href="">Liên lạc</a></li>
@@ -107,11 +106,10 @@
                                 </div>
                                 @if (a == null)
                                 {
-                                    <ul>
-                                        <li class="sign_in"><a href="~/Login/Sign_in">Sign in</a></li>
-                                        <li class="sign_up"><a href="~/Login/Sign_up">Sign up</a></li>
-                                    </ul>
-                                }
+                    <ul>
+                        <li class="sign_in"><a href="~/Login/Sign_in">Sign in</a></li>
+                        <li class="sign_up"><a href="~/Login/Sign_up">Sign up</a></li>
+                    </ul>}
                             </div>
                         </div>
                     </div>
@@ -136,27 +134,27 @@
             <!-- Social -->
             @if (a != null)
             {
-                <div class="header_social" style="display: inline-block">
-                    <div class="action">
-                        <div class="profile" onclick="menuToggle();">
-                            <img src="~/Theme/images/profile.png">
-                        </div>
-                        <div class="menu">
-                            <h3>Someone Famous<br><span>Website designer</span></h3>
-                            <ul>
-                                <li><img src="~/Theme/images/user.png" /><a href="/Member">My profile</a></li>
-                                <li><img src="~/Theme/images/logout.png">@Html.ActionLink("Log out", "Logout", "Home")</li>
-                                <li>@Html.ActionLink("Order", "Index", "Order")</li>
-                            </ul>
-                        </div>
-                        <script>
-                            function menuToggle() {
-                                const toggleMenu = document.querySelector('.menu');
-                                toggleMenu.classList.toggle('active')
-                            }
-                        </script>
+            <div class="header_social" style="display: inline-block">
+                <div class="action">
+                    <div class="profile" onclick="menuToggle();">
+                        <img src="~/Theme/images/profile.png">
                     </div>
+                    <div class="menu">
+                        <h3>Someone Famous<br><span>Website designer</span></h3>
+                        <ul>
+                            <li><img src="~/Theme/images/user.png" /><a href="/Member">My profile</a></li>
+                            <li><img src="~/Theme/images/logout.png">@Html.ActionLink("Log out", "Logout", "Home")</li>
+                            <li><a href="/Order">Đơn hàng</a></li>
+                        </ul>
+                    </div>
+                    <script>
+                        function menuToggle() {
+                            const toggleMenu = document.querySelector('.menu');
+                            toggleMenu.classList.toggle('active')
+                        }
+                    </script>
                 </div>
+            </div>            
             }
         </header>
 
@@ -200,11 +198,11 @@
 
             <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
         </div>
-        
-        
-            <div style="z-index: 2; background-color: white; border-bottom: 3px solid #bbbbbb">
-                @RenderBody()
-            </div>
+
+
+        <div style="z-index: 2; background-color: white; border-bottom: 3px solid #bbbbbb">
+            @RenderBody()
+        </div>
         <!-- Footer -->
 
         <div class="footer_overlay" style="z-index: -1;"></div>
@@ -228,7 +226,7 @@
         </footer>
     </div>
 
-    <script src="~/Theme/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Theme/styles/bootstrap4/popper.js"></script>
     <script src="~/Theme/styles/bootstrap4/bootstrap.min.js"></script>
     <script src="~/Theme/plugins/greensock/TweenMax.min.js"></script>
