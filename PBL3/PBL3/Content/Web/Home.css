@@ -5,7 +5,7 @@
 }
 div.product-display-frame {
     display: inline-block;
-    width: 29%;
+    width: 31%;
     vertical-align: top;
     height: 460px;
 }
@@ -18,9 +18,10 @@ div.product-display-frame {
     color: black;
 }
 div.Page-buttons {
+    height: 50px;
     display: block;
     text-align: center;
-    margin: 0px 0px 0px 30px;
+    margin: 0px 0px 30px 30px;
 }
 
     div.Page-buttons button.Next-Page, button.Previous-Page, .page-button {

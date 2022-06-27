@@ -3,16 +3,16 @@
 .poster {
     display: inline-block;
     width: 12%;
-    border: 3px solid rgba(0,255,255,0.2);
     position: fixed;
     vertical-align: top;
     top: 71px;
 }
 .poster img{
     width: 100%;
+    height:100%;
 }
 .list_order {
-    background: #efefef;
+    background-image: linear-gradient(to bottom, #7a6ee5, pink);
     display: inline-block;
     margin-left: 12%;
     width: 75.8%;
@@ -32,7 +32,8 @@
 }
 .Order_image {
     display: inline-block;
-    border: 4px solid #f0f0f0;
+    border: 4px solid #a4e3e2;
+    border-radius: 50%;
     width: 39%;
 }
 .FrameOrder a span.Name2Order {
@@ -46,7 +47,7 @@
 }
 
 .OrderContent {
-    padding: 5px 40px 5px 40px;
+    padding: 5px 40px 5px 15px;
 }
 .Info2Order {
     display: inline-block;

@@ -31,6 +31,7 @@ namespace PBL3.Controllers
             }
             ViewBag.Sort = list.sort;
             list.list_categories = dataContext.Categories.ToList();
+            ViewBag.Image = Image.SetImage(" ");
             list.Set_Product_View(dataContext.Products.ToList());
             return View(list);
         }
@@ -49,6 +50,7 @@ namespace PBL3.Controllers
             }
             ViewBag.Sort = sort;
             ViewData.Model = list;
+            ViewBag.Image = Image.SetImage(sort[0]);
             return View("AllProduct");
         }
         public ActionResult About()

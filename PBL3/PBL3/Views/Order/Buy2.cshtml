@@ -1,7 +1,7 @@
 ﻿@model PBL3.Models.Person
 
 @using PBL3.Models
-@{ ViewBag.Title = "Buy2";
+@{ ViewBag.Title = "Mua sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
     List_CD_View list = ViewBag.list;
     }
@@ -53,7 +53,7 @@
         <div class="row cart_items_row">
             <div class="col">
                 <div>
-                    @using (Html.BeginForm("OrderProduct", "Order", FormMethod.Post, new { onsubmit = "return Validate()" }))
+                    @using (Html.BeginForm("OrderProduct", "Order", FormMethod.Post))
                     {
                         foreach (var i in list.dataViews)
                         {

@@ -72,6 +72,22 @@ namespace PBL3.Controllers.Member
             }
             return RedirectToAction("NewPay","Payment");
         }
+        [HttpPost]
+        public ActionResult OrderProduct1(double price, int quantity, int productid, Person toPerson)
+        {
+            try
+            {
+                List<Orderdetail> LOD = new List<Orderdetail>();
+                LOD.Add(new Orderdetail() { price = price, quantity = quantity, Time = DateTime.Now, productid = productid});
+                PBL3DataContext dataContext = new PBL3DataContext();
+                dataContext.CreateOrder(LOD, (User)Session[Account_Session], null, toPerson);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return RedirectToAction("NewPay", "Payment");
+        }
         public ActionResult DeleteOrder(int Orderid)
         {
             PBL3DataContext dataContext = new PBL3DataContext();

@@ -215,7 +215,7 @@ namespace PBL3.Models
                     b = new Payment() { amount = OD.quantity, paymentdate = DateTime.Now, totalPrice = OD.price, orderid = OD.orderid, userid = user.id };
                     Adding(b);
                 }
-
+                if (CDid!=null)
                 foreach (var id in CDid)
                 {
                     this.CartDetails.Remove(this.CartDetails.ToList().First(x => x.id == id));
@@ -312,6 +312,19 @@ namespace PBL3.Models
 
             this.Users.First(i => i.id == user.id).password = pwmuondoi;
             this.SaveChanges();
+        }
+        public User CheckExistingEmail(User user)
+        {
+            try
+            {
+                return this.Users.First(i => i.email == user.email && i.name == user.name &&
+                i.username == user.username && i.phone == user.phone);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
         }
     }
 }

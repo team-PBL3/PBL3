@@ -63,7 +63,35 @@ namespace PBL3.Controllers.Web
             }
             return View();
         }
-
+        public ActionResult ForgetPwd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ForgetPwd(User user)
+        {
+            User a = datacontext.CheckExistingEmail(user);
+            if (a != null)
+            {
+                return RedirectToAction("NewPassword", new { i = a.id});
+            }
+            else ViewBag.Error = "Không tìm thấy mật khẩu chứa thông tin này";
+            return View();
+        }
+        public ActionResult NewPassword(int i)
+        {
+            ViewBag.id = i;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewPassword(int id, string password)
+        {
+            User user = datacontext.Users.First(i=>i.id==id);
+            user.password = password;
+            Session.Add(RouteController.Account_Session, user);
+            datacontext.Edit(user);
+            return RedirectToAction("Index","Home");
+        }
         public ActionResult Check_Existing_UserName(string username)
         {
             return Json(!datacontext.Users.Any(x => x.username == username), JsonRequestBehavior.AllowGet);

@@ -1466,6 +1466,8 @@
     <Content Include="Views\AdminHome\TableDetail.cshtml" />
     <Content Include="Views\Shared\_LayoutShowAll.cshtml" />
     <Content Include="Views\AdminHome\Order.cshtml" />
+    <Content Include="Views\Login\ForgetPwd.cshtml" />
+    <Content Include="Views\Login\NewPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

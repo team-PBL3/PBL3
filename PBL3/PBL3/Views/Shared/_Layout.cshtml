@@ -59,7 +59,7 @@
                                             <ul id="category-scrollbar">
                                                 @foreach (var i in categories)
                                                 {
-                                    <li><a href="https://localhost:44325/Home/AllProduct2?sort=@i.name&sort=+">@i.name</a></li>}
+                                    <li><a href="https://localhost:44325/Home/AllProduct2?sort=@i.id&sort=+">@i.name</a></li>}
                                             </ul>
                                         </li>
                                         <li><a href="">Liên lạc</a></li>
@@ -142,8 +142,8 @@
                     <div class="menu">
                         <h3>Someone Famous<br><span>Website designer</span></h3>
                         <ul>
-                            <li><img src="~/Theme/images/user.png" /><a href="/Member">My profile</a></li>
-                            <li><img src="~/Theme/images/logout.png">@Html.ActionLink("Log out", "Logout", "Home")</li>
+                            <li><img src="~/Theme/images/user.png" /><a href="/Member">Trang cá nhân</a></li>
+                            <li><img src="~/Theme/images/logout.png">@Html.ActionLink("Đăng xuất", "Logout", "Home")</li>
                             <li><a href="/Order">Đơn hàng</a></li>
                         </ul>
                     </div>
