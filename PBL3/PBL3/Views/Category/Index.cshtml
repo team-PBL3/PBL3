@@ -29,7 +29,7 @@
 <!-- Products -->
 
 <div class="products" style="padding-top:0px">
-    <div class="container">
+    <div class="container" style="width: 95%; max-width: none;">
         <div class="row">
             <div class="col">
 
@@ -59,7 +59,7 @@
                             {
                             <div class="product-display-frame">
                                 <a href="https://localhost:44325/Product/?name=@product.Name&productid=@product.id">
-                                    <img style="width: 300px; height: 300px; text-align:center; border: 5px solid pink; border-radius:5px" src="@(product.urlImage)" />
+                                    <img style="width: 100%; text-align:center; border: 5px solid pink; border-radius:5px" src="@(product.urlImage)" />
                                     <div>@product.Name</div>
                                 </a>
                                 <div style="color:black">@product.Price VND </div>

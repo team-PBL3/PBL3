@@ -426,6 +426,7 @@
     <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
+    <Content Include="Content\Web\ButtonPage.css" />
     <Content Include="Content\Web\Buy2.css" />
     <Content Include="Content\Web\cart.css" />
     <Content Include="Content\Web\cart_responsive.css" />

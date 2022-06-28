@@ -6,11 +6,11 @@ function searchbar(search_text, value) {
     for (var i = list.length - 1; i >= 0; i--) {
         list[i].style.display = "none";
         list[i].className = classFrameName + "0";
-        if (document.getElementsByClassName("name-product")[i].innerHTML.search(value) != -1) {
-            listNotSearch[0].style.display = "inline-block";
+        var stringUp = document.getElementsByClassName(search_text)[i].innerHTML.toUpperCase();
+        if (stringUp.search(value.toUpperCase()) != -1) {
+            listNotSearch[0].style.display = "";
             listNotSearch[0].className = classFrameName;
         }
-        console.log(list.length + " " + i + " " + listNotSearch.length);
     }
     changePage(1);
 }
@@ -20,6 +20,7 @@ var list = document.getElementsByClassName(classFrameName);
 var listNotSearch = document.getElementsByClassName(classFrameName + "0");
 
 var firstPage = document.getElementById("First-Page");
+firstPage.value = 1;
 var previousPage = document.getElementsByClassName("Previous-Page");
 var threedot1 = document.getElementById("Three-dot1");
 var currentPage = document.getElementById("Current-Page").innerHTML;
@@ -32,10 +33,11 @@ var totalproduct = document.getElementsByClassName('total_product');
 function changePage(page) {
     if (list.length > 0) totalproduct[0].innerHTML = "Có " + list.length + " sản phẩm được tìm thấy.";
     else totalproduct[0].innerHTML = "Không có sản phẩm nào được tìm thấy.";
+    lastPage.value = 1 + parseInt((list.length - 1) / PageProductNumber);
+    if (lastPage.value == 1) document.getElementsByClassName('Page-buttons')[0].style.display = "none";
     for (var i = 0; i < list.length; i++) {
         list[i].style.display = "none";
     }
-    lastPage.value = 1 + parseInt((list.length - 1) / 6);
     var i = 1;
     for (var y = 0; y < PageProductNumber; y++) {
         i = (currentPage - 1) * PageProductNumber + y;
@@ -44,25 +46,25 @@ function changePage(page) {
         }
         i = (page - 1) * PageProductNumber + y;
         if (i < list.length) {
-            list[i].style.display = "inline-block";
+            list[i].style.display = "";
         }
     }
     currentPage = page;
     document.getElementById("Current-Page").innerHTML = page;
-    firstPage.style.display = "inline-block";
+    firstPage.style.display = "";
     for (let i = 0; i < previousPage.length; i++) {
-        previousPage[i].style.display = "inline-block";
+        previousPage[i].style.display = "";
         previousPage[i].value = parseInt(currentPage) - 1;
     }
     previousPage[1].innerHTML = parseInt(currentPage) - 1;
-    threedot1.style.display = "inline-block";
-    lastPage.style.display = "inline-block";
+    threedot1.style.display = "";
+    lastPage.style.display = "";
     for (let i = 0; i < nextPage.length; i++) {
-        nextPage[i].style.display = "inline-block";
+        nextPage[i].style.display = "";
         nextPage[i].value = parseInt(currentPage) + 1;
     }
     nextPage[0].innerHTML = parseInt(currentPage) + 1;
-    threedot2.style.display = "inline-block";
+    threedot2.style.display = "";
 
     if (currentPage == 1) {
         firstPage.style.display = "none";
