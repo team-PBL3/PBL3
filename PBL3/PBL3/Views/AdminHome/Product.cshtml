@@ -9,9 +9,8 @@
 @{ 
     List_ProductView list = ViewBag.ShowProduct;
 }
-
-
 <div class="main-content">
+    <div class="Action-page-name" style="display:none">Product</div>
     <header>
         <h2>
             <label for="nav-toggle">
@@ -22,7 +21,7 @@
 
         <div class="search-wrapper">
             <span class="fa-solid fa-magnifying-glass"></span>
-            <input type="search" placeholder="Search here" />
+            <input type="search" placeholder="Tìm kiếm" />
         </div>
 
         <div class="user-wrapper" onclick="menuToggle();">
@@ -33,8 +32,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><span class="fa-solid fa-user"></span><a href="#">My profile</a></li>
-                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="#">Log out</a></li>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="~/AdminHome/Logout">Log out</a></li>
                 </ul>
             </div>
         </div>
@@ -74,7 +72,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in list.data_views)
-                                     {
+                                    {
                                         <tr>
                                             <td>@i.name</td>
                                             <td>@i.category</td>
@@ -85,7 +83,7 @@
                                             <td>@i.quantityRemain</td>
                                             <td>@i.Price</td>
                                         </tr>
-                                     }
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -104,56 +102,54 @@
             <form action="/AdminHome/addProduct" method="post">
                 <div class="product-details">
                     <div class="input-box">
-                        <span class="details">Name</span>
+                        <span class="details">Tên sản phẩm</span>
 
-                        @Html.TextBoxFor(model => model.name, new { @class = "input" })
+                        @Html.TextBoxFor(model => model.name, new { placeholder = "Nhập tên sản phẩm", @class = "input" })
                     </div>
                     <div class="input-box">
-                        <span class="details">Category</span>
+                        <span class="details">Thể loại</span>
                         <div class="search_select_box">
-                            @Html.DropDownListFor(model => model.categoryid, new SelectList(dataContext.Categories.ToList(), "id", "name"), "Choose a category")
+                            @Html.DropDownListFor(model => model.categoryid, new SelectList(dataContext.Categories.ToList(), "id", "name"), "Chọn thể loại")
                         </div>
                     </div>
                     <div class="input-box">
-                        <span class="details">Trademark</span>
+                        <span class="details">Thương hiệu</span>
                         <div class="search_select_box">
-                            @Html.DropDownListFor(model => model.trademarkid, new SelectList(dataContext.TradeMarks.ToList(), "id", "name"), "Choose a trademark")
+                            @Html.DropDownListFor(model => model.trademarkid, new SelectList(dataContext.TradeMarks.ToList(), "id", "name"), "Chọn thương hiệu")
                         </div>
                     </div>
                     <div class="input-box">
-                        <span class="details">Discription</span>
-                        @Html.TextBoxFor(model => model.description, new { @class = "input" })
+                        <span class="details">Mô tả</span>
+                        @Html.TextBoxFor(model => model.description, new { placeholder = "Nhập mô tả sản phẩm", @class = "input" })
                     </div>
                     <div class="input-box">
-                        <span class="details">Price</span>
-                        @Html.TextBoxFor(model => model.price, new { @class = "input" })
+                        <span class="details">Giá</span>
+                        @Html.TextBoxFor(model => model.price, new { placeholder = "Nhập giá", @class = "input" })
                     </div>
                     <div class="input-box">
-                        <span class="details">Status</span>
+                        <span class="details">Trạng thái</span>
                         <select class="options" data-live-search="true" style="width: 89%; height: 40px;border-radius: 8px; padding-left: 15px;">
                             <option>SOLD_OUT</option>
                             <option>ACTIVE</option>
-
                         </select>
 
                     </div>
                     <div class="input-box">
-                        <span class="details">Remain quantity</span>
-                        <input type="text" placeholder="Enter remain quantity" required style=" margin-left: 0px;">
+                        <span class="details">Số lượng còn lại</span>
+                        <input class = "input" type="text" placeholder="Nhập số lượng còn lại" required style=" margin-left: 0px;">
                     </div>
                     <div class="input-box">
-                        <span class="details">Image URL</span>
-
-                        <input type="file" id="myfile" name="imagee" style=" margin-left: 0px;"><br><br>
+                        <span class="details">URL ảnh</span>
+                        <input class = "input" type="file" id="myfile" name="imagee" style=" padding-top: 7px; margin-left: 0px;"><br><br>
                     </div>
                     <div class="input-box">
-                        <span class="details">Product information</span>
-                        <textarea id="productinfo" type="text" rows="4" placeholder="Enter product information" required name="infoproduct"></textarea>
+                        <span class="details">Thông tin sản phẩm</span>
+                        <textarea id="productinfo" type="text" rows="4" placeholder="Nhập thông tin sản phẩm" required name="infoproduct"></textarea>
 
                     </div>
                 </div>
                 <div class="button">
-                    <input type="submit" value="Add Product">
+                    <input type="submit" value="Thêm sản phẩm">
                 </div>
             </form>
         </div>

@@ -86,10 +86,6 @@ namespace PBL3.Models
                     password = data.password,
                     status = data.status,
                     Role = data.Role.value,
-
-
-
-
                 };
 
                 data_views.Add(customer_View);

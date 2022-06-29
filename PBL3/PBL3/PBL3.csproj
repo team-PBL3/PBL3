@@ -252,9 +252,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206201325072_sghoang.cs" />
-    <Compile Include="Migrations\202206201325072_sghoang.designer.cs">
-      <DependentUpon>202206201325072_sghoang.cs</DependentUpon>
+    <Compile Include="Migrations\202206271331017_songhoang.cs" />
+    <Compile Include="Migrations\202206271331017_songhoang.designer.cs">
+      <DependentUpon>202206271331017_songhoang.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
@@ -426,6 +426,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\About2.css" />
     <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
     <Content Include="Content\CSS\_Layout.css" />
@@ -500,17 +501,27 @@
     <Content Include="Image\701502.png" />
     <Content Include="Image\704201.png" />
     <Content Include="Image\704202.png" />
+    <Content Include="Image\avatarFrofile.png" />
+    <Content Include="Image\background.jpg" />
+    <Content Include="Image\bg-img.jpg" />
     <Content Include="Image\BodySuncream_1.jpg" />
     <Content Include="Image\BodySuncream_2.jpg" />
     <Content Include="Image\borderImage-nightsky.gif" />
+    <Content Include="Image\cart-icon.png" />
     <Content Include="Image\Cart_poster.jpg" />
     <Content Include="Image\Category_Background.jpg" />
     <Content Include="Image\Category_Background_1.jpg" />
+    <Content Include="Image\Category_Background_2.jpg" />
     <Content Include="Image\Eyebrow_1.jpg" />
     <Content Include="Image\Eyebrow_2.jpg" />
+    <Content Include="Image\Eyebrow_3.jpg" />
+    <Content Include="Image\Eyebrow_4.jpg" />
     <Content Include="Image\Eyeliner_1.jpg" />
     <Content Include="Image\Eyeliner_2.jpg" />
-    <Content Include="Image\EyePalettes_1.jpeg" />
+    <Content Include="Image\Eyeliner_3.jpg" />
+    <Content Include="Image\EyePalettes_1.jpg" />
+    <Content Include="Image\EyePalettes_2.jpg" />
+    <Content Include="Image\EyePalettes_3.jpg" />
     <Content Include="Image\FaceSuncream_1.jpg" />
     <Content Include="Image\FaceSuncream_2.jpg" />
     <Content Include="Image\Foundation_1.png" />
@@ -520,15 +531,31 @@
     <Content Include="Image\GifCategory_Background_3.gif" />
     <Content Include="Image\Highlighter_1.jpg" />
     <Content Include="Image\Highlighter_2.jpg" />
-    <Content Include="Image\Lipbalm.jpg" />
+    <Content Include="Image\Lipbalm_1.jpg" />
+    <Content Include="Image\Lipbalm_2.jpg" />
+    <Content Include="Image\Lipbalm_3.jpg" />
     <Content Include="Image\Lipstick_1.jpg" />
     <Content Include="Image\Lipstick_2.jpg" />
     <Content Include="Image\Mascara_1.jpg" />
     <Content Include="Image\Mascara_2.jpg" />
     <Content Include="Image\OIP.jpg" />
+    <Content Include="Image\order-icon.png" />
+    <Content Include="Image\p1.jpg" />
+    <Content Include="Image\p2.jpg" />
+    <Content Include="Image\p3.jpg" />
+    <Content Include="Image\p4.jpg" />
     <Content Include="Image\Perfume_1.png" />
     <Content Include="Image\Perfume_2.jpg" />
     <Content Include="Image\Perfume_3.jpg" />
+    <Content Include="Image\post1.gif" />
+    <Content Include="Image\poster1.jpg" />
+    <Content Include="Image\poster2.jpg" />
+    <Content Include="Image\poster3.jpg" />
+    <Content Include="Image\poster4.jpg" />
+    <Content Include="Image\poster5.jpg" />
+    <Content Include="Image\poster6.jpg" />
+    <Content Include="Image\poster6.png" />
+    <Content Include="Image\s2508869-main-zoom.png" />
     <Content Include="Image\Serum_1.jpg" />
     <Content Include="Image\Serum_2.jpg" />
     <Content Include="Image\Serum_3.jpg" />
@@ -1312,6 +1339,7 @@
     <Content Include="Theme\images\discount.png" />
     <Content Include="Theme\images\down.png" />
     <Content Include="Theme\images\footer.jpg" />
+    <Content Include="Theme\images\home_makeup_footer_pic.png" />
     <Content Include="Theme\images\home_slider_1.jpg" />
     <Content Include="Theme\images\icon_1.svg" />
     <Content Include="Theme\images\icon_2.svg" />
@@ -1381,6 +1409,7 @@
     <Content Include="Theme\styles\contact_responsive.css" />
     <Content Include="Theme\styles\main_styles.css" />
     <Content Include="Theme\styles\MemberPage.css" />
+    <Content Include="Theme\styles\OrderPage.css" />
     <Content Include="Theme\styles\product.css" />
     <Content Include="Theme\styles\ProductPage.css" />
     <Content Include="Theme\styles\product_responsive.css" />
@@ -1461,6 +1490,9 @@
     <Content Include="Views\AdminHome\EditProduct.cshtml" />
     <Content Include="Views\AdminHome\TableDetail.cshtml" />
     <Content Include="Views\Shared\_LayoutShowAll.cshtml" />
+    <Content Include="Views\AdminHome\Order.cshtml" />
+    <Content Include="Views\Login\ForgetPwd.cshtml" />
+    <Content Include="Views\Login\NewPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1482,13 +1514,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206201325072_sghoang.resx">
-      <DependentUpon>202206201325072_sghoang.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206271331017_songhoang.resx">
+      <DependentUpon>202206271331017_songhoang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\PBL3.Migrations.ahihi.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3.Migrations.Change.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3.Migrations.songhoang.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3.Migrations.Update_AdminHistory.resources" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

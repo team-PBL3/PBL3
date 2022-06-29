@@ -22,17 +22,18 @@ namespace PBL3.Models
         [Required]
         public String address { get; set; }
         [Required]
-        [Remote(action: "Check_Existing_UserName", controller: "Login", ErrorMessage = "This username already existed.")]
+        [Remote(action: "Check_Existing_UserName", controller: "Login", ErrorMessage = "Tên này đã được sử dụng.")]
         public String username { get; set; }
         [Required]
         [EmailAddress]
-        [Remote("Check_Existing_Email", "Login", AdditionalFields = "email", ErrorMessage = "Email already existed!")]
+        [Remote("Check_Existing_Email", "Login", AdditionalFields = "email", ErrorMessage = "Email này đã được sử dụng.")]
         public String email { get; set; }
         [Required]
-        [MaxLength(12,ErrorMessage = "Password length would have less or equals 12 characters")]
-        [MinLength(6, ErrorMessage = "Password length would have longer or equals 6 characters")]
+        [MaxLength(14,ErrorMessage = "Độ dài của mật khẩu nên gồm 8-14 ký tự")]
+        [MinLength(8, ErrorMessage = "Độ dài của mật khẩu nên gồm 8-14 ký tự")]
+        [Remote("Check_Val_Pwd", "Login", ErrorMessage = "Mật khẩu nên có ít nhất một ký tự số, viết hoa và ký tự đặc biệt.")]
         public String password { get; set; }
-        [Remote(action: "Is_Matched_Passwork", controller: "Login", AdditionalFields = "password", ErrorMessage = "The passwords don't match")]
+        [Remote(action: "Is_Matched_Passwork", controller: "Login", AdditionalFields = "password", ErrorMessage = "Mật khẩu nhập lại không chính xác!")]
         public string cfpassword { get; set; }
     }
 }

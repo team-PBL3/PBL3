@@ -46,6 +46,24 @@ namespace PBL3.Models
                 throw;
             }
         }
+        public int Edit(User user)
+        {
+            try
+            {
+                User a = this.Users.First(i => i.id == user.id);
+                if (user.name != null) a.name = user.name;
+                if (user.username != null) a.username = user.username;
+                if (user.sex != null) a.sex = user.sex;
+                if (user.phone !="0")a.phone = user.phone;
+                if (user.address != null) a.address = user.address;
+                if (user.password != null) a.password = user.password;
+                return this.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                throw;
+            }
+        }
         public int Adding(Category category)
         {
             try
@@ -72,10 +90,6 @@ namespace PBL3.Models
             }
             catch (DbEntityValidationException e)
             {
-                foreach (var eve in e.EntityValidationErrors)
-                {
-
-                }
                 throw;
             }
         }
@@ -88,7 +102,19 @@ namespace PBL3.Models
             }
             catch (Exception)
             {
-
+                throw;
+            }
+        }
+        public int Edit2(Orderr orderr)
+        {
+            try
+            {
+                Orderr orderr1 = this.Orderrs.First(i => i.id == orderr.id);
+                orderr1.status = orderr.status;
+                return this.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
                 throw;
             }
         }
@@ -189,7 +215,7 @@ namespace PBL3.Models
                     b = new Payment() { amount = OD.quantity, paymentdate = DateTime.Now, totalPrice = OD.price, orderid = OD.orderid, userid = user.id };
                     Adding(b);
                 }
-
+                if (CDid!=null)
                 foreach (var id in CDid)
                 {
                     this.CartDetails.Remove(this.CartDetails.ToList().First(x => x.id == id));
@@ -286,6 +312,19 @@ namespace PBL3.Models
 
             this.Users.First(i => i.id == user.id).password = pwmuondoi;
             this.SaveChanges();
+        }
+        public User CheckExistingEmail(User user)
+        {
+            try
+            {
+                return this.Users.First(i => i.email == user.email && i.name == user.name &&
+                i.username == user.username && i.phone == user.phone);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
         }
     }
 }

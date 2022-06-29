@@ -1,6 +1,6 @@
 ﻿
 @using PBL3.Models;
-@{ ViewBag.Title = "Thành Viên";
+@{ ViewBag.Title = "Thành viên";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     PBL3DataContext dataContext = new PBL3DataContext();
     List_CustomerView list2 = Model;
@@ -8,8 +8,8 @@
     List_ProductView list = ViewBag.ProductTotal;
 }
 
-
 <div class="main-content">
+    <div class="Action-page-name" style="display:none">Member</div>
     <header>
         <h2>
             <label for="nav-toggle">
@@ -20,7 +20,7 @@
 
         <div class="search-wrapper">
             <span class="fa-solid fa-magnifying-glass"></span>
-            <input type="search" placeholder="Search here" />
+            <input type="search" placeholder="Tìm kiếm" />
         </div>
 
         <div class="user-wrapper" onclick="menuToggle();">
@@ -31,8 +31,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><span class="fa-solid fa-user"></span><a href="#">My profile</a></li>
-                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="#">Log out</a></li>
+                    <li><span class="fa-solid fa-arrow-right-from-bracket"></span><a href="~/AdminHome/Logout">Log out</a></li>
                 </ul>
             </div>
         </div>
@@ -43,7 +42,7 @@
             <div class="card-single">
                 <div>
                     <h1>@list2.data_views.Count</h1>
-                    <span>Thành Viên</span>
+                    <span>Thành viên</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-users"></span>
@@ -77,7 +76,7 @@
             <div class="projects_1">
                 <div class="card_1">
                     <div class="card-header_1">
-                        <h3>Thành Viên</h3>
+                        <h3>Thành viên</h3>
 
                         <button>
                             Xem tất cả <span class="fa-solid fa-arrow-right">
@@ -102,19 +101,18 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var i in list2.data_views)
-                                     {
-                                        <tr>
-                                            <td>@i.name</td>
-                                            <td>@i.sex</td>
-                                            <td>@i.address</td>
-                                            <td>@i.phone</td>
-                                            <td>@i.email</td>
-                                            <td>@i.username</td>
+                                    {
+                        <tr>
+                            <td>@i.name</td>
+                            <td>@i.sex</td>
+                            <td>@i.address</td>
+                            <td>@i.phone</td>
+                            <td>@i.email</td>
+                            <td>@i.username</td>
 
 
 
-                                        </tr>
-                                     }
+                        </tr>}
 
                                 </tbody>
                             </table>

@@ -25,7 +25,7 @@
 ***********/
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap');
 
 /*********************************
 2. Body and some general stuff
@@ -60,7 +60,7 @@ ul {
 }
 
 p {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Charis SIL', sans-serif;
 	font-size: 14px;
 	line-height: 2.14;
 	font-weight: 400;
@@ -371,7 +371,7 @@ section {
 		}
 
 		.main_nav > ul > li > a {
-			font-size: 16px;
+			font-size: 18px;
 			font-weight: 600;
 			color: #767676;
 			-webkit-transition: all 200ms ease;
@@ -436,7 +436,7 @@ section {
 }
 
 .hassubs ul li a {
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 600;
 	color: #767676;
 	-webkit-transition: all 200ms ease;
@@ -1268,7 +1268,7 @@ section {
 }
 
 .avds_xl_background {
-	background-image: url('../../Image/EyePalettes_1.jpeg');
+	background-image: url('../../Image/EyePalettes_1.jpg');
 	position: absolute;
 	top: 0;
 	left: 0;

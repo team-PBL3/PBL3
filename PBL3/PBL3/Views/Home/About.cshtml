@@ -1,19 +1,82 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "About";
-}
+﻿<!DOCTYPE html>
 
-<div class="about_container">
-    <h2 class="group_name">HTCC Group</h2>
-    <div>
-        <h4>ĐỒ ÁN CÔNG NGHỆ PHẦN MỀM PBL3</h4>
-        <h5>Giáo viên hướng dẫn: Lê Thị Mỹ Hạnh</h5>
-        <p>Thành viên:</p>
-        <ul>
-            <li>Nguyễn Quốc Cường</li>
-            <li>Phan Mạnh Cường</li>
-            <li>Nguyễn Nho Song Hoàng</li>
-            <li>Lương Thiện</li>
-        </ul>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Về chúng tôi</title>
+    <link href="~/Content/CSS/About2.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c562b97dfd.js" crossorigin="anonymous"></script>
+</head>
+@{ Layout = "";}
+<body>
+    <div class="btn-back">
+        <a href="/Home/Index">
+            <i class="fa-solid fa-left-long"></i>
+        </a>
     </div>
-</div>
+    <h1>HTCC GROUP</h1>
+    <blockquote>
+        <h2>ĐỒ ÁN CÔNG NGHỆ PHẦN MỀM PBL3</h2>
+        <h2 style="font-size: 34px; color: #54a0ff; ">Website bán mỹ phẩm online</h2>
+        <h3>Giáo viên hướng dẫn: Lê Thị Mỹ Hạnh</h3>
+    </blockquote>
+    <section class="container">
+
+        <div class="card">
+            <div class="bg-image">
+                <img src="~/Image/bg-img.jpg" alt="">
+            </div>
+            <div class="Pic">
+                <img src="~/Image/p1.jpg">
+            </div>
+            <div class="info">
+                <h4>Nguyễn Nho Song Hoàng</h4>
+                <h6>102200257</h6>
+                <h5>20TCLC_KHDL</h5>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="bg-image">
+                <img src="~/Image/bg-img.jpg" alt="">
+            </div>
+            <div class="Pic">
+                <img src="~/Image/p2.jpg">
+            </div>
+            <div class="info">
+                <h4>Lương Thiện</h4>
+                <h6>102200287</h6>
+                <h5>20TCLC_KHDL</h5>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="bg-image">
+                <img src="~/Image/bg-img.jpg" alt="">
+            </div>
+            <div class="Pic">
+                <img src="~/Image/p3.jpg">
+            </div>
+            <div class="info">
+                <h4>Nguyễn Quốc Cường</h4>
+                <h6>102200249</h6>
+                <h5>20TCLC_KHDL</h5>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="bg-image">
+                <img src="~/Image/bg-img.jpg" alt="">
+            </div>
+            <div class="Pic">
+                <img src="~/Image/p4.jpg">
+            </div>
+            <div class="info">
+                <h4>Phan Mạnh Cường</h4>
+                <h6>102200250</h6>
+                <h5>20TCLC_KHDL</h5>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

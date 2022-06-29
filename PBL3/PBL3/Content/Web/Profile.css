@@ -1,41 +1,158 @@
-﻿.Content {
-    margin: 0px 50px;
+﻿div span.field-validation-error {
+    color: red;
+    height: 20px;
+}
+.Content {
+    margin: 0px 35px;
     padding: 30px 20px;
     border-radius: 10px;
     background: white;
+    font-family: 'Times New Roman', Times, serif;
 }
+
 img.ava {
     width: 20%;
     border-radius: 50%;
 }
+
 .backgroundAva {
     text-align: center;
-    background: pink;
-    padding: 10px 0px;
+    background-image: linear-gradient(to bottom, #00c9dd, #a9e5a9);
+    padding: 10px 0px 0xp 0px;
 }
+    .backgroundAva div {
+        padding: 0px 0px 10px 10px;
+        text-align: left;
+        color: black;
+        font-size: 26px;
+    }
 .side-menu {
-    display: block;
-    width: 25%;
-    padding: 20px 10px;
-    background: #eeeeee;
+    display: inline-block;
+    width: 20%;
+    padding: 10px;
 }
+
     .side-menu div {
         font-size: 18px;
         color: black;
         padding: 0.1cm 0.1cm 0.1cm 0.4cm;
-        margin-top: 0.4cm;
+        margin-top: 0.3cm;
         background: white;
         border-radius: 5px;
         cursor: pointer;
         line-height: 1.3cm;
+        font-weight: 400;
     }
+
         .side-menu div:first-child {
             margin-top: 0cm;
         }
-    .side-menu div:hover {
-        background: pink;
-        transition-duration: 1s;
-    }
+
+        .side-menu div:hover {
+            background: #0094ff;
+            color: white;
+            transition-duration: 0.25s;
+        }
+
 .Member-function {
+    text-align:center;
     width: 100%;
+    padding:10px 0px;
+}
+.Member-function-block {
+    text-align: left;
+    width: 32%;
+    margin: 0px 6px;
+    height: 100px;
+    display: inline-block;
+    border-radius: 10px;
+    vertical-align: top;
+    box-shadow: 0px 0px 5px #444444;
+    background-image: linear-gradient(to bottom, #a6e4a9, #ffffff,#00dddd);
+}
+    .Member-function-block div{
+        color: black;
+    }
+.Content_Menu {
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    padding: 25px 10px 20px 30px;
+    border-radius: 5px;
+    margin: 10px 0px 0px 0px;
+    width: 79%;
+    background: white;
+    color: black;
+    font-size: 18px;
+}
+
+.back_Content_Menu {
+    vertical-align: top;
+    text-align: left;
+    width: 75%;
+    display: inline-block;
+}
+    .back_Content_Menu table {
+        margin-top: 20px;
+        width: 100%;
+    }
+        .back_Content_Menu table td{
+            width: 50%;
+            text-align: left;
+            padding: 5px 0px;
+            margin: 10px 0px;
+            border-bottom: 2px solid #eeeeee;
+        }
+        .back_Content_Menu table td input{
+            padding: 0px 10px;
+        }
+.Member-info div:first-child {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.side-menu2 {
+    width: 27%;
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+}
+    .side-menu2 .slash{
+        text-align:right;
+    }
+    .side-menu2 .side-menu2-content {
+        background: #00dddd;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        border: 3px solid white;
+        padding: 10px;
+    }
+    .side-menu2 .side-menu2-content div {
+        background: white;
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px 10px 5px 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+.button_k {
+    margin:10px 10px 0px 0px;
+    background: white;
+    border-radius: 10px;
+    border-color: #00dddd;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+.Block-order {
+    text-align: center;
+    vertical-align: top;
+    margin-right: 15px;
+}
+.Block-order div{
+    display:inline-block;
+}
+.table-cart tr td{
+    width:auto;
+    padding: 10px 0px;
 }

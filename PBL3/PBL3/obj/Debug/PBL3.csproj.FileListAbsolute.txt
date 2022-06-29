@@ -349,14 +349,10 @@ E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.ca
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
-E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.Change.resources
-E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.Change.resources
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
 C:\Users\ADMIN\Documents\GitHub\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
-E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.Update_AdminHistory.resources
-E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.foreignkey.resources
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.Change.resources
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.Update_AdminHistory.resources
 E:\My life\CODE\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.foreignkey.resources
@@ -413,7 +409,6 @@ D:\PBL3\PBL3\PBL3\PBL3\bin\roslyn\VBCSCompiler.exe
 D:\PBL3\PBL3\PBL3\PBL3\bin\roslyn\VBCSCompiler.exe.config
 D:\PBL3\PBL3\PBL3\PBL3\bin\EntityFramework.xml
 D:\PBL3\PBL3\PBL3\PBL3\bin\EntityFramework.SqlServer.xml
-D:\PBL3\PBL3\PBL3\PBL3\bin\Google.Protobuf.pdb
 D:\PBL3\PBL3\PBL3\PBL3\bin\Google.Protobuf.xml
 D:\PBL3\PBL3\PBL3\PBL3\bin\K4os.Compression.LZ4.xml
 D:\PBL3\PBL3\PBL3\PBL3\bin\K4os.Compression.LZ4.Streams.xml
@@ -452,12 +447,209 @@ D:\PBL3\PBL3\PBL3\PBL3\bin\System.Web.WebPages.xml
 D:\PBL3\PBL3\PBL3\PBL3\bin\System.Web.WebPages.Deployment.xml
 D:\PBL3\PBL3\PBL3\PBL3\bin\System.Web.WebPages.Razor.xml
 D:\PBL3\PBL3\PBL3\PBL3\bin\Newtonsoft.Json.xml
-D:\PBL3\PBL3\PBL3\PBL3\bin\Antlr3.Runtime.pdb
 D:\PBL3\PBL3\PBL3\PBL3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.dll
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
-D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.sghoang.resources
 D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\obj\Debug\PBL3.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\obj\Debug\PBL3.pdb
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\PBL3.dll.config
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\PBL3.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\PBL3.pdb
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\csc.exe
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\csc.exe.config
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\csc.rsp
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\csi.exe
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\csi.exe.config
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\csi.rsp
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.Managed.Core.targets
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.AppContext.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Collections.Immutable.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Console.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Globalization.Calendars.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.IO.Compression.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.IO.FileSystem.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Net.Sockets.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Reflection.Metadata.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.ValueTuple.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Xml.XmlDocument.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Xml.XPath.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\vbc.exe
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\vbc.exe.config
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\vbc.rsp
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\VBCSCompiler.exe
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\roslyn\VBCSCompiler.exe.config
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\EntityFramework.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\EntityFramework.SqlServer.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Google.Protobuf.pdb
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Google.Protobuf.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\K4os.Compression.LZ4.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\K4os.Compression.LZ4.Streams.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\K4os.Hash.xxHash.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Bcl.AsyncInterfaces.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Bcl.HashCode.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.EntityFrameworkCore.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.EntityFrameworkCore.Relational.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Caching.Abstractions.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Caching.Memory.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Configuration.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Configuration.Binder.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.DependencyInjection.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Logging.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Logging.Abstractions.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Options.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.Extensions.Primitives.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\MySql.Data.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\MySql.Data.EntityFramework.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\MySql.Data.EntityFrameworkCore.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Buffers.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Collections.Immutable.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Diagnostics.DiagnosticSource.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Memory.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Numerics.Vectors.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Threading.Tasks.Extensions.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Web.Helpers.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Web.Mvc.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Web.Optimization.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Web.Razor.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Web.WebPages.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Web.WebPages.Deployment.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\System.Web.WebPages.Razor.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Newtonsoft.Json.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Antlr3.Runtime.pdb
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\PBL3.dll.config
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\PBL3.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\PBL3.pdb
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\csc.exe
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\csc.exe.config
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\csc.rsp
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\csi.exe
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\csi.exe.config
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\csi.rsp
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.AppContext.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Console.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.IO.Compression.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.ValueTuple.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\vbc.exe
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\vbc.exe.config
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\vbc.rsp
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\VBCSCompiler.exe
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\EntityFramework.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Google.Protobuf.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\K4os.Compression.LZ4.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\K4os.Compression.LZ4.Streams.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\K4os.Hash.xxHash.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Bcl.HashCode.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.EntityFrameworkCore.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Configuration.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Configuration.Binder.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Logging.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Options.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\MySql.Data.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\MySql.Data.EntityFramework.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\MySql.Data.EntityFrameworkCore.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Buffers.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Collections.Immutable.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Memory.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Web.Helpers.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Web.Mvc.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Web.Optimization.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Web.Razor.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Web.WebPages.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\System.Web.WebPages.Razor.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Newtonsoft.Json.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\obj\Debug\PBL3.dll
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\obj\Debug\PBL3.pdb
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\obj\Debug\PBL3.Migrations.songhoang.resources
+C:\Users\ADMIN\Downloads\PBL3-main\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
+D:\PBL3\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.songhoang.resources

@@ -1,18 +1,173 @@
-﻿    @using PBL3.Models
+﻿@using PBL3.Models
+@model PBL3.Models.Person
 @{
-    ViewBag.Title = "Buy";
+    ViewBag.Title = "Mua sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
     Product_View_Detail x = ViewBag.PVD;
 }
 
-<h2>Buy</h2>
 
+
+<link href="~/Content/Web/cart.css" rel="stylesheet" />
+<link href="~/Content/Web/cart_responsive.css" rel="stylesheet" />
+<link href="~/Content/Web/Product.css" rel="stylesheet" />
+<!-- Home -->
+
+<div class="home" style="height:600px">
+    <div class="home_container">
+        <div class="home_background" style="background-image:url('/Image/Cart_poster.jpg');background-size:contain"></div>
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Trang cá nhân</a></li>
+                                    <li><a href="categories.html">Giỏ hàng</a></li>
+                                    <li>Mua hàng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Info -->
+
+<div class="cart_info">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Column Titles -->
+                <div class="cart_info_columns clearfix" style="border:2px solid #a0a0a0; padding: 10px">
+                    <div class="cart_info_col cart_info_col_product" style="font-size: 20px">Sản phẩm</div>
+                    <div class="cart_info_col cart_info_col_price" style="font-size: 20px">Giá</div>
+                    <div class="cart_info_col cart_info_col_quantity" style="font-size: 20px">Số lượng</div>
+                    <div class="cart_info_col cart_info_col_total" style="font-size: 20px">Tổng giá</div>
+                </div>
+            </div>
+        </div>
+        <div class="row cart_items_row">
+            <div class="col">
+                <div>
+                    @using (Html.BeginForm("OrderProduct1", "Order", new
+                    {
+                        price = x.Price.Amount * ViewBag.quantity,
+                        quantity = ViewBag.quantity,
+                        productid = x.id
+
+                    }, FormMethod.Post, new { onsubmit = "return Validate()" }))
+                    {
+                        <!--Cart Item-->
+                            <div style = "border: 2px solid black;" >
+
+                                <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" style="padding-right:10px;">
+                                <!-- Name -->
+                                <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_item_image">
+                                        <div><img src = "@(x.imageName)" style="height: 100%; width: 100%" alt=""></div>
+                                    </div>
+                                    <div class="cart_item_name_container">
+                                        <div class="cart_item_name"><a href = "#" > @x.name </a></div>
+                                    </div >
+                                </div >
+                                <!--Price-->
+                                <div class="cart_item_price">@x.Price.ToString()</div>
+                                <!-- Quantity -->
+                                <div class="cart_item_quantity">
+                                    <div class="product_quantity_container">
+                                        <div class="product_quantity clearfix" style="border: none">
+                                            <label class="quantity_input" style="text-align: center; width: 70%">
+                                            <input disabled="disabled" id = "quantity_input" name="quantity_input" type="number" pattern="[0-9]*" value="@ViewBag.quantity" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Total -->
+                                <div style="color: black;width: 10%; text-align: right;">@(Money.Parse(x.Price.Amount * ViewBag.quantity).ToString())</div>
+
+                                </div>
+                            </div>
+                        
+                        <div style = "border: 2px solid black; margin-top: 10px" >
+                            <div class="Form_info">
+                                <div class="Form_info_recipient">Thông tin giao hàng:</div>
+                                <div class="Input_info_Form">
+                                    <div class="row2">
+                                        <label for="name">Tên</label>
+                                        <input data-val="true" data-val-required="Bạn chưa nhập trường tên."
+                                                id="name" name="name" type="text" value="">
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row2">
+                                        <label for="phone">Điện thoại</label>
+                                        <input data-val= "true" data-val-required= "Bạn chưa nhập số điện thoại."
+                                                id= "phone" min= "1" name= "phone" type= "number" value= "" >
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row2">
+                                        <label for="sex">Giới tính</label>
+                                        Nam
+                                        <input data-val="true" data-val-required="Bạn chưa chọn giới tính."
+                                                id="sex" name="sex" type="radio" value="NAM" style="margin-right:1cm" />
+                                        Nữ
+                                        <input type = "radio" value= "NU" />
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="sex" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row2">
+                                        <label for="address">Địa chỉ</label>
+                                        <input data-val= "true" data-val-required= "Bạn chưa nhập địa chỉ." id= "address" name= "address"
+                                                type= "text" value= "@Model.address" >
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="address" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row2">
+                                        <label for="email">Email</label>
+                                        <input data-val="true" data-val-email="Email không hợp lệ."
+                                                id="email" name="email" type="text" value="">
+                                        <div>
+                                            <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row_cart_buttons">
+                            <div class="col">
+                                <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                                    <div class="cart_buttons_right ml-lg-auto">
+                                        <div class="button update_cart_button">
+                                            <input class="sd" style="display:block; width: 100%; text-align:center; border:none" type="submit" value="Xác nhận" id="Buy" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <div style="margin-top:60px">
-    @using (Html.BeginForm("OrderProduct", "Order", new
+    @using (Html.BeginForm("OrderProduct1", "Order", new
     {
         price = x.Price.Amount * ViewBag.quantity,
         quantity = ViewBag.quantity,
-        Time = DateTime.Now,
         productid = x.id
 
     }, FormMethod.Post))

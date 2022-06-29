@@ -18,6 +18,7 @@ namespace PBL3.Controllers.Web
         {
             Product_View_Detail data = new Product_View_Detail();
             data.Set_Product_Detail(productid);
+            ViewBag.Image = Image.SetImage(data.category);
             return View(data);
         }
         [HttpPost]

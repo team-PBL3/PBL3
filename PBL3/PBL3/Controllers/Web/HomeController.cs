@@ -11,7 +11,7 @@ namespace PBL3.Controllers
         PBL3DataContext dataContext;
         public HomeController()
         {
-            dataContext = new PBL3DataContext();
+            
         }
         public ActionResult Index()
         {
@@ -19,6 +19,7 @@ namespace PBL3.Controllers
         }
         public ActionResult AllProduct(int id = 1)
         {
+            dataContext = new PBL3DataContext();
             List_ProductView list = new List_ProductView();
             try
             {
@@ -28,24 +29,33 @@ namespace PBL3.Controllers
                 if (e.Message == "Page Not Found") return View("Error");
                 throw;
             }
+            ViewBag.Sort = list.sort;
             list.list_categories = dataContext.Categories.ToList();
-            list.Set_Product_View(id, list.SortBy(List_ProductView.sort, dataContext.Products.ToList()));
+            ViewBag.Image = Image.SetImage(" ");
+            list.Set_Product_View(dataContext.Products.ToList());
             return View(list);
         }
-        public ActionResult AllProduct2(string sort)
+        public ActionResult AllProduct2(List<string> sort)
         {
+            dataContext = new PBL3DataContext();
             List_ProductView list = new List_ProductView();
             try
             {
                 list.list_categories = dataContext.Categories.ToList();
-                list.Set_Product_View(1, list.SortBy(sort, dataContext.Products.ToList()));
+                list.Set_Product_View(list.SortBy(sort, dataContext.Products.ToList()));
             }
             catch (Exception e)
             {
                 if (e.Message == "Page Not Found") return View("Error");
             }
+            ViewBag.Sort = sort;
             ViewData.Model = list;
+            ViewBag.Image = Image.SetImage(sort[0]);
             return View("AllProduct");
+        }
+        public ActionResult About()
+        {
+            return View();
         }
         public ActionResult Logout()
         {
