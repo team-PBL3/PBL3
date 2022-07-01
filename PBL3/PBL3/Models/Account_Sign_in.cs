@@ -24,7 +24,7 @@ namespace PBL3.Models
 
         public static User Check_Signing_In(List<User> users, string email, string password)
         {
-            //password = Encrypt.ToEncrypt(password);
+            password = Encrypt.ToEncrypt(password);
             if (!users.Any(x => x.email == email && x.password == password)) throw new Exception("Email or password is wrong, please checking again.");
             User i = null;
             i = users.First(x => x.email == email && x.password == password);
