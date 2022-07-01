@@ -57,7 +57,7 @@ namespace PBL3.Models
                 if (user.sex != null) a.sex = user.sex;
                 if (user.phone !="0" && user.phone != null) a.phone = user.phone;
                 if (user.address != null) a.address = user.address;
-                if (user.password != null) a.password = Encrypt.ToEncrypt(user.password);
+                if (user.password != null) a.password = user.password;
                 return this.SaveChanges();
             }
             catch (DbEntityValidationException e)
