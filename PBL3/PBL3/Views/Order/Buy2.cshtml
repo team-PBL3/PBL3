@@ -23,8 +23,8 @@
                         <div class="home_content">
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="index.html">Trang cá nhân</a></li>
-                                    <li><a href="categories.html">Giỏ hàng</a></li>
+                                    <li><a href="/Member/">Trang cá nhân</a></li>
+                                    <li><a href="/Cart/">Giỏ hàng</a></li>
                                     <li>Mua hàng</li>
                                 </ul>
                             </div>
@@ -77,7 +77,7 @@
                                     <div class="product_quantity_container">
                                         <div class="product_quantity clearfix" style="border: none">
                                             <label class="quantity_input" style="text-align: center; width: 70%">
-                                            <input id="quantity_input" class="@i.id" name="quantity_input" type="number" pattern="[0-9]*" value="@i.quantity" onkeydown="SaveOld()" onkeyup="Validate(@(i.product_view.quantityRemain))" onchange="Validate2(@(i.product_view.quantityRemain),@i.id, @(i.product_view.Price.Amount))" />
+                                            <input style="width: 100%; border: none; height: 57px; padding-left: 9px; text-align: center;" id="quantity_input" class="@i.id" name="quantity_input" type="number" pattern="[0-9]*" value="@i.quantity" onkeydown="SaveOld()" onkeyup="Validate(@(i.product_view.quantityRemain))" onchange="Validate2(@(i.product_view.quantityRemain),@i.id, @(i.product_view.Price.Amount))" />
                                             </label>
                                         </div>
                                     </div>

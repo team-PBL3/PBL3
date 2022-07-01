@@ -77,7 +77,7 @@
                 <div class="back_Content_Menu">
                     <div class="Member-info">
                         <div>Thông tin cá nhân</div>
-                        <table>
+                        <table  class="info">
                             <tbody>
                                 <tr>
                                     <td>Tài khoản:</td>
@@ -115,7 +115,7 @@
                         <div>Chỉnh sửa thông tin cá nhân</div>
                         <form action="/Member/ChangInfo" method="post">
                             <input name="id" value="@Model.id" style="display:none" />
-                            <table>
+                            <table class="info">
                                 <tbody>
                                     <tr>
                                         <td>Tài khoản:</td>
@@ -179,7 +179,7 @@
                         <div>Thay đổi mật khẩu</div>
                         <form action="/Member/ChangPwd" method="post">
                             <input name="id" value="@Model.id" style="display:none" />
-                            <table>
+                            <table class="info">
                                 <tbody>
                                     <tr>
                                         <td>Mật khẩu cũ:</td>
@@ -238,24 +238,56 @@
                         <div>Đơn hàng của bạn</div>
                         <div style="padding: 10px 0px; font-size: 17px;">
                             <a class="Block-order">
-                                <div style="width: 160px; height:120px; background: #e91616; border-radius: 10px">
-                                    Đã xác nhận
-                                    <div style="display:block">@ViewBag.Cof</div>
+                                <div style="background: #e91616;">
+                                    <div class="order-align-middle">
+                                        <span>Đã xác nhận</span>
+                                        <div class="amount-order">@ViewBag.Cof</div>
+                                    </div>
                                 </div>
                             </a>
                             <a class="Block-order">
-                                <div style="width: 160px; height:120px; background: #e9c209; border-radius: 10px">
-                                    Đang giao
-                                    <div style="display:block">@ViewBag.Ship</div>
+                                <div style="background: #e9c209">
+                                    <div class="order-align-middle">
+                                        <span>Đang giao</span>
+                                        <div class="amount-order">@ViewBag.Ship</div>
+                                    </div>
                                 </div>
                             </a>
                             <a class="Block-order">
-                                <div style="width: 160px; height:120px; background: #4cff00; border-radius: 10px">
-                                    Đã hoàn thành
-                                    <div style="display:block">@ViewBag.Com</div>
+                                <div style="background: #4cff00;">
+                                    <div class="order-align-middle">
+                                        <span>Đã hoàn thành</span>
+                                        <div class="amount-order">@ViewBag.Com</div>
+                                    </div>
                                 </div>
                             </a>
                         </div>
+                        <table class="Order" style="max-height:400px; overflow-y: scroll; display: block">
+                            <thead>
+                                <tr style="text-align: center">
+                                    <th>Mã đơn hàng</th>
+                                    <th>Hãng</th>
+                                    <th>Giá</th>
+                                    <th>Tổng tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model.orders.OrderByDescending(t=>t.id))
+                                {
+                                <tr>
+                                    <td><a href="/Order/Detail?Orderid=@i.id">@Encrypt.ToEncrypt("000" + i.id)</a></td>
+                                    <td>@i.TimeConfirm</td>
+                                    <td>@i.status</td>
+                                    <td>
+                                        @foreach (var ip in i.payments)
+                                        {
+                                        <span>Tổng tiền: @(Money.Parse(ip.totalPrice).ToString())</span>
+                                        }
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="side-menu2">
@@ -270,8 +302,8 @@
             <div class="Content_Menu" style="display:none">
                 <div class="back_Content_Menu">
                     <div class="Member-info">
-                        <div>Thông tin cá nhân</div>
-                        <table class="table-cart"style="max-height:400px; overflow: scroll">
+                        <div>Giỏ hàng của bạn</div>
+                        <table class="Order"style="max-height:400px; overflow: scroll">
                             <thead>
                                 <tr>
                                     <th>Tên</th>
@@ -284,7 +316,7 @@
                                 @foreach (var i in cart.cartdetails)
                                 {
                                 <tr>
-                                    <td>@i.product.name</td>
+                                    <td style="width: 40%">@i.product.name</td>
                                     <td>@i.product.category.name</td>
                                     <td>@i.product.trademark.name</td>
                                     <td>@Money.Parse(i.product.price).ToString()</td>
@@ -313,7 +345,6 @@
 <script>
     var canvass = document.getElementsByClassName('slash_canvas');
     for (var canvas of canvass) {
-        console.log(canvass.length);
         if (canvas.getContext) {
             var context = canvas.getContext('2d');
             context.beginPath();
@@ -357,6 +388,13 @@
         Memberinfo[0].style.display = "none";
         Memberinfo[1].style.display = "none";
         Memberinfo[2].style.display = "";
+    }
+    var list_table = document.getElementsByClassName("Order");
+    for (var item of list_table) {
+        console.log(list_table.length);
+        item.maxHeight = "400px";
+        item.overflowY = "scroll";
+        item.display = "block";
     }
 </script>
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>

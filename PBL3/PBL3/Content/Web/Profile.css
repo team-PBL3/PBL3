@@ -96,15 +96,42 @@ img.ava {
         margin-top: 20px;
         width: 100%;
     }
-        .back_Content_Menu table td{
+        .back_Content_Menu table.info td{
             width: 50%;
             text-align: left;
             padding: 5px 0px;
             margin: 10px 0px;
             border-bottom: 2px solid #eeeeee;
+            border-left:none;
         }
         .back_Content_Menu table td input{
             padding: 0px 10px;
+        }
+
+        .back_Content_Menu table.Order td,th {
+            color:black;
+            text-align: center;
+            padding: 5px 0px;
+            margin: 10px 0px;
+            border-bottom: 1px solid black;
+            padding:10px 5px;
+        }
+        .back_Content_Menu table.Order thead td {
+            width:auto;
+        }
+        .back_Content_Menu table.Order tr th:not(:first-child), td:not(:first-child) {
+            padding: 0px 10px;
+            border-left: solid 1px black;
+        }
+        .back_Content_Menu table.Order td:last-child {
+            text-align:left;
+        }
+
+        .back_Content_Menu table.Order td:first-child {
+            text-align: left;
+        }
+        .back_Content_Menu table.Order td:first-child a {
+            color: black;
         }
 .Member-info div:first-child {
     font-size: 20px;
@@ -145,14 +172,27 @@ img.ava {
     cursor: pointer;
 }
 .Block-order {
-    text-align: center;
     vertical-align: top;
     margin-right: 15px;
 }
-.Block-order div{
-    display:inline-block;
-}
+    .Block-order div {
+        text-align: center;
+        width: 29%;
+        height: 120px;
+        border-radius: 10px;
+        display: inline-block;
+    }
 .table-cart tr td{
     width:auto;
-    padding: 10px 0px;
+    padding: 5px 10px 5px 10px;
+}
+div.amount-order {
+    height:auto;
+    display: block;
+    width: 100%;
+}
+div.order-align-middle {
+    display: table-cell;
+    vertical-align: middle;
+    width: 14%;
 }

@@ -24,8 +24,8 @@
                         <div class="home_content">
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="index.html">Trang cá nhân</a></li>
-                                    <li><a href="categories.html">Giỏ hàng</a></li>
+                                    <li><a href="/Member/">Trang cá nhân</a></li>
+                                    <li><a href="/Cart/">Giỏ hàng</a></li>
                                     <li>Mua hàng</li>
                                 </ul>
                             </div>
@@ -164,19 +164,3 @@
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<div style="margin-top:60px">
-    @using (Html.BeginForm("OrderProduct1", "Order", new
-    {
-        price = x.Price.Amount * ViewBag.quantity,
-        quantity = ViewBag.quantity,
-        productid = x.id
-
-    }, FormMethod.Post))
-    {
-        <div>@x.name</div>
-        <div>@ViewBag.quantity</div>
-        <div>@x.Price.Amount</div>
-        <div>@(x.Price.Amount * ViewBag.quantity)</div>
-        <input type="submit" value="Xác nhận" />
-    }
-</div>

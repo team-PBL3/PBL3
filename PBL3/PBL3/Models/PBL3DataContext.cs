@@ -55,7 +55,7 @@ namespace PBL3.Models
                 if (user.name != null) a.name = user.name;
                 if (user.username != null) a.username = user.username;
                 if (user.sex != null) a.sex = user.sex;
-                if (user.phone !="0")a.phone = user.phone;
+                if (user.phone !="0" && user.phone != null) a.phone = user.phone;
                 if (user.address != null) a.address = user.address;
                 if (user.password != null) a.password = user.password;
                 return this.SaveChanges();

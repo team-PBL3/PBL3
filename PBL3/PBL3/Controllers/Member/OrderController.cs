@@ -68,7 +68,7 @@ namespace PBL3.Controllers.Member
             }
             catch (Exception)
             {
-                throw;
+                return View("Error");
             }
             return RedirectToAction("NewPay","Payment");
         }

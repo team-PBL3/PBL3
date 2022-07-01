@@ -17,7 +17,7 @@
                         <div class="home_content">
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="index.html">Trang cá nhân</a></li>
+                                    <li><a href="/Member">Trang cá nhân</a></li>
                                     <li>Đơn hàng</li>
                                 </ul>
                             </div>
@@ -34,6 +34,22 @@
 <div class="list_order">
     <div style="padding: 30px">
         <div>
+            <div style="text-align:right;">
+                <select onchange="Change(this.value)" style="text-align: center; width: 20%; margin-right: 10px; height: 30px; border-radius: 10px; border: solid 1px black">
+                    <option value="Xem tất cả">
+                        Xem tất cả
+                    </option>
+                    <option value="Đã xác nhận">
+                        Đã xác nhận
+                    </option>
+                    <option value="Đang giao">
+                        Đang giao
+                    </option>
+                    <option value="Đã hoàn thành">
+                        Đã hoàn thành
+                    </option>
+                </select>
+            </div>
             @foreach (var i in Model.list)
             {
             <div class="FrameOrder">
@@ -53,6 +69,7 @@
                             <div>Thời gian đặt hàng: @i.order.TimeConfirm</div>
                             <div>Địa chỉ giao hàng: @i.order.Person.address</div>
                             <div>Trạng thái: @i.order.status</div>
+                            <div class="status" style="display:none">@i.order.status</div>
                         </div>
                         @foreach (var ip in i.order.payments)
                         {
@@ -62,10 +79,37 @@
                 @Html.ActionLink("Hóa đơn", "Index", "Payment", new { orderid = i.order.id }, new { @class = "ToPayment" })
             </div>
             }
+            <div class="FrameOrder" id="no-item" style="display:none">
+                <div style="font-size: 24px">Không Tìm Thấy Đơn Hàng Nào</div>
+            </div>
         </div>
     </div>
 </div>
 <div class="poster">
     <img src="~/Image/poster4.jpg" />
 </div>
+<script>
+    var list_status = document.getElementsByClassName("status");
+    var list_order = document.getElementsByClassName("FrameOrder");
+    var noitem = document.getElementById("no-item");
+    var count = 0;
+    function Change(option) {
+        for (var i = 0; i < list_status.length; i++) {
+            if (list_status[i].innerHTML == "Xem tất cả") {
+                list_order[i].style.display = "";
+                count++;
+            }
+            if (list_status[i].innerHTML != option) list_order[i].style.display = "none";
+            else {
+                list_order[i].style.display = "";
+                count++;
+            }
+            if (count == 0) {
+                noitem.style.display = "";
+            }
+            else noitem.style.display = "none";
+            count = 0;
+        }
+    }
+</script>
 <script src="~/Scripts/Thien_JS/Order_Index.js"></script>

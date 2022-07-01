@@ -48,7 +48,7 @@ namespace PBL3.Controllers.Member
         }
         public ActionResult Check_Val_Pwd(string password)
         {
-            bool i = Regex.IsMatch(password, @".*([A-Z])+.*") && Regex.IsMatch(password, @".*(\d)+.*") && Regex.IsMatch(password, @".*(^[\w\s])+.*");
+            bool i = Regex.IsMatch(password, @".*([A-Z])+.*") && Regex.IsMatch(password, @".*(\d)+.*") && Regex.IsMatch(password, @".*([^\w\s])+.*");
             if (!i) return Json(false, JsonRequestBehavior.AllowGet);
             return Json(true, JsonRequestBehavior.AllowGet);
         }

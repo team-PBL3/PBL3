@@ -1,0 +1,7 @@
+﻿div.statistic-circle {
+    display: inline-block;
+    width: 40%;
+    height: 400px;
+    border-radius: 50%;
+    vertical-align: top;
+}

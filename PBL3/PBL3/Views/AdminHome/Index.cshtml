@@ -1,9 +1,8 @@
 ﻿@using PBL3.Models;
 @{ ViewBag.Title = "Thống kê";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-    List<Statistics> products = Model;
+    L_Statistic_View Statistic = Model;
     List_CustomerView list2 = ViewBag.ShowCustomer;
-    PBL3DataContext dataContext = new PBL3DataContext();
     List_ProductView list = ViewBag.ProductTotal;
     User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
 }
@@ -11,6 +10,7 @@
 <div class="main-content">
     <div class="Action-page-name" style="display:none">Dashboard</div>
     <header>
+        <link href="~/Content/CSS/Statistics.css" rel="stylesheet" />
         <h2>
             <label for="nav-toggle">
                 <span class="fa-solid fa-bars"></span>
@@ -80,6 +80,53 @@
                 </div>
             </div>
         </div>
+        <div style="margin: 20px 0px">
+            <div style="border:1px solid black; padding: 10px">
+                <h2> Sơ đồ </h2>
+                <div id="thChoose" style="display: inline-block; height: 400px; overflow: scroll; width: 25%; white-space: nowrap">
+                    @foreach (var i in Statistic.Stview)
+                {
+                    <div style="padding:10px 0px 10px 10px; display: inline-block; width:450px; border:1px solid black; cursor:pointer;" onclick="statist(@Statistic.Stview.IndexOf(i))">@i.statistics.product.name</div>
+                    <br />
+                }        
+                </div>
+                @foreach (var i in Statistic.Stview)
+                {
+            <div class="statistic-circle" minit="@i.statistics.total"
+                 mremain="@i.statistics.income" mpending="@i.statistics.pending"
+                 ainit="@i.Ptotal" aremain="@i.Psold" apending="@i.Ppending" style="display:none">
+            </div>}
+            <div id="heightfor" style="display:inline-block; vertical-align:top">
+                <div style="padding:10px; font-size:18px">
+                    <div style="padding: 10px 5px; margin-bottom: 10px;">
+                        <div style="width: 20px; height: 20px; background: blue; display: inline-block"></div>
+                        <span>Số còn lại</span>
+                    </div>
+                    <div>Tỉ lệ: <span id="tile1"></span></div>
+                    <div>Số lượng: <span id="tile12"></span></div>
+                </div>
+                <div style="padding:10px; font-size:18px">
+                    <div style="padding: 10px 5px; margin-bottom: 10px;">
+                        <div style="width: 20px; height: 20px; background: green; display: inline-block"></div>
+                        <span>Số đã bán</span>
+                    </div>
+                    <div>Tỉ lệ: <span id="tile2"></span></div>
+                    <div>Số lượng: <span id="tile22"></span></div>
+                    <div>Doanh thu: <span id="tile23"></span></div>
+                </div>
+                <div style="padding:10px; font-size:18px">
+                    <div style="padding: 10px 5px; margin-bottom: 10px;">
+                        <div style="width: 20px; height: 20px; background: yellow; display: inline-block"></div>
+                        <span>Số đang xử lý</span>
+                    </div>
+                    <div>Tỉ lệ: <span id="tile3"></span></div>
+                    <div>Số lượng: <span id="tile32"></span></div>
+                    <div>Doanh thu: <span id="tile33"></span></div>
+                    <div style="margin-top:10px">Ước tính doanh thu: <span id="tile13"></span></div>
+                </div>
+            </div>
+            </div>
+        </div>
         <div class="recent-grid">
             <div class="projects">
                 <div class="card">
@@ -104,14 +151,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var i in products)
+                                    @foreach (var i in Statistic.Stview)
                                     {
                                     <tr>
-                                        <td>@i.product.name</td>
-                                        <td>@(i.income)</td>
+                                        <td>@i.statistics.product.name</td>
+                                        <td>@(i.statistics.income)</td>
 
-                                        <td>@i.pending</td>
-                                        <td>@(i.total)</td>
+                                        <td>@i.statistics.pending</td>
+                                        <td>@(i.statistics.total)</td>
                                     </tr>}
                                 </tbody>
                             </table>
@@ -152,10 +199,35 @@
 </div>
 
 <script>
-    var i = document.getElementsByClassName("form - control form - control - sm");
-    var search = i[0];
-    search.addEventListener("change", Function() {
-        document.getElementById("demo").innerHTML = "Hello World";
-    });
+    var list_grap = document.getElementsByClassName("statistic-circle");
+    function statist(i) {
+        for(var item of list_grap)
+        {
+            item.style.display = "none";
+        }
+        item = list_grap[i];
+        document.getElementById("thChoose").style.height = document.getElementById("heightfor").getBoundingClientRect().height + "px";
+        console.log(document.getElementById("heightfor").getBoundingClientRect().height + "px");
+        var minit = item.attributes[1].value;
+        var mremain = item.attributes[2].value;
+        var mpending = item.attributes[3].value;
+        var ainit = item.attributes[4].value;
+        var aremain = item.attributes[5].value;
+        var apending = item.attributes[6].value;
+        document.getElementById("tile1").innerHTML = (Math.round(aremain * 100000 / ainit) / 1000) + "%";
+        document.getElementById("tile12").innerHTML = aremain;
+        document.getElementById("tile2").innerHTML = (Math.round((ainit - aremain - apending) * 100000 / ainit) / 1000) + "%";
+        document.getElementById("tile22").innerHTML = ainit - aremain - apending;
+        document.getElementById("tile23").innerHTML = mremain;
+        document.getElementById("tile3").innerHTML = (Math.round((apending) * 100000 / ainit) / 1000) + "%";
+        document.getElementById("tile32").innerHTML = apending;
+        document.getElementById("tile33").innerHTML = mpending;
+        document.getElementById("tile13").innerHTML = minit;
+        var goc1 = (360 * aremain / ainit);
+        var goc2 = (360 * apending / ainit);
+        item.style.backgroundImage = "conic-gradient( blue " + goc1 + "deg, yellow 0 " + goc2 + "deg, green 0)";
+        item.style.display = "";
+    }
+    statist(0);
 </script>
 

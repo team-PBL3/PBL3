@@ -55,8 +55,7 @@ namespace PBL3.Controllers.Web
                 User NewUser = new User() {
                     name = model.name, sex = model.sex, phone = model.phone,
                     address = model.address, username = model.username, email = model.email,
-                    password = model.password, status = "INACTIVE", roleid = 2};
-                //password = Encrypt.ToEncrypt( model.password), status = "INACTIVE", roleid = 2};
+                password = Encrypt.ToEncrypt( model.password), status = "INACTIVE", roleid = 2};
                 datacontext.Adding(NewUser);
                 
                 return RedirectToAction("Sign_in", "Login");                
@@ -107,7 +106,7 @@ namespace PBL3.Controllers.Web
         }
         public ActionResult Check_Val_Pwd(string password)
         {
-            bool i = Regex.IsMatch(password, @".*([A-Z])+.*") && Regex.IsMatch(password, @".*(\d)+.*") && Regex.IsMatch(password, @".*(^[\w\s])+.*");
+            bool i = Regex.IsMatch(password, @".*([A-Z])+.*") && Regex.IsMatch(password, @".*(\d)+.*") && Regex.IsMatch(password, @".*([^\w\s])+.*");
             if (!i) return Json(false, JsonRequestBehavior.AllowGet);
             return Json(true, JsonRequestBehavior.AllowGet);
         }

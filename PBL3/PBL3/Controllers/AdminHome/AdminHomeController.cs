@@ -18,8 +18,7 @@ namespace PBL3.Controllers.AdminHome
         }
         public ActionResult Index(int id = 1)
         {
-            List<Statistics> statistics = dataContext.Statistics.ToList();
-
+            L_Statistic_View Sview = new L_Statistic_View(dataContext.Statistics.ToList());
             ViewBag.Total = dataContext.TotalPrice();
 
 
@@ -44,7 +43,7 @@ namespace PBL3.Controllers.AdminHome
             }
             ViewBag.ProductTotal = list;
 
-            return View(statistics);
+            return View(Sview);
         }
         public ActionResult addCategory()
         {

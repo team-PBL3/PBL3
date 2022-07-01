@@ -19,7 +19,7 @@
                         <div class="home_content">
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="index.html">Trang cá nhân</a></li>
+                                    <li><a href="/Member/">Trang cá nhân</a></li>
                                     <li>Đơn hàng</li>
                                 </ul>
                             </div>
@@ -35,7 +35,7 @@
 </div>
 <div class="list_order">
     <div style="padding: 30px">
-        <div>
+        <div style="color:black;">
             <div style="padding: 10px; background: white;">
                 <div class="OrderCode">Đơn hàng: @Encrypt.ToEncrypt("000" + Model.id)</div>
             </div>
@@ -45,7 +45,7 @@
                  <div class="OrderContent">
                         @foreach (var y in item.product.images)
                         {
-                        <img class="Order_image" style="height: 250px;" src="@(Image_Url.urlImage + y.name)">
+                        <img class="Order_image" src="@(Image_Url.urlImage + y.name)">
                         }
                     <div class="Info2Order">
                         <div>

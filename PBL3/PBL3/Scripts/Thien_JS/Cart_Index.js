@@ -10,7 +10,7 @@ document.getElementById('ChooseAll').onclick = function () {
         checkbox.checked = true;
         document.getElementById("Buy").disabled = false;
         error.innerHTML = "Bạn đã chọn " + checkboxes.length + " sản phẩm.";
-        error.style.color = "springgreen";
+        error.style.color = "#13c36b";
         document.getElementById("label_" + checkbox.id).style.backgroundImage = "url('/Image/OIP.jpg')";
         document.getElementById("label_" + checkbox.id).style.backgroundSize = "cover";
     }

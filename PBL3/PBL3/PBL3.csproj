@@ -283,6 +283,7 @@
     <Compile Include="Models\Product_View.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Statistics.cs" />
+    <Compile Include="Models\Statistic_View.cs" />
     <Compile Include="Models\TradeMark.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
@@ -430,6 +431,7 @@
     <Content Include="Content\CSS\About2.css" />
     <Content Include="Content\CSS\EditProduct.css" />
     <Content Include="Content\CSS\Login.css" />
+    <Content Include="Content\CSS\Statistics.css" />
     <Content Include="Content\CSS\_Layout.css" />
     <Content Include="Content\Web\ButtonPage.css" />
     <Content Include="Content\Web\Buy2.css" />
