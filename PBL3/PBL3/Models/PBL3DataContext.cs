@@ -114,8 +114,8 @@ namespace PBL3.Models
                     foreach (var i in orderr.orderdetails)
                     {
                         Orderdetail od = i;
-                        i.product.statistics.Last().income += i.quantity;
-                        i.product.statistics.Last().pending -= i.quantity;
+                        i.product.statistics.Last().income += i.price;
+                        i.product.statistics.Last().pending -= i.price;
                     }
                         
                 Orderr orderr1 = this.Orderrs.First(i => i.id == orderr.id);
