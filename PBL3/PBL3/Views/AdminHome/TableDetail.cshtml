@@ -11,12 +11,16 @@
 }
 
 
-<div class="btn-back">
-    <a href="/AdminHome/Product">
-        <i class="fa-solid fa-left-long"></i>
-    </a>
+<div class="show-all-header">
+    <div class="btn-back">
+        <a href="/AdminHome/Product">
+            <i class="fa-solid fa-left-long"></i>
+        </a>
+    </div>
+
+    <h1>Tất cả sản phẩm</h1>
 </div>
-<div class="container mt-2 mb-2" style="margin-left: 20px;width:1770px;padding-top:40px">
+<div class="container mt-2 mb-2" style="margin-left: 20px;width:1770px;padding-top:20px">
 
     <table style="width: 1820px;"
            data-toggle="table"
@@ -33,7 +37,7 @@
                 <th data-field="Discription" data-sortable="true" class="col-description">Description</th>
                 <th data-field="Remain_quantity" data-sortable="true" class="col-remainquantity">Remain Quantity</th>
                 <th data-field="Product_info" data-sortable="true" class="col-productinfo">Product Info</th>
-                <th data-field="Status" data-sortable="true" class="col-status">STATUS</th>
+                <th data-field="Status" data-sortable="true" class="col-status">Status</th>
                 <th data-field="ImageUrl" data-sortable="true" class="col-img">Image URL</th>
                 <th data-field="Price" data-sortable="true" class="col-price">Price</th>
                 <th data-field="Action" data-formatter="" class="col-action">Action</th>
@@ -72,51 +76,51 @@
                 <input type="text" style="display: none" name="id" value="@Model.id" />
                 <div class="product-details">
                     <div class="input-box">
-                        <span class="details">Name</span>
+                        <span class="details">Tên sản phẩm</span>
 
                         @Html.TextBoxFor(model => model.name, new { @id = "name" })
                     </div>
                     <div class="input-box">
-                        <span class="details">Category</span>
+                        <span class="details">Thể loại</span>
                         <div class="search_select_box">
                             @Html.DropDownListFor(model => model.categoryid, new SelectList(dataContext.Categories.ToList(), "id", "name"), new { @class = "options", @id = "category" })
                         </div>
                     </div>
                     <div class="input-box">
-                        <span class="details">Trademark</span>
+                        <span class="details">Thương hiệu</span>
                         <div class="search_select_box">
                             @Html.DropDownListFor(model => model.trademarkid, new SelectList(dataContext.TradeMarks.ToList(), "id", "name"), new { @class = "option", @id = "trademark" })
                         </div>
                     </div>
                     <div class="input-box">
-                        <span class="details">Description</span>
+                        <span class="details">Mô tả</span>
                         @Html.TextBoxFor(model => model.description, new { @id = "description" })
                     </div>
                     <div class="input-box">
-                        <span class="details">Price</span>
+                        <span class="details">Giá</span>
                         @Html.TextBoxFor(model => model.price, new { @id = "PriceAmount" })
                     </div>
                     <div class="input-box">
-                        <span class="details">Status</span>
+                        <span class="details">Trạng thái</span>
                         @Html.TextBoxFor(model => model.status, new { @id = "status" })
                     </div>
                     <div class="input-box">
-                        <span class="details">Remain quantity</span>
+                        <span class="details">Số lượng còn lại</span>
                         @Html.TextBoxFor(model => model.quantityInit, new { @id = "quantityRemain" })
                     </div>
                     <div class="input-box">
-                        <label for="file">Choose a file</label>
+                        <label for="file">URL ảnh</label>
                         <input type="file" name="imagee" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
                         <img id="ahihi" src="~/Image/@ViewBag.images" width="100px" height="100px" />
                     </div>
                     <div class="input-box">
-                        <span class="details">Product information</span>
+                        <span class="details">Thông tin sản phẩm</span>
                         @Html.TextBoxFor(model => model.infoproduct, new { @id = "infoproduct" })
                     </div>
 
                 </div>
                 <div class="button">
-                    <input type="submit" value="Edit Product" style="width:25%;" />
+                    <input type="submit" value="Chỉnh sửa" style="width:25%;" />
                 </div>
             </form>
         </div>
@@ -125,15 +129,15 @@
 <div class="bg-modal-2">
     <div class="cards-2">
         <div class="close-2">+</div>
-        <div class="title-2">Xoá</div>
+        <div class="title-2">Xoá sản phẩm</div>
         <div class="delete-form">
             <form action="#">
                 <div class="confirm">
                     <span>Bạn có chắc chắn muốn xóa sản phẩm này?</span>
                 </div>
                 <div class="button">
-                    <a class="btn-yes" href="https://localhost:44325/AdminHome/DeleteProduct?productId=">Yes</a>
-                    <input type="submit" class="btn-no" value="No">
+                    <a class="btn-yes" href="https://localhost:44325/AdminHome/DeleteProduct?productId=">Có</a>
+                    <input type="submit" class="btn-no" value="Không">
                 </div>
             </form>
         </div>
@@ -163,9 +167,3 @@
         });
     });
 </script>
-
-
-
-
-
-

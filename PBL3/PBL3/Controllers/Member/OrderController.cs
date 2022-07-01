@@ -30,7 +30,7 @@ namespace PBL3.Controllers.Member
             a.Set_Product_Detail(productid);
             ViewBag.quantity = quantity_input;
             ViewBag.PVD = a;
-            return View();
+            return View((User)Session[Account_Session]);
         }
         public ActionResult Buy2(List<int> quantity_input, List<int> CDid)
         {
@@ -81,10 +81,11 @@ namespace PBL3.Controllers.Member
                 LOD.Add(new Orderdetail() { price = price, quantity = quantity, Time = DateTime.Now, productid = productid});
                 PBL3DataContext dataContext = new PBL3DataContext();
                 dataContext.CreateOrder(LOD, (User)Session[Account_Session], null, toPerson);
+            
             }
             catch (Exception)
             {
-                throw;
+                return View("Error");
             }
             return RedirectToAction("NewPay", "Payment");
         }

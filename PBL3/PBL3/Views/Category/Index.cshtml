@@ -2,6 +2,7 @@
 @model PBL3.Models.Category_View_List
 @{
     ViewBag.Title = "Thể loại";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link type="text/css" href="~/Content/Web/Home.css" rel="stylesheet" />
 <link type="text/css" href="~/Theme/styles/categories.css" rel="stylesheet" />
@@ -10,14 +11,14 @@
 
 <div class="home">
     <div class="home_container">
-        <div class="home_background" style="background-image: url('/Image/Category_Background_1.jpg');"></div>
+        <div class="home_background" style="background-image: url('/Image/Category_Background_2.jpg');"></div>
         <div class="home_content_container">
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div class="home_content" style="font-family: 'Charis SIL', serif; width: 780px; padding-left: 100px;">
-                            <div class="home_title" style="font-weight: 500; color: #70a1ff; padding-left: 8px; border-left: red solid 2px ">Trang điểm & Sắc đẹp<span style="color: #70a1ff;">.</span></div>
-                            <div class="home_text" style="margin-top: 20px; padding-left: 8px; border-left: red solid 2px"><p style="font-family: 'Charis SIL', serif; color: white; font-size: 24px">Các dụng cụ và sản phẩm hỗ trợ cải thiện vẻ ngoài. <br />Nâng niu và bảo vệ vẻ đẹp của bản thân.</p></div>
+                            <div class="home_title" style="font-weight: 500; color: #1e90ff; padding-left: 8px; border-left: red solid 2px ">Trang điểm & Sắc đẹp<span style="color: #1e90ff; ">.</span></div>
+                            <div class="home_text" style="margin-top: 20px; padding-left: 8px; border-left: red solid 2px"><p style="font-family: 'Charis SIL', serif; color: #778ca3; font-size: 24px ">Các dụng cụ và sản phẩm hỗ trợ cải thiện vẻ ngoài. <br />Nâng niu và bảo vệ vẻ đẹp của bản thân.</p></div>
                         </div>
                     </div>
                 </div>
@@ -30,44 +31,48 @@
 
 <div class="products" style="padding-top:0px">
     <div class="container" style="width: 95%; max-width: none;">
-        <div class="row">
-            <div class="col">
+        <div class="container">
+            <div class="row">
+                <div class="col">
 
-                <!-- Product Sorting -->
-                <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start" style="padding: 50px 0px 0px 0px">
-                    <div>
-                        <ul>
-                            @foreach (var partofbody in Model.list)
-                            {
-                                <li id="Select_@Model.list.IndexOf(partofbody)" class="View_select" onclick="ChangePOB(@Model.list.Count,@Model.list.IndexOf(partofbody))">@partofbody.Name</li>
-                            }
-                        </ul>
+                    <!-- Product Sorting -->
+                    <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start" style="padding: 50px 0px 0px 0px">
+                        <div>
+                            <ul>
+                                @foreach (var partofbody in Model.list)
+                                {
+                                    <li id="Select_@Model.list.IndexOf(partofbody)" class="View_select" onclick="ChangePOB(@Model.list.Count,@Model.list.IndexOf(partofbody))" style="font-weight: 700;">@partofbody.Name</li>
+                                }
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div>
-                    @foreach (var partofbody in Model.list)
-                    {
-                    <div id="Select_View_@Model.list.IndexOf(partofbody)" class="Selection_view">
-                        @foreach (var category in partofbody.categorylist)
-                        {   
-                            <div class="category_name"><a href="https://localhost:44325/Home/AllProduct2?sort=@category.name&sort=+">@category.name</a></div>
-                            foreach (var product in category.productlist)
-                            {
-                            <div class="product-display-frame">
-                                <a href="https://localhost:44325/Product/?name=@product.Name&productid=@product.id">
-                                    <img style="width: 100%; text-align:center; border: 5px solid pink; border-radius:5px" src="@(product.urlImage)" />
-                                    <div>@product.Name</div>
-                                </a>
-                                <div style="color:black">@product.Price VND </div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        @foreach (var partofbody in Model.list)
+                        {
+                            <div id="Select_View_@Model.list.IndexOf(partofbody)" class="Selection_view">
+                                @foreach (var category in partofbody.categorylist)
+                                {
+                                    <div class="category_name">
+                                        <a href="https://localhost:44325/Home/AllProduct2?sort=@category.name&sort=+" style="font-weight: 600; color: #7d5fff;">@category.name</a>
+                                    </div> 
+                                    foreach (var product in category.productlist)
+                                   {
+                                        <div class="product-display-frame">
+                                            <a href="https://localhost:44325/Product/?name=@product.Name&productid=@product.id">
+                                                <img style="width: 100%; text-align:center; border: 5px solid pink; border-radius:5px" src="@(product.urlImage)" /> 
+                                                <div>@product.Name</div>
+                                            </a>
+                                            <div style="color:black">@product.Price</div>
+                                        </div>
+                                   }
+                                }
                             </div>
-                            }
                         }
                     </div>
-                    }
                 </div>
             </div>
         </div>

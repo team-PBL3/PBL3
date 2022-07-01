@@ -7,8 +7,7 @@
     List<TradeMark> lt = Model.TradeMarks.ToList();
     User a = (User)Session[PBL3.Controllers.RouteController.Account_Session];
     List_CustomerView list2 = ViewBag.ShowCustomer;
-    List_ProductView list = ViewBag.ProductTotal; 
-}
+    List_ProductView list = ViewBag.ProductTotal; }
 <div class="main-content">
     <div class="Action-page-name" style="display:none">Category</div>
     <header>
@@ -21,7 +20,7 @@
 
         <div class="search-wrapper">
             <span class="fa-solid fa-magnifying-glass"></span>
-            <input type="search" placeholder="Search here" />
+            <input type="search" placeholder="Tìm kiếm" />
         </div>
 
         <div class="user-wrapper" onclick="menuToggle();">
@@ -72,8 +71,8 @@
         </div>
 
         <div class="button">
-            <input type="submit" value="Thêm thể loại" id="btn-add-category">
-            <input type="submit" value="Thêm thương hiệu" id="btn-add-trademark">
+            <input type="submit" value="Thêm thể loại" id="btn-add-category" style="font-size: 18px;">
+            <input type="submit" value="Thêm thương hiệu" id="btn-add-trademark" style="font-size: 18px;">
         </div>
 
         <div class="recent-grid_2">
@@ -107,7 +106,8 @@
                             <td>@i.id</td>
                             <td>@i.name</td>
                             <td>@i.partofbody</td>
-                        </tr>}
+                        </tr>
+}
                                 </tbody>
                             </table>
                         </div>
@@ -118,7 +118,7 @@
             <div class="projects_3">
                 <div class="card_3">
                     <div class="card-header_3">
-                        <h3>Trademarks</h3>
+                        <h3>Thương hiệu</h3>
 
                         <button>
                             Xem tất cả <span class="fa-solid fa-arrow-right">
@@ -143,7 +143,8 @@
                         <tr>
                             <td>@i.id</td>
                             <td>@i.name</td>
-                        </tr>}
+                        </tr>
+}
                                 </tbody>
                             </table>
                         </div>
@@ -164,18 +165,18 @@
                 <div class="input-box">
                     <span class="category">Category name</span>
                     <input data-val="true"
-                           data-val-required=" Category bị trống"
-                           id="password" name="name" type="text">
+                           data-val-required="Thể loại bị trống"
+                           id="password" name="name" type="text" placeholder="Nhập tên thể loại">
                 </div>
                 <div class="error" style="height: 36px; padding: 5px 0 5px 0;">
                     <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>
                 </div>
                 <div class="input-box">
                     <span class="category">Part of body</span>
-                    <select data-val="true" data-val-remote="Category bị trùng"
+                    <select data-val="true" data-val-remote="Thể loại bị trùng"
                             data-val-remote-additionalfields="*.partofbody,*.name"
                             data-val-remote-url="/AdminHome/ktraCategory"
-                            id="password" name="partofbody" type="text" style="width: 224.71px; height: 36px; border-radius: 8px;">
+                            id="password" name="partofbody" type="text" style="width: 224.71px; height: 36px; border-radius: 8px; border: 1px solid #686de0; border-bottom-width: 2px;">
                         <option></option>
                         <option>Eye</option>
                         <option>Face</option>
@@ -187,7 +188,7 @@
                     <span class="field-validation-valid" data-valmsg-for="partofbody" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>
                 </div>
                 <div class="button">
-                    <input type="submit" id="add-category" value="Add category" style=" margin-top: 5px;">
+                    <input type="submit" id="add-category" value="Thêm thể loại" style=" margin-top: 5px;">
                 </div>
             </form>
         </div>
@@ -201,12 +202,12 @@
         <div class="add-trademark-form">
             <form action="/AdminHome/addTradeMark" method="post">
                 <div class="input-box">
-                    <span class="trademark">Tên Thương Hiệu</span>
-                    <input data-val="true" data-val-remote="Trademark bị trùng"
+                    <span class="trademark" style="padding-top: 4px;">Tên Thương Hiệu</span>
+                    <input data-val="true" data-val-remote="Thương hiệu bị trùng"
                            data-val-remote-additionalfields="*.name"
                            data-val-remote-url="/AdminHome/ktratrademark"
-                           data-val-required="Trademark bị trống"
-                           id="password" name="nametm" type="text">
+                           data-val-required="Thương hiệu bị trống"
+                           id="password" name="nametm" type="text" placeholder="Nhập tên thương hiệu">
                 </div>
                 <div class="error" style="height: 36px; padding-top: 5px;">
                     <span class="field-validation-valid" data-valmsg-for="nametm" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>

@@ -252,6 +252,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206281052588_altertable.cs" />
+    <Compile Include="Migrations\202206281052588_altertable.designer.cs">
+      <DependentUpon>202206281052588_altertable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account_Sign_in.cs" />
     <Compile Include="Models\Account_Sign_Up.cs" />
@@ -278,6 +282,7 @@
     <Compile Include="Models\Product_Display.cs" />
     <Compile Include="Models\Product_View.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Statistics.cs" />
     <Compile Include="Models\TradeMark.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
@@ -448,7 +453,6 @@
     <Content Include="Image\102101.png" />
     <Content Include="Image\102201.png" />
     <Content Include="Image\102302.png" />
-    <Content Include="Image\202401.png" />
     <Content Include="Image\103101.png" />
     <Content Include="Image\103102.png" />
     <Content Include="Image\103201.png" />
@@ -463,6 +467,7 @@
     <Content Include="Image\202201.png" />
     <Content Include="Image\202202.png" />
     <Content Include="Image\202301.png" />
+    <Content Include="Image\202401.png" />
     <Content Include="Image\203101.png" />
     <Content Include="Image\203102.png" />
     <Content Include="Image\203103.png" />
@@ -498,19 +503,27 @@
     <Content Include="Image\701502.png" />
     <Content Include="Image\704201.png" />
     <Content Include="Image\704202.png" />
+    <Content Include="Image\avatarFrofile.png" />
     <Content Include="Image\background.jpg" />
     <Content Include="Image\bg-img.jpg" />
     <Content Include="Image\BodySuncream_1.jpg" />
     <Content Include="Image\BodySuncream_2.jpg" />
     <Content Include="Image\borderImage-nightsky.gif" />
+    <Content Include="Image\cart-icon.png" />
     <Content Include="Image\Cart_poster.jpg" />
     <Content Include="Image\Category_Background.jpg" />
     <Content Include="Image\Category_Background_1.jpg" />
+    <Content Include="Image\Category_Background_2.jpg" />
     <Content Include="Image\Eyebrow_1.jpg" />
     <Content Include="Image\Eyebrow_2.jpg" />
+    <Content Include="Image\Eyebrow_3.jpg" />
+    <Content Include="Image\Eyebrow_4.jpg" />
     <Content Include="Image\Eyeliner_1.jpg" />
     <Content Include="Image\Eyeliner_2.jpg" />
-    <Content Include="Image\EyePalettes_1.jpeg" />
+    <Content Include="Image\Eyeliner_3.jpg" />
+    <Content Include="Image\EyePalettes_1.jpg" />
+    <Content Include="Image\EyePalettes_2.jpg" />
+    <Content Include="Image\EyePalettes_3.jpg" />
     <Content Include="Image\FaceSuncream_1.jpg" />
     <Content Include="Image\FaceSuncream_2.jpg" />
     <Content Include="Image\Foundation_1.png" />
@@ -520,12 +533,15 @@
     <Content Include="Image\GifCategory_Background_3.gif" />
     <Content Include="Image\Highlighter_1.jpg" />
     <Content Include="Image\Highlighter_2.jpg" />
-    <Content Include="Image\Lipbalm.jpg" />
+    <Content Include="Image\Lipbalm_1.jpg" />
+    <Content Include="Image\Lipbalm_2.jpg" />
+    <Content Include="Image\Lipbalm_3.jpg" />
     <Content Include="Image\Lipstick_1.jpg" />
     <Content Include="Image\Lipstick_2.jpg" />
     <Content Include="Image\Mascara_1.jpg" />
     <Content Include="Image\Mascara_2.jpg" />
     <Content Include="Image\OIP.jpg" />
+    <Content Include="Image\order-icon.png" />
     <Content Include="Image\p1.jpg" />
     <Content Include="Image\p2.jpg" />
     <Content Include="Image\p3.jpg" />
@@ -533,9 +549,21 @@
     <Content Include="Image\Perfume_1.png" />
     <Content Include="Image\Perfume_2.jpg" />
     <Content Include="Image\Perfume_3.jpg" />
+    <Content Include="Image\post1.gif" />
+    <Content Include="Image\poster1.jpg" />
+    <Content Include="Image\poster2.jpg" />
+    <Content Include="Image\poster3.jpg" />
+    <Content Include="Image\poster4.jpg" />
+    <Content Include="Image\poster5.jpg" />
+    <Content Include="Image\poster6.jpg" />
+    <Content Include="Image\poster6.png" />
+    <Content Include="Image\red-x.png" />
+    <Content Include="Image\red-x2.png" />
+    <Content Include="Image\s2508869-main-zoom.png" />
     <Content Include="Image\Serum_1.jpg" />
     <Content Include="Image\Serum_2.jpg" />
     <Content Include="Image\Serum_3.jpg" />
+    <Content Include="Image\shop-icon.png" />
     <Content Include="Image\Toner_1.jpg" />
     <Content Include="Image\Toner_2.jpg" />
     <Content Include="Image\Toner_3.jpg" />
@@ -1316,6 +1344,7 @@
     <Content Include="Theme\images\discount.png" />
     <Content Include="Theme\images\down.png" />
     <Content Include="Theme\images\footer.jpg" />
+    <Content Include="Theme\images\home_makeup_footer_pic.png" />
     <Content Include="Theme\images\home_slider_1.jpg" />
     <Content Include="Theme\images\icon_1.svg" />
     <Content Include="Theme\images\icon_2.svg" />
@@ -1490,6 +1519,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\202206281052588_altertable.resx">
+      <DependentUpon>202206281052588_altertable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

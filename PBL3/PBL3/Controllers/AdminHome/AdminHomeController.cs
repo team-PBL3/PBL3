@@ -18,7 +18,7 @@ namespace PBL3.Controllers.AdminHome
         }
         public ActionResult Index(int id = 1)
         {
-            List<Product> products = dataContext.Products.ToList();
+            List<Statistics> statistics = dataContext.Statistics.ToList();
 
             ViewBag.Total = dataContext.TotalPrice();
 
@@ -44,7 +44,7 @@ namespace PBL3.Controllers.AdminHome
             }
             ViewBag.ProductTotal = list;
 
-            return View(products);
+            return View(statistics);
         }
         public ActionResult addCategory()
         {
@@ -279,7 +279,7 @@ namespace PBL3.Controllers.AdminHome
                 }
                 catch (Exception e)
                 {
-                    throw;
+                    return View("Error");
                 }
             }
             return View("Index");

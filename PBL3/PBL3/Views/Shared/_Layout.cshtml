@@ -62,7 +62,7 @@
                                     <li><a href="https://localhost:44325/Home/AllProduct2?sort=@i.id&sort=+">@i.name</a></li>}
                                             </ul>
                                         </li>
-                                        <li><a href="">Liên lạc</a></li>
+                                        <li><a href="/Home/About">Về chúng tôi</a></li>
                                     </ul>
                                 </nav>
                                 <div class="header_extra ml-auto">
@@ -107,8 +107,8 @@
                                 @if (a == null)
                                 {
                     <ul>
-                        <li class="sign_in"><a href="~/Login/Sign_in">Sign in</a></li>
-                        <li class="sign_up"><a href="~/Login/Sign_up">Sign up</a></li>
+                        <li class="sign_in"><a href="~/Login/Sign_in">Đăng nhập</a></li>
+                        <li class="sign_up"><a href="~/Login/Sign_up">Đăng ký</a></li>
                     </ul>}
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                         <div class="col">
                             <div class="search_panel_content d-flex flex-row align-items-center justify-content-end">
                                 <form action="#">
-                                    <input type="text" class="search_input" placeholder="Search" required="required">
+                                    <input type="text" class="search_input" placeholder="Tìm kiếm" required="required">
                                 </form>
                             </div>
                         </div>
@@ -144,7 +144,6 @@
                         <ul>
                             <li><img src="~/Theme/images/user.png" /><a href="/Member">Trang cá nhân</a></li>
                             <li><img src="~/Theme/images/logout.png">@Html.ActionLink("Đăng xuất", "Logout", "Home")</li>
-                            <li><a href="/Order">Đơn hàng</a></li>
                         </ul>
                     </div>
                     <script>
@@ -207,7 +206,7 @@
 
         <div class="footer_overlay" style="z-index: -1;"></div>
         <footer class="footer">
-            <div class="footer_background" style="background-image:url(Theme/images/footer.jpg)"></div>
+            <div class="footer_background" style="background-image: url('../../Theme/images/home_makeup_footer_pic.png'); "></div>
             <div class="container">
                 <div class="row">
                     <div class="col">

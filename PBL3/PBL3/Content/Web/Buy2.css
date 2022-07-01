@@ -82,3 +82,36 @@ ul {
     -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
+.Form_info {
+    margin: 20px;
+    color: black;
+    font-size: 16px;
+}
+
+    .Form_info label {
+        width: 20%;
+    }
+
+    .Form_info input[type=text], input[type=number] {
+        width: 30%;
+        border: 1px solid black;
+        height: auto;
+        padding: 5px 10px;
+        text-align: left;
+    }
+
+    .Form_info span {
+        margin: 0px 20px 0px 5px;
+    }
+
+    .Form_info .row2 {
+        margin: 10px;
+        font-size: 16px;
+    }
+
+    .Form_info .Input_info_Form {
+        background: #eeeeee;
+        border: 2px solid #eeeeee;
+        border-radius: 5px;
+        padding: 10px;
+    }

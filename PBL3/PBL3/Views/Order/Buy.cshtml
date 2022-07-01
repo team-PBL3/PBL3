@@ -1,5 +1,5 @@
 ﻿@using PBL3.Models
-@model PBL3.Models.Person
+@model PBL3.Models.User
 @{
     ViewBag.Title = "Mua sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,6 +11,7 @@
 <link href="~/Content/Web/cart.css" rel="stylesheet" />
 <link href="~/Content/Web/cart_responsive.css" rel="stylesheet" />
 <link href="~/Content/Web/Product.css" rel="stylesheet" />
+<link href="~/Content/Web/Buy2.css" rel="stylesheet" />
 <!-- Home -->
 
 <div class="home" style="height:600px">
@@ -82,7 +83,7 @@
                                     <div class="product_quantity_container">
                                         <div class="product_quantity clearfix" style="border: none">
                                             <label class="quantity_input" style="text-align: center; width: 70%">
-                                            <input disabled="disabled" id = "quantity_input" name="quantity_input" type="number" pattern="[0-9]*" value="@ViewBag.quantity" />
+                                            <input style="width: 100%; border: none; height: 57px; padding-left: 9px; text-align: center;" disabled="disabled" id = "quantity_input" name="quantity_input" type="number" pattern="[0-9]*" value="@ViewBag.quantity" />
                                             </label>
                                         </div>
                                     </div>
@@ -107,8 +108,8 @@
                                     </div>
                                     <div class="row2">
                                         <label for="phone">Điện thoại</label>
-                                        <input data-val= "true" data-val-required= "Bạn chưa nhập số điện thoại."
-                                                id= "phone" min= "1" name= "phone" type= "number" value= "" >
+                                        <input style="font-size:16px" data-val= "true" data-val-required= "Bạn chưa nhập số điện thoại."
+                                                id= "phone" min= "1" name= "phone" type= "number" value= "">
                                         <div>
                                             <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="true"></span>
                                         </div>

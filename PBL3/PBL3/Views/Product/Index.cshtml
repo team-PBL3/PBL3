@@ -1,9 +1,10 @@
 ﻿@model PBL3.Models.Product_View_Detail
 @{
-    ViewBag.Title = "Sản phẩm" + Model.name;
+    ViewBag.Title = "Sản phẩm " + Model.name;
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<string> Limage = ViewBag.Image;
 }
+<link href="~/Content/Web/Product.css" rel="stylesheet" />
 <div class="home" style="height: 550px !important;">
     <div class="home_slider_container">
 

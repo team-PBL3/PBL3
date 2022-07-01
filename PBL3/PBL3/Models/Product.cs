@@ -13,6 +13,7 @@ namespace PBL3.Models
             images = new List<Image>();
             orderdetails = new List<Orderdetail>();
             cartdetails = new List<CartDetail>();
+            statistics = new List<Statistics>();
         }
         [Key]
         public int id { get; set; }
@@ -39,6 +40,7 @@ namespace PBL3.Models
         public virtual ICollection<Image> images { get; set; }
         public virtual ICollection<Orderdetail> orderdetails { get; set; }
         public virtual ICollection<CartDetail> cartdetails { get; set; }
+        public virtual ICollection<Statistics> statistics { get; set; }
     }
     
 }

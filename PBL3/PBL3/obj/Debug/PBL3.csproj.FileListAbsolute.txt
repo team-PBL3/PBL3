@@ -556,3 +556,5 @@ E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Newtonsoft.Json.xml
 E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Antlr3.Runtime.pdb
 E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\My life\CODE\PBL3-newsghoang\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
+E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.Migrations.altertable.resources
+E:\My life\CODE\Pbl3_1\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache

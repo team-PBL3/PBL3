@@ -20,7 +20,7 @@ input::-webkit-inner-spin-button {
         border: none;
         font-size: 20px;
         display: inline-block;
-        width: 100% !important;
+        width: 100%;
         height: 57px;
         vertical-align: top;
     }
@@ -64,25 +64,3 @@ textarea:focus, input:focus {
     font-size:20px;
     margin-bottom: 15px;
 }
-.Form_info {
-    margin: 20px;
-    color: black;
-}
-    .Form_info label{
-        width: 20%;
-    }
-    .Form_info input[type=text],input[type=number]{
-        width: 30%
-    }
-    .Form_info span {
-        margin: 0px 20px 0px 5px;
-    }
-    .Form_info .row2 {
-        margin: 10px;
-    }
-    .Form_info .Input_info_Form {
-        background: #eeeeee;
-        border: 2px solid #eeeeee;
-        border-radius: 5px;
-        padding: 10px;
-    }

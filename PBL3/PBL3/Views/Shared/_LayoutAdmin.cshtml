@@ -19,7 +19,7 @@
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
-            <h2><span class="fa-solid fa-helicopter-symbol"></span><span>HTCC</span></h2>
+            <h2><span class="fa-solid fa-helicopter-symbol"></span><span style="font-size: 28px;">HTCC-Beauty</span></h2>
         </div>
 
         <div class="sidebar-menu">
@@ -64,7 +64,7 @@
         </div>
     </div>
 
-    @RenderBody();
+    @RenderBody()
 
     <div class="bg-modal-X">
         <div class="cards-X">
@@ -75,13 +75,13 @@
                     <div class="input-box-password">
                         <span class="pass">Mật khẩu hiện tại</span>
 
-                        <input data-val="true" data-val-remote="mật khẩu hiện tại chưa đúng"
+                        <input data-val="true" data-val-remote="Mật khẩu hiện tại chưa đúng"
                                data-val-remote-additionalfields="*.pwcurrent"
                                data-val-remote-url="/AdminHome/CurrentPw"
                                data-val-maxlength="Mật khẩu không được dài hơn 12 ký tự"
                                data-val-maxlength-max="12" data-val-minlength="Mật khẩu không được ít hơn 6 ký tự"
                                data-val-minlength-min="6" data-val-required="Mật khẩu đang để trống"
-                               id="password" name="pwcurrent" placeholder="Enter your password" type="password">
+                               id="password" name="pwcurrent" placeholder="Nhập mật khẩu cũ" type="password">
                     </div>
                     <div class="error" style="height: 36px; padding: 5px 0 5px 0;">
                         <span class="field-validation-valid" data-valmsg-for="pwcurrent" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>
@@ -92,7 +92,7 @@
                                data-val-maxlength="Mật khẩu không được dài hơn 12 ký tự"
                                data-val-maxlength-max="12" data-val-minlength="Mật khẩu không được ít hơn 6 ký tự"
                                data-val-minlength-min="6" data-val-required="Mật khẩu đang để trống"
-                               id="password" name="pwmuondoi" placeholder="Enter your password" type="password">
+                               id="password" name="pwmuondoi" placeholder="Nhập mật khẩu mới" type="password">
                     </div>
                     <div class="error" style="height: 36px; padding-top: 5px;">
                         <span class="field-validation-valid" data-valmsg-for="pwmuondoi" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>
@@ -102,13 +102,13 @@
                         <input data-val="true" data-val-remote="Mật khẩu chưa đúng"
                                data-val-remote-additionalfields="*.cfpassword,*.pwmuondoi"
                                data-val-remote-url="/AdminHome/Is_Matched_Passwork"
-                               id="cfpassword" name="cfpassword" placeholder="Confirm your password" type="password">
+                               id="cfpassword" name="cfpassword" placeholder="Xác nhận mật khẩu mới" type="password">
                     </div>
                     <div class="error" style="height: 36px;">
                         <span class="field-validation-valid" data-valmsg-for="cfpassword" data-valmsg-replace="true" style="font-size: 18px; color:blue;"></span>
                     </div>
                     <div class="button">
-                        <input type="submit" id="btn-change-pass" value="Change">
+                        <input type="submit" id="btn-change-pass" value="Đổi mật khẩu">
                     </div>
                 </form>
             </div>
@@ -121,8 +121,6 @@
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>

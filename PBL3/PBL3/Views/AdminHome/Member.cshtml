@@ -1,6 +1,6 @@
 ﻿
 @using PBL3.Models;
-@{ ViewBag.Title = "Thành Viên";
+@{ ViewBag.Title = "Thành viên";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     PBL3DataContext dataContext = new PBL3DataContext();
     List_CustomerView list2 = Model;
@@ -20,7 +20,7 @@
 
         <div class="search-wrapper">
             <span class="fa-solid fa-magnifying-glass"></span>
-            <input type="search" placeholder="Search here" />
+            <input type="search" placeholder="Tìm kiếm" />
         </div>
 
         <div class="user-wrapper" onclick="menuToggle();">
@@ -42,7 +42,7 @@
             <div class="card-single">
                 <div>
                     <h1>@list2.data_views.Count</h1>
-                    <span>Thành Viên</span>
+                    <span>Thành viên</span>
                 </div>
                 <div>
                     <span class="fa-solid fa-users"></span>
@@ -76,7 +76,7 @@
             <div class="projects_1">
                 <div class="card_1">
                     <div class="card-header_1">
-                        <h3>Thành Viên</h3>
+                        <h3>Thành viên</h3>
 
                         <button>
                             Xem tất cả <span class="fa-solid fa-arrow-right">

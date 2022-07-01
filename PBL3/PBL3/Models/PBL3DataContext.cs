@@ -29,6 +29,7 @@ namespace PBL3.Models
         public DbSet<TradeMark> TradeMarks { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Admin_Action_History> Admin_Actions_History { get; set; }
+        public DbSet<Statistics> Statistics { get; set; }
         public int Adding(User user)
         {
             try
@@ -104,11 +105,19 @@ namespace PBL3.Models
             {
                 throw;
             }
-        }
+        }   
         public int Edit2(Orderr orderr)
         {
             try
             {
+                if (orderr.status == "Đã xác nhận")
+                    foreach (var i in orderr.orderdetails)
+                    {
+                        Orderdetail od = i;
+                        i.product.statistics.Last().income += i.quantity;
+                        i.product.statistics.Last().pending -= i.quantity;
+                    }
+                        
                 Orderr orderr1 = this.Orderrs.First(i => i.id == orderr.id);
                 orderr1.status = orderr.status;
                 return this.SaveChanges();
@@ -189,6 +198,7 @@ namespace PBL3.Models
         {
             try
             {
+
                 this.Orderdetails.Add(orderdetail);
                 return this.SaveChanges();
             }
@@ -202,19 +212,26 @@ namespace PBL3.Models
         {
             try
             {
-                foreach(var OD in LOD)
+                Orderr order = new Orderr() { status = "Đã xác nhận", TimeUpdate = DateTime.Now, userid = user.id, TimeConfirm = DateTime.Now, Person = toPerson };
+                Adding(order);
+                int Oid = this.Orderrs.ToList().Last().id;
+                int count = 0;
+                double total = 0;
+                foreach (var OD in LOD)
                 {
+                    Statistics temp = this.Statistics.OrderByDescending(t=>t.id).First(t => t.productid == OD.productid);
+                    temp.pending += (OD.price);
                     this.Products.First(x => x.id == OD.productid).quantityremain -= OD.quantity;
-                    int i=this.SaveChanges();
-                    Orderr order = new Orderr() { status = "Đã xác nhận", TimeUpdate = DateTime.Now, userid = user.id, TimeConfirm = DateTime.Now, Person=toPerson};
-                    Adding(order);
-                    List<Orderr> a = this.Orderrs.ToList();
-                    OD.orderid = a.Last().id;
+                    this.SaveChanges();
+                    OD.orderid = Oid;
                     Adding(OD);
-                    Payment b;
-                    b = new Payment() { amount = OD.quantity, paymentdate = DateTime.Now, totalPrice = OD.price, orderid = OD.orderid, userid = user.id };
-                    Adding(b);
+                    count += OD.quantity;
+                    total += (OD.price * OD.quantity);
                 }
+                Payment b;
+                b = new Payment() { amount = count, paymentdate = DateTime.Now, totalPrice = total, orderid = Oid, userid = user.id };
+                Adding(b);
+
                 if (CDid!=null)
                 foreach (var id in CDid)
                 {
@@ -300,9 +317,9 @@ namespace PBL3.Models
         public double TotalPrice()
         {
             double total = 0; ;
-            foreach(var i in this.Products.ToList())
+            foreach(var i in this.Statistics.ToList())
             {
-                total += i.price * (i.quantityInit - i.quantityremain);
+                total += i.total;
 
             }
             return total;

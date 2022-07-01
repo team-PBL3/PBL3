@@ -9,7 +9,6 @@
 <link href="~/Content/Web/cart.css" rel="stylesheet" />
 <link href="~/Content/Web/cart_responsive.css" rel="stylesheet" />
 <link href="~/Content/Web/Product.css" rel="stylesheet" />
-<link href="~/Content/Web/ButtonPage.css" rel="stylesheet" />
 <!-- Home -->
 <div>
 <div class="home" style="height: 600px; background: #ffb7abf7;">
@@ -39,24 +38,8 @@
 <div class="cart_info" style="background: url('/Image/poster6.jpg') no-repeat; background-size: cover; background-attachment: fixed; padding-bottom: 30px; ">
     <div style="padding: 30px 0px; margin: 0px 70px; border-radius: 10px; background: #fefeee; border: solid 5px #e0e0e0; ">
     <div class="container">
-        <div class="row" style="margin: 0px">
-            <div class="col">
-                <div class="total_product" style="padding-top:10px"></div>
-            </div>
-            <div class="col">
-                <div style="text-align:right">
-                    <div style="display:inline-block; margin: 10px; color: black; font-size:20px">
-                        <label for="search">Search: </label>
-                        <input name="search" id="search" type="text" class="input-text-box" onchange="searchbar('item_name',this.value)" />
-                    </div>
-                </div>
-            </div>
-            <div id="FrameName" style="display:none">Cart-display-frame</div>
-            <div id="FrameNumber" style="display:none">5</div>
-        </div>
         <div class="row">
             <div class="col">
-
                 <!-- Column Titles -->
                 <div class="cart_info_columns clearfix" style="border:2px solid #a0a0a0; padding: 10px">
                     <div class="cart_info_col cart_info_col_product" style="font-size: 20px">Sản phẩm</div>
@@ -78,7 +61,7 @@
             if (newCD != null)
             {
                 <!-- Cart Item -->
-                        <div style="border: 2px solid black;" class="Cart-display-frame">
+                        <div style="border: 2px solid black;">
                         <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" style="padding-right:10px;">
                             <!-- Name -->
                             <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
@@ -86,7 +69,7 @@
                                     <div><img src="@(Image_Url.urlImage + newCD.product_view.imageName)" style="height: 100%; width: 100%" alt=""></div>
                                 </div>
                                 <div class="cart_item_name_container">
-                                    <div class="cart_item_name"><a href="https://localhost:44325/Product/?name=@newCD.product_view.name&productid=@newCD.product_view.id" class="item_name">@newCD.product_view.name</a></div>
+                                    <div class="cart_item_name"><a href="https://localhost:44325/Product/?name=@newCD.product_view.name&productid=@newCD.product_view.id">@newCD.product_view.name</a></div>
                                 </div>
                             </div>
                             <!-- Price -->
@@ -127,7 +110,7 @@
                         {
                             if (newCD.id == i.id) { continue; }
                         } <!-- Cart Item -->
-                        <div style="border: 2px solid black;" class="Cart-display-frame">
+                        <div style="border: 2px solid black;">
                         <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start" style="padding-right:10px;">
                             <!-- Name -->
                             <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
@@ -135,7 +118,7 @@
                                     <div><img src="@(Image_Url.urlImage + i.product_view.imageName)" style="height: 100%; width: 100%" alt=""></div>
                                 </div>
                                 <div class="cart_item_name_container">
-                                    <div class="cart_item_name"><a href="https://localhost:44325/Product/?name=@i.product_view.name&productid=@i.product_view.id" class="item_name">@i.product_view.name</a></div>
+                                    <div class="cart_item_name"><a href="https://localhost:44325/Product/?name=@i.product_view.name&productid=@i.product_view.id">@i.product_view.name</a></div>
                                 </div>
                             </div>
                             <!-- Price -->
@@ -172,17 +155,6 @@
                     }
                     <input type="text" name="cartid" style="display:none" value="@Model.cart.id" />
                     <div id="error" style="height: 30px"></div>
-                    <div class="Page-buttons">
-                        <div name="id" id="First-Page" class="page-button" value="1" onclick="changePage(this.value)">First</div>
-                        <div name="id" class="Previous-Page" value="0" onclick="changePage(this.value)"><</div>
-                        <span id="Three-dot1" class="page-button">...</span>
-                        <div name="id" class="Previous-Page" value="0" onclick="changePage(this.value)">0</div>
-                        <label id="Current-Page" class="page-button">1</label>
-                        <div name="id" class="Next-Page" value="2" onclick="changePage(this.value)">2</div>
-                        <span id="Three-dot2" class="page-button">...</span>
-                        <div name="id" class="Next-Page" value="2" onclick="changePage(this.value)">></div>
-                        <div name="id" id="Last-Page" class="page-button" value="@(Model.lViews.dataViews.Count/5+1)" onclick="changePage(this.value)">Last</div>
-                    </div>
                     
         <div class="row row_cart_buttons">
             <div class="col"  style="text-align:right;">
@@ -211,8 +183,11 @@
                 </div>
             </div>
         </div>
+        
          }
+
                 </div>}
+
             </div>
         </div>
     </div>
@@ -220,4 +195,3 @@
 </div>
 </div>
 <script type="text/javascript" src="~/Scripts/Thien_JS/Cart_Index.js"></script>
-<script type="text/javascript" src="~/Scripts/Thien_JS/Home_Index.js"></script>

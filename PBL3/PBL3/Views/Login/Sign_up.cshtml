@@ -3,32 +3,32 @@
 @using PBL3.Models
 
 @{
-    ViewBag.Title = "Sign_up";
+    ViewBag.Title = "Đăng ký";
     Layout = "~/Views/Shared/_LayoutSignUp.cshtml";
 }
-<div class="title">Sign up</div>
+<div class="title">Đăng ký</div>
 
 @using (Html.BeginForm("Sign_Up", "Login", FormMethod.Post))
 {
     <div class="user-details1">
         <div class="input-box">
-            <span class="details">Full Name</span>
-            @Html.TextBoxFor(model => model.name, new { placeholder = "Enter your name" })
+            <span class="details">Họ và tên</span>
+            @Html.TextBoxFor(model => model.name, new { placeholder = "Nhập họ và tên" })
             <br />
             @Html.ValidationMessageFor(model => model.name)
         </div>
         <div class="gender-details">
             @Html.RadioButtonFor(model => model.sex, "NAM", new { id = "dot-1" })
             @Html.RadioButtonFor(model => model.sex, "NU", new { id = "dot-2" })
-            <span class="gender-title">Gender</span>
+            <span class="gender-title">Giới tính</span>
             <div class="category">
                 <label for="dot-1">
                     <span class="dot one"></span>
-                    <span class="gender">Male</span>
+                    <span class="gender">Nam</span>
                 </label>
                 <label for="dot-2">
                     <span class="dot two"></span>
-                    <span class="gender">Female</span>
+                    <span class="gender">Nữ</span>
                 </label>
             </div>
             @Html.ValidationMessageFor(model => model.sex)
@@ -36,45 +36,49 @@
     </div>
     <div class="user-details2">
         <div class="input-box">
-            <span class="details">Phone Number</span>
-            @Html.TextBoxFor(model => model.phone, new { type = "number", min = 1, placeholder = "Enter your number" })
+            <span class="details">Số điện thoại</span>
+            @Html.TextBoxFor(model => model.phone, new { type = "number", min = 1, placeholder = "Nhập số điện thoại" })
             <br />
             @Html.ValidationMessageFor(model => model.phone)
         </div>
         <div class="input-box">
-            <span class="details">Address</span>
-            @Html.TextBoxFor(model => model.address, new { placeholder = "Enter your address" })
+            <span class="details">Địa chỉ</span>
+            @Html.TextBoxFor(model => model.address, new { placeholder = "Nhập địa chỉ" })
             <br />
             @Html.ValidationMessageFor(model => model.address)
         </div>
         <div class="input-box">
             <span class="details">Username</span>
-            @Html.TextBoxFor(model => model.username, new { placeholder = "Enter your username" })
+            @Html.TextBoxFor(model => model.username, new { placeholder = "Nhập username" })
             <br />
             @Html.ValidationMessageFor(model => model.username)
         </div>
         <div class="input-box">
             <span class="details">Email</span>
-            @Html.TextBoxFor(model => model.email, new { placeholder = "Enter your email" })
+            @Html.TextBoxFor(model => model.email, new { placeholder = "Nhập email" })
             <br />
             @Html.ValidationMessageFor(model => model.email)
         </div>
         <div class="input-box">
-            <span class="details">Password</span>
-            @Html.PasswordFor(model => model.password, new { id = "password", placeholder = "Enter your password" })
+            <span class="details">Mật khẩu</span>
+            @Html.PasswordFor(model => model.password, new { id = "password", placeholder = "Nhập mật khẩu" })
             <br />
             @Html.ValidationMessageFor(model => model.password)
         </div>
         <div class="input-box">
-            <span class="details">Confirm Password</span>
-            @Html.PasswordFor(model => model.cfpassword, new { placeholder = "Confirm your password" })
+            <span class="details">Xác nhận mật khẩu</span>
+            @Html.PasswordFor(model => model.cfpassword, new { placeholder = "Xác nhận mật khẩu" })
             <br />
             @Html.ValidationMessageFor(model => model.cfpassword)
         </div>
     </div>
     <div class="button">
-        <input type="submit" value="Sign up">
+        <input type="submit" value="Đăng ký">
     </div>
+
+    <a href="/Home/Index" class="btn-back">
+            <i class="fa-solid fa-left-long"></i>
+    </a>
 }
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

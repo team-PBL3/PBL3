@@ -34,9 +34,9 @@ body {
             content: '';
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: -4px;
             height: 3px;
-            width: 60px;
+            width: 80px;
             background: linear-gradient(135deg,#2980b9, #8e44ad);
         }
 
@@ -155,7 +155,7 @@ form .user-details2 .input-box {
 
 form .button {
     height: 45px;
-    margin: 45px 0;
+    margin: 45px 0 15px 0;
 }
 
     form .button input {
@@ -175,6 +175,20 @@ form .button {
             background: linear-gradient(-135deg,#2980b9, #8e44ad);
         }
 
+.field-validation-error {
+    color: red;
+}
+
+.btn-back {
+    padding-top: 30px;
+    padding-left: 48%;
+    font-size: 38px;
+    color: #1e90ff;
+}
+
+    .btn-back:hover {
+        color: #8e44ad;
+    }
 @media (max-width: 768px) {
     .container {
         max-width: 100%;

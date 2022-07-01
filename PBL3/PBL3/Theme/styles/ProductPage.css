@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap');
 
 * {
     margin: 0;
@@ -7,8 +8,8 @@
     list-style-type: none;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
+    font-family: 'Charis SIL', sans-serif;
 }
-
 .sidebar {
     width: 320px;
     position: fixed;
@@ -178,7 +179,9 @@ main {
     letter-spacing: 1px;
     background: linear-gradient(30deg,#686de0, #ff6b81);
 }
-
+#btn-add {
+    font-size: 18px;
+}
 .button input:hover {
     background: linear-gradient(-135deg,#686de0, #ff6b81);
 }
@@ -209,8 +212,11 @@ main {
 .close {
     position: absolute;
     top: 10px;
+    top: 8px;
     right: 100px;
     font-size: 36px;
+    font-size: 32px !important;
+    font-weight: 900 !important;
     transform: rotate(45deg);
     cursor: pointer;
 }
@@ -232,7 +238,7 @@ main {
 
 .add-form {
     display: flex;
-    height: 470px;
+    height: 480px;
     width: 90%;
     padding: 0 25px;
     padding-top: 10px;
@@ -264,7 +270,7 @@ form .product-details .input-box {
     width: 89%;
     outline: none;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #686de0;
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
@@ -274,24 +280,6 @@ form .product-details .input-box {
 
     .product-details .input-box .input:focus,
     .product-details .input-box .input:valid {
-        border-color: #686de0;
-        background: #ffffff;
-    }
-
-.product-details .input-box input {
-    height: 40px;
-    width: 89%;
-    outline: none;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
-}
-
-    .product-details .input-box input:focus,
-    .product-details .input-box input:valid {
         border-color: #686de0;
         background: #ffffff;
     }
@@ -317,6 +305,15 @@ form .button {
         form .button input:hover {
             background: linear-gradient(-135deg,#686de0, #ff6b81);
         }
+
+.search_select_box select {
+    width: 89%;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 8px;
+    border: 1px solid #686de0;
+    border-bottom-width: 2px;
+}
 
 .search_select_box button {
     width: 218px !important;
@@ -381,6 +378,10 @@ form .button {
     border: 1px solid #ff7979;
     text-decoration: none;
 }
+
+    #btn-see-all:hover {
+        color: #4834d4;
+    }
 
 .recent-grid_4 {
     margin-top: 3.5rem;
